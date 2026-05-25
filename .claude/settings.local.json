@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\lubin\\\\OneDrive\\\\Documents\\\\ClaudeCode\\\\kodshim-practice\\\\source-material\\\\Rambam Commentary on Mishnah Zevachim - Introduction.json\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\lubin\\\\OneDrive\\\\Documents\\\\ClaudeCode\\\\kodshim-practice\\\\web-app\\\\kodshim-data.js\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\lubin\\\\OneDrive\\\\Documents\\\\ClaudeCode\\\\kodshim-practice\\\\web-app\\\\kodshim-styles.css\" | Measure-Object -Line\\).Lines)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\lubin\\\\OneDrive\\\\Documents\\\\ClaudeCode\\\\kodshim-practice\\\\web-app\\\\kodshim-screens.jsx\")",
+      "Bash(Remove-Item \"c:\\\\Users\\\\lubin\\\\OneDrive\\\\Documents\\\\ClaudeCode\\\\kodshim-practice\\\\web-app\\\\kodshim-slides.css\")",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\lubin\\\\OneDrive\\\\Documents\\\\ClaudeCode\\\\kodshim-practice\\\\web-app\" -Recurse -Force)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Format-Table -AutoSize)"
+    ]
+  }
+}
