@@ -39,7 +39,10 @@ window.KODSHIM_LEVELS[3] = {
             ["Yoledet", "A lamb as olah and a bird ({{he:תּוֹר}} or {{he:בֶּן יוֹנָה}}) as chatat", "Two birds — one olah and one chatat"],
             ["Metzora", "Three lambs — an asham waved alive, a female lamb as chatat, a male lamb as olah — and a {{he:לֹג שֶׁמֶן}}", "One male lamb as asham (waved alive), two birds — olah and chatat — and a {{he:לֹג שֶׁמֶן}}"],
           ] },
-        { type: "figure", src: "assets/lamb.png", caption: "A keves. The wealthy yoledet brings one as her olah; every metzora, rich or poor, brings one as his asham — and it is waved while still alive." },
+        { type: "cast", items: [
+          { src: "assets/cast/yoledet.png", he: "יוֹלֶדֶת", name: "The yoledet", caption: "Wealthy: a lamb as olah and a bird as chatat. Poor: two birds — one olah, one chatat." },
+          { src: "assets/cast/metzora.png", he: "מְצֹרָע", name: "The metzora", caption: "Rich or poor, a male lamb as asham, waved alive, with a log of oil. The poor man's olah and chatat are birds." },
+        ] },
         { type: "callout", title: "A look-alike: the nazir tameh",
           text: "A {{he:נָזִיר}} who became tameh is not one of the four mechusrei kapparah, but his korban looks like theirs: two birds (one olah and one chatat) plus a male lamb as asham — the {{he:אֲשַׁם נָזִיר}}. Keep him in mind; his asham returns in Lesson 4." },
       ],
@@ -56,7 +59,7 @@ window.KODSHIM_LEVELS[3] = {
       blocks: [
         { type: "cards", items: [
           { he: "נָזִיר", tl: "nazir", en: "at the end of his vow", text: "A male lamb as olah, a female lamb as chatat, and a ram as shelamim — with matzot and libations." },
-          { he: "סוֹטָה", tl: "sotah", en: "a wife suspected of unfaithfulness", text: "A barley mincha of one-tenth ephah, without oil or frankincense — called a minchat chatat." },
+          { he: "סוֹטָה", tl: "sotah", en: "a wife suspected of unfaithfulness", text: "A barley mincha of one-tenth ephah, with no oil and no frankincense — the pattern of a sinner's mincha." },
           { he: "גֵּר", tl: "ger", en: "a convert", text: "An olah — either an animal olah, or two birds, both of them olah." },
           { he: "תּוֹדָה", tl: "todah", en: "thanksgiving offering", text: "Brought by one who survived danger: crossing the sea, traveling through a desert, recovering from illness, or release from prison." },
         ] },
@@ -68,9 +71,13 @@ window.KODSHIM_LEVELS[3] = {
             ["Ger", "An animal olah, or two birds both as olah", "Conversion"],
             ["Todah", "A shelamim of thanksgiving", "Survived the sea, the desert, illness, or prison"],
           ] },
-        { type: "figure", src: "assets/ram.png", caption: "An ayil — the ram the nazir brings as shelamim at the completion of his vow." },
+        { type: "cast", items: [
+          { src: "assets/cast/nazir.png", he: "נָזִיר", name: "The nazir", caption: "At the end of his vow: a male lamb olah, a female lamb chatat, and a ram as shelamim." },
+          { src: "assets/cast/ger.png", he: "גֵּר", name: "The ger", caption: "An olah — an animal, or two birds, both as olah." },
+          { src: "assets/cast/todah.png", he: "תּוֹדָה", name: "One who was saved", caption: "Back from the sea, the desert, illness, or prison: a korban todah." },
+        ] },
         { type: "callout", title: "Two pattern-breakers",
-          text: "Every bird pair in Lesson 1 was one olah and one chatat; the ger's pair is **both olah**. And the sotah's mincha is **barley**, with **no oil and no frankincense** — the Torah calls it a {{he:מִנְחַת חַטָּאת}}, a mincha of sin, even though it is a flour offering." },
+          text: "Every bird pair in Lesson 1 was one olah and one chatat; the ger's pair is **both olah**. And the sotah's mincha is **barley**, with **no oil and no frankincense** — the same stripped-down pattern as a sinner's mincha ({{he:מִנְחַת חוֹטֵא}}), even though it is a flour offering." },
       ],
     },
     {
@@ -91,7 +98,10 @@ window.KODSHIM_LEVELS[3] = {
             ["Kohen mashiach", "A bull ({{he:פַּר}})", "Burned outside; not eaten"],
             ["Kohen gadol on Yom Kippur", "A bull as his personal chatat", "Plus a ram as his personal olah — for himself and his household"],
           ] },
-        { type: "figure", src: "assets/male-goat.png", caption: "A se'ir izim — the male goat a nasi brings as his chatat." },
+        { type: "cast", items: [
+          { src: "assets/cast/nasi.png", he: "נָשִׂיא", name: "The nasi", caption: "A male goat ({{he:שְׂעִיר עִזִּים}}) as his chatat — the one leader whose chatat is male." },
+          { src: "assets/male-goat.png", he: "שְׂעִיר עִזִּים", name: "His goat", caption: "An ordinary Israelite brings a female goat or a female sheep instead." },
+        ] },
         { type: "callout", title: "The chavitin — the kohen gadol's daily mincha",
           text: "Every day the kohen gadol brings a mincha of one-tenth ephah of fine flour, **half in the morning and half in the afternoon**, baked on a flat pan ({{he:מַחֲבַת}}) with oil. This is the {{he:חֲבִתִּין}}, the chavitei kohen gadol." },
         { type: "terms", items: [
@@ -117,7 +127,7 @@ window.KODSHIM_LEVELS[3] = {
       blocks: [
         { type: "cards", items: [
           { he: "אֲשַׁם גְּזֵלוֹת", tl: "asham gezelot", en: "for a false oath about money", text: "A male sheep, brought by one who swore falsely on a monetary obligation. He first repays the principal plus a fifth." },
-          { he: "אֲשַׁם מְעִילוֹת", tl: "asham me'ilot", en: "for benefit from hekdesh", text: "A male sheep worth at least two shekels, brought by one who derived benefit from hekdesh. He repays plus a fifth." },
+          { he: "אֲשַׁם מְעִילוֹת", tl: "asham me'ilot", en: "for unintentional misuse of hekdesh", text: "A male sheep worth at least two shekels, brought by one who unintentionally derived benefit from hekdesh. He repays plus a fifth." },
           { he: "אָשָׁם תָּלוּי", tl: "asham talui", en: "the suspended asham", text: "A male sheep, brought when one is uncertain whether he committed a karet-level sin that would require a chatat." },
           { he: "אֲשַׁם שִׁפְחָה חֲרוּפָה", tl: "asham shifchah charufah", en: "for a designated maidservant", text: "A male sheep, brought by a man who slept with a non-free maidservant designated to another man." },
           { he: "אֲשַׁם נָזִיר", tl: "asham nazir", en: "the nazir who became tameh", text: "A male lamb, brought together with his two birds." },
@@ -126,7 +136,7 @@ window.KODSHIM_LEVELS[3] = {
         { type: "compare",
           left:  { title: "The money ashamot", he: "אֲשַׁם גְּזֵלוֹת · אֲשַׁם מְעִילוֹת", items: [
             "Gezelot — he swore falsely about a monetary obligation",
-            "Me'ilot — he derived benefit from hekdesh",
+            "Me'ilot — he unintentionally derived benefit from hekdesh",
             "Both: repay the principal plus a fifth before the korban",
             "Me'ilot: the sheep must be worth at least two shekels",
           ] },
@@ -138,8 +148,8 @@ window.KODSHIM_LEVELS[3] = {
           ] },
         },
         { type: "callout", title: "The rule that holds for all six",
-          text: "Every asham in this level is a male sheep — a {{he:כֶּבֶשׂ}}. The situation changes; the animal does not." },
-        { type: "figure", src: "assets/lamb.png", caption: "A male lamb — the only animal an asham ever comes from." },
+          text: "Every asham in this level is a male sheep — usually a ram ({{he:אַיִל}}), and for the nazir and the metzora a lamb ({{he:כֶּבֶשׂ}}). The situation changes; the species and sex do not." },
+        { type: "figure", src: "assets/lamb.png", caption: "A male sheep — the only animal an asham ever comes from: a ram for most ashamot, a lamb for the nazir's and the metzora's." },
       ],
     },
     {
@@ -148,7 +158,7 @@ window.KODSHIM_LEVELS[3] = {
       dek: "Korban oleh ve'yored moves with the owner's means — and the community brings only olot and chatot.",
       sources: ["Shegagot 10:1", "Maaseh HaKorbanot 1:4", "Vayikra 5:1-4", "Vayikra 5:6-11"],
       intro: [
-        "The {{he:קָרְבַּן עוֹלֶה וְיוֹרֵד}} — \"the korban that goes up and down\" — is the Torah's clearest sliding scale. Three sins bring it, and the same sin costs a wealthy person an animal, a middle-income person two birds, and a poor person a handful of flour.",
+        "The {{he:קָרְבַּן עוֹלֶה וְיוֹרֵד}} — \"the korban that goes up and down\" — is the Torah's clearest sliding scale. Three sins bring it, and the same sin costs a wealthy person an animal, a middle-income person two birds, and a poor person a tenth of an ephah of fine flour.",
         "To close the level, step back and ask which of all these korbanot a {{he:צִבּוּר}} could ever bring. The answer is short: olot and chatot. Nearly everything in this level belongs to a yachid.",
       ],
       blocks: [
@@ -345,7 +355,7 @@ window.KODSHIM_LEVELS[3] = {
       cite: "Nezirut 6:11" },
 
     { id: "L3-Q07", kind: "match",
-      prompt: "Match each person to what they bring.",
+      prompt: "Match each person or korban to its description.",
       pairs: [
         { hebrew: "נָזִיר בְּסוֹף נְזִירוּתוֹ", english: "male lamb olah, female lamb chatat, ram shelamim" },
         { hebrew: "סוֹטָה", english: "barley mincha of one-tenth ephah, no oil or frankincense" },
@@ -364,7 +374,7 @@ window.KODSHIM_LEVELS[3] = {
         "A fine-flour mincha of one-tenth ephah with oil and frankincense",
       ],
       answer: 2,
-      explain: "The sotah brings a mincha of barley, one-tenth ephah, without oil or frankincense — called a minchat chatat.",
+      explain: "The sotah brings a mincha of barley, one-tenth ephah, with no oil and no frankincense — like a sinner's mincha.",
       cite: "Sotah 3:1" },
 
     { id: "L3-Q09", kind: "mc",
@@ -392,7 +402,7 @@ window.KODSHIM_LEVELS[3] = {
       cite: "Maaseh HaKorbanot 2:1" },
 
     { id: "L3-Q11", kind: "match",
-      prompt: "Match each person to the chatat he brings for an unintentional sin.",
+      prompt: "Match each person to the korban his rank calls for.",
       pairs: [
         { hebrew: "יִשְׂרָאֵל", english: "a female goat or a female sheep" },
         { hebrew: "נָשִׂיא", english: "a male goat" },
@@ -438,7 +448,7 @@ window.KODSHIM_LEVELS[3] = {
       prompt: "Match each asham to the situation that brings it.",
       pairs: [
         { hebrew: "אֲשַׁם גְּזֵלוֹת", english: "swore falsely about a monetary obligation" },
-        { hebrew: "אֲשַׁם מְעִילוֹת", english: "derived benefit from hekdesh" },
+        { hebrew: "אֲשַׁם מְעִילוֹת", english: "unintentionally derived benefit from hekdesh" },
         { hebrew: "אָשָׁם תָּלוּי", english: "unsure whether he committed a karet-level sin" },
         { hebrew: "אֲשַׁם שִׁפְחָה חֲרוּפָה", english: "slept with a maidservant designated to another man" },
       ],

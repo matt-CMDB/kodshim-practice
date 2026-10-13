@@ -413,7 +413,7 @@ window.KODSHIM_LEVELS[1] = {
       items: [
         { hebrew: "עוֹלָה",    translit: "olah",     bucket: "kk" },
         { hebrew: "אָשָׁם",    translit: "asham",    bucket: "kk" },
-        { hebrew: "שְׁלָמִים", translit: "shelamim", bucket: "kalim" },
+        { hebrew: "שַׁלְמֵי יָחִיד", translit: "shalmei yachid", bucket: "kalim" },
         { hebrew: "פֶּסַח",    translit: "pesach",   bucket: "kalim" },
       ],
       explain: "Olah, chatat, and asham are kodshei kodashim. Individual shelamim, bechor, maaser, and pesach are kodashim kalim.",
@@ -430,7 +430,7 @@ window.KODSHIM_LEVELS[1] = {
     {
       id: "L1-Q13", kind: "mc",
       prompt: "A male sheep on the thirtieth day of its second year — what is it, and may it be offered?",
-      options: ["A keves — fully valid", "An ayil — fully valid", "A pilgas — valid as neither keves nor ayil", "A zaken — too old to offer"],
+      options: ["A keves — fully valid", "An ayil — fully valid", "A pilgas — eligible as neither keves nor ayil", "A zaken — too old to offer"],
       answer: 2,
       explain: "On that one day the animal is a pilgas: no longer a keves, not yet an ayil, so it cannot serve as either.",
       cite: "Maaseh HaKorbanot 1:14",
@@ -466,10 +466,10 @@ window.KODSHIM_LEVELS[1] = {
     },
     {
       id: "L1-Q18", kind: "cloze",
-      prompt: "An individual's chatat is always ____, except for a nasi, a kohen mashiach, and the kohen gadol on Yom Kippur.",
+      prompt: "An individual's animal chatat is always ____, except for a nasi, a kohen mashiach, and the kohen gadol on Yom Kippur.",
       options: ["female", "male", "a bird", "a lamb"],
       answer: 0,
-      explain: "A chatat yachid is female. The three exceptions bring males: the nasi a male goat, the kohen mashiach and the kohen gadol on Yom Kippur a bull.",
+      explain: "An individual's animal chatat is female (for a bird chatat the sex does not matter). The three exceptions bring males: the nasi a male goat, the kohen mashiach and the kohen gadol on Yom Kippur a bull.",
       cite: "Maaseh HaKorbanot 1:14",
     },
     {
@@ -501,7 +501,7 @@ window.KODSHIM_LEVELS[1] = {
       prompt: "Which animals are fit for a chatat?",
       options: ["Any of the five species, male or female", "Only female sheep and goats", "Only cattle", "Only birds"],
       answer: 0,
-      explain: "A chatat can come from all five species. Which sex depends on who brings it — an individual's chatat is female.",
+      explain: "A chatat can come from all five species. Which sex depends on who brings it — an individual's animal chatat is female; for birds it does not matter.",
       cite: "Maaseh HaKorbanot 1:9",
     },
   ],

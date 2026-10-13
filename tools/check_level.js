@@ -28,7 +28,7 @@ for (const k of ["num", "name", "he", "tagline", "summary", "lessons", "concepts
 }
 if (!Array.isArray(L.summary) || !L.summary.every(isStr)) err("summary must be an array of strings");
 
-const BLOCK_TYPES = ["cards", "table", "compare", "callout", "steps", "list", "terms", "figure"];
+const BLOCK_TYPES = ["cards", "table", "compare", "callout", "steps", "list", "terms", "figure", "cast"];
 const assetsDir = path.join(path.dirname(file), "..", "assets");
 (L.lessons || []).forEach((ls, i) => {
   const tag = `lesson[${i}] ${ls.id || ""}`;
@@ -46,6 +46,10 @@ const assetsDir = path.join(path.dirname(file), "..", "assets");
     if (b.type === "steps" && !(Array.isArray(b.items) && b.items.every((it) => isStr(it.title) && isStr(it.text)))) err(`${bt}: steps need items[].title/text`);
     if (b.type === "list" && !(Array.isArray(b.items) && b.items.every(isStr))) err(`${bt}: list needs string items`);
     if (b.type === "terms" && !(Array.isArray(b.items) && b.items.every((it) => isStr(it.he)))) err(`${bt}: terms need items[].he`);
+    if (b.type === "cast") {
+      if (!Array.isArray(b.items) || !b.items.every((it) => isStr(it.src))) err(`${bt}: cast needs items[].src`);
+      else b.items.forEach((it) => { if (!fs.existsSync(path.join(assetsDir, "..", it.src))) err(`${bt}: asset not found ${it.src}`); });
+    }
     if (b.type === "figure") {
       if (!isStr(b.src)) err(`${bt}: figure needs src`);
       else if (!fs.existsSync(path.join(assetsDir, "..", b.src))) err(`${bt}: asset not found ${b.src}`);

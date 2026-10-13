@@ -79,6 +79,9 @@ Each block is revealed by one click/keypress, in order.
 
 { type: "figure", src: "assets/ram.png", caption: "An ayil — the asham animal." }
 // Only use images that exist under web-app/assets/ (see the list in the task prompt).
+
+{ type: "cast", items: [ { src: "assets/cast/yoledet.png", he: "יוֹלֶדֶת", name: "The yoledet", caption: "What she brings." } ] }
+// A row of character portraits (web-app/assets/cast/) with a Hebrew label, a name and a one-line caption; 1-4 items.
 ```
 
 ## Concept

@@ -92,6 +92,21 @@
             ))}
           </div>
         );
+      case "cast":
+        return (
+          <div className={"blk blk-cast n" + Math.min(b.items.length, 6)}>
+            {b.items.map((it, i) => (
+              <figure className="cast-card" key={i}>
+                <img src={it.src} alt={it.name || ""} />
+                <figcaption>
+                  {it.he && <span className="he">{it.he}</span>}
+                  {it.name && <span className="name">{it.name}</span>}
+                  {it.caption && <span className="cap"><Inline text={it.caption} /></span>}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        );
       case "figure":
         return (
           <figure className="blk blk-figure">

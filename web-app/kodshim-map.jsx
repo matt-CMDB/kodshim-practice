@@ -55,10 +55,9 @@
   }
 
   function Avatar({ step, total }) {
-    // Feet on the top edge of the step bar; on the ground when step is 0.
-    const bottom = step === 0 ? 0 : 26 + step * 34 + (step - 1) * 5;
+    // Feet on the top edge of the step bar (CSS computes it from --step); on the ground when step is 0.
     return (
-      <div className="avatar" style={{ bottom: bottom + "px" }} aria-hidden="true">
+      <div className={"avatar" + (step === 0 ? " ground" : "")} style={{ "--step": step }} aria-hidden="true">
         <img src="assets/boy-learning.png" alt="" />
       </div>
     );

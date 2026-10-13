@@ -472,7 +472,7 @@ window.KODSHIM_LEVELS[5] = {
 
     // L5-C13
     { id: "L5-Q10", kind: "tf",
-      prompt: "The two bazichei levonah stand beside the two stacks of lechem hapanim and are burned on Shabbat, when the bread is changed.",
+      prompt: "The two bazichei levonah stand beside the two stacks of lechem hapanim, and their frankincense is burned on Shabbat, when the bread is changed.",
       answer: true,
       explain: "True. Two bowls of frankincense are placed beside the two stacks, and their levonah is burned on Shabbat at the changeover of the bread.",
       cite: "Temidin uMusafin 5:2" },
@@ -524,7 +524,7 @@ window.KODSHIM_LEVELS[5] = {
       prompt: "Which word names the fistful the kohen takes from a mincha to burn on the altar?",
       options: ["קֹמֶץ", "בָּזִיךְ", "לְבוֹנָה", "סֹלֶת"],
       answer: 0,
-      explain: "Kemitzah is the kohen taking a kometz — a fistful — of the mincha for burning on the altar. The rest of the mincha is eaten by the kohanim.",
+      explain: "Kemitzah is the kohen taking a kometz — a fistful — of the mincha for burning on the altar. In an ordinary mincha the rest is eaten by the kohanim; the wholly burned menachot have no kemitzah at all.",
       cite: "Maaseh HaKorbanot 13:13" },
 
     // L5-C24

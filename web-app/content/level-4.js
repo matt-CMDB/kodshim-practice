@@ -66,9 +66,9 @@ window.KODSHIM_LEVELS[4] = {
           caption: "Where the blood goes, and how many times",
           cols: ["Korban", "Where", "How many applications"],
           rows: [
-            ["Chatat of an individual", "On the four horns of the outer altar; the remainder is poured at the base", "Four — one on each horn"],
+            ["Ordinary chatat of an individual (outer altar)", "On the four horns of the outer altar; the remainder is poured at the base", "Four — one on each horn"],
             ["Olah, shelamim, asham", "Cast from the vessel against two opposite corners of the outer altar, so that all four sides are touched", "Two that count as four — {{he:שְׁתַּיִם שֶׁהֵן אַרְבַּע}}"],
-            ["Inner chatat (par he'elem davar and the like)", "Sprinkled seven times before the parochet, then placed on the horns of the golden altar; the remainder is poured at the base of the outer altar", "Seven before the parochet, then the horns of the inner altar"],
+            ["Inner chatat (par he'elem davar, par kohen mashiach)", "Sprinkled seven times before the parochet, then placed on the horns of the golden altar; the remainder is poured at the base of the outer altar", "Seven before the parochet, then the horns of the inner altar"],
           ],
         },
         {
@@ -121,7 +121,7 @@ window.KODSHIM_LEVELS[4] = {
         {
           type: "figure",
           src: "assets/cow-male.png",
-          caption: "A par — the chatat of the kohen mashiach, and of the kohen gadol on Yom Kippur. An individual's chatat is otherwise always female; the only exceptions are these two bulls and the male goat of a nasi.",
+          caption: "A par — the chatat of the kohen mashiach, and of the kohen gadol on Yom Kippur. An individual's animal chatat is otherwise female; the exceptions are these two bulls and the male goat of a nasi. (A bird chatat has no sex requirement.)",
         },
         {
           type: "cards",
@@ -160,7 +160,7 @@ window.KODSHIM_LEVELS[4] = {
           type: "cards",
           items: [
             { he: "נוֹתָר", tl: "notar", en: "left over", text: "Meat left past its permitted time. It must be burned, and one who eats it is liable to karet." },
-            { he: "פִּגּוּל", tl: "pigul", en: "wrong intent of time", text: "A korban offered with intent to eat it outside its permitted time. The korban is invalid and one who eats it is liable to karet — yet the kapparah still goes to the owner." },
+            { he: "פִּגּוּל", tl: "pigul", en: "wrong intent of time", text: "A korban offered with intent to eat it outside its permitted time. The korban is invalid and one who eats it is liable to karet." },
             { he: "חוּץ לִמְקוֹמוֹ", tl: "chutz limkomo", en: "wrong intent of place", text: "A korban offered with intent to eat or burn it outside its permitted place. The korban is pasul, but there is no karet." },
           ],
         },
@@ -280,7 +280,7 @@ window.KODSHIM_LEVELS[4] = {
       qHe: "מהו נותר?", aHe: "בשר קרבן שנותר אחרי זמנו — חייב שריפה; האוכלו חייב כרת.",
       tanach: ["Vayikra 19:6-8"], rambam: ["Pesulei HaMukdashin 18:10"] },
     { id: "L4-C15", q: "What is pigul and its consequences?",
-      a: "A korban offered with intent to eat it outside its permitted time. The korban is invalid; one who eats it is liable to karet — but kapparah still goes to the owner.",
+      a: "A korban offered with intent to eat it outside its permitted time. The korban is invalid and does not atone; one who eats it is liable to karet.",
       qHe: "מהו פיגול ומה תוצאותיו?", aHe: "קרבן שהוקרב במחשבת אכילה חוץ לזמנו. הקרבן נפסל; אוכלו חייב כרת — אבל הכפרה עולה לבעלים.",
       tanach: ["Vayikra 7:18"], rambam: ["Pesulei HaMukdashin 13:1"] },
     { id: "L4-C16", q: "What is chutz limkomo?",
@@ -368,7 +368,7 @@ window.KODSHIM_LEVELS[4] = {
       cite: "Maaseh HaKorbanot 6:1" },
 
     { id: "L4-Q05", kind: "mc",
-      prompt: "How is the blood of an individual's chatat applied?",
+      prompt: "How is the blood of an ordinary individual's chatat applied on the outer altar?",
       options: [
         "Cast from a vessel at two opposite corners of the altar",
         "On the four horns of the outer altar; the remainder is poured at the base",
@@ -380,7 +380,7 @@ window.KODSHIM_LEVELS[4] = {
       cite: "Maaseh HaKorbanot 5:11" },
 
     { id: "L4-Q06", kind: "cloze",
-      prompt: "A chatat has ____ blood applications — one on each horn of the outer altar.",
+      prompt: "An ordinary outer-altar chatat has ____ blood applications — one on each horn.",
       options: ["one", "two", "four", "seven"],
       answer: 2,
       explain: "Four — one on each of the four horns. Seven is the number of sprinklings before the parochet for an inner chatat.",
@@ -465,7 +465,7 @@ window.KODSHIM_LEVELS[4] = {
       cite: "Maaseh HaKorbanot 1:15" },
 
     { id: "L4-Q14", kind: "mc",
-      prompt: "An individual's chatat is normally female. Which of these is a real exception?",
+      prompt: "An individual's animal chatat is normally female. Which of these is a real exception?",
       options: [
         "A nasi brings a male goat",
         "An ordinary person brings a male goat",
@@ -473,7 +473,7 @@ window.KODSHIM_LEVELS[4] = {
         "A nasi brings a bull",
       ],
       answer: 0,
-      explain: "Three exceptions only: a nasi brings a male goat, a kohen mashiach brings a bull, and the kohen gadol on Yom Kippur brings a bull. Everyone else's chatat is female.",
+      explain: "Three exceptions among animal chatot: a nasi brings a male goat, a kohen mashiach brings a bull, and the kohen gadol on Yom Kippur brings a bull. Everyone else's animal chatat is female; birds have no sex requirement.",
       cite: "Maaseh HaKorbanot 1:14" },
 
     { id: "L4-Q15", kind: "match",

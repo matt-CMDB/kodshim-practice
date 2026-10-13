@@ -63,8 +63,12 @@ def call(system, user):
         try:
             with urllib.request.urlopen(req, timeout=300) as r:
                 d = json.load(r)
-            return d["choices"][0]["message"]["content"], d.get("usage", {})
-        except Exception:  # noqa: BLE001
+            content = d["choices"][0]["message"]["content"]
+            if not content:
+                raise RuntimeError("empty content: " + json.dumps(d)[:300])
+            return content, d.get("usage", {})
+        except Exception as e:  # noqa: BLE001
+            print("  attempt", attempt, "failed:", str(e)[:200])
             if attempt == 3:
                 raise
             time.sleep(3 * (attempt + 1))
