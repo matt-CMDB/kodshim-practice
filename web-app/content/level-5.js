@@ -387,7 +387,7 @@ window.KODSHIM_LEVELS[5] = {
         { hebrew: "מוּסַף רֹאשׁ חֹדֶשׁ", english: "two bulls, one ram, seven lambs as olot, and a goat chatat" },
         { hebrew: "מוּסַף יוֹם הַכִּפּוּרִים", english: "a bull, a ram, seven lambs as olot, and a goat chatat" },
       ],
-      explain: "The tamid is the daily base: two lambs. Musafin are the additions on Shabbat, Rosh Chodesh, and festivals — Shabbat adds two lambs; Rosh Chodesh adds two bulls, a ram, seven lambs, and a goat chatat; Yom Kippur's musaf is a bull, seven lambs, and a goat.",
+      explain: "The tamid is the daily base: two lambs. Musafin are the additions on Shabbat, Rosh Chodesh, and festivals — Shabbat adds two lambs; Rosh Chodesh adds two bulls, a ram, seven lambs, and a goat chatat; Yom Kippur's musaf is a bull, a ram, seven lambs as olot, and a goat chatat.",
       cite: "Temidin uMusafin 4:1" },
 
     // L5-C06
@@ -426,7 +426,7 @@ window.KODSHIM_LEVELS[5] = {
         { hebrew: "תָּמִיד", translit: "tamid", bucket: "tzibur" },
         { hebrew: "מוּסָף", translit: "musaf", bucket: "tzibur" },
       ],
-      explain: "The kohen gadol's personal korbanot are a bull and a ram. The communal ones are the two goats (one slaughtered, one to Azazel) and a ram olah — plus the regular tamid and the day's musaf of a bull, seven lambs, and a goat.",
+      explain: "The kohen gadol's personal korbanot are a bull and a ram. The communal ones are the two goats (one slaughtered, one to Azazel) and a ram olah — plus the regular tamid and the day's musaf of a bull, a ram, seven lambs as olot, and a goat chatat.",
       cite: "Avodat Yom HaKippurim 1:1" },
 
     // L5-C09
@@ -670,47 +670,555 @@ window.KODSHIM_LEVELS[5] = {
       ],
       explain: "Shelamim are eaten for two days and the intervening night, until sunset on the second day; so is a bechor. A todah and its breads get only one day and the following night, like a chatat. The korban pesach is eaten that night until midnight.",
       cite: "Maaseh HaKorbanot 10:6" },
+
+    // ── Expanded bank ──────────────────────────────────────────────────
+
+    // L5-C01
+    { id: "L5-Q27", kind: "mc",
+      prompt: "It is an ordinary weekday — not Shabbat, not Rosh Chodesh, not a festival. What does the community offer on the altar that day?",
+      options: [
+        "One lamb, in the morning only",
+        "Two lambs — one in the morning and one in the afternoon",
+        "Two lambs in the morning and two more in the afternoon",
+        "A bull in the morning and a lamb in the afternoon",
+      ],
+      answer: 1,
+      explain: "The tamid is two lambs every single day — one in the morning and one in the afternoon — each with its mincha and nesachim. On an ordinary weekday no musaf is added.",
+      cite: "Temidin uMusafin 1:1" },
+
+    // L5-C01
+    { id: "L5-Q28", kind: "tf",
+      prompt: "Both lambs of the tamid are brought in the morning, one right after the other.",
+      answer: false,
+      explain: "False. One tamid lamb is brought in the morning and the other in the afternoon; the day's service opens with the first and closes with the second.",
+      cite: "Temidin uMusafin 1:1" },
+
+    // L5-C02
+    { id: "L5-Q29", kind: "cloze",
+      prompt: "The wine libation of each tamid lamb is ____ of a hin.",
+      options: ["one-tenth", "one-half", "one-quarter", "one-third"],
+      answer: 2,
+      explain: "Each tamid lamb has a nesech of one-quarter hin of wine; its mincha is one-tenth of an ephah of solet mixed with one-quarter hin of oil. The tenth belongs to the flour, not the wine.",
+      cite: "Temidin uMusafin 2:1" },
+
+    // L5-C03
+    { id: "L5-Q30", kind: "cloze",
+      prompt: "On Shabbat, Rosh Chodesh, and the festivals the musafin are brought ____ the daily tamid.",
+      options: ["in addition to", "instead of", "in place of the afternoon lamb of"],
+      answer: 0,
+      explain: "Musaf means \"addition\": the extra communal offerings of Shabbat, Rosh Chodesh, and the festivals come beyond the daily tamid, which is still brought morning and afternoon.",
+      cite: "Temidin uMusafin 4:1" },
+
+    // L5-C03
+    { id: "L5-Q31", kind: "tf",
+      prompt: "On Rosh Chodesh the musaf takes the place of the tamid, so no tamid lambs are brought that day.",
+      answer: false,
+      explain: "False. The tamid is brought every day of the year; the musaf of Rosh Chodesh is added beyond it, never in place of it.",
+      cite: "Temidin uMusafin 4:1" },
+
+    // L5-C04
+    { id: "L5-Q32", kind: "mc",
+      prompt: "It is Shabbat morning. Besides the tamid, what goes on the altar as the musaf?",
+      options: [
+        "Two bulls, one ram, seven lambs, and a goat chatat",
+        "Two lambs as shelamim",
+        "One lamb as an olah",
+        "Two lambs as olot",
+      ],
+      answer: 3,
+      explain: "The musaf of Shabbat is two lambs brought as olot, in addition to the daily tamid. The bulls, ram, seven lambs, and goat belong to Rosh Chodesh; two lambs as shelamim belong to Shavuot.",
+      cite: "Temidin uMusafin 4:2" },
+
+    // L5-C05
+    { id: "L5-Q33", kind: "mc",
+      prompt: "It is Rosh Chodesh. What is the musaf?",
+      options: [
+        "Two lambs as olot",
+        "Two bulls, one ram, and seven lambs as olot, plus one goat as a chatat",
+        "One bull, one ram, and seven lambs as olot, plus one goat as a chatat",
+        "Two bulls, one ram, and seven lambs as olot, with no chatat",
+      ],
+      answer: 1,
+      explain: "The musaf of Rosh Chodesh is two bulls, one ram, and seven lambs as olot, together with one goat as a chatat — all beyond the daily tamid.",
+      cite: "Temidin uMusafin 4:3" },
+
+    // L5-C01, C03, C04, C05
+    { id: "L5-Q34", kind: "sort",
+      prompt: "Is each of these part of the tamid, part of a musaf, or neither?",
+      buckets: [
+        { id: "tamid", he: "תָּמִיד", en: "Part of the tamid" },
+        { id: "musaf", he: "מוּסָף", en: "Part of a musaf" },
+        { id: "neither", he: "לֹא זֶה וְלֹא זֶה", en: "Neither" },
+      ],
+      items: [
+        { hebrew: "כֶּבֶשׂ שֶׁל שַׁחַר", translit: "keves shel shachar", bucket: "tamid" },
+        { hebrew: "כֶּבֶשׂ שֶׁל בֵּין הָעַרְבַּיִם", translit: "keves shel bein ha'arbayim", bucket: "tamid" },
+        { hebrew: "שְׁנֵי כְבָשִׂים שֶׁל שַׁבָּת", translit: "shnei kevasim shel Shabbat", bucket: "musaf" },
+        { hebrew: "שְׂעִיר רֹאשׁ חֹדֶשׁ", translit: "se'ir Rosh Chodesh", bucket: "musaf" },
+        { hebrew: "עֹמֶר", translit: "omer", bucket: "neither" },
+        { hebrew: "קָרְבַּן פֶּסַח", translit: "korban pesach", bucket: "neither" },
+      ],
+      explain: "The tamid is the morning lamb and the afternoon lamb. The two Shabbat lambs and the Rosh Chodesh goat chatat are musafin, the additions of those days. The omer is a communal mincha and the korban pesach is an individual's — neither is tamid or musaf.",
+      cite: "Temidin uMusafin 4:1" },
+
+    // L5-C06
+    { id: "L5-Q35", kind: "tap",
+      prompt: "Which term names the bull chatat the community brings after the Sanhedrin ruled in error and most of Israel followed?",
+      options: ["שְׂעִירֵי עֲבוֹדָה זָרָה", "פַּר כֹּהֵן גָּדוֹל", "פַּר הֶעְלֵם דָּבָר", "שָׂעִיר הַמִּשְׁתַּלֵּחַ"],
+      answer: 2,
+      explain: "The par he'elem davar is the community's chatat when the Sanhedrin issued an erroneous ruling and the majority of Israel acted on it inadvertently. The par kohen gadol is the kohen gadol's own Yom Kippur bull.",
+      cite: "Shegagot 12:1" },
+
+    // L5-C06, C07
+    { id: "L5-Q36", kind: "mc",
+      prompt: "The Sanhedrin ruled in error and most of Israel acted on the ruling. What does the community bring — if the sin was idolatry, and if it was any other mitzvah?",
+      options: [
+        "Goats for idolatry; a bull for any other mitzvah",
+        "A bull for idolatry; goats for any other mitzvah",
+        "A bull in either case",
+        "Goats in either case",
+      ],
+      answer: 0,
+      explain: "For idolatry the community brings goats as chatot, the se'irei avodah zarah; for an error in any other mitzvah it brings a bull, the par he'elem davar.",
+      cite: "Shegagot 12:1" },
+
+    // L5-C07
+    { id: "L5-Q37", kind: "cloze",
+      prompt: "The se'irei avodah zarah are goats brought as ____ when most of Israel inadvertently served idols on a mistaken Sanhedrin ruling.",
+      options: ["olot", "chatot", "shelamim", "ashamot"],
+      answer: 1,
+      explain: "They are chatot — sin offerings — brought by the community, just like the par he'elem davar for other mitzvot; only the animal differs.",
+      cite: "Shegagot 12:1" },
+
+    // L5-C08
+    { id: "L5-Q38", kind: "mc",
+      prompt: "On Yom Kippur, which korbanot does the kohen gadol bring from his own, and not on behalf of the community?",
+      options: [
+        "Two goats and a ram",
+        "A bull and a goat",
+        "A ram and seven lambs",
+        "A bull and a ram",
+      ],
+      answer: 3,
+      explain: "The kohen gadol's personal korbanot on Yom Kippur are a bull and a ram. The two goats and the ram olah are the community's, as are the tamid and the day's musaf.",
+      cite: "Avodat Yom HaKippurim 1:1" },
+
+    // L5-C08, C09
+    { id: "L5-Q39", kind: "tf",
+      prompt: "On Yom Kippur both of the community's two goats are slaughtered on the altar.",
+      answer: false,
+      explain: "False. Of the two se'irim, one is slaughtered and the other — the se'ir hamishtaleach — is confessed over and sent alive to the wilderness, to Azazel.",
+      cite: "Avodat Yom HaKippurim 1:1" },
+
+    // L5-C09
+    { id: "L5-Q40", kind: "tap",
+      prompt: "Which term names the goat the kohen gadol confesses over and sends to Azazel?",
+      options: ["שְׂעִיר רֹאשׁ חֹדֶשׁ", "שָׂעִיר הַמִּשְׁתַּלֵּחַ", "שְׂעִירֵי עֲבוֹדָה זָרָה", "פַּר הֶעְלֵם דָּבָר"],
+      answer: 1,
+      explain: "The se'ir hamishtaleach is the Yom Kippur goat sent to the wilderness after the kohen gadol confesses over it. The Rosh Chodesh goat and the se'irei avodah zarah are slaughtered as chatot.",
+      cite: "Avodat Yom HaKippurim 3:14" },
+
+    // L5-C10
+    { id: "L5-Q41", kind: "mc",
+      prompt: "It is Shavuot. What grain offering does the community bring?",
+      options: [
+        "An omer of barley",
+        "Twelve unleavened wheat loaves for the golden table",
+        "Two loaves of leavened wheat bread, with two lambs as shelamim",
+        "Two loaves of unleavened wheat bread, with two lambs as olot",
+      ],
+      answer: 2,
+      explain: "On Shavuot the community brings the shtei halechem — two loaves of leavened wheat bread as bikurim — together with two lambs as communal shelamim. The omer belongs to Pesach; the twelve loaves are the weekly lechem hapanim.",
+      cite: "Temidin uMusafin 8:1" },
+
+    // L5-C10
+    { id: "L5-Q42", kind: "tf",
+      prompt: "The shtei halechem are chametz — leavened bread — unlike the lechem hapanim, which is unleavened.",
+      answer: true,
+      explain: "True. The two loaves of Shavuot are leavened wheat bread, the one communal bread that is chametz; the twelve loaves of the lechem hapanim are matzah.",
+      cite: "Temidin uMusafin 8:1" },
+
+    // L5-C11
+    { id: "L5-Q43", kind: "mc",
+      prompt: "It is 16 Nissan. What does the community bring today?",
+      options: [
+        "The shtei halechem, two leavened wheat loaves",
+        "The korban pesach",
+        "Twelve fresh loaves for the golden table",
+        "The omer, a mincha of barley",
+      ],
+      answer: 3,
+      explain: "On 16 Nissan the community brings the omer, a barley mincha; once it is brought, the new grain (chadash) may be eaten. The korban pesach is an individual's, on 14 Nissan; the shtei halechem come on Shavuot.",
+      cite: "Temidin uMusafin 7:3" },
+
+    // L5-C10, C12, C29
+    { id: "L5-Q44", kind: "sort",
+      prompt: "Chametz or matzah? Sort each bread of the Mikdash.",
+      buckets: [
+        { id: "chametz", he: "חָמֵץ", en: "Leavened" },
+        { id: "matzah", he: "מַצָּה", en: "Unleavened" },
+      ],
+      items: [
+        { hebrew: "שְׁתֵּי הַלֶּחֶם", translit: "shtei halechem", bucket: "chametz" },
+        { hebrew: "לֶחֶם הַפָּנִים", translit: "lechem hapanim", bucket: "matzah" },
+        { hebrew: "חַלּוֹת שֶׁל תּוֹדָה", translit: "challot shel todah", bucket: "matzah" },
+        { hebrew: "רְקִיקֵי תוֹדָה", translit: "rekikei todah", bucket: "matzah" },
+        { hebrew: "רְבוּכָה", translit: "revuchah", bucket: "matzah" },
+        ],
+      explain: "The shtei halechem of Shavuot are leavened, and so are ten of the forty todah loaves. The lechem hapanim and the other thirty todah loaves — challot, rekikin, and revuchah — are matzah.",
+      cite: "Maaseh HaKorbanot 9:17" },
+
+    // L5-C11, C14, C18, C10, C28
+    { id: "L5-Q45", kind: "sort",
+      prompt: "Which festival does each of these belong to?",
+      buckets: [
+        { id: "pesach", he: "פֶּסַח", en: "Pesach (Nissan)" },
+        { id: "shavuot", he: "שָׁבוּעוֹת", en: "Shavuot (Sivan)" },
+        { id: "sukkot", he: "סֻכּוֹת", en: "Sukkot (Tishrei)" },
+      ],
+      items: [
+        { hebrew: "עֹמֶר", translit: "omer", bucket: "pesach" },
+        { hebrew: "קָרְבַּן פֶּסַח", translit: "korban pesach", bucket: "pesach" },
+        { hebrew: "חֲגִיגַת אַרְבָּעָה עָשָׂר", translit: "chagigat arba'ah asar", bucket: "pesach" },
+        { hebrew: "שְׁתֵּי הַלֶּחֶם", translit: "shtei halechem", bucket: "shavuot" },
+        { hebrew: "שְׁנֵי כִבְשֵׂי שַׁלְמֵי צִבּוּר", translit: "shnei kivsei shalmei tzibur", bucket: "shavuot" },
+        { hebrew: "נִסּוּךְ הַמַּיִם", translit: "nisuch hamayim", bucket: "sukkot" },
+      ],
+      explain: "Nissan holds the korban pesach and its chagigat arba'ah asar on the 14th and the omer on the 16th. Shavuot brings the shtei halechem with their two lambs, the only communal shelamim of the year. The water libation belongs to Sukkot alone.",
+      cite: "Temidin uMusafin 10:6" },
+
+    // L5-C12
+    { id: "L5-Q46", kind: "mc",
+      prompt: "How many loaves of lechem hapanim are on the golden table at any one time?",
+      options: ["Two", "Ten", "Twelve", "Forty"],
+      answer: 2,
+      explain: "Twelve unleavened wheat loaves, in two stacks, sit on the golden table all week and are replaced every Shabbat. Two is the shtei halechem; forty is the todah's bread.",
+      cite: "Temidin uMusafin 5:1" },
+
+    // L5-C13
+    { id: "L5-Q47", kind: "mc",
+      prompt: "When the lechem hapanim is changed on Shabbat, what from the golden table goes on the altar?",
+      options: [
+        "The twelve old loaves",
+        "The frankincense from the two bazichin",
+        "Two of the twelve loaves",
+        "The two bowls themselves",
+      ],
+      answer: 1,
+      explain: "The loaves are never burned — the old ones are eaten by the kohanim. What is burned on Shabbat is the levonah held in the two bazichin that stood beside the stacks.",
+      cite: "Temidin uMusafin 5:2" },
+
+    // L5-C13
+    { id: "L5-Q48", kind: "tap",
+      prompt: "Which term names the two bowls of frankincense placed beside the stacks of lechem hapanim?",
+      options: ["קֹמֶץ", "מִנְחַת נְסָכִים", "שְׁתֵּי הַלֶּחֶם", "בְּזִיכֵי לְבוֹנָה"],
+      answer: 3,
+      explain: "The bazichei levonah are the two bowls of frankincense, one beside each stack; their levonah is burned on Shabbat when the bread is changed.",
+      cite: "Temidin uMusafin 5:2" },
+
+    // L5-C10, C11, C12, C22
+    { id: "L5-Q49", kind: "match",
+      prompt: "Match each grain offering to what it is made of.",
+      pairs: [
+        { hebrew: "עֹמֶר", english: "a barley mincha of the community, brought on 16 Nissan" },
+        { hebrew: "שְׁתֵּי הַלֶּחֶם", english: "two leavened wheat loaves, brought on Shavuot" },
+        { hebrew: "לֶחֶם הַפָּנִים", english: "twelve unleavened wheat loaves on the golden table" },
+        { hebrew: "מִנְחַת סוֹטָה", english: "a barley mincha with no oil and no levonah" },
+      ],
+      explain: "The omer and the sotah's mincha are the barley offerings; the shtei halechem and the lechem hapanim are wheat — the first leavened, the second not.",
+      cite: "Temidin uMusafin 7:3" },
+
+    // L5-C14
+    { id: "L5-Q50", kind: "mc",
+      prompt: "On the afternoon of which day is the korban pesach slaughtered?",
+      options: ["13 Nissan", "14 Nissan", "15 Nissan", "16 Nissan"],
+      answer: 1,
+      explain: "The korban pesach is slaughtered on the afternoon of 14 Nissan and eaten that night, roasted, with matzah and maror. The 16th is the day of the omer.",
+      cite: "Korban Pesach 1:1" },
+
+    // L5-C14
+    { id: "L5-Q51", kind: "tf",
+      prompt: "A male lamb in its second year is fit to be a korban pesach.",
+      answer: false,
+      explain: "False. The korban pesach must be a male lamb or kid up to one year old.",
+      cite: "Korban Pesach 1:1" },
+
+    // L5-C15
+    { id: "L5-Q52", kind: "mc",
+      prompt: "A chaburah is still eating its korban pesach late on the night of 15 Nissan. According to the practical halacha, until when may they continue?",
+      options: [
+        "Until midnight",
+        "Until dawn",
+        "Until the morning tamid is offered",
+        "Until sunset the next day",
+      ],
+      answer: 0,
+      explain: "As a matter of practical halacha the korban pesach may be eaten only until midnight; after that it may no longer be eaten.",
+      cite: "Korban Pesach 8:15" },
+
+    // L5-C16
+    { id: "L5-Q53", kind: "tf",
+      prompt: "Pesach sheni is offered on 14 Iyyar, one month after the first pesach.",
+      answer: true,
+      explain: "True. The second pesach, on 14 Iyyar, is for those who were tameh, on a distant journey, or otherwise unable to offer it on 14 Nissan.",
+      cite: "Korban Pesach 5:1" },
+
+    // L5-C16
+    { id: "L5-Q54", kind: "mc",
+      prompt: "A man was tameh on 14 Nissan and could not bring the korban pesach. What does he do?",
+      options: [
+        "He brings it on 15 Nissan, once he is tahor",
+        "He brings a chatat in its place",
+        "He brings a pesach sheni on 14 Iyyar",
+        "He waits and brings it the following Nissan",
+      ],
+      answer: 2,
+      explain: "Someone who was tameh, on a distant journey, or otherwise unable on 14 Nissan brings the pesach sheni on 14 Iyyar.",
+      cite: "Korban Pesach 5:1" },
+
+    // L5-C17
+    { id: "L5-Q55", kind: "mc",
+      prompt: "What kind of korban is the chagigah that every adult male brings on a festival?",
+      options: ["An olah", "A shelamim", "A chatat", "A mincha"],
+      answer: 1,
+      explain: "The chagigah is a shelamim, brought by every adult male on each of the three festivals when he appears at the Mikdash. The olah he brings is the olat re'iyah.",
+      cite: "Chagigah 1:1" },
+
+    // L5-C18
+    { id: "L5-Q56", kind: "cloze",
+      prompt: "The chagigat arba'ah asar is brought with the pesach when the chaburah is large, so that the pesach is eaten ____.",
+      options: ["al hasova — on a full stomach", "before midnight", "within Jerusalem"],
+      answer: 0,
+      explain: "With a large group each person would get only a little pesach meat, so a shelamim is brought on 14 Nissan to be eaten first; the pesach is then eaten al hasova, on a full stomach.",
+      cite: "Korban Pesach 10:12" },
+
+    // L5-C17, C19
+    { id: "L5-Q57", kind: "mc",
+      prompt: "A man comes up to the Mikdash on Sukkot. Which two korbanot does he bring for appearing there?",
+      options: [
+        "An olat tamid and a chagigah",
+        "An olat re'iyah and a chagigat arba'ah asar",
+        "A chagigah as an olah and an olat re'iyah as a shelamim",
+        "An olat re'iyah as an olah and a chagigah as a shelamim",
+      ],
+      answer: 3,
+      explain: "Every adult male who appears at the Mikdash on the three festivals brings an olat re'iyah, which is an olah, and a chagigah, which is a shelamim. The chagigat arba'ah asar belongs only to 14 Nissan.",
+      cite: "Chagigah 1:1" },
+
+    // L5-C19
+    { id: "L5-Q58", kind: "tap",
+      prompt: "Which term names the olah every adult male brings when he appears at the Mikdash on the three festivals?",
+      options: ["חֲגִיגָה", "חֲגִיגַת אַרְבָּעָה עָשָׂר", "עוֹלַת רְאִיָּה", "עוֹלַת תָּמִיד"],
+      answer: 2,
+      explain: "The olat re'iyah — the olah of appearing — is the olah of the pilgrim on each festival; the chagigah is his shelamim.",
+      cite: "Chagigah 1:1" },
+
+    // L5-C20
+    { id: "L5-Q59", kind: "mc",
+      prompt: "A mincha is cooked in a deep pan. Which type of mincha is it?",
+      options: ["Machavat", "Marcheshet", "Ma'afeh tanur", "Solet"],
+      answer: 1,
+      explain: "The marcheshet is the deep-pan mincha; the machavat is cooked on a flat pan, the ma'afeh tanur is oven-baked, and solet is plain fine flour.",
+      cite: "Maaseh HaKorbanot 12:6" },
+
+    // L5-C20
+    { id: "L5-Q60", kind: "tap",
+      prompt: "Which term names the oven-baked mincha, brought as challot or rekikin?",
+      options: ["מַחֲבַת", "מַרְחֶשֶׁת", "מַאֲפֵה תַנּוּר", "סֹלֶת"],
+      answer: 2,
+      explain: "Ma'afeh tanur means baked in an oven; it comes in two shapes, challot (loaves) and rekikin (wafers).",
+      cite: "Maaseh HaKorbanot 12:6" },
+
+    // L5-C21
+    { id: "L5-Q61", kind: "tf",
+      prompt: "Most menachot require fine wheat flour, olive oil, honey, and frankincense.",
+      answer: false,
+      explain: "False. The four ingredients of most menachot are fine wheat flour (solet), olive oil, salt, and frankincense (levonah) — salt, not honey.",
+      cite: "Maaseh HaKorbanot 12:7" },
+
+    // L5-C21
+    { id: "L5-Q62", kind: "cloze",
+      prompt: "Most menachot are made of fine wheat flour, olive oil, frankincense, and ____.",
+      options: ["wine", "water", "honey", "salt"],
+      answer: 3,
+      explain: "Salt is the fourth ingredient of most menachot, together with solet, olive oil, and levonah.",
+      cite: "Maaseh HaKorbanot 12:7" },
+
+    // L5-C22
+    { id: "L5-Q63", kind: "mc",
+      prompt: "Which mincha is brought with no oil and no frankincense?",
+      options: [
+        "The sotah's mincha",
+        "The minchat nesachim",
+        "The minchat machavat",
+        "The chavitin of the kohen gadol",
+      ],
+      answer: 0,
+      explain: "Only two menachot omit oil and levonah: the sotah's barley mincha and the mincha of a poor person bringing a sliding-scale chatat. The others listed have both.",
+      cite: "Maaseh HaKorbanot 12:8" },
+
+    // L5-C23
+    { id: "L5-Q64", kind: "mc",
+      prompt: "In an ordinary mincha, what happens once the kohen has taken the kometz?",
+      options: [
+        "The kometz is eaten by the kohen and the rest is burned",
+        "The whole mincha, kometz and remainder, is burned",
+        "The kometz is burned on the altar and the rest is eaten by the kohanim",
+        "The kometz is burned and the rest is returned to the owner",
+      ],
+      answer: 2,
+      explain: "Kemitzah takes a fistful for the altar; in an ordinary mincha that kometz is burned and the remainder is eaten by the kohanim. Only the wholly burned menachot go entirely to the fire.",
+      cite: "Maaseh HaKorbanot 13:13" },
+
+    // L5-C23
+    { id: "L5-Q65", kind: "cloze",
+      prompt: "Kemitzah is the kohen taking a ____ of the mincha to burn on the altar.",
+      options: ["fistful", "tenth", "half", "single loaf"],
+      answer: 0,
+      explain: "The kometz is a fistful — the kohen's handful of the mincha — and it is the mincha's portion for the altar.",
+      cite: "Maaseh HaKorbanot 13:13" },
+
+    // L5-C24
+    { id: "L5-Q66", kind: "mc",
+      prompt: "Which of these menachot is NOT burned entirely — its remainder is eaten by the kohanim?",
+      options: [
+        "The mincha of a kohen",
+        "The chavitin of the kohen gadol",
+        "The minchat nesachim",
+        "The minchat solet of an ordinary yisrael",
+      ],
+      answer: 3,
+      explain: "An ordinary yisrael's mincha has its kometz burned and the rest eaten by the kohanim. The mincha of a kohen, the chavitin of the kohen gadol, the minchat chinuch, and the minchat nesachim are burned entirely.",
+      cite: "Maaseh HaKorbanot 12:12" },
+
+    // L5-C25, C26
+    { id: "L5-Q67", kind: "mc",
+      prompt: "A bechor and a maaser behemah both go to the altar. Who eats the meat of each?",
+      options: [
+        "Bechor: the kohanim; maaser behemah: its owner",
+        "Bechor: its owner; maaser behemah: the kohanim",
+        "Both are eaten by the kohanim",
+        "Both are eaten by the owner",
+      ],
+      answer: 0,
+      explain: "The bechor is given to a kohen and eaten by kohanim in Jerusalem; the maaser behemah stays with its owner, who eats its meat in Jerusalem after the blood and eimurin go on the altar.",
+      cite: "Bechorot 6:1" },
+
+    // L5-C25, C26, C30, C12
+    { id: "L5-Q68", kind: "match",
+      prompt: "Match each korban to who eats it.",
+      pairs: [
+        { hebrew: "בְּכוֹר", english: "kohanim, in Jerusalem, within two days and a night" },
+        { hebrew: "מַעְשַׂר בְּהֵמָה", english: "its owner, in Jerusalem" },
+        { hebrew: "קָרְבַּן פֶּסַח", english: "only those registered to its chaburah, roasted, in Jerusalem" },
+        { hebrew: "לֶחֶם הַפָּנִים", english: "the kohanim, when the old loaves come off the table" },
+      ],
+      explain: "Bechor and lechem hapanim go to the kohanim; maaser behemah goes to its owner; the korban pesach is eaten only by the members of its chaburah — all within Jerusalem.",
+      cite: "Bechorot 1:1" },
+
+    // L5-C27
+    { id: "L5-Q69", kind: "tf",
+      prompt: "A nazir's shelamim and a metzora's olah both come with nesachim.",
+      answer: true,
+      explain: "True. Nesachim are required with every olah and every shelamim, including those of the metzora and the nazir; it is most chatot and ashamot that have none.",
+      cite: "Maaseh HaKorbanot 2:1" },
+
+    // L5-C28
+    { id: "L5-Q70", kind: "tap",
+      prompt: "Which term names the water libation poured on the altar on Sukkot?",
+      options: ["נְסָכִים", "נִסּוּךְ הַמַּיִם", "מִנְחַת נְסָכִים", "נֶסֶךְ הַתָּמִיד"],
+      answer: 1,
+      explain: "Nisuch hamayim is the water libation of Sukkot, a halacha leMoshe miSinai. Nesachim are the wine libations that come with olot and shelamim all year.",
+      cite: "Temidin uMusafin 10:6" },
+
+    // L5-C27, C28, C24, C02
+    { id: "L5-Q71", kind: "match",
+      prompt: "Match each libation term to its meaning.",
+      pairs: [
+        { hebrew: "נְסָכִים", english: "wine poured on the altar with every olah and shelamim" },
+        { hebrew: "נִסּוּךְ הַמַּיִם", english: "water poured on the altar during Sukkot — a halacha leMoshe miSinai" },
+        { hebrew: "מִנְחַת נְסָכִים", english: "the flour offering that accompanies the libations — burned entirely" },
+        { hebrew: "נֶסֶךְ הַתָּמִיד", english: "one-quarter hin of wine with each tamid lamb" },
+      ],
+      explain: "Nesachim are wine, brought with every olah and shelamim; the minchat nesachim is the flour that accompanies them and is burned entirely. Nisuch hamayim is water, only on Sukkot.",
+      cite: "Maaseh HaKorbanot 2:1" },
+
+    // L5-C29
+    { id: "L5-Q72", kind: "cloze",
+      prompt: "Of the forty loaves of a korban todah, ____ are chametz and the rest are matzah.",
+      options: ["ten", "twenty", "thirty", "forty"],
+      answer: 0,
+      explain: "Ten of the todah's loaves are leavened; the other thirty are matzot in three forms — ten challot, ten rekikin, and ten revuchah.",
+      cite: "Maaseh HaKorbanot 9:17" },
+
+    // L5-C29
+    { id: "L5-Q73", kind: "tap",
+      prompt: "Which word names the scalded-dough loaves among the todah's matzot?",
+      options: ["חָמֵץ", "חַלּוֹת", "רְקִיקִין", "רְבוּכָה"],
+      answer: 3,
+      explain: "Revuchah is the third form of the todah's matzah — ten loaves of dough scalded in hot water — beside the ten challot and ten rekikin.",
+      cite: "Maaseh HaKorbanot 9:17" },
+
+    // L5-C30
+    { id: "L5-Q74", kind: "tf",
+      prompt: "A chaburah cooked its korban pesach in water and ate it boiled. The pesach was eaten properly.",
+      answer: false,
+      explain: "False. The korban pesach may be eaten only roasted — never raw and never boiled — within Jerusalem, by those registered to its chaburah.",
+      cite: "Korban Pesach 8:1" },
+
+    // L5-C31
+    { id: "L5-Q75", kind: "mc",
+      prompt: "An ordinary shelamim was slaughtered on Sunday. Until when may its meat be eaten?",
+      options: [
+        "Until midnight Sunday night",
+        "Until dawn on Monday",
+        "Until sunset on Monday",
+        "Until sunset on Tuesday",
+      ],
+      answer: 2,
+      explain: "Shelamim are eaten for two days and the night between — the day of slaughter, that night, and the next day until sunset. Slaughtered Sunday, they must be finished by sunset Monday.",
+      cite: "Maaseh HaKorbanot 10:7" },
+
+    // L5-C31
+    { id: "L5-Q76", kind: "tf",
+      prompt: "Shelamim may be eaten for two days and the intervening night, until sunset on the second day.",
+      answer: true,
+      explain: "True. An ordinary shelamim has two days and the night between them; the todah, though a shelamim, is cut to one day and a night.",
+      cite: "Maaseh HaKorbanot 10:7" },
+
+    // L5-C32
+    { id: "L5-Q77", kind: "mc",
+      prompt: "A todah was offered on Sunday morning. Until when may it and its forty loaves be eaten?",
+      options: [
+        "That night only, until midnight",
+        "Through Sunday and the night that follows it",
+        "Through Monday until sunset — two days and a night",
+      ],
+      answer: 1,
+      explain: "A todah and its breads are eaten for one day and the following night, like a chatat — shorter than an ordinary shelamim's two days and a night.",
+      cite: "Maaseh HaKorbanot 10:6" },
+
+    // L5-C32
+    { id: "L5-Q78", kind: "tf",
+      prompt: "A todah and its breads are eaten for one day and the following night, the same span as a chatat.",
+      answer: true,
+      explain: "True. Although the todah is a kind of shelamim, the Torah shortens its time to one day and the following night, like a chatat — and its forty loaves follow the same clock.",
+      cite: "Maaseh HaKorbanot 10:6" },
   ],
 };
 
-// Which quiz items are used as in-lesson checks (built by tools/map_checks.js, hand-adjusted).
+// Which quiz items are used as in-lesson checks (hand-picked: simple kinds, each id in one lesson only).
 window.KODSHIM_LEVELS[5].checks = {
-  "L5-01": [
-    "L5-Q01",
-    "L5-Q02",
-    "L5-Q16",
-    "L5-Q17"
-  ],
-  "L5-02": [
-    "L5-Q03",
-    "L5-Q04",
-    "L5-Q05",
-    "L5-Q06"
-  ],
-  "L5-03": [
-    "L5-Q07",
-    "L5-Q08",
-    "L5-Q09",
-    "L5-Q10"
-  ],
-  "L5-04": [
-    "L5-Q11",
-    "L5-Q12",
-    "L5-Q13",
-    "L5-Q14",
-    "L5-Q15"
-  ],
-  "L5-05": [
-    "L5-Q18",
-    "L5-Q19",
-    "L5-Q20",
-    "L5-Q21",
-    "L5-Q22"
-  ],
-  "L5-06": [
-    "L5-Q23",
-    "L5-Q24",
-    "L5-Q25",
-    "L5-Q26"
-  ]
+  // The tamid, its nesachim, and the musafim
+  "L5-01": ["L5-Q01", "L5-Q27", "L5-Q30", "L5-Q32", "L5-Q33", "L5-Q16", "L5-Q17"],
+  // Communal chatot and the goats of Yom Kippur
+  "L5-02": ["L5-Q03", "L5-Q35", "L5-Q36", "L5-Q38", "L5-Q39", "L5-Q06", "L5-Q40"],
+  // Grain and bread of the tzibur
+  "L5-03": ["L5-Q07", "L5-Q43", "L5-Q08", "L5-Q41", "L5-Q09", "L5-Q46", "L5-Q47"],
+  // Menachot: types, ingredients, and kemitzah
+  "L5-04": ["L5-Q59", "L5-Q60", "L5-Q12", "L5-Q62", "L5-Q63", "L5-Q14", "L5-Q64"],
+  // Korban pesach and the festival offerings
+  "L5-05": ["L5-Q18", "L5-Q50", "L5-Q20", "L5-Q19", "L5-Q21", "L5-Q54", "L5-Q55"],
+  // Kodashim kalim: bechor, maaser behemah, and todah
+  "L5-06": ["L5-Q23", "L5-Q24", "L5-Q67", "L5-Q25", "L5-Q72", "L5-Q75", "L5-Q77"],
 };
