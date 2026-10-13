@@ -349,11 +349,14 @@ function MusicCard({ music, onClose }) {
   // engine so the toggle / sliders take effect immediately if opened
   // before the user clicked Let's GO.
   const startIfNeeded = () => music.start();
+  // The full-ensemble preview lives only in this card: it stops on close.
+  const close = () => { music.setPreview(false); onClose(); };
+  useEffectI(() => () => music.setPreview(false), []); // eslint-disable-line
 
   return (
     <div
       className="intro-overlay music-overlay"
-      onClick={onClose}
+      onClick={close}
       role="presentation"
     >
       <div
@@ -365,7 +368,7 @@ function MusicCard({ music, onClose }) {
         <button
           type="button"
           className="modal-close"
-          onClick={onClose}
+          onClick={close}
           aria-label="Close"
         >×</button>
 
@@ -382,9 +385,11 @@ function MusicCard({ music, onClose }) {
             <p className="modal-p">
               While the korbanos were offered, the Levi'im sang on the
               duchan and played five families of instruments — strings,
-              winds, and percussion. The recording you're hearing is the
-              ancient <em>Epitaph of Seikilos</em>, layered one instrument
-              at a time as you climb the steps.
+              winds, and percussion. {music.source === "synth"
+                ? <>What you're hearing is <em>Ma'alot</em>, an original piece for the five instruments, played by the game's own synthesizer.</>
+                : <>The recording you're hearing is the ancient <em>Epitaph of Seikilos</em>.</>} One instrument
+              joins at a time as you climb the steps; the preview button below
+              lets you hear all five together, here only.
             </p>
             <p className="modal-p music-caveat">
               <strong>A caveat.</strong> We don't know exactly what these
@@ -397,7 +402,16 @@ function MusicCard({ music, onClose }) {
 
         <div className="music-mixer">
           <div className="music-mixer-head">
-            <span className="eyebrow gold">Mixer</span>
+            <span className="eyebrow gold">Mixer · {music.source === "synth" ? "Ma'alot" : "Seikilos"}</span>
+            <button
+              type="button"
+              className={"music-preview" + (music.preview ? " on" : "")}
+              onClick={() => { startIfNeeded(); if (!music.enabled) music.setEnabled(true); music.setPreview(!music.preview); }}
+              aria-pressed={music.preview ? "true" : "false"}
+              title="Hear all five instruments together, here only"
+            >
+              <span className="dot" /> {music.preview ? "Previewing all five" : "Preview the full ensemble"}
+            </button>
             <button
               type="button"
               className={"music-toggle" + (music.enabled ? " on" : "")}
@@ -409,7 +423,7 @@ function MusicCard({ music, onClose }) {
           </div>
           <ul className="music-list">
             {INSTRUMENTS.map((inst, idx) => {
-              const unlocked = idx < music.unlockedCount;
+              const unlocked = idx < music.unlockedCount || music.preview;
               const isPlaying = unlocked && music.enabled;
               return (
                 <li

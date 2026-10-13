@@ -1,6 +1,6 @@
 // Kodshim game engine — no React in here.
 // Progress + settings persistence, the fifteen-step ladder, the Leitner
-// review scheduler, quiz selection, sound effects, and the tutor client.
+// review scheduler, quiz selection, and sound effects.
 
 (function () {
   const PROGRESS_KEY = "kodshim.progress.v2";
@@ -47,8 +47,7 @@
     sfx: true,
     volumes: [0.7, 0.7, 0.7, 0.7, 0.7],
     showTranslit: true,
-    tutorKey: "",
-    tutorModel: "anthropic/claude-haiku-5.5",
+    musicSource: "recorded",
     seenWelcome: false,
     seenTutorial: false,
   };
@@ -295,62 +294,6 @@
     step() { tone(440, 0, 0.08, "square", 0.05); tone(554, 0.08, 0.1, "square", 0.05); },
   };
 
-  /* ─── Tutor (OpenRouter, key supplied by the player in Settings) ──── */
-  function tutorContext(n) {
-    const L = level(n);
-    if (!L) return "";
-    const S = window.KODSHIM_SOURCES || {};
-    const lines = [];
-    lines.push(`Level ${L.num}: ${L.name}. ${L.tagline || ""}`);
-    (L.concepts || []).forEach((c) => {
-      const cites = [].concat(c.tanach || [], c.rambam || []).join("; ");
-      lines.push(`Q: ${c.q}\nA: ${c.a}${cites ? ` [${cites}]` : ""}`);
-    });
-    const cites = new Set();
-    (L.lessons || []).forEach((ls) => (ls.sources || []).forEach((s) => cites.add(s)));
-    (L.quiz || []).forEach((q) => { if (q.cite) cites.add(q.cite); });
-    const src = [];
-    cites.forEach((c) => { const s = S[c]; if (s && s.en) src.push(`${c}: ${s.en}`); });
-    if (src.length) lines.push("\nSource passages (English):\n" + src.slice(0, 40).join("\n"));
-    return lines.join("\n");
-  }
-  function tutorSystem(n) {
-    return [
-      "You are the study partner inside 'Kodshim Training', a game that teaches the laws of korbanot from the Rambam's Mishneh Torah.",
-      "Speak as a warm, exacting chavrusa. Answer in plain English, two to five sentences, and cite the Rambam or verse when you can (e.g. 'Maaseh HaKorbanot 1:14').",
-      "Stay inside the level's material below. If asked something outside it, say briefly that it comes later in the course or is beyond this level, and offer the nearest in-scope idea.",
-      "Transliteration style: korban, chatat, asham, shelamim, olah, mincha, kohen, tahor, tzibur, yachid. Write 'Hashem' for the divine name. Hebrew terms may be written in Hebrew letters.",
-      "Never invent a halacha. If the material below does not settle a question, say so.",
-      "",
-      "LEVEL MATERIAL:",
-      tutorContext(n),
-    ].join("\n");
-  }
-  async function askTutor(n, history, question) {
-    const key = (settings.tutorKey || "").trim();
-    if (!key) throw new Error("NO_KEY");
-    const messages = [{ role: "system", content: tutorSystem(n) }]
-      .concat(history.slice(-8).map((m) => ({ role: m.role, content: m.content })))
-      .concat([{ role: "user", content: question }]);
-    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + key,
-        "HTTP-Referer": "https://github.com/matt-CMDB/kodshim-practice",
-        "X-Title": "Kodshim Training",
-      },
-      body: JSON.stringify({ model: settings.tutorModel || DEFAULT_SETTINGS.tutorModel, messages, max_tokens: 500, temperature: 0.3 }),
-    });
-    if (!res.ok) {
-      let msg = "HTTP " + res.status;
-      try { const j = await res.json(); msg = (j.error && j.error.message) || msg; } catch (e) { /* ignore */ }
-      throw new Error(msg);
-    }
-    const data = await res.json();
-    return (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || "").trim();
-  }
-
   /* ─── Misc helpers ────────────────────────────────────────────────── */
   function resetProgress() { progress = Object.assign({}, DEFAULT_PROGRESS, { levels: {}, cards: {}, created: Date.now() }); saveProgress(); }
   function pad2(n) { return String(n).padStart(2, "0"); }
@@ -377,7 +320,6 @@
     recordAnswer, dueCards, weakCards, card,
     pickProve, pickMaster, pickReview, shuffle,
     sfx,
-    askTutor, tutorSystem,
     resetProgress, summary, pad2,
   };
 })();

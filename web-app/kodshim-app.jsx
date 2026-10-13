@@ -13,21 +13,30 @@
     const s = K().settings;
     const [enabled, setEnabledState] = useState(s.music !== false);
     const [started, setStarted] = useState(false);
+    const [source, setSourceState] = useState(s.musicSource === "synth" ? "synth" : "recorded");
+    const [preview, setPreview] = useState(false);
     const [volumes, setVolumesState] = useState(() => (Array.isArray(s.volumes) && s.volumes.length === INSTRUMENTS.length ? s.volumes : INSTRUMENTS.map(() => 0.7)));
     const [unlockedCount, setUnlockedCount] = useState(() => K().unlockedInstruments());
     const refs = useRef({});
     useEffect(() => K().subscribe(() => setUnlockedCount(K().unlockedInstruments())), []);
     useEffect(() => {
+      const playing = (i) => started && enabled && (preview || i < unlockedCount);
+      const synth = window.KODSHIM_SYNTH;
       INSTRUMENTS.forEach((inst, i) => {
         const el = refs.current[inst.id];
         if (!el) return;
         el.volume = volumes[i];
-        if (started && enabled && i < unlockedCount) { const p = el.play(); if (p && p.catch) p.catch(() => {}); } else el.pause();
+        if (source === "recorded" && playing(i)) { const p = el.play(); if (p && p.catch) p.catch(() => {}); } else el.pause();
       });
-    }, [started, enabled, unlockedCount, volumes]);
+      if (synth) {
+        if (source === "synth" && started && enabled) synth.start(); else synth.stop();
+        synth.setMix(INSTRUMENTS.map((_, i) => playing(i)), volumes);
+      }
+    }, [started, enabled, unlockedCount, volumes, source, preview]);
     const setEnabled = (v) => { setEnabledState(v); K().setSetting("music", v); };
+    const setSource = (v) => { setSourceState(v); K().setSetting("musicSource", v); };
     const setVolume = (i, v) => setVolumesState((prev) => { const next = prev.map((x, j) => (j === i ? v : x)); K().setSetting("volumes", next); return next; });
-    return { enabled, setEnabled, start: () => setStarted(true), unlockedCount, volumes, setVolume, refs };
+    return { enabled, setEnabled, start: () => setStarted(true), unlockedCount, volumes, setVolume, refs, source, setSource, preview, setPreview };
   }
 
   function AudioRack({ music }) {
@@ -41,8 +50,6 @@
     const [lessonIdx, setLessonIdx] = useState(0);
     const [run, setRun] = useState(null);       // { mode, items, key }
     const [musicCardOpen, setMusicCardOpen] = useState(false);
-    const [tutor, setTutor] = useState(null);
-    const [settingsOpen, setSettingsOpen] = useState(false);
     const [mapKey, setMapKey] = useState(0);
     const music = useMusicEngine();
 
@@ -51,7 +58,7 @@
       ALL_IMAGES.forEach((src) => { const img = new Image(); img.onload = img.onerror = () => { count += 1; setLoadedCount(count); if (count >= ALL_IMAGES.length) setScreen("welcome"); }; img.src = src; });
     }, []);
 
-    const goMap = useCallback(() => { setRun(null); setTutor(null); setMapKey((k) => k + 1); setScreen("map"); }, []);
+    const goMap = useCallback(() => { setRun(null); setMapKey((k) => k + 1); setScreen("map"); }, []);
 
     const startRun = useCallback((mode, num) => {
       let items;
@@ -59,14 +66,14 @@
       else if (mode === "master") items = K().pickMaster(num, 10);
       else items = K().pickReview(10);
       if (!items.length) { goMap(); return; }
-      setLevelNum(num); setTutor(null);
+      setLevelNum(num);
       setRun({ mode, items, key: Date.now() });
       setScreen("run");
     }, [goMap]);
 
     const startStage = useCallback((num, stage) => {
       if (K().settings.seenTutorial !== true) K().setSetting("seenTutorial", true);
-      if (stage === "learn") { setLevelNum(num); setLessonIdx(K().nextLesson(num)); setTutor(null); setScreen("learn"); return; }
+      if (stage === "learn") { setLevelNum(num); setLessonIdx(K().nextLesson(num)); setScreen("learn"); return; }
       startRun(stage, num);
     }, [startRun]);
     const startReview = useCallback(() => startRun("review", K().currentLevel()), [startRun]);
@@ -89,7 +96,6 @@
       }
     }, [run, levelNum, goMap, startRun, startStage]);
 
-    const openTutor = useCallback((item) => setTutor({ seed: item ? { item } : null }), []);
     const firstVisit = !K().settings.seenTutorial;
 
     return (
@@ -98,12 +104,10 @@
           {screen === "loading" && <LoadingScene loaded={loadedCount} total={ALL_IMAGES.length} />}
           {screen === "welcome" && <WelcomeScene levels={[]} onContinue={() => { music.start(); K().setSetting("seenWelcome", true); goMap(); }} onOpenMusic={() => setMusicCardOpen(true)} />}
           {screen === "map" && <MapScene key={mapKey} music={music} firstVisit={firstVisit} onStart={startStage} onReview={startReview} onOpenMusic={() => setMusicCardOpen(true)} onReset={() => { K().resetProgress(); setMapKey((k) => k + 1); }} />}
-          {screen === "learn" && <LearnScene levelNum={levelNum} lessonIdx={lessonIdx} onLessonDone={onLessonDone} onExit={goMap} onAsk={openTutor} />}
-          {screen === "run" && run && <RunScene key={run.key} mode={run.mode} levelNum={levelNum} items={run.items} onAction={onRunAction} onExit={goMap} onAsk={openTutor} />}
+          {screen === "learn" && <LearnScene levelNum={levelNum} lessonIdx={lessonIdx} onLessonDone={onLessonDone} onExit={goMap} />}
+          {screen === "run" && run && <RunScene key={run.key} mode={run.mode} levelNum={levelNum} items={run.items} onAction={onRunAction} onExit={goMap} />}
         </div>
         {musicCardOpen && <MusicCard music={music} onClose={() => setMusicCardOpen(false)} />}
-        {settingsOpen && <SettingsCard onClose={() => setSettingsOpen(false)} music={music} onOpenMusic={() => setMusicCardOpen(true)} onReset={() => { K().resetProgress(); setSettingsOpen(false); goMap(); }} />}
-        {tutor && <TutorDrawer levelNum={levelNum} seed={tutor.seed} onClose={() => setTutor(null)} onOpenSettings={() => setSettingsOpen(true)} />}
         <AudioRack music={music} />
       </div>
     );

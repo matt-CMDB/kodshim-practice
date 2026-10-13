@@ -1,4 +1,4 @@
-// Small shared UI pieces used by the map, lessons, quiz and tutor.
+// Small shared UI pieces used by the map, the scene and the quiz.
 (() => {
   const { useEffect, useState, useMemo } = React;
 

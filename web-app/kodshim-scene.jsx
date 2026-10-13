@@ -231,7 +231,7 @@
   }
 
   /* ─── The runner ──────────────────────────────────────────────────── */
-  function SceneRunner({ steps, mode, levelNum, label, onEnd, onExit, onAsk, hearts0 }) {
+  function SceneRunner({ steps, mode, levelNum, label, onEnd, onExit, hearts0 }) {
     const [i, setI] = useState(0);
     const [phase, setPhase] = useState("say");   // say | ask | feedback | result
     const [fb, setFb] = useState(null);
@@ -325,7 +325,6 @@
           {isRun && hearts !== Infinity && <HeartRow hearts={hearts} />}
           {isRun && hearts === Infinity && <span className="scene-tag">no hearts</span>}
           {streak >= 3 && <span className="scene-streak">🔥 {streak}</span>}
-          {onAsk && <button type="button" className="icon-btn ask" onClick={() => onAsk(step && step.item ? step.item : null)} title="Ask the kohen"><span className="ico">?</span><span>Ask</span></button>}
         </div>
 
         <div className="scene-stage">
@@ -369,15 +368,15 @@
   }
 
   /* ─── Learn ───────────────────────────────────────────────────────── */
-  function LearnScene({ levelNum, lessonIdx, onLessonDone, onExit, onAsk }) {
+  function LearnScene({ levelNum, lessonIdx, onLessonDone, onExit }) {
     const L = K().level(levelNum);
     const steps = useMemo(() => buildLearnScript(levelNum, lessonIdx), [levelNum, lessonIdx]);
     const label = `Level ${K().pad2(levelNum)} · Lesson ${lessonIdx + 1}/${L.lessons.length} · ${L.lessons[lessonIdx].title}`;
-    return <SceneRunner key={levelNum + "-" + lessonIdx} steps={steps} mode="learn" levelNum={levelNum} label={label} onEnd={(r) => onLessonDone(r)} onExit={onExit} onAsk={onAsk} />;
+    return <SceneRunner key={levelNum + "-" + lessonIdx} steps={steps} mode="learn" levelNum={levelNum} label={label} onEnd={(r) => onLessonDone(r)} onExit={onExit} />;
   }
 
   /* ─── Prove / Master / Review ─────────────────────────────────────── */
-  function RunScene({ mode, levelNum, items, onAction, onExit, onAsk }) {
+  function RunScene({ mode, levelNum, items, onAction, onExit }) {
     const steps = useMemo(() => buildRunScript(mode, levelNum, items), [mode, levelNum, items]);
     const L = K().level(levelNum);
     const label = mode === "review" ? "Review · all levels" : `Level ${K().pad2(levelNum)} · ${mode === "master" ? "Master" : "Prove"}`;
@@ -399,7 +398,7 @@
       const nextLabel = mode === "review" ? null : mode === "prove" ? "Master this level" : nextL ? `On to Level ${levelNum + 1}` : null;
       window.__sceneShowResult && window.__sceneShowResult({ type: "result", mode, num: levelNum, title, say, passed: outcome.passed, stars: outcome.stars, xp: outcome.xp, correct: r.correct, total: r.total, hearts: r.hearts, streak: r.streak, missed: r.missed, note, nextLabel, onAction });
     }, [mode, levelNum, onAction]);
-    return <SceneRunner steps={steps} mode={mode} levelNum={levelNum} label={label} hearts0={mode === "review" ? null : 3} onEnd={onEnd} onExit={onExit} onAsk={onAsk} />;
+    return <SceneRunner steps={steps} mode={mode} levelNum={levelNum} label={label} hearts0={mode === "review" ? null : 3} onEnd={onEnd} onExit={onExit} />;
   }
 
   Object.assign(window, { SceneRunner, LearnScene, RunScene, buildLearnScript, buildRunScript });

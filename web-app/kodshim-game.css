@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════
    Kodshim Training — game layer styles
    Map (fifteen steps), level cards, settings, generic lessons, quiz
-   feedback, true/false, cloze, streaks, tutor drawer, results.
+   Shared pieces: stars, modals, settings sheets.
    Builds on the palette in kodshim-styles.css.
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -47,37 +47,12 @@
 .btn.danger { background: var(--err); border-color: var(--err); color: #fff; }
 .about-modal { max-width: 560px; }
 
-/* ─── Tutor drawer ───────────────────────────────────────────────── */
-.tutor {
-  position: absolute; top: 0; right: 0; bottom: 0;
-  width: min(420px, 100%);
-  z-index: 30;
-  display: flex; flex-direction: column;
-  background: var(--paper-2);
-  border-left: 1px solid var(--rule);
-  box-shadow: -24px 0 48px -30px rgba(28,20,10,.6);
-  animation: tutor-in .25s cubic-bezier(.2,.9,.3,1) both;
-}
-@keyframes tutor-in { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
-.tutor-head { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--rule); background: var(--paper); }
-.tutor-head img { height: 44px; width: auto; }
-.tutor-head .t { display: flex; flex-direction: column; }
-.tutor-head .t b { font-family: var(--font-display); font-weight: 500; font-size: 17px; }
-.tutor-head .t span { font-family: var(--font-readable); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-mute); }
-.tutor-head .modal-close { position: static; margin-left: auto; }
-.tutor-body { flex: 1; min-height: 0; overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
-.tutor-msg { max-width: 92%; padding: 10px 14px; border-radius: 14px; font-family: var(--font-body); font-size: 14.5px; line-height: 1.5; white-space: pre-wrap; }
-.tutor-msg.user { align-self: flex-end; background: var(--ink); color: var(--paper-2); border-bottom-right-radius: 4px; }
-.tutor-msg.assistant { align-self: flex-start; background: var(--paper); border: 1px solid var(--rule); border-bottom-left-radius: 4px; }
-.tutor-msg.error { align-self: stretch; background: rgba(184,90,61,.12); border: 1px solid var(--err); color: var(--ink); font-family: var(--font-readable); font-size: 13px; }
-.tutor-msg.thinking { align-self: flex-start; color: var(--ink-mute); font-style: italic; }
-.tutor-sugg { display: flex; flex-direction: column; gap: 6px; }
-.tutor-sugg button { text-align: left; padding: 8px 12px; background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; font-family: var(--font-body); font-size: 13.5px; color: var(--ink); cursor: pointer; }
-.tutor-sugg button:hover { border-color: var(--gold); }
-.tutor-form { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--rule); background: var(--paper); }
-.tutor-form textarea { flex: 1; resize: none; height: 44px; padding: 10px 12px; font-family: var(--font-body); font-size: 14.5px; border: 1px solid var(--rule); border-radius: 10px; background: #fff; color: var(--ink); }
-.tutor-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
-.tutor-nokey { padding: 16px; margin: 6px 0; background: rgba(212,160,70,.14); border: 1px solid var(--gold); border-radius: 12px; font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
-.tutor-nokey code { font-family: var(--font-mono); font-size: 12px; }
 
-.quiz-keys { color: var(--ink-mute); }
+/* Segmented choice (settings) */
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; background: var(--paper); flex: 0 0 auto; }
+.seg-btn { padding: 7px 14px; border: 0; background: transparent; font-family: var(--font-readable); font-size: 13px; color: var(--ink-soft); cursor: pointer; }
+.seg-btn.on { background: var(--ink); color: var(--paper-2); }
+.music-preview { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--gold); background: rgba(212,160,70,.14); font-family: var(--font-readable); font-size: 13px; color: var(--ink); cursor: pointer; }
+.music-preview.on { background: var(--gold-deep); color: var(--paper-2); border-color: var(--gold-deep); }
+.music-preview .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.music-preview.on .dot { animation: blink 1s ease-in-out infinite; }

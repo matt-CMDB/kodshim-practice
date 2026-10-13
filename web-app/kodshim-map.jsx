@@ -131,12 +131,8 @@
   function SettingsCard({ onClose, music, onOpenMusic, onReset }) {
     const s = K().settings;
     const [, bump] = useState(0);
-    const [key, setKey] = useState(s.tutorKey || "");
-    const [model, setModel] = useState(s.tutorModel || "anthropic/claude-haiku-5.5");
-    const [showKey, setShowKey] = useState(false);
     const [confirm, setConfirm] = useState(false);
     const set = (k, v) => { K().setSetting(k, v); bump((x) => x + 1); };
-    const saveTutor = () => { set("tutorKey", key.trim()); set("tutorModel", model.trim() || "anthropic/claude-haiku-5.5"); };
     const Toggle = ({ on, onClick }) => <button type="button" className={"music-toggle" + (on ? " on" : "")} onClick={onClick} aria-pressed={on}><span className="dot" /> {on ? "On" : "Off"}</button>;
     return (
       <Modal onClose={onClose} className="settings-modal" label="Settings">
@@ -144,16 +140,14 @@
         <h2 className="modal-h sm">Make it yours.</h2>
         <div className="set-group">
           <div className="set-row"><div className="set-label"><b>Music</b><span>The Levi'im ensemble, one instrument per level mastered.</span></div><Toggle on={music.enabled} onClick={() => { music.start(); music.setEnabled(!music.enabled); }} /></div>
-          <div className="set-row"><div className="set-label"><b>Mixer</b><span>Balance the instruments you've unlocked.</span></div><button type="button" className="btn sm" onClick={onOpenMusic}>Open mixer</button></div>
+          <div className="set-row"><div className="set-label"><b>Score</b><span>The recorded Epitaph of Seikilos, or an original piece, "Ma'alot", played by the game's own synthesizer.</span></div>
+            <span className="seg">
+              <button type="button" className={"seg-btn" + (music.source === "recorded" ? " on" : "")} onClick={() => { music.start(); music.setSource("recorded"); }}>Seikilos</button>
+              <button type="button" className={"seg-btn" + (music.source === "synth" ? " on" : "")} onClick={() => { music.start(); music.setSource("synth"); }}>Ma'alot</button>
+            </span></div>
+          <div className="set-row"><div className="set-label"><b>Mixer</b><span>Balance the instruments, and preview the full ensemble.</span></div><button type="button" className="btn sm" onClick={onOpenMusic}>Open mixer</button></div>
           <div className="set-row"><div className="set-label"><b>Sound effects</b><span>Chimes for right and wrong answers, fanfares.</span></div><Toggle on={s.sfx} onClick={() => set("sfx", !s.sfx)} /></div>
           <div className="set-row"><div className="set-label"><b>Transliteration</b><span>Latin-letter readings under Hebrew terms.</span></div><Toggle on={s.showTranslit} onClick={() => set("showTranslit", !s.showTranslit)} /></div>
-        </div>
-        <div className="set-group">
-          <div className="set-head">Ask the kohen <span className="eyebrow">optional</span></div>
-          <p className="set-help">A study partner that answers questions about the current level. It calls OpenRouter straight from this browser with your own key, kept only in this browser's storage. A question costs a fraction of a cent with the default model.</p>
-          <label className="set-field"><span>OpenRouter API key</span><span className="set-input-row"><input type={showKey ? "text" : "password"} value={key} onChange={(e) => setKey(e.target.value)} placeholder="sk-or-v1-…" spellCheck={false} autoComplete="off" /><button type="button" className="btn sm ghost" onClick={() => setShowKey((v) => !v)}>{showKey ? "Hide" : "Show"}</button></span></label>
-          <label className="set-field"><span>Model</span><input type="text" value={model} onChange={(e) => setModel(e.target.value)} spellCheck={false} /></label>
-          <div className="set-actions"><button type="button" className="btn primary sm" onClick={saveTutor}>Save</button>{s.tutorKey && <span className="set-ok">Key saved · tutor enabled</span>}</div>
         </div>
         <div className="set-group danger">
           <div className="set-row"><div className="set-label"><b>Reset progress</b><span>Clears every step, star and review card on this browser.</span></div>
