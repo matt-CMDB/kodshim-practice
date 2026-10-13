@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/zealous-curie-fkd7xb]
+    branches: [main]
     paths: ["web-app/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
