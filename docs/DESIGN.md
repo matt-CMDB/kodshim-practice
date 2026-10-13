@@ -72,20 +72,23 @@ answers. Number keys answer; space or enter advances.
 - Lessons and quiz items cite with strings like `Maaseh HaKorbanot 1:14`;
   the sources drawer resolves them.
 
-## Tutor
+## Music
 
-"Ask the kohen" opens a side drawer on any Learn, Prove or Review screen.
-It calls OpenRouter directly from the browser with a key the player pastes
-into Settings (stored only in that browser's localStorage). The system
-prompt carries the current level's concepts and source translations, so
-answers stay inside the material. From a feedback card, "Explain this"
-pre-fills the question.
+Five stems, one per instrument of the Levi'im; stem *i* is audible once
+the player has cleared `3*i` of the 15 steps (`unlockedInstruments`). Two
+scores: the recorded Seikilos arrangement (the `assets/*.mp3` stems, default)
+and "Ma'alot", a 16-bar score synthesized in `kodshim-music.js` with
+WebAudio (Karplus-Strong strings, a pipe, a brass call, a cymbal). The
+music card (Menu → Music) has a Preview toggle that unmutes every stem;
+it is cleared when the card closes, so the full ensemble is never heard
+elsewhere in the game before it is earned. Settings → Score picks the
+score; both honor the same mixer and unlock rules.
 
 ## Persistence
 
 `localStorage`:
 - `kodshim.progress.v2` — per-level stage results, Leitner boxes, XP.
-- `kodshim.settings.v2` — music, sound effects, mixer volumes, tutor key and model.
+- `kodshim.settings.v2` — music on/off, score, sound effects, mixer volumes, transliteration.
 
 Settings has a Reset progress button.
 

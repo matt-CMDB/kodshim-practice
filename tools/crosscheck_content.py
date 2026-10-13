@@ -55,7 +55,7 @@ def compact(L):
 
 
 def call(system, user):
-    body = {"model": MODEL, "max_tokens": 2500, "temperature": 0.1,
+    body = {"model": MODEL, "max_tokens": 8000, "temperature": 0.1,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
     req = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions", data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json", "X-Title": "Kodshim Training"})

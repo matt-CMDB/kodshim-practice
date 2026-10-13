@@ -441,7 +441,7 @@ window.KODSHIM_LEVELS[4] = {
       cite: "Maaseh HaKorbanot 5:19" },
 
     { id: "L4-Q12", kind: "mc",
-      prompt: "Who eats the meat of a chatat, and where?",
+      prompt: "Who eats the meat of an ordinary chatat, the kind that is eaten, and where?",
       options: [
         "The owner, anywhere in Jerusalem",
         "Any tahor person, within the courtyard",
@@ -753,7 +753,7 @@ window.KODSHIM_LEVELS[4] = {
       cite: "Maaseh HaKorbanot 1:15" },
 
     { id: "L4-Q43", kind: "match",
-      prompt: "Match each of the burned chatot to who brings it.",
+      prompt: "Match each chatat to its description.",
       pairs: [
         { hebrew: "פַּר כֹּהֵן מָשִׁיחַ", english: "the bull of the anointed kohen" },
         { hebrew: "פַּר הֶעְלֵם דָּבָר", english: "the bull for a communal error of the court" },
@@ -843,7 +843,7 @@ window.KODSHIM_LEVELS[4] = {
 
     // ── Time and place ──────────────────────────────────────────────────
     { id: "L4-Q54", kind: "tf",
-      prompt: "Shelamim may still be eaten on the day after it is slaughtered.",
+      prompt: "An ordinary shelamim may still be eaten on the day after it is slaughtered.",
       answer: true,
       explain: "True. A shelamim is eaten for two days and one night — the day of slaughter, the night, and the following day. A chatat or asham would be notar by then.",
       cite: "Maaseh HaKorbanot 10:6-7" },

@@ -34,7 +34,7 @@ window.KODSHIM_LEVELS[5] = {
         { type: "compare",
           left:  { title: "Nesachim — wine", he: "נְסָכִים", items: [
             "Wine poured on the altar.",
-            "Required with every olah and every shelamim — including the metzora's and the nazir's.",
+            "Required with every animal olah and every shelamim — including the metzora's and the nazir's. (A bird olah has none.)",
             "Not brought with most chatot and ashamot.",
           ] },
           right: { title: "Nisuch hamayim — water", he: "נִסּוּךְ הַמַּיִם", items: [
@@ -59,7 +59,7 @@ window.KODSHIM_LEVELS[5] = {
       dek: "When the whole nation errs on its court's ruling — and the one day the kohen gadol brings a chatat for everyone.",
       sources: ["Shegagot 12:1", "Avodat Yom HaKippurim 1:1", "Avodat Yom HaKippurim 3:14", "Vayikra 4:13-14", "Bamidbar 15:24", "Vayikra 16:3-5", "Vayikra 16:21-22"],
       intro: [
-        "An individual who sins inadvertently brings a chatat. But what if the mistake belongs to the nation? If the Sanhedrin issued a mistaken ruling and most of Israel acted on it in good faith, the community itself brings a chatat. The animal depends on what the error was about: for most mitzvot it is a bull, the {{he:פַּר הֶעְלֵם דָּבָר}}; for idolatry it is goats, the {{he:שְׂעִירֵי עֲבוֹדָה זָרָה}}.",
+        "An individual who sins inadvertently brings a chatat. But what if the mistake belongs to the nation? If the Sanhedrin issued a mistaken ruling and most of Israel acted on it in good faith, the community itself brings a chatat. The animal depends on what the error was about: for most mitzvot it is a bull, the {{he:פַּר הֶעְלֵם דָּבָר}}; for idolatry the chatat is goats, the {{he:שְׂעִירֵי עֲבוֹדָה זָרָה}} — and each goat comes alongside a bull brought as an olah.",
         "Yom Kippur has its own set. The kohen gadol brings a bull and a ram of his own, and on behalf of the community two goats and a ram — and of the two goats, one is slaughtered and one is sent away alive. All this comes on top of the tamid and the day's musaf.",
       ],
       blocks: [
@@ -70,7 +70,7 @@ window.KODSHIM_LEVELS[5] = {
             "Brought by the community, not by an individual.",
           ] },
           right: { title: "Se'irei avodah zarah", he: "שְׂעִירֵי עֲבוֹדָה זָרָה", items: [
-            "Goats, brought as chatot.",
+            "Goats, brought as chatot — each alongside a bull brought as an olah.",
             "The same kind of error — a mistaken Sanhedrin ruling that most of Israel followed — but the sin was idolatry.",
             "Also communal.",
           ] } },
@@ -151,12 +151,12 @@ window.KODSHIM_LEVELS[5] = {
             "The mincha of a poor person who owes a sliding-scale chatat, {{he:מִנְחַת חוֹטֵא}}.",
           ] } },
         { type: "steps", items: [
-          { title: "The mincha is prepared", he: "הֲכָנָה", text: "Solet, oil, salt, and levonah — in whichever form the mincha takes." },
-          { title: "Kemitzah", he: "קְמִיצָה", text: "The kohen takes a fistful — a {{he:קֹמֶץ}} — from the mincha." },
+          { title: "The mincha is prepared", he: "הֲכָנָה", text: "Solet, oil, salt, and levonah — in whichever form the mincha takes. (The sotah's and the poor sinner's leave out the oil and levonah.)" },
+          { title: "Kemitzah", he: "קְמִיצָה", text: "In an ordinary mincha, the kohen takes a fistful — a {{he:קֹמֶץ}} — from it. The wholly burned menachot skip this step." },
           { title: "The kometz is burned", he: "הַקְטָרָה", text: "The fistful is burned on the altar. This is the mincha's share of the altar." },
           { title: "The rest is eaten", he: "שְׁיָרִים", text: "The remainder is eaten by the kohanim — unless the mincha is one of the kinds that is burned entirely." },
         ] },
-        { type: "list", title: "Menachot that are burned entirely — nothing eaten by kohanim", items: [
+        { type: "list", title: "Menachot that are burned entirely — no kemitzah, nothing eaten by kohanim", items: [
           "The mincha of a kohen — {{he:מִנְחַת כֹּהֵן}}.",
           "The chavitin of the kohen gadol — {{he:חֲבִיתֵי כֹּהֵן גָּדוֹל}}.",
           "The mincha a kohen brings on his first day of service — {{he:מִנְחַת חִנּוּךְ}}.",
@@ -200,13 +200,13 @@ window.KODSHIM_LEVELS[5] = {
       dek: "Three korbanot that end at the table — and how long the table stays open.",
       sources: ["Bechorot 1:1", "Bechorot 6:1", "Maaseh HaKorbanot 9:17", "Maaseh HaKorbanot 10:6", "Maaseh HaKorbanot 10:7", "Bamidbar 18:17", "Vayikra 27:32", "Vayikra 7:12-16"],
       intro: [
-        "Some korbanot become holy without anyone choosing them. A {{he:בְּכוֹר}} — the first male born to a cow, ewe, or she-goat — is holy from birth. {{he:מַעְשַׂר בְּהֵמָה}} is every tenth animal born in the herd or flock. Both go to the altar for their blood and eimurin, and both are eaten — the bechor by kohanim, the maaser by its owner, both in Jerusalem.",
+        "Some korbanot become holy without anyone choosing them. A {{he:בְּכוֹר}} — a male that is the first to open its mother's womb, whether cow, ewe, or she-goat — is holy from birth. (A male born after a female is not a bechor.) {{he:מַעְשַׂר בְּהֵמָה}} is every tenth animal born in the herd or flock. Both go to the altar for their blood and eimurin, and both are eaten — the bechor by kohanim, the maaser by its owner, both in Jerusalem.",
         "A {{he:תּוֹדָה}} is a shelamim of thanks, and it comes with a remarkable amount of bread: forty loaves in four kinds. Because there is so much to eat, the Torah shortens the clock. Ordinary shelamim may be eaten for two days and the night between; a todah and its breads must be finished in one day and the following night, like a chatat.",
       ],
       blocks: [
         { type: "compare",
           left:  { title: "Bechor", he: "בְּכוֹר", items: [
-            "The first male offspring of a kosher domestic animal.",
+            "A male that is the first to open its mother's womb — of a cow, ewe, or she-goat.",
             "Holy from birth; given to a kohen.",
             "Offered on the altar.",
             "Eaten by kohanim, in Jerusalem, within two days and a night.",
@@ -335,7 +335,7 @@ window.KODSHIM_LEVELS[5] = {
       qHe: "אלו מנחות נשרפות כולן ואינן נאכלות לכוהנים?", aHe: "מנחת כהן; חביתי כהן גדול; מנחת חינוך; מנחת נסכים.",
       tanach: ["Vayikra 6:16"], rambam: ["Maaseh HaKorbanot 12:12"] },
     { id: "L5-C25", q: "What is a bechor?",
-      a: "The first male offspring of a kosher domestic animal — sanctified from birth; given to a kohen; offered on the altar; eaten by kohanim in Jerusalem within two days and a night.",
+      a: "A male that is the first to open its mother's womb, of a kosher domestic animal — sanctified from birth; given to a kohen; offered on the altar; eaten by kohanim in Jerusalem within two days and a night.",
       qHe: "מהו בכור?", aHe: "זכר ראשון של בהמה טהורה — קדוש מבטן; ניתן לכהן; קרב על המזבח; נאכל לכוהנים בירושלים תוך שני ימים ולילה.",
       tanach: ["Bamidbar 18:17"], rambam: ["Bechorot 1:1"] },
     { id: "L5-C26", q: "What is maaser behemah?",
@@ -343,7 +343,7 @@ window.KODSHIM_LEVELS[5] = {
       qHe: "מהו מעשר בהמה?", aHe: "כל עשירי מבקרו וצאנו — מוקדש לקרבן; דם ואימורים על המזבח; בשרו נאכל לבעלים בירושלים.",
       tanach: ["Vayikra 27:32"], rambam: ["Bechorot 6:1"] },
     { id: "L5-C27", q: "What are nesachim and which korbanot require them?",
-      a: "Wine libations poured on the altar — required with every olah and shelamim (including the metzora's and nazir's). Not with most chatot or ashamot.",
+      a: "Wine libations poured on the altar — required with every animal olah and shelamim (including the metzora's and nazir's). Not with bird olot, nor with most chatot or ashamot.",
       qHe: "מהם נסכים ועם אלו קרבנות הם באים?", aHe: "ניסוך יין על המזבח — נדרש עם כל עולה ושלמים (כולל של מצורע ונזיר). לא עם רוב חטאות ואשמות.",
       tanach: ["Bamidbar 15:4-12"], rambam: ["Maaseh HaKorbanot 2:1"] },
     { id: "L5-C28", q: "What is nisuch hamayim?",
@@ -529,7 +529,7 @@ window.KODSHIM_LEVELS[5] = {
 
     // L5-C24
     { id: "L5-Q15", kind: "sort",
-      prompt: "After kemitzah, is the rest of this mincha eaten by the kohanim — or is the whole mincha burned?",
+      prompt: "Is part of this mincha eaten by the kohanim — or is the whole mincha burned?",
       buckets: [
         { id: "eaten", he: "שְׁיָרֶיהָ נֶאֱכָלִין", en: "Rest eaten by kohanim" },
         { id: "burned", he: "כֻּלָּהּ כָּלִיל", en: "Burned entirely" },
@@ -550,12 +550,12 @@ window.KODSHIM_LEVELS[5] = {
       prompt: "Which korbanot require nesachim, the wine libations?",
       options: [
         "Every chatat and asham",
-        "Every olah and shelamim — but not most chatot and ashamot",
+        "Every animal olah and shelamim — but not most chatot and ashamot",
         "Only communal korbanot",
         "Only the tamid and the musafim",
       ],
       answer: 1,
-      explain: "Nesachim are wine libations poured on the altar. They are required with every olah and shelamim — including the metzora's and the nazir's — but not with most chatot or ashamot.",
+      explain: "Nesachim are wine libations poured on the altar. They are required with every animal olah and shelamim — including the metzora's and the nazir's — but not with a bird olah, nor with most chatot or ashamot.",
       cite: "Maaseh HaKorbanot 2:1" },
 
     // L5-C28
@@ -628,7 +628,7 @@ window.KODSHIM_LEVELS[5] = {
         "Anyone tahor, anywhere, within one day and a night",
       ],
       answer: 1,
-      explain: "A bechor — the first male offspring of a kosher domestic animal — is holy from birth and given to a kohen. It is offered on the altar and eaten by kohanim in Jerusalem within two days and a night.",
+      explain: "A bechor — a male that is the first to open its mother's womb, of a kosher domestic animal — is holy from birth and given to a kohen. It is offered on the altar and eaten by kohanim in Jerusalem within two days and a night.",
       cite: "Bechorot 1:1" },
 
     // L5-C26
@@ -771,7 +771,7 @@ window.KODSHIM_LEVELS[5] = {
 
     // L5-C06, C07
     { id: "L5-Q36", kind: "mc",
-      prompt: "The Sanhedrin ruled in error and most of Israel acted on the ruling. What does the community bring — if the sin was idolatry, and if it was any other mitzvah?",
+      prompt: "The Sanhedrin ruled in error and most of Israel acted on the ruling. What chatat does the community bring — if the sin was idolatry, and if it was any other mitzvah?",
       options: [
         "Goats for idolatry; a bull for any other mitzvah",
         "A bull for idolatry; goats for any other mitzvah",
@@ -779,7 +779,7 @@ window.KODSHIM_LEVELS[5] = {
         "Goats in either case",
       ],
       answer: 0,
-      explain: "For idolatry the community brings goats as chatot, the se'irei avodah zarah; for an error in any other mitzvah it brings a bull, the par he'elem davar.",
+      explain: "For idolatry the community brings goats as chatot, the se'irei avodah zarah, each alongside a bull as an olah; for an error in any other mitzvah it brings a bull as a chatat, the par he'elem davar.",
       cite: "Shegagot 12:1" },
 
     // L5-C07
@@ -787,7 +787,7 @@ window.KODSHIM_LEVELS[5] = {
       prompt: "The se'irei avodah zarah are goats brought as ____ when most of Israel inadvertently served idols on a mistaken Sanhedrin ruling.",
       options: ["olot", "chatot", "shelamim", "ashamot"],
       answer: 1,
-      explain: "They are chatot — sin offerings — brought by the community, just like the par he'elem davar for other mitzvot; only the animal differs.",
+      explain: "They are chatot — sin offerings — brought by the community, just as the par he'elem davar is for other mitzvot. For idolatry the goats are accompanied by bulls brought as olot.",
       cite: "Shegagot 12:1" },
 
     // L5-C08
@@ -1120,7 +1120,7 @@ window.KODSHIM_LEVELS[5] = {
     { id: "L5-Q69", kind: "tf",
       prompt: "A nazir's shelamim and a metzora's olah both come with nesachim.",
       answer: true,
-      explain: "True. Nesachim are required with every olah and every shelamim, including those of the metzora and the nazir; it is most chatot and ashamot that have none.",
+      explain: "True. Nesachim are required with every animal olah and every shelamim, including those of the metzora and the nazir; it is most chatot and ashamot that have none.",
       cite: "Maaseh HaKorbanot 2:1" },
 
     // L5-C28
@@ -1135,12 +1135,12 @@ window.KODSHIM_LEVELS[5] = {
     { id: "L5-Q71", kind: "match",
       prompt: "Match each libation term to its meaning.",
       pairs: [
-        { hebrew: "נְסָכִים", english: "wine poured on the altar with every olah and shelamim" },
+        { hebrew: "נְסָכִים", english: "wine poured on the altar with every animal olah and shelamim" },
         { hebrew: "נִסּוּךְ הַמַּיִם", english: "water poured on the altar during Sukkot — a halacha leMoshe miSinai" },
         { hebrew: "מִנְחַת נְסָכִים", english: "the flour offering that accompanies the libations — burned entirely" },
         { hebrew: "נֶסֶךְ הַתָּמִיד", english: "one-quarter hin of wine with each tamid lamb" },
       ],
-      explain: "Nesachim are wine, brought with every olah and shelamim; the minchat nesachim is the flour that accompanies them and is burned entirely. Nisuch hamayim is water, only on Sukkot.",
+      explain: "Nesachim are wine, brought with every animal olah and shelamim; the minchat nesachim is the flour that accompanies them and is burned entirely. Nisuch hamayim is water, only on Sukkot.",
       cite: "Maaseh HaKorbanot 2:1" },
 
     // L5-C29

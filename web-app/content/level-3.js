@@ -99,7 +99,7 @@ window.KODSHIM_LEVELS[3] = {
             ["Kohen gadol on Yom Kippur", "A bull as his personal chatat", "Plus a ram as his personal olah — for himself and his household"],
           ] },
         { type: "cast", items: [
-          { src: "assets/cast/nasi.webp", he: "נָשִׂיא", name: "The nasi", caption: "A male goat ({{he:שְׂעִיר עִזִּים}}) as his chatat — the one leader whose chatat is male." },
+          { src: "assets/cast/nasi.webp", he: "נָשִׂיא", name: "The nasi", caption: "A male goat ({{he:שְׂעִיר עִזִּים}}) as the chatat for his unintentional sin." },
           { src: "assets/male-goat.webp", he: "שְׂעִיר עִזִּים", name: "His goat", caption: "An ordinary Israelite brings a female goat or a female sheep instead." },
         ] },
         { type: "callout", title: "The chavitin — the kohen gadol's daily mincha",
@@ -185,7 +185,7 @@ window.KODSHIM_LEVELS[3] = {
           ] },
         },
         { type: "callout", title: "Look back over the level",
-          text: "The ashamot, the bird pairs, the sliding scale, the sotah's mincha, the todah — all of it is korban yachid. When the community brings a korban, it is an olah or a chatat." },
+          text: "The ashamot, the bird pairs, the sliding scale, the sotah's mincha, the todah — all of it is korban yachid. When the community brings a korban, it is an olah or a chatat — with one exception, the two Shavuot lambs brought as shelamim." },
       ],
     },
   ],
@@ -542,9 +542,8 @@ window.KODSHIM_LEVELS[3] = {
         { hebrew: "אָשָׁם", translit: "asham", bucket: "no" },
         { hebrew: "חַטָּאת", translit: "chatat", bucket: "yes" },
         { hebrew: "קָרְבַּן הָעוֹף", translit: "bird offering", bucket: "no" },
-        { hebrew: "שְׁלָמִים", translit: "shelamim", bucket: "no" },
-      ],
-      explain: "A tzibur brings only olot and chatot. It never brings an asham, almost never a bird offering, and shelamim only as the two Shavuot lambs — so as categories, asham, birds, and shelamim belong to the yachid.",
+        ],
+      explain: "A tzibur brings only olot and chatot. It never brings an asham and never a bird offering. Its only shelamim are the two Shavuot lambs, so as a category shelamim is not something the community brings either.",
       cite: "Maaseh HaKorbanot 1:4" },
 
     // ── More on the mechusrei kapparah ──
@@ -918,7 +917,7 @@ window.KODSHIM_LEVELS[3] = {
         "Only olot",
       ],
       answer: 1,
-      explain: "The community brings olot and chatot. Its only shelamim are the two lambs of Shavuot; it never brings an asham and almost never a bird offering.",
+      explain: "The community brings olot and chatot. Its only shelamim are the two lambs of Shavuot; it never brings an asham and never a bird offering.",
       cite: "Maaseh HaKorbanot 1:4" },
 
     { id: "L3-Q61", kind: "mc",

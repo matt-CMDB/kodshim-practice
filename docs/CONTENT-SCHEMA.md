@@ -87,7 +87,7 @@ Each block is revealed by one click/keypress, in order.
 ## Concept
 
 One entry per CSV row for the level, in CSV order. These drive the Review
-flashcards and ground the in-game tutor. Copy `q`, `a`, `qHe`, `aHe` from the
+flashcards. Copy `q`, `a`, `qHe`, `aHe` from the
 CSV (fix obvious typos only), and copy the normalized cites.
 
 ```js

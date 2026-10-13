@@ -23,7 +23,7 @@ except the Google Fonts.
 ## Online
 
 `.github/workflows/pages.yml` publishes `web-app/` to GitHub Pages on every
-push to `main` (and to the revamp branch) that touches the app. Once Pages is
+push to `main` that touches the app. Once Pages is
 enabled for the repository (Settings → Pages → Source: GitHub Actions), the game
 lives at `https://<owner>.github.io/kodshim-practice/`.
 
@@ -32,17 +32,17 @@ lives at `https://<owner>.github.io/kodshim-practice/`.
 ```
 web-app/
   kodshim-training.html    page shell, script order
-  kodshim-engine.js        progress, review scheduler, question picker, sound, tutor client
+  kodshim-engine.js        progress, review scheduler, question picker, sound
+  kodshim-music.js         the Ma'alot score: a WebAudio synth for the five instruments
   kodshim-app.jsx          screens and routing
   kodshim-map.jsx          the journey map, level sheet, menu, settings, about
   kodshim-scene.jsx        the courtyard scene: lesson scripts, boards, dialogue, runs
   kodshim-quiz.jsx         the answer surfaces (mc, tap, cloze, pic, tf, match, sort)
-  kodshim-tutor.jsx        "Ask the kohen" drawer
   kodshim-ui.jsx           shared bits (inline markup, stars, modal, source scroll)
   content/level-N.js       lessons + concepts + quiz bank per level
   kodshim-sources.js       generated: cited Hebrew texts + English
   kodshim-play.css         the map and the scene
-  kodshim-game.css         stars, modals, settings, tutor drawer
+  kodshim-game.css         stars, modals, settings, music card
 tools/
   csv_to_levels.py         CSV → tools/levels-json/level-N.json (normalized cites)
   build_sources.py         pulls cited passages from source-material/ → kodshim-sources.js
@@ -69,8 +69,10 @@ python3 tools/build_sources.py      # if you cited a passage that was not cited 
 Everything is stored in the browser's `localStorage` (`kodshim.progress.v2`
 and `kodshim.settings.v2`). Settings → Reset progress wipes it.
 
-## The tutor
+## Music
 
-"Ask the kohen" calls OpenRouter straight from the browser with a key you
-paste into Settings. The key never leaves your browser. The default model is
-`anthropic/claude-haiku-5.5`; any OpenRouter model id works.
+The Levi'im's five instruments (kinor, nevel, chalil, chatzotzrah,
+tziltzel) join one at a time as you clear stages. Menu → Music has a mixer
+and a Preview button that plays the full ensemble; the preview only runs
+while that card is open. Settings → Score switches between the recorded
+Seikilos arrangement and the synthesized Ma'alot score.
