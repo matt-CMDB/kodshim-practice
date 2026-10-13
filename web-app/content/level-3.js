@@ -59,7 +59,7 @@ window.KODSHIM_LEVELS[3] = {
       blocks: [
         { type: "cards", items: [
           { he: "נָזִיר", tl: "nazir", en: "at the end of his vow", text: "A male lamb as olah, a female lamb as chatat, and a ram as shelamim — with matzot and libations." },
-          { he: "סוֹטָה", tl: "sotah", en: "a wife suspected of unfaithfulness", text: "A barley mincha of one-tenth ephah, with no oil and no frankincense — the pattern of a sinner's mincha." },
+          { he: "סוֹטָה", tl: "sotah", en: "a wife suspected of unfaithfulness", text: "A barley mincha of one-tenth ephah, with no oil and no frankincense — the Torah calls it the {{he:מִנְחַת קְנָאֹת}}, the jealousy offering." },
           { he: "גֵּר", tl: "ger", en: "a convert", text: "An olah — either an animal olah, or two birds, both of them olah." },
           { he: "תּוֹדָה", tl: "todah", en: "thanksgiving offering", text: "Brought by one who survived danger: crossing the sea, traveling through a desert, recovering from illness, or release from prison." },
         ] },
@@ -180,7 +180,7 @@ window.KODSHIM_LEVELS[3] = {
           ] },
           right: { title: "The tzibur never brings", he: "אֵין בַּצִּבּוּר", items: [
             "An asham — there is no communal asham",
-            "Almost any bird offering",
+            "Any bird offering — the tzibur brings no birds",
             "Shelamim, apart from the two Shavuot lambs",
           ] },
         },
@@ -193,8 +193,8 @@ window.KODSHIM_LEVELS[3] = {
   // ── Concepts (one per CSV row, in CSV order) ─────────────────────────
   concepts: [
     { id: "L3-C01", q: "What sacrifice does a sotah bring?",
-      a: "A barley mincha of one-tenth ephah without oil or frankincense — called minchath chatat.",
-      qHe: "מה קרבן הסוטה?", aHe: "מנחת שעורים עשירית האיפה ללא שמן ולבונה — היא מנחת חטאת.",
+      a: "A barley mincha of one-tenth ephah without oil or frankincense — called the minchat kenaot (the jealousy offering).",
+      qHe: "מה קרבן הסוטה?", aHe: "מנחת שעורים עשירית האיפה ללא שמן ולבונה — היא מנחת קנאות.",
       tanach: ["Bamidbar 5:15"], rambam: ["Sotah 3:1"] },
     { id: "L3-C02", q: "What korbanot does a nazir bring at the conclusion of his vow?",
       a: "A male lamb as olah, a female lamb as chatat, and a ram as shelamim — with matzot and libations.",
@@ -281,12 +281,12 @@ window.KODSHIM_LEVELS[3] = {
       qHe: "אלו קרבנות מביא הגר בגיורו?", aHe: "עולה — בהמה לעולה או שני עופות (שניהם עולה).",
       tanach: [], rambam: ["Mechusrei Kapparah 1:2"] },
     { id: "L3-C23", q: "Which categories of korban may a tzibur bring?",
-      a: "Only olot and chatot. Communal shelamim exist only as the two Shavuot lambs; no communal asham; almost no communal bird offerings.",
-      qHe: "אלו סוגי קרבן הציבור מביא?", aHe: "רק עולות וחטאות. שלמי ציבור יחידים הם שני כבשי עצרת; אין אשם ציבור; כמעט אין עוף ציבור.",
+      a: "Only olot and chatot. Communal shelamim exist only as the two Shavuot lambs; no communal asham; no communal bird offerings.",
+      qHe: "אלו סוגי קרבן הציבור מביא?", aHe: "רק עולות וחטאות. שלמי ציבור יחידים הם שני כבשי עצרת; אין אשם ציבור; אין עוף ציבור.",
       tanach: [], rambam: ["Maaseh HaKorbanot 1:4"] },
     { id: "L3-C24", q: "Which categories may a tzibur never bring?",
-      a: "Asham; almost any bird offering; shelamim (apart from the two Shavuot lambs).",
-      qHe: "אלו קרבנות הציבור לעולם אינו מביא?", aHe: "אשם; כמעט אין עוף ציבור; שלמי ציבור (חוץ משני כבשי עצרת).",
+      a: "Asham; any bird offering; shelamim (apart from the two Shavuot lambs).",
+      qHe: "אלו קרבנות הציבור לעולם אינו מביא?", aHe: "אשם; עוף; שלמי ציבור (חוץ משני כבשי עצרת).",
       tanach: [], rambam: ["Maaseh HaKorbanot 1:4"] },
   ],
 

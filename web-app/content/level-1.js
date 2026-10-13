@@ -277,12 +277,8 @@ window.KODSHIM_LEVELS[1] = {
         "a": "Three: cattle (bakar), sheep (kevasim), and goats (izim).",
         "qHe": "מאלו מיני בהמות מביאים קרבן?",
         "aHe": "שלושה: בקר, כבשים, ועזים.",
-        "tanach": [
-            "Vayikra 1:2"
-        ],
-        "rambam": [
-            "Maaseh HaKorbanot 1:1"
-        ]
+        "tanach": ["Vayikra 1:2"],
+        "rambam": ["Maaseh HaKorbanot 1:1"]
     },
     {
         "id": "L1-C16",
@@ -290,12 +286,8 @@ window.KODSHIM_LEVELS[1] = {
         "a": "Two: turtledoves (torim) and young pigeons (bnei yonah).",
         "qHe": "מאלו מיני עוף מביאים קרבן?",
         "aHe": "שניים: תורים ובני יונה.",
-        "tanach": [
-            "Vayikra 1:14"
-        ],
-        "rambam": [
-            "Maaseh HaKorbanot 1:1"
-        ]
+        "tanach": ["Vayikra 1:14"],
+        "rambam": ["Maaseh HaKorbanot 1:1"]
     },
     {
         "id": "L1-C17",
@@ -304,9 +296,7 @@ window.KODSHIM_LEVELS[1] = {
         "qHe": "האם תורים ובני יונה כשרים באותו גיל?",
         "aHe": "תורים גדולים כשרים וקטנים פסולים; בני יונה קטנים כשרים וגדולים פסולים.",
         "tanach": [],
-        "rambam": [
-            "Maaseh HaKorbanot 1:14"
-        ]
+        "rambam": ["Maaseh HaKorbanot 1:14"]
     },
     {
         "id": "L1-C18",
@@ -314,12 +304,8 @@ window.KODSHIM_LEVELS[1] = {
         "a": "From the eighth day of its life. Ideally from the thirtieth day onward.",
         "qHe": "מאיזה גיל ניתן להקריב בהמה?",
         "aHe": "מיום השמיני ואילך. לכתחילה מיום השלושים ואילך.",
-        "tanach": [
-            "Vayikra 22:27"
-        ],
-        "rambam": [
-            "Maaseh HaKorbanot 1:12"
-        ]
+        "tanach": ["Vayikra 22:27"],
+        "rambam": ["Maaseh HaKorbanot 1:12"]
     },
     {
         "id": "L1-C19",
@@ -328,9 +314,7 @@ window.KODSHIM_LEVELS[1] = {
         "qHe": "מה הגיל המרבי לקרבן בקר?",
         "aHe": "עד שלוש שנים.",
         "tanach": [],
-        "rambam": [
-            "Maaseh HaKorbanot 1:12"
-        ]
+        "rambam": ["Maaseh HaKorbanot 1:12"]
     },
     {
         "id": "L1-C20",
@@ -339,9 +323,7 @@ window.KODSHIM_LEVELS[1] = {
         "qHe": "מה הגיל המרבי לקרבן כבשים ועזים?",
         "aHe": "עד שנתיים.",
         "tanach": [],
-        "rambam": [
-            "Maaseh HaKorbanot 1:12"
-        ]
+        "rambam": ["Maaseh HaKorbanot 1:12"]
     },
     {
         "id": "L1-C21",
@@ -350,9 +332,7 @@ window.KODSHIM_LEVELS[1] = {
         "qHe": "עד איזה גיל הכבש נקרא כבש ולא איל?",
         "aHe": "עד השלמת שנתו הראשונה.",
         "tanach": [],
-        "rambam": [
-            "Maaseh HaKorbanot 1:14"
-        ]
+        "rambam": ["Maaseh HaKorbanot 1:14"]
     },
     {
         "id": "L1-C22",
@@ -360,12 +340,8 @@ window.KODSHIM_LEVELS[1] = {
         "a": "Male cattle, male sheep, or male goats; or turtledoves or young pigeons.",
         "qHe": "מאלו מינים מביאים עולה?",
         "aHe": "מן הבקר זכרים, מן הכבשים זכרים, מן העזים זכרים; או מן התורים ובני היונה (עוף מכל מין).",
-        "tanach": [
-            "Vayikra 1:3"
-        ],
-        "rambam": [
-            "Maaseh HaKorbanot 1:8"
-        ]
+        "tanach": ["Vayikra 1:3"],
+        "rambam": ["Maaseh HaKorbanot 1:8"]
     },
     {
         "id": "L1-C23",
@@ -373,23 +349,17 @@ window.KODSHIM_LEVELS[1] = {
         "a": "From all five species — cattle, sheep, goats, turtledoves, or young pigeons — male or female.",
         "qHe": "מאלו מינים מביאים חטאת?",
         "aHe": "מכל חמשת המינים — בקר, כבשים, עזים, תורים ובני יונה — זכר או נקבה.",
-        "tanach": [
-            "Vayikra 4:3"
-        ],
-        "rambam": [
-            "Maaseh HaKorbanot 1:9"
-        ]
+        "tanach": ["Vayikra 4:3"],
+        "rambam": ["Maaseh HaKorbanot 1:9"]
     },
     {
         "id": "L1-C24",
         "q": "From which species may an asham be brought?",
         "a": "Only from male sheep (kevasim zekharim); never from cattle, goats, or birds.",
         "qHe": "מאיזה מין מביאים אשם?",
-        "aHe": "רק מן הכבשים הזכרים — לא מבקר",
-        "tanach": [],
-        "rambam": [
-            "Vayikra 5:15"
-        ]
+        "aHe": "רק מן הכבשים הזכרים — לא מבקר, עזים או עוף.",
+        "tanach": ["Vayikra 5:15"],
+        "rambam": ["Maaseh HaKorbanot 1:10"]
     },
     {
         "id": "L1-C25",
@@ -397,12 +367,8 @@ window.KODSHIM_LEVELS[1] = {
         "a": "From cattle, sheep, or goats — male or female. There are no bird shelamim.",
         "qHe": "מאלו מינים מביאים שלמים?",
         "aHe": "מן הבקר, הכבשים, והעזים — זכר או נקבה. אין שלמים מן העוף.",
-        "tanach": [
-            "Vayikra 3:1"
-        ],
-        "rambam": [
-            "Maaseh HaKorbanot 1:11"
-        ]
+        "tanach": ["Vayikra 3:1"],
+        "rambam": ["Maaseh HaKorbanot 1:11"]
     },
     {
         "id": "L1-C26",
@@ -411,20 +377,16 @@ window.KODSHIM_LEVELS[1] = {
         "qHe": "האם זכר כשר לחטאת יחיד?",
         "aHe": "בדרך כלל לא — חטאת יחיד תמיד נקבה, חוץ מנשיא, כהן משיח, וכהן גדול ביום הכיפורים.",
         "tanach": [],
-        "rambam": [
-            "Maaseh HaKorbanot 1:14"
-        ]
+        "rambam": ["Maaseh HaKorbanot 1:14"]
     },
     {
         "id": "L1-C27",
         "q": "What disqualifies an animal from being a korban?",
         "a": "A blemish (mum) — any physical defect listed in the Torah (blindness, broken limb, etc.) renders it pasul.",
         "qHe": "מה פוסל בהמה מקרבן?",
-        "aHe": "מום — כל מום גופני המנוי בתורה (עיוורון",
-        "tanach": [],
-        "rambam": [
-            "Vayikra 22:22"
-        ]
+        "aHe": "מום — כל מום גופני המנוי בתורה (עיוורון, שבר וכדומה) פוסל.",
+        "tanach": ["Vayikra 22:22"],
+        "rambam": ["Biat HaMikdash 7:1"]
     }
 ],
   quiz: [

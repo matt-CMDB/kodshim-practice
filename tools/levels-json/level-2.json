@@ -29,9 +29,9 @@
     {
       "id": "L2-C03",
       "q": "What is an olah?",
-      "a": "A burnt offering — entirely consumed on the altar; nothing is eaten.",
+      "a": "A burnt offering — its flesh is entirely burned on the altar; nothing is eaten. Only the hide goes to the kohanim.",
       "qHe": "מהי עולה?",
-      "aHe": "קרבן הנשרף כולו על המזבח; אין ממנו נאכל כלל.",
+      "aHe": "קרבן שבשרו נשרף כולו על המזבח; אין ממנו נאכל כלל. רק עורו לכוהנים.",
       "tanach": [
         "Vayikra 1:9"
       ],
@@ -55,9 +55,9 @@
     {
       "id": "L2-C05",
       "q": "What is an asham?",
-      "a": "A guilt offering — brought for specific sins (Temple misappropriation, false oaths on property, doubtful chatat, metzora purification, nazir who became impure).",
+      "a": "A guilt offering — brought for specific cases: misuse of Temple property (me'ilah), a false oath denying money owed, a doubtful chatat, relations with a shifchah charufah, and as part of the purification of a metzora or of a nazir who became tamei.",
       "qHe": "מהו אשם?",
-      "aHe": "קרבן הבא על חטאים מסוימים (מעילה, שבועות שקר בממון, ספק חטאת, טהרת מצורע, נזיר שנטמא).",
+      "aHe": "קרבן הבא על עניינים מסוימים: מעילה, שבועת שקר בממון, ספק חטאת, שפחה חרופה, וכחלק מטהרת מצורע ונזיר שנטמא.",
       "tanach": [
         "Vayikra 5:15"
       ],
@@ -81,9 +81,9 @@
     {
       "id": "L2-C07",
       "q": "What are the eimurin?",
-      "a": "The fats and organs burned on the altar: chelev on the stomach, two kidneys with their fat, and yoteret hakabed (lobe of liver). For sheep: also the alyah (fat tail).",
+      "a": "The fats and organs burned on the altar: the chelev on the stomach, the two kidneys with the fat on them by the flanks, and the yoteret hakaved (lobe of the liver). For sheep: also the alyah (fat tail).",
       "qHe": "מהם האימורים?",
-      "aHe": "החלקים הנשרפים על המזבח: החלב שעל הקרב, שתי הכליות עם חלבהן, ויותרת הכבד. ובכבש — גם האליה.",
+      "aHe": "החלקים הנשרפים על המזבח: החלב שעל הקרב, שתי הכליות עם החלב שעליהן אשר על הכסלים, ויותרת הכבד. ובכבש — גם האליה.",
       "tanach": [
         "Vayikra 3:3-4"
       ],
@@ -247,11 +247,13 @@
     {
       "id": "L2-C21",
       "q": "What is a korban chovah?",
-      "a": "A required offering — brought to fulfill an obligation (e.g.",
-      "qHe": "chatat for a sin or pesach).",
-      "aHe": "מהו קרבן חובה?",
+      "a": "A required offering — brought to fulfill an obligation (e.g., chatat for a sin or pesach).",
+      "qHe": "מהו קרבן חובה?",
+      "aHe": "קרבן הבא חובה — לקיים חיוב (כגון חטאת או פסח).",
       "tanach": [],
-      "rambam": []
+      "rambam": [
+        "Maaseh HaKorbanot 14:2"
+      ]
     }
   ]
 }

@@ -5,9 +5,9 @@
     {
       "id": "L3-C01",
       "q": "What sacrifice does a sotah bring?",
-      "a": "A barley mincha of one-tenth ephah without oil or frankincense — called minchath chatat.",
+      "a": "A barley mincha of one-tenth ephah without oil or frankincense — called the minchat kenaot (the jealousy offering).",
       "qHe": "מה קרבן הסוטה?",
-      "aHe": "מנחת שעורים עשירית האיפה ללא שמן ולבונה — היא מנחת חטאת.",
+      "aHe": "מנחת שעורים עשירית האיפה ללא שמן ולבונה — היא מנחת קנאות.",
       "tanach": [
         "Bamidbar 5:15"
       ],
@@ -287,9 +287,9 @@
     {
       "id": "L3-C23",
       "q": "Which categories of korban may a tzibur bring?",
-      "a": "Only olot and chatot. Communal shelamim exist only as the two Shavuot lambs; no communal asham; almost no communal bird offerings.",
+      "a": "Only olot and chatot. Communal shelamim exist only as the two Shavuot lambs; no communal asham; no communal bird offerings.",
       "qHe": "אלו סוגי קרבן הציבור מביא?",
-      "aHe": "רק עולות וחטאות. שלמי ציבור יחידים הם שני כבשי עצרת; אין אשם ציבור; כמעט אין עוף ציבור.",
+      "aHe": "רק עולות וחטאות. שלמי ציבור יחידים הם שני כבשי עצרת; אין אשם ציבור; אין עוף ציבור.",
       "tanach": [],
       "rambam": [
         "Maaseh HaKorbanot 1:4"
@@ -298,9 +298,9 @@
     {
       "id": "L3-C24",
       "q": "Which categories may a tzibur never bring?",
-      "a": "Asham; almost any bird offering; shelamim (apart from the two Shavuot lambs).",
+      "a": "Asham; any bird offering; shelamim (apart from the two Shavuot lambs).",
       "qHe": "אלו קרבנות הציבור לעולם אינו מביא?",
-      "aHe": "אשם; כמעט אין עוף ציבור; שלמי ציבור (חוץ משני כבשי עצרת).",
+      "aHe": "אשם; עוף; שלמי ציבור (חוץ משני כבשי עצרת).",
       "tanach": [],
       "rambam": [
         "Maaseh HaKorbanot 1:4"

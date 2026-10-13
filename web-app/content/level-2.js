@@ -58,7 +58,7 @@ window.KODSHIM_LEVELS[2] = {
       sources: ["Maaseh HaKorbanot 5:1", "Shegagot 1:1", "Shegagot 8:1", "Maaseh HaKorbanot 1:2", "Vayikra 1:9", "Vayikra 4", "Vayikra 5:15", "Vayikra 3"],
       intro: [
         "The four names are easy to confuse until you know what each one is for. Two of them — olah and shelamim — are brought freely, as a gift or in thanks. The other two — chatat and asham — are brought because something went wrong. And the four differ sharply in what happens to the meat.",
-        "The olah is the simplest: the whole animal is burned on the altar, and nothing is eaten. The shelamim is the opposite pole — it is the one korban the owner himself eats from, sharing it with the kohanim. The chatat and the asham sit between them, each tied to a particular kind of wrongdoing.",
+        "The olah is the simplest: the whole animal is burned on the altar, and nothing is eaten — only the hide goes to the kohanim. The shelamim is the opposite pole — it is the one korban the owner himself eats from, sharing it with the kohanim. The chatat and the asham sit between them, each tied to a particular kind of wrongdoing.",
       ],
       blocks: [
         {
@@ -84,6 +84,7 @@ window.KODSHIM_LEVELS[2] = {
             "Me'ilah — misusing Temple property ({{he:מְעִילָה}})",
             "A false oath denying money owed to another person",
             "A doubtful chatat — when one is not sure whether the sin was committed ({{he:סְפֵק חַטָּאת}})",
+            "Relations with a shifchah charufah ({{he:שִׁפְחָה חֲרוּפָה}})",
             "The purification of a metzora ({{he:מְצֹרָע}})",
             "A nazir who became tamei ({{he:נָזִיר שֶׁנִּטְמָא}})",
           ],
@@ -107,7 +108,7 @@ window.KODSHIM_LEVELS[2] = {
       dek: "The parts that always go to the altar — and the one part only sheep have.",
       sources: ["Maaseh HaKorbanot 1:17", "Vayikra 3:3-4", "Vayikra 3:9"],
       intro: [
-        "Even when a korban is eaten, part of it is always burned on the altar. These burned parts are called the eimurin. The Torah lists them in the shelamim section of Vayikra: the chelev (fat) on the stomach, the two kidneys with the fat on them, and the yoteret hakaved — the lobe of the liver.",
+        "Even when a korban is eaten, part of it is always burned on the altar. These burned parts are called the eimurin. The Torah lists them in the shelamim section of Vayikra: the chelev (fat) on the stomach, the two kidneys with the fat on them by the flanks, and the yoteret hakaved — the lobe of the liver.",
         "Sheep have one more. The sheep of the Land of Israel carry a heavy fat tail, the alyah. When a sheep is offered, the alyah is included in its eimurin and burned. Goats and cattle have no alyah, so their eimurin are the three parts alone.",
       ],
       blocks: [
@@ -116,7 +117,7 @@ window.KODSHIM_LEVELS[2] = {
           title: "The eimurin — burned on the altar",
           items: [
             "The chelev on the stomach — {{he:הַחֵלֶב שֶׁעַל הַקֶּרֶב}}",
-            "The two kidneys, with their fat — {{he:שְׁתֵּי הַכְּלָיוֹת}}",
+            "The two kidneys, with the fat on them by the flanks — {{he:שְׁתֵּי הַכְּלָיוֹת}}",
             "The lobe of the liver — {{he:יוֹתֶרֶת הַכָּבֵד}}",
             "For sheep only: the fat tail — {{he:אַלְיָה}}",
           ],
@@ -287,9 +288,9 @@ window.KODSHIM_LEVELS[2] = {
       tanach: [], rambam: ["Maaseh HaKorbanot 1:3"] },
     { id: "L2-C03",
       q: "What is an olah?",
-      a: "A burnt offering — entirely consumed on the altar; nothing is eaten.",
+      a: "A burnt offering — its flesh is entirely burned on the altar; nothing is eaten. Only the hide goes to the kohanim.",
       qHe: "מהי עולה?",
-      aHe: "קרבן הנשרף כולו על המזבח; אין ממנו נאכל כלל.",
+      aHe: "קרבן שבשרו נשרף כולו על המזבח; אין ממנו נאכל כלל. רק עורו לכוהנים.",
       tanach: ["Vayikra 1:9"], rambam: ["Maaseh HaKorbanot 5:1"] },
     { id: "L2-C04",
       q: "What is a chatat?",
@@ -299,9 +300,9 @@ window.KODSHIM_LEVELS[2] = {
       tanach: ["Vayikra 4"], rambam: ["Shegagot 1:1"] },
     { id: "L2-C05",
       q: "What is an asham?",
-      a: "A guilt offering — brought for specific sins (Temple misappropriation, false oaths on property, doubtful chatat, metzora purification, nazir who became impure).",
+      a: "A guilt offering — brought for specific cases: misuse of Temple property (me'ilah), a false oath denying money owed, a doubtful chatat, relations with a shifchah charufah, and as part of the purification of a metzora or of a nazir who became tamei.",
       qHe: "מהו אשם?",
-      aHe: "קרבן הבא על חטאים מסוימים (מעילה, שבועות שקר בממון, ספק חטאת, טהרת מצורע, נזיר שנטמא).",
+      aHe: "קרבן הבא על עניינים מסוימים: מעילה, שבועת שקר בממון, ספק חטאת, שפחה חרופה, וכחלק מטהרת מצורע ונזיר שנטמא.",
       tanach: ["Vayikra 5:15"], rambam: ["Shegagot 8:1"] },
     { id: "L2-C06",
       q: "What is a shelamim?",
@@ -311,9 +312,9 @@ window.KODSHIM_LEVELS[2] = {
       tanach: ["Vayikra 3"], rambam: ["Maaseh HaKorbanot 1:2"] },
     { id: "L2-C07",
       q: "What are the eimurin?",
-      a: "The fats and organs burned on the altar: chelev on the stomach, two kidneys with their fat, and yoteret hakaved (lobe of liver). For sheep: also the alyah (fat tail).",
+      a: "The fats and organs burned on the altar: the chelev on the stomach, the two kidneys with the fat on them by the flanks, and the yoteret hakaved (lobe of the liver). For sheep: also the alyah (fat tail).",
       qHe: "מהם האימורים?",
-      aHe: "החלקים הנשרפים על המזבח: החלב שעל הקרב, שתי הכליות עם חלבהן, ויותרת הכבד. ובכבש — גם האליה.",
+      aHe: "החלקים הנשרפים על המזבח: החלב שעל הקרב, שתי הכליות עם החלב שעליהן אשר על הכסלים, ויותרת הכבד. ובכבש — גם האליה.",
       tanach: ["Vayikra 3:3-4"], rambam: ["Maaseh HaKorbanot 1:17"] },
     { id: "L2-C08",
       q: "What is the alyah and which species has it?",
@@ -400,8 +401,8 @@ window.KODSHIM_LEVELS[2] = {
       q: "What is a korban chovah?",
       a: "A required offering — brought to fulfill an obligation (e.g., chatat for a sin or pesach).",
       qHe: "מהו קרבן חובה?",
-      aHe: "קרבן שאדם חייב להביאו (כגון חטאת על חטא, או פסח).",
-      tanach: [], rambam: [] },
+      aHe: "קרבן הבא חובה — לקיים חיוב (כגון חטאת או פסח).",
+      tanach: [], rambam: ["Maaseh HaKorbanot 14:2"] },
   ],
 
   // ── Quiz ─────────────────────────────────────────────────────────────
@@ -462,7 +463,7 @@ window.KODSHIM_LEVELS[2] = {
     { id: "L2-Q05", kind: "tf",
       prompt: "An asham is brought to atone for an unintentional sin whose intentional violation is punishable by karet.",
       answer: false,
-      explain: "That is the chatat. An asham is brought for a specific list of sins: me'ilah, a false oath about money, a doubtful chatat, the purification of a metzora, and a nazir who became tamei.",
+      explain: "That is the chatat. An asham is brought for a specific list of cases: me'ilah, a false oath about money, a doubtful chatat, a shifchah charufah, the purification of a metzora, and a nazir who became tamei.",
       cite: "Shegagot 8:1" },
 
     { id: "L2-Q06", kind: "match",
@@ -737,7 +738,7 @@ window.KODSHIM_LEVELS[2] = {
         "Thanksgiving for a kindness received",
       ],
       answer: 2,
-      explain: "Me'ilah is on the asham list, along with a false oath on money, a doubtful chatat, the purification of a metzora, and a nazir who became tamei. The karet case is a chatat; a free gift or thanksgiving is an olah or shelamim.",
+      explain: "Me'ilah is on the asham list, along with a false oath on money, a doubtful chatat, a shifchah charufah, the purification of a metzora, and a nazir who became tamei. The karet case is a chatat; a free gift or thanksgiving is an olah or shelamim.",
       cite: "Shegagot 8:1" },
 
     { id: "L2-Q36", kind: "mc",

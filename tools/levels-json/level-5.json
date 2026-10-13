@@ -96,9 +96,9 @@
     {
       "id": "L5-C08",
       "q": "What korbanot does the kohen gadol bring on Yom Kippur?",
-      "a": "Personal: a bull and a ram. Communal: two se'irim (one slaughtered, one to Azazel) and a ram olah; plus the regular tamid and a special musaf (bull + seven lambs + goat).",
+      "a": "Personal: a bull and a ram. Communal: two se'irim (one slaughtered, one to Azazel) and a ram olah; plus the regular tamid and a special musaf (bull + ram + seven lambs + goat).",
       "qHe": "אלו קרבנות מקריב כהן גדול ביום הכיפורים?",
-      "aHe": "אישית: פר ואיל. ציבור: שני שעירים (אחד נשחט ואחד לעזאזל) ואיל לעולה; ועוד תמיד ומוסף — פר ושבעה כבשים ושעיר.",
+      "aHe": "אישית: פר ואיל. ציבור: שני שעירים (אחד נשחט ואחד לעזאזל) ואיל לעולה; ועוד תמיד ומוסף — פר ואיל ושבעה כבשים ושעיר.",
       "tanach": [
         "Vayikra 16:3-5"
       ],
@@ -161,9 +161,9 @@
     {
       "id": "L5-C13",
       "q": "What two bowls of frankincense accompany the lechem hapanim?",
-      "a": "Two bazichei levonah — placed beside the two stacks; burned on Shabbat when the bread is changed.",
+      "a": "Two bazichei levonah — one beside each stack; their frankincense is burned on Shabbat when the bread is changed.",
       "qHe": "מה שני בזיכים מלווים את לחם הפנים?",
-      "aHe": "שני בזיכי לבונה — אחד לכל מערכת; מוקטרים בשבת בהחלפת הלחם.",
+      "aHe": "שני בזיכי לבונה — אחד לכל מערכת; הלבונה שבהם מוקטרת בשבת בהחלפת הלחם.",
       "tanach": [
         "Vayikra 24:7"
       ],
@@ -316,9 +316,9 @@
     {
       "id": "L5-C25",
       "q": "What is a bechor?",
-      "a": "The first male offspring of a kosher domestic animal — sanctified from birth; given to a kohen; offered on the altar; eaten by kohanim in Jerusalem within two days and a night.",
+      "a": "A male that is the first to open its mother's womb, of a kosher domestic animal — sanctified from birth; given to a kohen; offered on the altar; eaten by kohanim in Jerusalem within two days and a night.",
       "qHe": "מהו בכור?",
-      "aHe": "זכר ראשון של בהמה טהורה — קדוש מבטן; ניתן לכהן; קרב על המזבח; נאכל לכוהנים בירושלים תוך שני ימים ולילה.",
+      "aHe": "זכר פטר רחם של בהמה טהורה — קדוש מבטן; ניתן לכהן; קרב על המזבח; נאכל לכוהנים בירושלים תוך שני ימים ולילה.",
       "tanach": [
         "Bamidbar 18:17"
       ],
@@ -342,9 +342,9 @@
     {
       "id": "L5-C27",
       "q": "What are nesachim and which korbanot require them?",
-      "a": "Wine libations poured on the altar — required with every olah and shelamim (including the metzora's and nazir's). Not with most chatot or ashamot.",
+      "a": "Wine libations poured on the altar — required with every animal olah and shelamim (including the metzora's and nazir's). Not with bird olot, nor with most chatot or ashamot.",
       "qHe": "מהם נסכים ועם אלו קרבנות הם באים?",
-      "aHe": "ניסוך יין על המזבח — נדרש עם כל עולה ושלמים (כולל של מצורע ונזיר). לא עם רוב חטאות ואשמות.",
+      "aHe": "ניסוך יין על המזבח — נדרש עם כל עולת בהמה ושלמים (כולל של מצורע ונזיר). לא עם עולת העוף ולא עם רוב חטאות ואשמות.",
       "tanach": [
         "Bamidbar 15:4-12"
       ],

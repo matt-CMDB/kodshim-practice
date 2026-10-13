@@ -242,10 +242,12 @@
       "q": "From which species may an asham be brought?",
       "a": "Only from male sheep (kevasim zekharim); never from cattle, goats, or birds.",
       "qHe": "מאיזה מין מביאים אשם?",
-      "aHe": "רק מן הכבשים הזכרים — לא מבקר",
-      "tanach": [],
-      "rambam": [
+      "aHe": "רק מן הכבשים הזכרים — לא מבקר, עזים או עוף.",
+      "tanach": [
         "Vayikra 5:15"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:10"
       ]
     },
     {
@@ -277,10 +279,12 @@
       "q": "What disqualifies an animal from being a korban?",
       "a": "A blemish (mum) — any physical defect listed in the Torah (blindness, broken limb, etc.) renders it pasul.",
       "qHe": "מה פוסל בהמה מקרבן?",
-      "aHe": "מום — כל מום גופני המנוי בתורה (עיוורון",
-      "tanach": [],
-      "rambam": [
+      "aHe": "מום — כל מום גופני המנוי בתורה (עיוורון, שבר וכדומה) פוסל.",
+      "tanach": [
         "Vayikra 22:22"
+      ],
+      "rambam": [
+        "Biat HaMikdash 7:1"
       ]
     }
   ]
