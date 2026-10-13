@@ -40,8 +40,8 @@ window.KODSHIM_LEVELS[3] = {
             ["Metzora", "Three lambs — an asham waved alive, a female lamb as chatat, a male lamb as olah — and a {{he:לֹג שֶׁמֶן}}", "One male lamb as asham (waved alive), two birds — olah and chatat — and a {{he:לֹג שֶׁמֶן}}"],
           ] },
         { type: "cast", items: [
-          { src: "assets/cast/yoledet.png", he: "יוֹלֶדֶת", name: "The yoledet", caption: "Wealthy: a lamb as olah and a bird as chatat. Poor: two birds — one olah, one chatat." },
-          { src: "assets/cast/metzora.png", he: "מְצֹרָע", name: "The metzora", caption: "Rich or poor, a male lamb as asham, waved alive, with a log of oil. The poor man's olah and chatat are birds." },
+          { src: "assets/cast/yoledet.webp", he: "יוֹלֶדֶת", name: "The yoledet", caption: "Wealthy: a lamb as olah and a bird as chatat. Poor: two birds — one olah, one chatat." },
+          { src: "assets/cast/metzora.webp", he: "מְצֹרָע", name: "The metzora", caption: "Rich or poor, a male lamb as asham, waved alive, with a log of oil. The poor man's olah and chatat are birds." },
         ] },
         { type: "callout", title: "A look-alike: the nazir tameh",
           text: "A {{he:נָזִיר}} who became tameh is not one of the four mechusrei kapparah, but his korban looks like theirs: two birds (one olah and one chatat) plus a male lamb as asham — the {{he:אֲשַׁם נָזִיר}}. Keep him in mind; his asham returns in Lesson 4." },
@@ -72,9 +72,9 @@ window.KODSHIM_LEVELS[3] = {
             ["Todah", "A shelamim of thanksgiving", "Survived the sea, the desert, illness, or prison"],
           ] },
         { type: "cast", items: [
-          { src: "assets/cast/nazir.png", he: "נָזִיר", name: "The nazir", caption: "At the end of his vow: a male lamb olah, a female lamb chatat, and a ram as shelamim." },
-          { src: "assets/cast/ger.png", he: "גֵּר", name: "The ger", caption: "An olah — an animal, or two birds, both as olah." },
-          { src: "assets/cast/todah.png", he: "תּוֹדָה", name: "One who was saved", caption: "Back from the sea, the desert, illness, or prison: a korban todah." },
+          { src: "assets/cast/nazir.webp", he: "נָזִיר", name: "The nazir", caption: "At the end of his vow: a male lamb olah, a female lamb chatat, and a ram as shelamim." },
+          { src: "assets/cast/ger.webp", he: "גֵּר", name: "The ger", caption: "An olah — an animal, or two birds, both as olah." },
+          { src: "assets/cast/todah.webp", he: "תּוֹדָה", name: "One who was saved", caption: "Back from the sea, the desert, illness, or prison: a korban todah." },
         ] },
         { type: "callout", title: "Two pattern-breakers",
           text: "Every bird pair in Lesson 1 was one olah and one chatat; the ger's pair is **both olah**. And the sotah's mincha is **barley**, with **no oil and no frankincense** — the same stripped-down pattern as a sinner's mincha ({{he:מִנְחַת חוֹטֵא}}), even though it is a flour offering." },
@@ -99,8 +99,8 @@ window.KODSHIM_LEVELS[3] = {
             ["Kohen gadol on Yom Kippur", "A bull as his personal chatat", "Plus a ram as his personal olah — for himself and his household"],
           ] },
         { type: "cast", items: [
-          { src: "assets/cast/nasi.png", he: "נָשִׂיא", name: "The nasi", caption: "A male goat ({{he:שְׂעִיר עִזִּים}}) as his chatat — the one leader whose chatat is male." },
-          { src: "assets/male-goat.png", he: "שְׂעִיר עִזִּים", name: "His goat", caption: "An ordinary Israelite brings a female goat or a female sheep instead." },
+          { src: "assets/cast/nasi.webp", he: "נָשִׂיא", name: "The nasi", caption: "A male goat ({{he:שְׂעִיר עִזִּים}}) as his chatat — the one leader whose chatat is male." },
+          { src: "assets/male-goat.webp", he: "שְׂעִיר עִזִּים", name: "His goat", caption: "An ordinary Israelite brings a female goat or a female sheep instead." },
         ] },
         { type: "callout", title: "The chavitin — the kohen gadol's daily mincha",
           text: "Every day the kohen gadol brings a mincha of one-tenth ephah of fine flour, **half in the morning and half in the afternoon**, baked on a flat pan ({{he:מַחֲבַת}}) with oil. This is the {{he:חֲבִתִּין}}, the chavitei kohen gadol." },
@@ -149,7 +149,7 @@ window.KODSHIM_LEVELS[3] = {
         },
         { type: "callout", title: "The rule that holds for all six",
           text: "Every asham in this level is a male sheep — usually a ram ({{he:אַיִל}}), and for the nazir and the metzora a lamb ({{he:כֶּבֶשׂ}}). The situation changes; the species and sex do not." },
-        { type: "figure", src: "assets/lamb.png", caption: "A male sheep — the only animal an asham ever comes from: a ram for most ashamot, a lamb for the nazir's and the metzora's." },
+        { type: "figure", src: "assets/lamb.webp", caption: "A male sheep — the only animal an asham ever comes from: a ram for most ashamot, a lamb for the nazir's and the metzora's." },
       ],
     },
     {

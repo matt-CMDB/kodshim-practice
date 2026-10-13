@@ -5,10 +5,10 @@
   const K = () => window.KODSHIM;
 
   const ALL_IMAGES = [
-    "assets/heichal-steps.png", "assets/kohen-gadol-teaching.png", "assets/boy-learning.png",
-    "assets/instruments.png", "assets/test.png", "assets/success.png", "assets/teach-and-learn.png",
-    "assets/calf.png", "assets/cow-male.png", "assets/cow-f.png", "assets/ram.png", "assets/ewe.png",
-    "assets/lamb.png", "assets/male-goat.png", "assets/kid-goat.png",
+    "assets/heichal-steps.webp", "assets/kohen-gadol-teaching.webp", "assets/boy-learning.webp",
+    "assets/instruments.webp", "assets/test.webp", "assets/success.webp", "assets/teach-and-learn.webp",
+    "assets/calf.webp", "assets/cow-male.webp", "assets/cow-f.webp", "assets/ram.webp", "assets/ewe.webp",
+    "assets/lamb.webp", "assets/male-goat.webp", "assets/kid-goat.webp",
   ];
 
   /* ─── Music engine ─────────────────────────────────────────────────── */
@@ -49,9 +49,9 @@
 
   /* ─── Run intro ────────────────────────────────────────────────────── */
   const RUN_COPY = {
-    prove: { eyebrow: "Prove your knowledge", h: "Time to test what you've learned.", p: "Twelve cards drawn from this level — multiple choice, sorting, matching, kosher-or-pasul.", rules: [["Three hearts.", "Each wrong answer costs one."], ["Seventy percent", "correct earns the step and opens the next level."], ["Every card", "goes into your review deck afterward."]], art: "assets/test.png", cta: "Begin" },
-    master: { eyebrow: "Master the level", h: "A harder run. Earlier levels mix in.", p: "Twelve cards, weighted toward the ones you've missed, with a few from the levels below.", rules: [["Three hearts.", "Same as Prove."], ["Eighty-five percent", "to pass — this is the third step and an instrument."], ["Earlier material", "appears without warning."]], art: "assets/teach-and-learn.png", cta: "Begin" },
-    review: { eyebrow: "Review", h: "Keep what you've learned.", p: "Cards that are due, then the ones you find hardest, from every level you've opened.", rules: [["No hearts.", "Nothing to lose but the forgetting."], ["Right answers", "push a card further into the future."], ["Wrong answers", "bring it back tomorrow."]], art: "assets/teach-and-learn.png", cta: "Start review" },
+    prove: { eyebrow: "Prove your knowledge", h: "Time to test what you've learned.", p: "Twelve cards drawn from this level — multiple choice, sorting, matching, kosher-or-pasul.", rules: [["Three hearts.", "Each wrong answer costs one."], ["Seventy percent", "correct earns the step and opens the next level."], ["Every card", "goes into your review deck afterward."]], art: "assets/test.webp", cta: "Begin" },
+    master: { eyebrow: "Master the level", h: "A harder run. Earlier levels mix in.", p: "Twelve cards, weighted toward the ones you've missed, with a few from the levels below.", rules: [["Three hearts.", "Same as Prove."], ["Eighty-five percent", "to pass — this is the third step and an instrument."], ["Earlier material", "appears without warning."]], art: "assets/teach-and-learn.webp", cta: "Begin" },
+    review: { eyebrow: "Review", h: "Keep what you've learned.", p: "Cards that are due, then the ones you find hardest, from every level you've opened.", rules: [["No hearts.", "Nothing to lose but the forgetting."], ["Right answers", "push a card further into the future."], ["Wrong answers", "bring it back tomorrow."]], art: "assets/teach-and-learn.webp", cta: "Start review" },
   };
   function RunIntro({ mode, levelNum, count, onBegin, onBack, onSwitchStage, onAsk }) {
     const c = RUN_COPY[mode];
@@ -106,7 +106,7 @@
         <TopBar levelNum={levelNum} stage={mode === "review" ? "review" : "prove"} onStageChange={onSwitchStage} onExit={onMap} onAsk={onAsk} />
         <div className={passed ? "success-body" : "result"}>
           <div className={passed ? "" : "result-card"}>
-            {passed && mode !== "review" && <img src="assets/success.png" className="success-img" alt="" />}
+            {passed && mode !== "review" && <img src="assets/success.webp" className="success-img" alt="" />}
             <div className="quiz-intro-eyebrow">{mode === "review" ? "Review" : `Level ${K().pad2(levelNum)} · ${mode === "master" ? "Master" : "Prove"}`}</div>
             <h1 className={passed ? "success-h" : "result-h"}>{title}</h1>
             {mode !== "review" && outcome.stars > 0 && <div className="result-stars"><Stars n={outcome.stars} size="lg" /></div>}

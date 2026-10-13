@@ -120,7 +120,7 @@ window.KODSHIM_LEVELS[4] = {
         },
         {
           type: "figure",
-          src: "assets/cow-male.png",
+          src: "assets/cow-male.webp",
           caption: "A par — the chatat of the kohen mashiach, and of the kohen gadol on Yom Kippur. An individual's animal chatat is otherwise female; the exceptions are these two bulls and the male goat of a nasi. (A bird chatat has no sex requirement.)",
         },
         {

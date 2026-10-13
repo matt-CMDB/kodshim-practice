@@ -239,7 +239,7 @@ button { font-family: inherit; cursor: pointer; }
   position: absolute;
   top: 0; bottom: 0; left: 0;
   width: 100%;
-  background: url("assets/heichal-steps.png") center center / cover no-repeat;
+  background: url("assets/heichal-steps.webp") center center / cover no-repeat;
   transition: width 1s cubic-bezier(.65,.05,.2,1),
               background-position 1s cubic-bezier(.65,.05,.2,1);
 }

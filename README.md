@@ -20,6 +20,13 @@ Any static server works (VS Code's Live Server, `npx serve`, etc.). React and
 Babel are vendored under `web-app/vendor/`, so nothing is fetched from a CDN
 except the Google Fonts.
 
+## Online
+
+`.github/workflows/pages.yml` publishes `web-app/` to GitHub Pages on every
+push to `main` (and to the revamp branch) that touches the app. Once Pages is
+enabled for the repository (Settings → Pages → Source: GitHub Actions), the game
+lives at `https://<owner>.github.io/kodshim-practice/`.
+
 ## How it is organized
 
 ```

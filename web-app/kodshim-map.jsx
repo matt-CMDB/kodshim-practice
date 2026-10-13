@@ -58,7 +58,7 @@
     // Feet on the top edge of the step bar (CSS computes it from --step); on the ground when step is 0.
     return (
       <div className={"avatar" + (step === 0 ? " ground" : "")} style={{ "--step": step }} aria-hidden="true">
-        <img src="assets/boy-learning.png" alt="" />
+        <img src="assets/boy-learning.webp" alt="" />
       </div>
     );
   }
@@ -347,7 +347,7 @@
       <div className="intro intro-tutorial map-scene">
         <div className="heichal-backdrop" />
         <div className="figure figure-left">
-          <img src="assets/kohen-gadol-teaching.png" alt="The kohen gadol teaching" className="figure-img" />
+          <img src="assets/kohen-gadol-teaching.webp" alt="The kohen gadol teaching" className="figure-img" />
           <KohenBubble summary={summary} />
         </div>
 

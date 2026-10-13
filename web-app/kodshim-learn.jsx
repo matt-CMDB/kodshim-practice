@@ -123,7 +123,7 @@ const SlideIntro = {
         </div>
       </div>
       <div className="intro-art" style={{ width: "306px" }}>
-        <img src="assets/boy-learning.png" alt="A student preparing to learn" style={{ width: "306px", height: "600px" }} />
+        <img src="assets/boy-learning.webp" alt="A student preparing to learn" style={{ width: "306px", height: "600px" }} />
       </div>
     </div>
 
@@ -235,7 +235,7 @@ const NAMES_ROWS = [
 
 const NAMES_CELLS = {
   "young-cow": {
-    img: "calf.png", he: "עֵגֶל", tl: "egel", en: "calf",
+    img: "calf.webp", he: "עֵגֶל", tl: "egel", en: "calf",
     species: "cattle", stage: "young",
     age: "Day 8 — end of year 1",
     ageNote: "Eligible from the 8th day of life; called egel through its first year.",
@@ -245,7 +245,7 @@ const NAMES_CELLS = {
     ]
   },
   "young-sheep": {
-    img: "lamb.png", he: "כֶּבֶשׂ", tl: "keves", en: "lamb",
+    img: "lamb.webp", he: "כֶּבֶשׂ", tl: "keves", en: "lamb",
     species: "sheep", stage: "young",
     age: "Day 8 — end of year 1",
     ageNote: "A keves / kavsa / kevasim is always a one‑year‑old.",
@@ -257,7 +257,7 @@ const NAMES_CELLS = {
     ]
   },
   "young-goat": {
-    img: "kid-goat.png", he: "גְּדִי", tl: "gedi", en: "kid",
+    img: "kid-goat.webp", he: "גְּדִי", tl: "gedi", en: "kid",
     species: "goats", stage: "young",
     age: "Day 8 — end of year 1",
     ageNote: "A se'ir izim ben shanah — a one‑year‑old male goat.",
@@ -267,7 +267,7 @@ const NAMES_CELLS = {
     ]
   },
   "male-cow": {
-    img: "cow-male.png", he: "פַּר", tl: "par", en: "bull (also: שׁוֹר shor)",
+    img: "cow-male.webp", he: "פַּר", tl: "par", en: "bull (also: שׁוֹר shor)",
     species: "cattle", stage: "adult male",
     age: "Year 2 — through age 3",
     ageNote: "A par is two years old; cattle remain eligible until their third year ends.",
@@ -279,7 +279,7 @@ const NAMES_CELLS = {
     ]
   },
   "male-sheep": {
-    img: "ram.png", he: "אַיִל", tl: "ayil", en: "ram (from day 31 of yr 2)",
+    img: "ram.webp", he: "אַיִל", tl: "ayil", en: "ram (from day 31 of yr 2)",
     species: "sheep", stage: "adult male",
     age: "Day 31 of year 2 — end of year 2",
     ageNote: "Called ayil only from the 31st day of its second year onward.",
@@ -291,7 +291,7 @@ const NAMES_CELLS = {
     ]
   },
   "male-goat": {
-    img: "male-goat.png", he: "תַּיִשׁ", tl: "tayish", en: "he-goat (also: שָׂעִיר sa'ir)",
+    img: "male-goat.webp", he: "תַּיִשׁ", tl: "tayish", en: "he-goat (also: שָׂעִיר sa'ir)",
     species: "goats", stage: "adult male",
     age: "Year 2 (1 – 2 years)",
     ageNote: "A sa'ir is two years old; throughout its second year called sa'ir.",
@@ -302,7 +302,7 @@ const NAMES_CELLS = {
     ]
   },
   "female-cow": {
-    img: "cow-f.png", he: "פָּרָה", tl: "parah", en: "cow",
+    img: "cow-f.webp", he: "פָּרָה", tl: "parah", en: "cow",
     species: "cattle", stage: "adult female",
     age: "Year 2 — through age 3",
     ageNote: "Cattle females share the same eligibility window as males.",
@@ -312,7 +312,7 @@ const NAMES_CELLS = {
     ]
   },
   "female-sheep": {
-    img: "ewe.png", he: "רָחֵל", tl: "rachel", en: "ewe (also: כַּבְשָׂה kavsa)",
+    img: "ewe.webp", he: "רָחֵל", tl: "rachel", en: "ewe (also: כַּבְשָׂה kavsa)",
     species: "sheep", stage: "adult female",
     age: "From day 31 of year 2 — end of year 2",
     ageNote: "An adult ewe shares the ayil age window.",
@@ -323,7 +323,7 @@ const NAMES_CELLS = {
     ]
   },
   "female-goat": {
-    img: "female-goat-never-used.png", he: "עֵז", tl: "ez", en: "she-goat (also: שְׂעִירָה se'irah)",
+    img: "female-goat-never-used.webp", he: "עֵז", tl: "ez", en: "she-goat (also: שְׂעִירָה se'irah)",
     species: "goats", stage: "adult female",
     age: "Year 2 (1 – 2 years)",
     ageNote: "Shares the sa'ir age window.",
@@ -551,7 +551,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "any of the five" },
   { k: "Age", v: "any valid age" }],
 
-  pics: ["cow-male.png", "ram.png", "male-goat.png"]
+  pics: ["cow-male.webp", "ram.webp", "male-goat.webp"]
 },
 { he: "שְׁלָמִים", en: "Shlamim",
   rules: [
@@ -559,7 +559,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "mammals only — no birds" },
   { k: "Age", v: "any valid age" }],
 
-  pics: ["cow-f.png", "ewe.png", "female-goat-never-used.png"]
+  pics: ["cow-f.webp", "ewe.webp", "female-goat-never-used.webp"]
 },
 { he: "אָשָׁם", en: "Asham",
   rules: [
@@ -567,7 +567,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "sheep only — never cattle, goats, birds" },
   { k: "Age", v: "usually adult (ayil); metzora's asham is a keves" }],
 
-  pics: ["ram.png", "lamb.png"]
+  pics: ["ram.webp", "lamb.webp"]
 },
 { he: "חַטָּאת יָחִיד", en: "Chatat (individual)",
   rules: [
@@ -575,7 +575,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "any of the five" },
   { k: "Exceptions", v: "nasi (male goat); kohen mashiach & KG on Yom Kippur (bull)" }],
 
-  pics: ["ewe.png", "female-goat-never-used.png"]
+  pics: ["ewe.webp", "female-goat-never-used.webp"]
 }];
 
 const SlideMatch = {

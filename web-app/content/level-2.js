@@ -123,7 +123,7 @@ window.KODSHIM_LEVELS[2] = {
         },
         {
           type: "figure",
-          src: "assets/lamb.png",
+          src: "assets/lamb.webp",
           caption: "A keves. Only sheep have the alyah, the fat tail — so only for sheep is it part of the eimurin.",
         },
         {

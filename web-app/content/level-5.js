@@ -49,7 +49,7 @@ window.KODSHIM_LEVELS[5] = {
             ["Chatat", "None", "One goat"],
             ["Replaces the tamid?", "No — added to it", "No — added to it"],
           ] },
-        { type: "figure", src: "assets/lamb.png", caption: "A keves. Two of these are the tamid every day, and two more are the musaf of Shabbat." },
+        { type: "figure", src: "assets/lamb.webp", caption: "A keves. Two of these are the tamid every day, and two more are the musaf of Shabbat." },
       ],
     },
 
@@ -81,7 +81,7 @@ window.KODSHIM_LEVELS[5] = {
           "**The musaf of the day:** a bull, a ram, seven lambs as olot, and a goat chatat.",
         ] },
         { type: "callout", title: "The se'ir hamishtaleach", text: "Of the two communal goats, one is the {{he:שָׂעִיר הַמִּשְׁתַּלֵּחַ}}. The kohen gadol confesses over it, and it is sent out to the wilderness — to Azazel — rather than slaughtered on the altar." },
-        { type: "figure", src: "assets/male-goat.png", caption: "A sa'ir. The communal chatat for idolatry, the Rosh Chodesh chatat, and both Yom Kippur goats are all male goats." },
+        { type: "figure", src: "assets/male-goat.webp", caption: "A sa'ir. The communal chatat for idolatry, the Rosh Chodesh chatat, and both Yom Kippur goats are all male goats." },
       ],
     },
 
@@ -190,7 +190,7 @@ window.KODSHIM_LEVELS[5] = {
           { he: "חֲגִיגָה", tl: "chagigah", en: "festival shelamim", text: "A shelamim brought by every adult male on each of the three festivals when he comes to the Mikdash." },
           { he: "חֲגִיגַת אַרְבָּעָה עָשָׂר", tl: "chagigat arba'ah asar", en: "the shelamim of 14 Nissan", text: "A shelamim brought with the pesach when the chaburah is large — so the pesach can be eaten {{he:עַל הַשֹּׂבַע}}, on a full stomach." },
         ] },
-        { type: "figure", src: "assets/kid-goat.png", caption: "A gedi. The korban pesach may be a lamb or a kid — male, and no older than one year." },
+        { type: "figure", src: "assets/kid-goat.webp", caption: "A gedi. The korban pesach may be a lamb or a kid — male, and no older than one year." },
       ],
     },
 

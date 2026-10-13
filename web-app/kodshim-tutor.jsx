@@ -54,7 +54,7 @@
     return (
       <aside className="tutor" aria-label="Ask the kohen">
         <div className="tutor-head">
-          <img src="assets/kohen-gadol-teaching.png" alt="" />
+          <img src="assets/kohen-gadol-teaching.webp" alt="" />
           <div className="t"><b>Ask the kohen</b><span>Level {K().pad2(levelNum)} · {L ? L.name : ""}</span></div>
           <button type="button" className="modal-close" onClick={onClose} aria-label="Close">×</button>
         </div>

@@ -136,7 +136,7 @@
           </div>
         </div>
         <div className="intro-art">
-          <img src="assets/boy-learning.png" alt="A student preparing to learn" />
+          <img src="assets/boy-learning.webp" alt="A student preparing to learn" />
         </div>
       </div>
     );

@@ -1,8 +1,8 @@
 // Intro scenes: cold-open welcome → tutorial / step map.
 // Uses real cartoon art:
-//   assets/heichal-steps.png         — backdrop (Heichal + steps)
-//   assets/kohen-gadol-teaching.png  — left figure on tutorial scene
-//   assets/boy-learning.png          — right figure on tutorial scene
+//   assets/heichal-steps.webp         — backdrop (Heichal + steps)
+//   assets/kohen-gadol-teaching.webp  — left figure on tutorial scene
+//   assets/boy-learning.webp          — right figure on tutorial scene
 
 const { useState: useStateI, useEffect: useEffectI, useRef: useRefI } = React;
 
@@ -184,7 +184,7 @@ function WelcomeScene({ levels, onContinue, onOpenMusic }) {
       <div className="heichal-backdrop" />
       <div className="teaching-pane">
         <img
-          src="assets/kohen-gadol-teaching.png"
+          src="assets/kohen-gadol-teaching.webp"
           alt="The kohen gadol teaching a kohen hedyot"
           className="teaching-img"
         />
@@ -245,14 +245,14 @@ function TutorialScene({ levels, showCard, onDismissCard, onShowCard, onSelectSt
 
       <div className="figure figure-left">
         <img
-          src="assets/kohen-gadol-teaching.png"
+          src="assets/kohen-gadol-teaching.webp"
           alt="The kohen gadol teaching"
           className="figure-img"
         />
       </div>
       <div className="figure figure-right">
         <img
-          src="assets/boy-learning.png"
+          src="assets/boy-learning.webp"
           alt="A student learning"
           className="figure-img"
         />
@@ -374,7 +374,7 @@ function MusicCard({ music, onClose }) {
 
         <div className="music-modal-body">
           <img
-            src="assets/instruments.png"
+            src="assets/instruments.webp"
             alt="The five instruments of the Levi'im"
             className="music-modal-img"
           />
