@@ -123,7 +123,7 @@ const SlideIntro = {
         </div>
       </div>
       <div className="intro-art" style={{ width: "306px" }}>
-        <img src="assets/boy-learning.png" alt="A student preparing to learn" style={{ width: "306px", height: "600px" }} />
+        <img src="assets/boy-learning.webp" alt="A student preparing to learn" style={{ width: "306px", height: "600px" }} />
       </div>
     </div>
 
@@ -235,7 +235,7 @@ const NAMES_ROWS = [
 
 const NAMES_CELLS = {
   "young-cow": {
-    img: "calf.png", he: "עֵגֶל", tl: "egel", en: "calf",
+    img: "calf.webp", he: "עֵגֶל", tl: "egel", en: "calf",
     species: "cattle", stage: "young",
     age: "Day 8 — end of year 1",
     ageNote: "Eligible from the 8th day of life; called egel through its first year.",
@@ -245,7 +245,7 @@ const NAMES_CELLS = {
     ]
   },
   "young-sheep": {
-    img: "lamb.png", he: "כֶּבֶשׂ", tl: "keves", en: "lamb",
+    img: "lamb.webp", he: "כֶּבֶשׂ", tl: "keves", en: "lamb",
     species: "sheep", stage: "young",
     age: "Day 8 — end of year 1",
     ageNote: "A keves / kavsa / kevasim is always a one‑year‑old.",
@@ -257,7 +257,7 @@ const NAMES_CELLS = {
     ]
   },
   "young-goat": {
-    img: "kid-goat.png", he: "גְּדִי", tl: "gedi", en: "kid",
+    img: "kid-goat.webp", he: "גְּדִי", tl: "gedi", en: "kid",
     species: "goats", stage: "young",
     age: "Day 8 — end of year 1",
     ageNote: "A se'ir izim ben shanah — a one‑year‑old male goat.",
@@ -267,7 +267,7 @@ const NAMES_CELLS = {
     ]
   },
   "male-cow": {
-    img: "cow-male.png", he: "פַּר", tl: "par", en: "bull (also: שׁוֹר shor)",
+    img: "cow-male.webp", he: "פַּר", tl: "par", en: "bull (also: שׁוֹר shor)",
     species: "cattle", stage: "adult male",
     age: "Year 2 — through age 3",
     ageNote: "A par is two years old; cattle remain eligible until their third year ends.",
@@ -279,7 +279,7 @@ const NAMES_CELLS = {
     ]
   },
   "male-sheep": {
-    img: "ram.png", he: "אַיִל", tl: "ayil", en: "ram (from day 31 of yr 2)",
+    img: "ram.webp", he: "אַיִל", tl: "ayil", en: "ram (from day 31 of yr 2)",
     species: "sheep", stage: "adult male",
     age: "Day 31 of year 2 — end of year 2",
     ageNote: "Called ayil only from the 31st day of its second year onward.",
@@ -291,7 +291,7 @@ const NAMES_CELLS = {
     ]
   },
   "male-goat": {
-    img: "male-goat.png", he: "תַּיִשׁ", tl: "tayish", en: "he-goat (also: שָׂעִיר sa'ir)",
+    img: "male-goat.webp", he: "תַּיִשׁ", tl: "tayish", en: "he-goat (also: שָׂעִיר sa'ir)",
     species: "goats", stage: "adult male",
     age: "Year 2 (1 – 2 years)",
     ageNote: "A sa'ir is two years old; throughout its second year called sa'ir.",
@@ -302,7 +302,7 @@ const NAMES_CELLS = {
     ]
   },
   "female-cow": {
-    img: "cow-f.png", he: "פָּרָה", tl: "parah", en: "cow",
+    img: "cow-f.webp", he: "פָּרָה", tl: "parah", en: "cow",
     species: "cattle", stage: "adult female",
     age: "Year 2 — through age 3",
     ageNote: "Cattle females share the same eligibility window as males.",
@@ -312,7 +312,7 @@ const NAMES_CELLS = {
     ]
   },
   "female-sheep": {
-    img: "ewe.png", he: "רָחֵל", tl: "rachel", en: "ewe (also: כַּבְשָׂה kavsa)",
+    img: "ewe.webp", he: "רָחֵל", tl: "rachel", en: "ewe (also: כַּבְשָׂה kavsa)",
     species: "sheep", stage: "adult female",
     age: "From day 31 of year 2 — end of year 2",
     ageNote: "An adult ewe shares the ayil age window.",
@@ -323,7 +323,7 @@ const NAMES_CELLS = {
     ]
   },
   "female-goat": {
-    img: "female-goat-never-used.png", he: "עֵז", tl: "ez", en: "she-goat (also: שְׂעִירָה se'irah)",
+    img: "female-goat-never-used.webp", he: "עֵז", tl: "ez", en: "she-goat (also: שְׂעִירָה se'irah)",
     species: "goats", stage: "adult female",
     age: "Year 2 (1 – 2 years)",
     ageNote: "Shares the sa'ir age window.",
@@ -551,7 +551,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "any of the five" },
   { k: "Age", v: "any valid age" }],
 
-  pics: ["cow-male.png", "ram.png", "male-goat.png"]
+  pics: ["cow-male.webp", "ram.webp", "male-goat.webp"]
 },
 { he: "שְׁלָמִים", en: "Shlamim",
   rules: [
@@ -559,7 +559,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "mammals only — no birds" },
   { k: "Age", v: "any valid age" }],
 
-  pics: ["cow-f.png", "ewe.png", "female-goat-never-used.png"]
+  pics: ["cow-f.webp", "ewe.webp", "female-goat-never-used.webp"]
 },
 { he: "אָשָׁם", en: "Asham",
   rules: [
@@ -567,7 +567,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "sheep only — never cattle, goats, birds" },
   { k: "Age", v: "usually adult (ayil); metzora's asham is a keves" }],
 
-  pics: ["ram.png", "lamb.png"]
+  pics: ["ram.webp", "lamb.webp"]
 },
 { he: "חַטָּאת יָחִיד", en: "Chatat (individual)",
   rules: [
@@ -575,7 +575,7 @@ const MATCH_PANELS = [
   { k: "Species", v: "any of the five" },
   { k: "Exceptions", v: "nasi (male goat); kohen mashiach & KG on Yom Kippur (bull)" }],
 
-  pics: ["ewe.png", "female-goat-never-used.png"]
+  pics: ["ewe.webp", "female-goat-never-used.webp"]
 }];
 
 const SlideMatch = {
@@ -860,7 +860,7 @@ function NameCellZoom({ cellKey, onClose }) {
 /* ═══════════════════════════════════════════════════════════════════ */
 /*  LearnScreen                                                        */
 /* ═══════════════════════════════════════════════════════════════════ */
-function LearnScreen({ onDone, onBack, onSwitchStage }) {
+function LearnScreen({ levelNum = 1, onDone, onBack, onSwitchStage, onAsk }) {
   const [slideIdx, setSlideIdx] = useStateLV(0);
   const [reveal, setReveal] = useStateLV(0);
   const [drawerOpen, setDrawerOpen] = useStateLV(false);
@@ -940,10 +940,12 @@ function LearnScreen({ onDone, onBack, onSwitchStage }) {
   return (
     <div className="learn">
       <TopBar
+        levelNum={levelNum}
         stage="learn"
         onStageChange={onSwitchStage}
-        onExit={onBack} />
-      
+        onExit={onBack}
+        onAsk={onAsk} />
+
 
       <div className="slide-area" ref={slideAreaRef}>
         <div className="slide-head">
@@ -1040,178 +1042,53 @@ function LearnScreen({ onDone, onBack, onSwitchStage }) {
 const STAGES = [
 { id: "learn", num: "01", label: "Learn" },
 { id: "prove", num: "02", label: "Prove" },
-{ id: "review", num: "03", label: "Review" }];
+{ id: "master", num: "03", label: "Master" }];
 
 
-function TopBar({ stage, onStageChange, onExit, onMusic }) {
+function TopBar({ levelNum = 1, stage, onStageChange, onExit, onAsk }) {
+  const K = window.KODSHIM;
+  const L = K.level(levelNum) || {};
+  const st = K.levelState(levelNum);
+  const canMaster = !!st.prove.passed;
+  const pad = K.pad2(levelNum);
   return (
     <div className="topbar">
       <div className="brand">
         <span className="brand-mark">קדשים</span>
         <span className="brand-sep" />
         <span className="brand-title">
-          <span className="num">LVL 01</span>
+          <span className="num">LVL {pad}</span>
         </span>
       </div>
 
       <div className="stage-wrap">
-        <div className="stage-label">Level 01 · Animals for Korbanos</div>
+        <div className="stage-label">{stage === "review" ? "Review · all levels" : `Level ${pad} · ${L.name || ""}`}</div>
         <div className="stage-bricks" role="tablist" aria-label="Stage selector">
-          {STAGES.map((s) =>
-          <button
-            key={s.id}
-            type="button"
-            role="tab"
-            aria-selected={stage === s.id}
-            className={"brick" + (stage === s.id ? " active" : "")}
-            onClick={() => onStageChange && onStageChange(s.id)}
-            title={s.label}>
-            
-              <span className="brick-num">{s.num}</span>
-              <span className="brick-name">{s.label}</span>
-            </button>
-          )}
+          {STAGES.map((s) => {
+            const off = s.id === "master" && !canMaster;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                role="tab"
+                aria-selected={stage === s.id}
+                className={"brick" + (stage === s.id ? " active" : "") + (off ? " off" : "")}
+                disabled={off}
+                onClick={() => onStageChange && onStageChange(s.id)}
+                title={off ? "Prove the level first" : s.label}>
+                <span className="brick-num">{s.num}</span>
+                <span className="brick-name">{s.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
       <div className="topbar-actions">
-        {onMusic &&
-        <button type="button" className="icon-btn" onClick={onMusic} title="Music">♪</button>
+        {onAsk &&
+        <button type="button" className="icon-btn ask" onClick={onAsk} title="Ask the kohen"><span className="ico">?</span><span>Ask</span></button>
         }
         <button type="button" className="icon-btn exit" onClick={onExit} title="Exit to the steps" aria-label="Exit">×</button>
-      </div>
-    </div>);
-
-}
-
-/* ═══════════════════════════════════════════════════════════════════ */
-/*  Quiz intro splash                                                  */
-/* ═══════════════════════════════════════════════════════════════════ */
-function QuizIntroScreen({ onBegin, onBack, onSwitchStage }) {
-  useEffectLV(() => {
-    const onKey = (e) => {
-      if (e.key !== "Enter") return;
-      if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")) return;
-      onBegin();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onBegin]);
-
-  return (
-    <div className="quiz">
-      <TopBar stage="prove" onStageChange={onSwitchStage} onExit={onBack} />
-      <div className="quiz-intro">
-        <div className="quiz-intro-art">
-          <img src="assets/test.png" alt="Time to prove yourself" />
-        </div>
-        <div className="quiz-intro-text">
-          <div className="quiz-intro-eyebrow">Level 01 · Prove Your Knowledge</div>
-          <h1 className="quiz-intro-h">Time to test what you've learned.</h1>
-          <p className="quiz-intro-p">
-            A mix of multiple-choice, sorting, and matching cards drawn from
-            the six lessons you just walked through.
-          </p>
-          <ul className="quiz-intro-rules">
-            <li><b>Three hearts.</b> Each wrong answer costs one.</li>
-            <li><b>Seventy percent</b> correct earns the step.</li>
-            <li><b>Earlier material</b> may resurface in later levels.</li>
-          </ul>
-          <div className="quiz-intro-actions">
-            <button type="button" className="btn" onClick={onBack}>Back to the steps</button>
-            <button type="button" className="btn primary gold" onClick={onBegin}>
-              <span>Begin</span>
-              <span className="arrow">→</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>);
-
-}
-
-/* ═══════════════════════════════════════════════════════════════════ */
-/*  Result screen                                                      */
-/* ═══════════════════════════════════════════════════════════════════ */
-function ResultScreen({ passed, hearts, total, correct, onMap, onRetry, onSwitchStage }) {
-  useEffectLV(() => {
-    const onKey = (e) => {
-      if (e.key !== "Enter") return;
-      if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")) return;
-      onRetry();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onRetry]);
-
-  return (
-    <div className="quiz">
-      <TopBar stage="prove" onStageChange={onSwitchStage} onExit={onMap} />
-      <div className="result">
-        <div className="result-card">
-          <div className="quiz-intro-eyebrow">Level 01 · Verdict</div>
-          <h1 className="result-h">{passed ? "Proven." : "Not yet."}</h1>
-          <p className="result-p">
-            {passed ?
-            "You're ready to climb to Level 02." :
-            "Try again — every wrong answer was a chance to remember better."}
-          </p>
-          <div className="result-stats">
-            <div className="result-stat">
-              <span className="v">{correct}/{total}</span>
-              <span className="l">Correct</span>
-            </div>
-            <div className="result-stat">
-              <span className="v">{Math.round(correct / total * 100)}%</span>
-              <span className="l">Score</span>
-            </div>
-            <div className="result-stat">
-              <span className="v">{hearts}</span>
-              <span className="l">Hearts left</span>
-            </div>
-          </div>
-          <div className="result-actions">
-            <button className="btn" onClick={onMap}>Back to the steps</button>
-            <button className="btn primary gold" onClick={onRetry}>
-              <span>{passed ? "Continue" : "Try again"}</span>
-              <span className="arrow">→</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>);
-
-}
-
-/* ═══════════════════════════════════════════════════════════════════ */
-/*  Review screen (placeholder until earlier-material cards exist)     */
-/* ═══════════════════════════════════════════════════════════════════ */
-function ReviewScreen({ onSwitchStage, onBack }) {
-  return (
-    <div className="review">
-      <TopBar stage="review" onStageChange={onSwitchStage} onExit={onBack} />
-      <div className="review-body">
-        <div className="review-card">
-          <div className="quiz-intro-eyebrow">Level 01 · Review</div>
-          <h2 className="review-h">Spaced-review cards live here.</h2>
-          <p className="review-p">
-            Once you've finished a level, the words and concepts you've
-            already met start mixing in with the new ones — so old material
-            doesn't quietly slip away. There's nothing to review yet from
-            Level 01.
-          </p>
-          <div className="review-coming">Coming soon</div>
-          <div className="result-actions" style={{ marginTop: 14 }}>
-            <button type="button" className="btn" onClick={() => onSwitchStage("learn")}>
-              <span className="arrow">←</span>
-              <span>Back to Learn</span>
-            </button>
-            <button type="button" className="btn primary" onClick={() => onSwitchStage("prove")}>
-              <span>Go to Prove</span>
-              <span className="arrow">→</span>
-            </button>
-          </div>
-        </div>
       </div>
     </div>);
 
@@ -1253,43 +1130,4 @@ function Confetti() {
   );
 }
 
-/* ─── Success screen ──────────────────────────────────────────────── */
-function SuccessScreen({ hearts, correct, total, onMap, onRetry, onSwitchStage }) {
-  const missed = total - correct;
-
-  useEffectLV(() => {
-    const onKey = (e) => {
-      if (e.key !== "Enter") return;
-      if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")) return;
-      onRetry();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onRetry]);
-
-  return (
-    <div className="quiz">
-      <Confetti />
-      <TopBar stage="prove" onStageChange={onSwitchStage} onExit={onMap} />
-      <div className="success-body">
-        <img src="assets/success.png" className="success-img" alt="" />
-        <div className="quiz-intro-eyebrow">Level 01 · Complete</div>
-        <h1 className="success-h">Well done.</h1>
-        <p className="result-p">
-          {missed === 0
-            ? "You answered every question correctly. Outstanding."
-            : `You finished with ${hearts} heart${hearts !== 1 ? "s" : ""} to spare — ready to move on.`}
-        </p>
-        <div className="result-actions">
-          <button type="button" className="btn" onClick={onMap}>Back to the steps</button>
-          <button type="button" className="btn primary gold" onClick={onRetry}>
-            <span>Continue</span>
-            <span className="arrow">→</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-Object.assign(window, { LearnScreen, QuizIntroScreen, ResultScreen, TopBar, ReviewScreen, SuccessScreen });
+Object.assign(window, { LearnScreen, TopBar, Confetti, SourceScroll });

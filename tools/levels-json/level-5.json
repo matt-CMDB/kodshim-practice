@@ -1,0 +1,419 @@
+{
+  "num": 5,
+  "name": "Communal korbanot and kodashim kalim",
+  "concepts": [
+    {
+      "id": "L5-C01",
+      "q": "What is the tamid offering?",
+      "a": "Two lambs daily — one each morning and one each afternoon — with their accompanying mincha and nesachim.",
+      "qHe": "מהו קרבן התמיד?",
+      "aHe": "שני כבשים בכל יום — אחד בבוקר ואחד בין הערביים — עם מנחתם ונסכיהם.",
+      "tanach": [
+        "Bamidbar 28:3-4"
+      ],
+      "rambam": [
+        "Temidin uMusafin 1:1"
+      ]
+    },
+    {
+      "id": "L5-C02",
+      "q": "What accompanies each tamid lamb?",
+      "a": "A mincha of one-tenth ephah fine flour mixed with one-quarter hin of oil; and a wine libation of one-quarter hin.",
+      "qHe": "מה מלווה כל כבש תמיד?",
+      "aHe": "מנחת עשירית האיפה סולת בלולה ברביעית ההין שמן; ונסך יין רביעית ההין.",
+      "tanach": [
+        "Bamidbar 28:5-7"
+      ],
+      "rambam": [
+        "Temidin uMusafin 2:1"
+      ]
+    },
+    {
+      "id": "L5-C03",
+      "q": "What are musafin?",
+      "a": "Additional communal offerings on Shabbat, Rosh Chodesh, and the festivals — beyond the daily tamid.",
+      "qHe": "מהם המוספים?",
+      "aHe": "קרבנות ציבור נוספים בשבת, ראש חודש, ומועדים — מעבר לתמיד.",
+      "tanach": [
+        "Bamidbar 28:9-10"
+      ],
+      "rambam": [
+        "Temidin uMusafin 4:1"
+      ]
+    },
+    {
+      "id": "L5-C04",
+      "q": "What is the musaf of Shabbat?",
+      "a": "Two lambs as olah — in addition to the daily tamid.",
+      "qHe": "מהו מוסף שבת?",
+      "aHe": "שני כבשים לעולה — נוסף על התמיד.",
+      "tanach": [
+        "Bamidbar 28:9"
+      ],
+      "rambam": [
+        "Temidin uMusafin 4:2"
+      ]
+    },
+    {
+      "id": "L5-C05",
+      "q": "What is the musaf of Rosh Chodesh?",
+      "a": "Two bulls, one ram, seven lambs as olot; and one goat as a chatat.",
+      "qHe": "מהו מוסף ראש חודש?",
+      "aHe": "שני פרים, איל אחד, שבעה כבשים לעולה; ושעיר אחד לחטאת.",
+      "tanach": [
+        "Bamidbar 28:11-15"
+      ],
+      "rambam": [
+        "Temidin uMusafin 4:3"
+      ]
+    },
+    {
+      "id": "L5-C06",
+      "q": "What is the par he'elem davar?",
+      "a": "A bull brought as a chatat when the Sanhedrin issued an erroneous ruling and the majority of Israel acted on it inadvertently.",
+      "qHe": "מהו פר העלם דבר?",
+      "aHe": "פר הבא לחטאת כשהורתה הסנהדרין בטעות ועשה רוב ישראל על פיהם בשגגה.",
+      "tanach": [
+        "Vayikra 4:13-14"
+      ],
+      "rambam": [
+        "Shegagot 12:1"
+      ]
+    },
+    {
+      "id": "L5-C07",
+      "q": "What are the se'irei avodah zarah?",
+      "a": "Goat chatot brought communally when the majority of Israel inadvertently engaged in idolatry based on an erroneous Sanhedrin ruling.",
+      "qHe": "מהם שעירי עבודה זרה?",
+      "aHe": "שעירי חטאת שמביא הציבור כשטעו בעבודה זרה על פי הוראת הסנהדרין.",
+      "tanach": [
+        "Bamidbar 15:24"
+      ],
+      "rambam": [
+        "Shegagot 12:1"
+      ]
+    },
+    {
+      "id": "L5-C08",
+      "q": "What korbanot does the kohen gadol bring on Yom Kippur?",
+      "a": "Personal: a bull and a ram. Communal: two se'irim (one slaughtered, one to Azazel) and a ram olah; plus the regular tamid and a special musaf (bull + seven lambs + goat).",
+      "qHe": "אלו קרבנות מקריב כהן גדול ביום הכיפורים?",
+      "aHe": "אישית: פר ואיל. ציבור: שני שעירים (אחד נשחט ואחד לעזאזל) ואיל לעולה; ועוד תמיד ומוסף — פר ושבעה כבשים ושעיר.",
+      "tanach": [
+        "Vayikra 16:3-5"
+      ],
+      "rambam": [
+        "Avodat Yom HaKippurim 1:1"
+      ]
+    },
+    {
+      "id": "L5-C09",
+      "q": "What is the se'ir hamishtaleach?",
+      "a": "The Yom Kippur goat confessed upon by the kohen gadol and sent to the wilderness (to Azazel).",
+      "qHe": "מהו שעיר המשתלח?",
+      "aHe": "שעיר שמתוודה עליו כהן גדול ביום הכיפורים ונשלח לעזאזל המדברה.",
+      "tanach": [
+        "Vayikra 16:21-22"
+      ],
+      "rambam": [
+        "Avodat Yom HaKippurim 3:14"
+      ]
+    },
+    {
+      "id": "L5-C10",
+      "q": "What are the shtei halechem of Shavuot?",
+      "a": "Two loaves of leavened wheat bread (chametz) brought as bikurim on Shavuot, with two lambs as communal shelamim — the only communal shelamim of the year.",
+      "qHe": "מהן שתי הלחם של שבועות?",
+      "aHe": "שתי כיכרות לחם חמץ של חיטה ביכורים בשבועות עם שני כבשים לשלמי ציבור — היחידים של השנה.",
+      "tanach": [
+        "Vayikra 23:17"
+      ],
+      "rambam": [
+        "Temidin uMusafin 8:1"
+      ]
+    },
+    {
+      "id": "L5-C11",
+      "q": "What is the omer?",
+      "a": "A barley mincha brought by the community on the 16th of Nissan; permits eating of the new grain (chadash).",
+      "qHe": "מהו העומר?",
+      "aHe": "מנחת שעורים של ציבור בט״ז בניסן; מתיר את החדש.",
+      "tanach": [
+        "Vayikra 23:10-11"
+      ],
+      "rambam": [
+        "Temidin uMusafin 7:3"
+      ]
+    },
+    {
+      "id": "L5-C12",
+      "q": "What is the lechem hapanim?",
+      "a": "Twelve unleavened wheat loaves arranged in two stacks on the golden table; replaced every Shabbat; old loaves are eaten by the kohanim.",
+      "qHe": "מהו לחם הפנים?",
+      "aHe": "שנים עשר חלות מצה של חיטה בשתי מערכות על שולחן הזהב; מתחלפות בכל שבת; הישנות נאכלות לכוהנים.",
+      "tanach": [
+        "Vayikra 24:5-9"
+      ],
+      "rambam": [
+        "Temidin uMusafin 5:1"
+      ]
+    },
+    {
+      "id": "L5-C13",
+      "q": "What two bowls of frankincense accompany the lechem hapanim?",
+      "a": "Two bazichei levonah — placed beside the two stacks; burned on Shabbat when the bread is changed.",
+      "qHe": "מה שני בזיכים מלווים את לחם הפנים?",
+      "aHe": "שני בזיכי לבונה — אחד לכל מערכת; מוקטרים בשבת בהחלפת הלחם.",
+      "tanach": [
+        "Vayikra 24:7"
+      ],
+      "rambam": [
+        "Temidin uMusafin 5:2"
+      ]
+    },
+    {
+      "id": "L5-C14",
+      "q": "What is a korban pesach?",
+      "a": "A male lamb or kid up to one year old slaughtered on the afternoon of 14 Nissan; eaten roasted that night with matzah and maror.",
+      "qHe": "מהו קרבן הפסח?",
+      "aHe": "כבש או גדי זכר בן שנה הנשחט בי״ד בניסן בין הערביים; נאכל צלי בלילה עם מצה ומרור.",
+      "tanach": [
+        "Shemot 12:3-5"
+      ],
+      "rambam": [
+        "Korban Pesach 1:1"
+      ]
+    },
+    {
+      "id": "L5-C15",
+      "q": "Until what time may the korban pesach be eaten?",
+      "a": "Until midnight (the practical halacha).",
+      "qHe": "עד מתי מותר לאכול קרבן הפסח?",
+      "aHe": "עד חצות הלילה.",
+      "tanach": [
+        "Shemot 12:10"
+      ],
+      "rambam": [
+        "Korban Pesach 8:15"
+      ]
+    },
+    {
+      "id": "L5-C16",
+      "q": "What is the pesach sheni?",
+      "a": "A second pesach offering on 14 Iyyar for those who were tameh, on a distant journey, or otherwise unable to offer it on 14 Nissan.",
+      "qHe": "מהו פסח שני?",
+      "aHe": "קרבן פסח נוסף בי״ד אייר למי שהיה טמא או בדרך רחוקה ולא הקריב בפסח ראשון.",
+      "tanach": [
+        "Bamidbar 9:10-11"
+      ],
+      "rambam": [
+        "Korban Pesach 5:1"
+      ]
+    },
+    {
+      "id": "L5-C17",
+      "q": "What is chagigah?",
+      "a": "A shelamim brought by every adult male Jew on each of the three festivals when appearing at the Temple.",
+      "qHe": "מהי חגיגה?",
+      "aHe": "שלמים שמביא כל זכר ישראל בכל אחד משלושת הרגלים בעת עלייתו למקדש.",
+      "tanach": [
+        "Devarim 16:16-17"
+      ],
+      "rambam": [
+        "Chagigah 1:1"
+      ]
+    },
+    {
+      "id": "L5-C18",
+      "q": "What is chagigat 14 (chagigat arba'ah asar)?",
+      "a": "A shelamim brought together with the pesach on 14 Nissan when the pesach group is large — so the pesach can be eaten 'al hasova'.",
+      "qHe": "מהי חגיגת י״ד?",
+      "aHe": "שלמים הבאים עם הפסח בי״ד בניסן כשחבורת הפסח גדולה — כדי שייאכל הפסח על השובע.",
+      "tanach": [],
+      "rambam": [
+        "Korban Pesach 10:12"
+      ]
+    },
+    {
+      "id": "L5-C19",
+      "q": "What is re'iyah?",
+      "a": "An olah brought by every adult male Jew when appearing at the Temple on the three festivals.",
+      "qHe": "מהי עולת ראייה?",
+      "aHe": "עולה שמביא כל זכר ישראל בעלותו לרגל.",
+      "tanach": [
+        "Devarim 16:16"
+      ],
+      "rambam": [
+        "Chagigah 1:1"
+      ]
+    },
+    {
+      "id": "L5-C20",
+      "q": "What is a mincha and what are its main types?",
+      "a": "A flour offering of wheat or barley. Main types: solet, ma'afeh tanur (oven-baked — challot or rekikin), machabat (flat pan), marcheshet (deep pan).",
+      "qHe": "מהי מנחה ומה סוגיה העיקריים?",
+      "aHe": "קרבן קמח של חיטה או שעורה. סוגים עיקריים: סולת, מאפה תנור (חלות או רקיקים), מחבת, מרחשת.",
+      "tanach": [
+        "Vayikra 2:1-7"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 12:6"
+      ]
+    },
+    {
+      "id": "L5-C21",
+      "q": "What ingredients are required in most menachot?",
+      "a": "Fine wheat flour (solet), olive oil, salt, and frankincense (levonah).",
+      "qHe": "אלו מרכיבים נדרשים ברוב המנחות?",
+      "aHe": "סולת, שמן זית, מלח, ולבונה.",
+      "tanach": [
+        "Vayikra 2:1-13"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 12:7"
+      ]
+    },
+    {
+      "id": "L5-C22",
+      "q": "Which two menachot omit oil and frankincense?",
+      "a": "The sotah's mincha (barley) and the mincha of a poor person (sliding-scale chatat-mincha).",
+      "qHe": "אלו שתי מנחות אין בהן שמן ולבונה?",
+      "aHe": "מנחת סוטה (של שעורים) ומנחת חטאת של עני.",
+      "tanach": [
+        "Vayikra 5:11",
+        "Bamidbar 5:15"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 12:8"
+      ]
+    },
+    {
+      "id": "L5-C23",
+      "q": "What is kemitzah?",
+      "a": "The kohen taking a fistful (kometz) of the mincha for burning on the altar; the rest is eaten by the kohanim.",
+      "qHe": "מהי קמיצה?",
+      "aHe": "לקיחת הכהן מלוא קומצו מהמנחה להקטרה על המזבח; השאר נאכל לכוהנים.",
+      "tanach": [
+        "Vayikra 2:2"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 13:13"
+      ]
+    },
+    {
+      "id": "L5-C24",
+      "q": "Which menachot are completely burned (none eaten by kohanim)?",
+      "a": "Mincha of a kohen; chavitin of kohen gadol; mincha of a kohen on his first day (chinuch); mincha that accompanies nesachim.",
+      "qHe": "אלו מנחות נשרפות כולן ואינן נאכלות לכוהנים?",
+      "aHe": "מנחת כהן; חביתי כהן גדול; מנחת חינוך; מנחת נסכים.",
+      "tanach": [
+        "Vayikra 6:16"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 12:12"
+      ]
+    },
+    {
+      "id": "L5-C25",
+      "q": "What is a bechor?",
+      "a": "The first male offspring of a kosher domestic animal — sanctified from birth; given to a kohen; offered on the altar; eaten by kohanim in Jerusalem within two days and a night.",
+      "qHe": "מהו בכור?",
+      "aHe": "זכר ראשון של בהמה טהורה — קדוש מבטן; ניתן לכהן; קרב על המזבח; נאכל לכוהנים בירושלים תוך שני ימים ולילה.",
+      "tanach": [
+        "Bamidbar 18:17"
+      ],
+      "rambam": [
+        "Bechorot 1:1"
+      ]
+    },
+    {
+      "id": "L5-C26",
+      "q": "What is maaser behemah?",
+      "a": "Every tenth animal born to one's cattle, sheep, or goats — set aside as a korban; blood and eimurin on altar; meat eaten by the owner in Jerusalem.",
+      "qHe": "מהו מעשר בהמה?",
+      "aHe": "כל עשירי מבקרו וצאנו — מוקדש לקרבן; דם ואימורים על המזבח; בשרו נאכל לבעלים בירושלים.",
+      "tanach": [
+        "Vayikra 27:32"
+      ],
+      "rambam": [
+        "Bechorot 6:1"
+      ]
+    },
+    {
+      "id": "L5-C27",
+      "q": "What are nesachim and which korbanot require them?",
+      "a": "Wine libations poured on the altar — required with every olah and shelamim (including the metzora's and nazir's). Not with most chatot or ashamot.",
+      "qHe": "מהם נסכים ועם אלו קרבנות הם באים?",
+      "aHe": "ניסוך יין על המזבח — נדרש עם כל עולה ושלמים (כולל של מצורע ונזיר). לא עם רוב חטאות ואשמות.",
+      "tanach": [
+        "Bamidbar 15:4-12"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 2:1"
+      ]
+    },
+    {
+      "id": "L5-C28",
+      "q": "What is nisuch hamayim?",
+      "a": "Water libation poured on the altar during Sukkot — a halacha leMoshe miSinai.",
+      "qHe": "מהו ניסוך המים?",
+      "aHe": "ניסוך מים על המזבח בחג הסוכות — הלכה למשה מסיני.",
+      "tanach": [],
+      "rambam": [
+        "Temidin uMusafin 10:6"
+      ]
+    },
+    {
+      "id": "L5-C29",
+      "q": "What are the four types of bread of the korban todah?",
+      "a": "Ten leavened loaves (chametz) plus thirty matzot in three forms — ten challot, ten rekikin, and ten revuchah — forty total.",
+      "qHe": "מהם ארבעת סוגי לחמי תודה?",
+      "aHe": "עשרה חמץ ועשרים מצות בשלושה סוגים: עשר חלות, עשרה רקיקים, ועשר רבוכה — ארבעים בסך הכל.",
+      "tanach": [
+        "Vayikra 7:12-13"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 9:17"
+      ]
+    },
+    {
+      "id": "L5-C30",
+      "q": "Where is the korban pesach eaten?",
+      "a": "Within Jerusalem; only by those registered to the chaburah; only roasted; never raw or boiled.",
+      "qHe": "איפה נאכל קרבן הפסח?",
+      "aHe": "בירושלים; רק על ידי הנמנים על החבורה; רק צלי — לא חי ולא מבושל.",
+      "tanach": [
+        "Shemot 12:9"
+      ],
+      "rambam": [
+        "Korban Pesach 8:1"
+      ]
+    },
+    {
+      "id": "L5-C31",
+      "q": "Until what time may shelamim be eaten?",
+      "a": "Two days and the intervening night — until sunset on the second day.",
+      "qHe": "עד מתי נאכלים שלמים?",
+      "aHe": "שני ימים והלילה שביניהם — עד שקיעת היום השני.",
+      "tanach": [
+        "Vayikra 7:16"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 10:7"
+      ]
+    },
+    {
+      "id": "L5-C32",
+      "q": "Until what time may todah and its breads be eaten?",
+      "a": "One day and the following night — like a chatat.",
+      "qHe": "עד מתי נאכלים תודה ולחמיה?",
+      "aHe": "יום ולילה — כחטאת.",
+      "tanach": [
+        "Vayikra 7:15"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 10:6"
+      ]
+    }
+  ]
+}

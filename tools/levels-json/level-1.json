@@ -1,0 +1,287 @@
+{
+  "num": 1,
+  "name": "Which animals belong and when",
+  "concepts": [
+    {
+      "id": "L1-C01",
+      "q": "A young male cow (calf)",
+      "a": "egel — עֵגֶל",
+      "qHe": "",
+      "aHe": "עֵגֶל",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C02",
+      "q": "A young female cow (heifer)",
+      "a": "eglah — עֶגְלָה",
+      "qHe": "",
+      "aHe": "עֶגְלָה",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C03",
+      "q": "An adult male cow (bull)",
+      "a": "par — פַּר (also: shor — שׁוֹר)",
+      "qHe": "",
+      "aHe": "פַּר / שׁוֹר",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C04",
+      "q": "An adult female cow",
+      "a": "parah — פָּרָה",
+      "qHe": "",
+      "aHe": "פָּרָה",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C05",
+      "q": "A young male sheep (lamb",
+      "a": "under one year)",
+      "qHe": "keves — כֶּבֶשׂ",
+      "aHe": "",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C06",
+      "q": "A young female sheep (lamb)",
+      "a": "kivsah — כִּבְשָׂה",
+      "qHe": "",
+      "aHe": "כִּבְשָׂה",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C07",
+      "q": "An adult male sheep (ram)",
+      "a": "ayil — אַיִל",
+      "qHe": "",
+      "aHe": "אַיִל",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C08",
+      "q": "An adult female sheep (ewe)",
+      "a": "rachel — רָחֵל",
+      "qHe": "",
+      "aHe": "רָחֵל",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C09",
+      "q": "A young male goat (kid)",
+      "a": "gedi — גְּדִי",
+      "qHe": "",
+      "aHe": "גְּדִי",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C10",
+      "q": "A young female goat",
+      "a": "se'irah / gediyah — שְׂעִירָה / גְּדִיָּה",
+      "qHe": "",
+      "aHe": "שְׂעִירָה / גְּדִיָּה",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C11",
+      "q": "An adult male goat",
+      "a": "sa'ir / tayish — שָׂעִיר / תַּיִשׁ",
+      "qHe": "",
+      "aHe": "שָׂעִיר / תַּיִשׁ",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C12",
+      "q": "An adult female goat",
+      "a": "ez — עֵז",
+      "qHe": "",
+      "aHe": "עֵז",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C13",
+      "q": "A turtledove",
+      "a": "tor — תּוֹר (plural: torim — תּוֹרִים)",
+      "qHe": "",
+      "aHe": "תּוֹר / תּוֹרִים",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C14",
+      "q": "A young pigeon (dove)",
+      "a": "ben yonah — בֶּן יוֹנָה (plural: bnei yonah — בְּנֵי יוֹנָה)",
+      "qHe": "",
+      "aHe": "בֶּן יוֹנָה / בְּנֵי יוֹנָה",
+      "tanach": [],
+      "rambam": []
+    },
+    {
+      "id": "L1-C15",
+      "q": "From what species of mammals (non-flying animals) may a korban be brought?",
+      "a": "Three: cattle (bakar), sheep (kevasim), and goats (izim).",
+      "qHe": "מאלו מיני בהמות מביאים קרבן?",
+      "aHe": "שלושה: בקר, כבשים, ועזים.",
+      "tanach": [
+        "Vayikra 1:2"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:1"
+      ]
+    },
+    {
+      "id": "L1-C16",
+      "q": "From what species of birds may a korban be brought?",
+      "a": "Two: turtledoves (torim) and young pigeons (bnei yonah).",
+      "qHe": "מאלו מיני עוף מביאים קרבן?",
+      "aHe": "שניים: תורים ובני יונה.",
+      "tanach": [
+        "Vayikra 1:14"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:1"
+      ]
+    },
+    {
+      "id": "L1-C17",
+      "q": "At what age (young or old) are birds fit to be brought as korbanot?",
+      "a": "Turtledoves must be adults, and pigeons must be young",
+      "qHe": "האם תורים ובני יונה כשרים באותו גיל?",
+      "aHe": "תורים גדולים כשרים וקטנים פסולים; בני יונה קטנים כשרים וגדולים פסולים.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:14"
+      ]
+    },
+    {
+      "id": "L1-C18",
+      "q": "From what age may a birdbe offered as a korban?",
+      "a": "From the eighth day of its life. Ideally from the thirtieth day onward.",
+      "qHe": "מאיזה גיל ניתן להקריב בהמה?",
+      "aHe": "מיום השמיני ואילך. לכתחילה מיום השלושים ואילך.",
+      "tanach": [
+        "Vayikra 22:27"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:12"
+      ]
+    },
+    {
+      "id": "L1-C19",
+      "q": "What is the maximum age for cattle offered as a korban?",
+      "a": "Three years old.",
+      "qHe": "מה הגיל המרבי לקרבן בקר?",
+      "aHe": "עד שלוש שנים.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:12"
+      ]
+    },
+    {
+      "id": "L1-C20",
+      "q": "What is the maximum age for sheep or goats offered as a korban?",
+      "a": "Two years old.",
+      "qHe": "מה הגיל המרבי לקרבן כבשים ועזים?",
+      "aHe": "עד שנתיים.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:12"
+      ]
+    },
+    {
+      "id": "L1-C21",
+      "q": "Until what age is a sheep called a keves (lamb) rather than an ayil (ram)?",
+      "a": "Until it completes its first year.",
+      "qHe": "עד איזה גיל הכבש נקרא כבש ולא איל?",
+      "aHe": "עד השלמת שנתו הראשונה.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:14"
+      ]
+    },
+    {
+      "id": "L1-C22",
+      "q": "From which species may an animal olah be brought?",
+      "a": "Male cattle, male sheep, or male goats; or turtledoves or young pigeons.",
+      "qHe": "מאלו מינים מביאים עולה?",
+      "aHe": "מן הבקר זכרים, מן הכבשים זכרים, מן העזים זכרים; או מן התורים ובני היונה (עוף מכל מין).",
+      "tanach": [
+        "Vayikra 1:3"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:8"
+      ]
+    },
+    {
+      "id": "L1-C23",
+      "q": "From which species may a chatat be brought?",
+      "a": "From all five species — cattle, sheep, goats, turtledoves, or young pigeons — male or female.",
+      "qHe": "מאלו מינים מביאים חטאת?",
+      "aHe": "מכל חמשת המינים — בקר, כבשים, עזים, תורים ובני יונה — זכר או נקבה.",
+      "tanach": [
+        "Vayikra 4:3"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:9"
+      ]
+    },
+    {
+      "id": "L1-C24",
+      "q": "From which species may an asham be brought?",
+      "a": "Only from male sheep (kevasim zekharim); never from cattle, goats, or birds.",
+      "qHe": "מאיזה מין מביאים אשם?",
+      "aHe": "רק מן הכבשים הזכרים — לא מבקר",
+      "tanach": [],
+      "rambam": [
+        "Vayikra 5:15"
+      ]
+    },
+    {
+      "id": "L1-C25",
+      "q": "From which species may shelamim be brought?",
+      "a": "From cattle, sheep, or goats — male or female. There are no bird shelamim.",
+      "qHe": "מאלו מינים מביאים שלמים?",
+      "aHe": "מן הבקר, הכבשים, והעזים — זכר או נקבה. אין שלמים מן העוף.",
+      "tanach": [
+        "Vayikra 3:1"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:11"
+      ]
+    },
+    {
+      "id": "L1-C26",
+      "q": "May a male animal be brought as an individual chatat?",
+      "a": "Generally no — chatat yachid is always female, except: nasi, kohen mashiach, and kohen gadol on Yom Kippur.",
+      "qHe": "האם זכר כשר לחטאת יחיד?",
+      "aHe": "בדרך כלל לא — חטאת יחיד תמיד נקבה, חוץ מנשיא, כהן משיח, וכהן גדול ביום הכיפורים.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:14"
+      ]
+    },
+    {
+      "id": "L1-C27",
+      "q": "What disqualifies an animal from being a korban?",
+      "a": "A blemish (mum) — any physical defect listed in the Torah (blindness, broken limb, etc.) renders it pasul.",
+      "qHe": "מה פוסל בהמה מקרבן?",
+      "aHe": "מום — כל מום גופני המנוי בתורה (עיוורון",
+      "tanach": [],
+      "rambam": [
+        "Vayikra 22:22"
+      ]
+    }
+  ]
+}

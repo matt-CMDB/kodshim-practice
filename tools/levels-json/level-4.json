@@ -1,0 +1,347 @@
+{
+  "num": 4,
+  "name": "Details of olah chatat and asham",
+  "concepts": [
+    {
+      "id": "L4-C01",
+      "q": "What happens to the entire olah offering?",
+      "a": "Completely burned on the altar; nothing eaten. The hide goes to the kohanim.",
+      "qHe": "מה עושים עם קרבן העולה?",
+      "aHe": "כולה עולה באש המזבח; אין ממנה נאכל. העור לכוהנים.",
+      "tanach": [
+        "Vayikra 1:9"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:1"
+      ]
+    },
+    {
+      "id": "L4-C02",
+      "q": "Who gets the hide of an olah?",
+      "a": "The kohanim of that mishmar (priestly watch).",
+      "qHe": "מי מקבל את עור העולה?",
+      "aHe": "כוהני המשמר.",
+      "tanach": [
+        "Vayikra 7:8"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:19"
+      ]
+    },
+    {
+      "id": "L4-C03",
+      "q": "Who may eat a chatat and where?",
+      "a": "Male kohanim eat it within the Temple courtyard, on the day of slaughter and the following night.",
+      "qHe": "מי אוכל את החטאת ואיפה?",
+      "aHe": "הכוהנים הזכרים בעזרה, ביום שחיטה ובלילה שלאחריו.",
+      "tanach": [
+        "Vayikra 6:18"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 10:1"
+      ]
+    },
+    {
+      "id": "L4-C04",
+      "q": "Which chatot are NOT eaten?",
+      "a": "The five inner chatot whose blood is brought into the Heichal — they are burned outside.",
+      "qHe": "אלו חטאות אינן נאכלות?",
+      "aHe": "חמש החטאות הפנימיות שדמן נכנס להיכל — נשרפות בחוץ.",
+      "tanach": [
+        "Vayikra 6:23"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:1"
+      ]
+    },
+    {
+      "id": "L4-C05",
+      "q": "What are the five chatot that are burned (chatot ha-nisrafot)?",
+      "a": "Par kohen mashiach; par he'elem davar; the Yom Kippur bull of the kohen gadol; the Yom Kippur se'ir (paired with the one sent to Azazel); se'irei avodah zarah.",
+      "qHe": "מה הן חמש החטאות הנשרפות?",
+      "aHe": "פר כהן משיח; פר העלם דבר; פר יום הכיפורים של כהן גדול; שעיר יום הכיפורים (שחבירו לעזאזל); שעירי עבודה זרה.",
+      "tanach": [
+        "Vayikra 4:12"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:15"
+      ]
+    },
+    {
+      "id": "L4-C06",
+      "q": "What is the sex requirement for an individual's chatat — and its exceptions?",
+      "a": "Always female — except: nasi (male goat), kohen mashiach (bull), kohen gadol on Yom Kippur (bull).",
+      "qHe": "מה דין המין בחטאת יחיד ומה החריגים?",
+      "aHe": "תמיד נקבה — חוץ מנשיא (שעיר זכר), כהן משיח (פר), כהן גדול ביום הכיפורים (פר).",
+      "tanach": [
+        "Vayikra 4:28"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:14"
+      ]
+    },
+    {
+      "id": "L4-C07",
+      "q": "How is the blood of an individual chatat applied?",
+      "a": "On the four horns of the outer altar; the remainder is poured at the base.",
+      "qHe": "כיצד נותנים את דם חטאת היחיד?",
+      "aHe": "על ארבע קרנות מזבח החיצוני; הנותר נשפך על היסוד.",
+      "tanach": [
+        "Vayikra 4:30"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:11"
+      ]
+    },
+    {
+      "id": "L4-C08",
+      "q": "How is the blood of an inner chatat (par he'elem davar etc.) applied?",
+      "a": "Sprinkled seven times before the parochet; on the horns of the inner (golden) altar; remainder poured at the base of the outer altar.",
+      "qHe": "כיצד נותנים את דם החטאות הפנימיות?",
+      "aHe": "מזה שבע פעמים לפני הפרכת; על קרנות מזבח הזהב; הנותר נשפך על יסוד המזבח החיצון.",
+      "tanach": [
+        "Vayikra 4:6-7"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:11"
+      ]
+    },
+    {
+      "id": "L4-C09",
+      "q": "How is the blood of an olah applied?",
+      "a": "By zerikah (casting) from a vessel against two opposite corners of the outer altar, covering all four sides.",
+      "qHe": "כיצד נותנים את דם העולה?",
+      "aHe": "זריקה מן הכלי על שתי קרנות מנוגדות של המזבח החיצוני; שייגע בארבע רוחות.",
+      "tanach": [
+        "Vayikra 1:5"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:6"
+      ]
+    },
+    {
+      "id": "L4-C10",
+      "q": "How many blood applications does a chatat have?",
+      "a": "Four — one on each of the four horns of the outer altar.",
+      "qHe": "כמה מתנות דם יש לחטאת?",
+      "aHe": "ארבע — אחת על כל קרן.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 5:11"
+      ]
+    },
+    {
+      "id": "L4-C11",
+      "q": "How many blood applications do olah / shelamim / asham have?",
+      "a": "Two corner-applications that count as four ('shtayim shehen arba').",
+      "qHe": "כמה מתנות דם לעולה / שלמים / אשם?",
+      "aHe": "שתיים שהן ארבע.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 5:6"
+      ]
+    },
+    {
+      "id": "L4-C12",
+      "q": "What is the time limit for eating a chatat or asham?",
+      "a": "The day of slaughter and the following night.",
+      "qHe": "מה הזמן לאכילת חטאת ואשם?",
+      "aHe": "יום השחיטה והלילה שאחריו.",
+      "tanach": [
+        "Vayikra 7:15"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 10:6"
+      ]
+    },
+    {
+      "id": "L4-C13",
+      "q": "What is the time limit for eating shelamim (and todah)?",
+      "a": "Shelamim: two days and one night. Todah: only one day and the following night.",
+      "qHe": "מה הזמן לאכילת שלמים ותודה?",
+      "aHe": "שלמים: שני ימים ולילה אחד. תודה: יום ולילה.",
+      "tanach": [
+        "Vayikra 7:15-16"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 10:6-7"
+      ]
+    },
+    {
+      "id": "L4-C14",
+      "q": "What is notar?",
+      "a": "Korban meat left over past its permitted time — must be burned; one who eats it is liable to karet.",
+      "qHe": "מהו נותר?",
+      "aHe": "בשר קרבן שנותר אחרי זמנו — חייב שריפה; האוכלו חייב כרת.",
+      "tanach": [
+        "Vayikra 19:6-8"
+      ],
+      "rambam": [
+        "Pesulei HaMukdashin 18:10"
+      ]
+    },
+    {
+      "id": "L4-C15",
+      "q": "What is pigul and its consequences?",
+      "a": "A korban offered with intent to eat it outside its permitted time. The korban is invalid; one who eats it is liable to karet — but kapparah still goes to the owner.",
+      "qHe": "מהו פיגול ומה תוצאותיו?",
+      "aHe": "קרבן שהוקרב במחשבת אכילה חוץ לזמנו. הקרבן נפסל; אוכלו חייב כרת — אבל הכפרה עולה לבעלים.",
+      "tanach": [
+        "Vayikra 7:18"
+      ],
+      "rambam": [
+        "Pesulei HaMukdashin 13:1"
+      ]
+    },
+    {
+      "id": "L4-C16",
+      "q": "What is chutz limkomo?",
+      "a": "A korban offered with intent to eat or burn outside its permitted location. The korban is invalid (pasul) but no karet.",
+      "qHe": "מהו פסול חוץ למקומו?",
+      "aHe": "קרבן שהוקרב במחשבת אכילה או הקטרה חוץ למקומו. הקרבן פסול אבל אין כרת.",
+      "tanach": [],
+      "rambam": [
+        "Pesulei HaMukdashin 13:1"
+      ]
+    },
+    {
+      "id": "L4-C17",
+      "q": "What are the four sacrificial avodot of an animal korban?",
+      "a": "Shechitah (slaughter), kabbalat hadam (receiving the blood), holachah (carrying), and zerikah (applying).",
+      "qHe": "מה הן ארבע עבודות הקרבן?",
+      "aHe": "שחיטה, קבלת הדם, הולכה, וזריקה.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 4:1"
+      ]
+    },
+    {
+      "id": "L4-C18",
+      "q": "Which avodah does not require a kohen?",
+      "a": "Shechitah — slaughter is valid even when performed by a zar (non-kohen).",
+      "qHe": "איזו עבודה אינה דורשת כהן?",
+      "aHe": "שחיטה — כשרה גם בזר.",
+      "tanach": [
+        "Vayikra 1:5"
+      ],
+      "rambam": [
+        "Biat HaMikdash 9:1"
+      ]
+    },
+    {
+      "id": "L4-C19",
+      "q": "What does the kohen receive from a chatat? From shelamim?",
+      "a": "Chatat: all the meat (after eimurin are burned). Shelamim: chazeh (breast) and shok (right thigh).",
+      "qHe": "אלו חלקים מקבל הכהן מחטאת ומשלמים?",
+      "aHe": "חטאת: כל הבשר (אחרי הקטרת האימורים). שלמים: חזה ושוק הימין.",
+      "tanach": [
+        "Vayikra 7:31-34"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 10:1"
+      ]
+    },
+    {
+      "id": "L4-C20",
+      "q": "What is tenufah?",
+      "a": "Waving the offering toward the four directions and up/down — done with shelamim's chazeh and shok and certain other korbanot.",
+      "qHe": "מהי תנופה?",
+      "aHe": "הנפת הקרבן לארבע רוחות ולמעלה ולמטה — נעשית בחזה ושוק של שלמים ובמקומות מסוימים נוספים.",
+      "tanach": [
+        "Vayikra 7:30"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 9:6"
+      ]
+    },
+    {
+      "id": "L4-C21",
+      "q": "Which korbanot are waved while alive?",
+      "a": "The asham of the metzora and the two Shavuot lambs (kivsei atzeret).",
+      "qHe": "אלו קרבנות מנופפים חיים?",
+      "aHe": "אשם מצורע ושני כבשי עצרת.",
+      "tanach": [
+        "Vayikra 14:12"
+      ],
+      "rambam": [
+        "Mechusrei Kapparah 4:2"
+      ]
+    },
+    {
+      "id": "L4-C22",
+      "q": "Where is the blood of a bird olah placed?",
+      "a": "On the upper half of the outer altar wall (above the chut hasikra).",
+      "qHe": "היכן ניתן דם עולת העוף?",
+      "aHe": "על קיר המזבח החיצון למעלה מן החוט.",
+      "tanach": [
+        "Vayikra 1:15"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 6:20"
+      ]
+    },
+    {
+      "id": "L4-C23",
+      "q": "Where is the blood of a bird chatat placed?",
+      "a": "On the lower half of the outer altar wall (below the chut hasikra).",
+      "qHe": "היכן ניתן דם חטאת העוף?",
+      "aHe": "על קיר המזבח החיצון למטה מן החוט.",
+      "tanach": [
+        "Vayikra 5:9"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 7:6"
+      ]
+    },
+    {
+      "id": "L4-C24",
+      "q": "How is a bird olah prepared?",
+      "a": "Melikah (severing the neck with the thumbnail), squeezing blood on the upper altar wall, removing the crop with skin, splitting the wings (without separation), and burning whole.",
+      "qHe": "כיצד מקריבים עולת העוף?",
+      "aHe": "מליקה, מיצוי דם על הקיר למעלה, הסרת המוראה והנוצה, שיסוע בכנפיים, והקטרה.",
+      "tanach": [
+        "Vayikra 1:14-17"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 6:20"
+      ]
+    },
+    {
+      "id": "L4-C25",
+      "q": "How is a bird chatat prepared?",
+      "a": "Melikah, sprinkling the blood on the lower altar wall, squeezing the remaining blood at the base; the body is eaten by male kohanim.",
+      "qHe": "כיצד מקריבים חטאת העוף?",
+      "aHe": "מליקה, הזאת דם על הקיר למטה, ומיצוי הנותר על היסוד; הגוף נאכל לכוהנים הזכרים.",
+      "tanach": [
+        "Vayikra 5:8-9"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 7:6"
+      ]
+    },
+    {
+      "id": "L4-C26",
+      "q": "What is melikah?",
+      "a": "Severing a bird's neck from behind with the kohen's thumbnail — used for bird olot and chatot in place of shechitah.",
+      "qHe": "מהי מליקה?",
+      "aHe": "חיתוך עורף העוף בציפורן הכהן מאחור — במקום שחיטה לעופות.",
+      "tanach": [
+        "Vayikra 1:15"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 6:22"
+      ]
+    },
+    {
+      "id": "L4-C27",
+      "q": "What is haktarah?",
+      "a": "Burning the eimurin (or the whole olah) on the altar fire.",
+      "qHe": "מהי הקטרה?",
+      "aHe": "שריפת האימורים (או כל העולה) על אש המזבח.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 6:1"
+      ]
+    }
+  ]
+}
