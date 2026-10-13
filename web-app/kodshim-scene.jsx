@@ -230,8 +230,37 @@
     );
   }
 
+  /* ─── Fit: one logical stage, scaled uniformly ─────────────────────
+     The scene is laid out in a logical box (DESIGN) and scaled to the
+     viewport, so the board, the figures and the dialogue keep the same
+     proportions at every aspect ratio. Wider screens get more logical
+     width (the backdrop bleeds); shorter ones scale everything down
+     together instead of clipping. Phones (< 880px) render at 1:1 with
+     the narrow layout. */
+  const DESIGN = { w: 1366, h: 820, top: 58 };
+  function computeFit() {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const avail = Math.max(300, vh - DESIGN.top);
+    let s = 1;
+    if (vw >= 880) s = Math.min(vw / DESIGN.w, avail / (DESIGN.h - DESIGN.top));
+    s = Math.max(0.55, Math.min(1.7, s));
+    const w = Math.round(vw / s), h = Math.round(avail / s);
+    return { s, w, h, narrow: w < 1180, tight: w < 880, short: h < 660 };
+  }
+  function useSceneFit() {
+    const [fit, setFit] = useState(computeFit);
+    useEffect(() => {
+      const onResize = () => setFit(computeFit());
+      window.addEventListener("resize", onResize);
+      window.addEventListener("orientationchange", onResize);
+      return () => { window.removeEventListener("resize", onResize); window.removeEventListener("orientationchange", onResize); };
+    }, []);
+    return fit;
+  }
+
   /* ─── The runner ──────────────────────────────────────────────────── */
   function SceneRunner({ steps, mode, levelNum, label, onEnd, onExit, hearts0 }) {
+    const fit = useSceneFit();
     const [i, setI] = useState(0);
     const [phase, setPhase] = useState("say");   // say | ask | feedback | result
     const [fb, setFb] = useState(null);
@@ -316,7 +345,7 @@
     const src = phase === "feedback" && fb.item.cite ? sourceFor(fb.item.cite) : null;
 
     return (
-      <div className={"scene mode-" + mode + " phase-" + phase} onClick={() => { if (canAdvance) advance(); }}>
+      <div className={"scene mode-" + mode + " phase-" + phase + (fit.narrow ? " narrow" : "") + (fit.tight ? " tight" : "") + (fit.short ? " short" : "")} onClick={() => { if (canAdvance) advance(); }}>
         <div className="scene-bg" />
         <div className="scene-top" onClick={(e) => e.stopPropagation()}>
           <button type="button" className="icon-btn exit" onClick={onExit} aria-label="Back to the map" title="Back to the map">×</button>
@@ -327,6 +356,7 @@
           {streak >= 3 && <span className="scene-streak">🔥 {streak}</span>}
         </div>
 
+        <div className="scene-fit" style={{ width: fit.w + "px", height: fit.h + "px", transform: `scale(${fit.s})` }}>
         <div className="scene-stage">
           <div className="fig fig-kohen"><img src="assets/kohen-gadol-teaching.webp" alt="" /></div>
           <div className={"fig fig-student pose-" + pose}><img src={pose === "happy" ? "assets/success.webp" : "assets/boy-learning.webp"} alt="" /></div>
@@ -350,6 +380,7 @@
             {phase === "ask" && <span className="dlg-hint">{hintFor(step.item)}</span>}
             {canAdvance && <span className="dlg-next" aria-hidden="true">{phase === "feedback" ? "Continue ▸" : "▸"}</span>}
           </div>
+        </div>
         </div>
 
         {source && <SourceScroll sources={[source]} onClose={() => setSource(null)} />}

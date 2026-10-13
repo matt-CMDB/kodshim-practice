@@ -5,6 +5,54 @@
   const { useState, useEffect, useMemo } = React;
   const K = () => window.KODSHIM;
 
+  /* ─── Map fit ──────────────────────────────────────────────────────
+     The backdrop is placed so that the medallions' region (FOCUS, in
+     fractions of the image) is always inside the viewport, next to the
+     kohen, whatever the aspect ratio. The image covers the viewport when
+     it can; where it cannot, a blurred copy fills the gaps. */
+  const IMG = { w: 2000, h: 1439 };
+  const FOCUS = { x0: 0.22, x1: 0.68, y0: 0.35, y1: 0.91 };
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  function computeMapFit() {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const phone = vw < 880;
+    // Tall layouts (tablets upright, phones): the kohen stands bottom-right,
+    // mirrored, so he points at the medallions instead of covering Level 1.
+    const stack = vh > vw * 1.05;
+    const kohenH = phone ? clamp(vh * 0.3, 150, 260) : stack ? clamp(vh * 0.3, 200, 360) : clamp(vh * 0.46, 260, 440);
+    const kohenW = kohenH * 0.5, kohenLeft = 0.025 * vw;
+    const reserve = phone ? 0 : Math.round(kohenLeft + kohenW + 24);
+    const reserveLeft = stack ? 0 : reserve, reserveRight = stack ? reserve : 0;
+    const aw = Math.max(240, vw - reserveLeft - reserveRight);
+    const topPad = phone ? 96 : 0;
+    const sCover = Math.max(vw / IMG.w, vh / IMG.h);
+    const sFocus = Math.min(aw / ((FOCUS.x1 - FOCUS.x0) * IMG.w), (vh - topPad) / ((FOCUS.y1 - FOCUS.y0) * IMG.h));
+    const s = Math.min(sCover, sFocus);
+    const W = IMG.w * s, H = IMG.h * s;
+    let left = reserveLeft + aw / 2 - ((FOCUS.x0 + FOCUS.x1) / 2) * W;
+    let top = topPad + (vh - topPad) / 2 - ((FOCUS.y0 + FOCUS.y1) / 2) * H;
+    left = clamp(left, Math.min(0, vw - W), Math.max(0, vw - W));
+    top = clamp(top, Math.min(0, vh - H), Math.max(0, vh - H));
+    const spacing = ((NODES[0].y - NODES[NODES.length - 1].y) / 100 / (NODES.length - 1)) * H;
+    const node = Math.round(clamp(spacing * 0.72, 44, 76));
+    // Where does the kohen's bubble go? Beside him unless that covers a medallion.
+    const nodeRects = NODES.map((n) => { const cx = left + (n.x / 100) * W, cy = top + (n.y / 100) * H; return { l: cx - node / 2 - 6, r: cx + node / 2 + 6, t: cy - node / 2 - 16, b: cy + node / 2 + 46 }; });
+    const hits = (r) => nodeRects.some((n) => !(n.r < r.l || n.l > r.r || n.b < r.t || n.t > r.b));
+    const side = { l: kohenLeft + kohenW - 20, t: vh - kohenH + 0.08 * kohenH }; side.r = side.l + 280; side.b = side.t + 96;
+    const bubble = phone ? "banner" : stack ? "above" : (hits(side) || side.r > vw - 8) ? "above" : "side";
+    return { vw, vh, s, W, H, left, top, node, kohenH, bubble, phone, stack };
+  }
+  function useMapFit() {
+    const [fit, setFit] = useState(computeMapFit);
+    useEffect(() => {
+      const onResize = () => setFit(computeMapFit());
+      window.addEventListener("resize", onResize);
+      window.addEventListener("orientationchange", onResize);
+      return () => { window.removeEventListener("resize", onResize); window.removeEventListener("orientationchange", onResize); };
+    }, []);
+    return fit;
+  }
+
   // Positions in percent of the backdrop image (2000×1439): a path from the
   // courtyard floor up the steps to the door.
   const NODES = [
@@ -194,6 +242,7 @@
   /* ─── Map scene ───────────────────────────────────────────────────── */
   function MapScene({ music, onStart, onReview, onOpenMusic, onReset, firstVisit }) {
     const [, bump] = useState(0);
+    const fit = useMapFit();
     useEffect(() => K().subscribe(() => bump((x) => x + 1)), []);
     const summary = useMemo(() => K().summary(), [K().progress.lastPlayed, K().progress.xp]); // eslint-disable-line
     const [sheet, setSheet] = useState(null);
@@ -220,8 +269,9 @@
     const sheetLevel = sheet ? summary.levels.find((L) => L.num === sheet) : null;
 
     return (
-      <div className="jmap-scene">
-        <div className="jmap">
+      <div className={"jmap-scene" + (fit.phone ? " phone" : "")}>
+        <div className="jmap-fill" aria-hidden="true" />
+        <div className="jmap" style={{ left: fit.left + "px", top: fit.top + "px", width: fit.W + "px", height: fit.H + "px", "--node": fit.node + "px" }}>
           <div className="jmap-img" />
           <svg className="jm-path" viewBox="0 0 2000 1439" preserveAspectRatio="none" aria-hidden="true"><path d={pathD} /></svg>
           {summary.levels.map((lv, i) => <Medallion key={lv.num} lv={lv} idx={i} current={lv.num === currentNum} onPick={pick} />)}
@@ -235,9 +285,9 @@
           {summary.due > 0 && <span className="tool-badge">{summary.due}</span>}
         </button>
 
-        <div className="jm-kohen">
+        <div className={"jm-kohen" + (fit.stack ? " right" : "")} style={{ height: fit.kohenH + "px" }}>
           <img src="assets/kohen-gadol-teaching.webp" alt="" />
-          <div className="jm-bubble">{hintFor(summary)}</div>
+          <div className={"jm-bubble " + fit.bubble}>{hintFor(summary)}</div>
         </div>
 
         {sheetLevel && <LevelSheet lv={sheetLevel} onClose={() => setSheet(null)} onStart={(num, stage) => { setSheet(null); onStart(num, stage); }} />}

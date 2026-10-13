@@ -423,7 +423,8 @@ function MusicCard({ music, onClose }) {
           </div>
           <ul className="music-list">
             {INSTRUMENTS.map((inst, idx) => {
-              const unlocked = idx < music.unlockedCount || music.preview;
+              // Locked rows stay locked during the preview: it is heard, not editable.
+              const unlocked = idx < music.unlockedCount;
               const isPlaying = unlocked && music.enabled;
               return (
                 <li
@@ -443,7 +444,7 @@ function MusicCard({ music, onClose }) {
                   </span>
                   <span className="music-status">
                     {!unlocked
-                      ? "Step " + inst.unlockStep
+                      ? (music.preview ? "Step " + inst.unlockStep + " · preview" : "Step " + inst.unlockStep)
                       : isPlaying ? "Playing" : "Ready"}
                   </span>
                   <input

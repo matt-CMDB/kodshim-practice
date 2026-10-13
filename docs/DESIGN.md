@@ -96,7 +96,12 @@ Settings has a Reset progress button.
 
 1. Welcome (the original art) → the map.
 2. **Map**: five medallions placed along the courtyard and up the drawn
-   steps to the Heichal door, joined by a dotted path. Each medallion's ring
+   steps to the Heichal door, joined by a dotted path. The backdrop is
+   placed so that the medallions' region of the image is always inside
+   the viewport beside the kohen (a blurred copy fills any gap), the
+   medallions shrink when the path gets short, and the kohen's bubble
+   moves above his head, or he moves to the bottom-right, when he
+   would otherwise cover Level 1. Each medallion's ring
    has three segments (learn / prove / master). Your trainee stands by the
    current one; the kohen gadol says one line. A single menu button holds
    Review (with a due badge), How it works, Music, Settings, About.
@@ -110,6 +115,12 @@ Settings has a Reset progress button.
    of the level's quiz cards, assigned per lesson in `checks`); the kohen
    reacts in the dialogue with the explanation and a Source button.
    Nothing scrolls; every board is sized to fit.
+   The scene is laid out in a logical box (1366×820 under a 58px bar)
+   and scaled uniformly to the viewport, so the figures, the board and
+   the dialogue keep the same proportions at every aspect ratio; wider
+   windows get more logical width, shorter ones scale down as a whole.
+   Below 880px the scene renders 1:1 with the narrow layout (figures
+   hidden, single-column options).
 4. Prove / Master / Review are the same scene with hearts in the top bar,
    and the result appears as a board with stars, XP and the misses.
 5. Settings and About are modals from the menu sheet.
