@@ -456,3 +456,4 @@
   .map-scene .figure-left { display: none; }
   .stairs-wrap { right: 24px; }
 }
+.quiz-keys { color: var(--ink-mute); }

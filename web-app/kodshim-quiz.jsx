@@ -321,6 +321,8 @@
           {!fb && (
             <span className="quiz-hint">
               {item.kind === "sort" ? "Place every chip, then press Check." : item.kind === "match" ? "A slip costs the card, not a heart — until you finish." : mode === "review" ? "No hearts in review. Just remember." : "One wrong answer costs a heart."}
+              {["mc", "tap", "cloze"].includes(item.kind) && <span className="quiz-keys"> · keys 1–{item.options.length} answer</span>}
+              {item.kind === "tf" && <span className="quiz-keys"> · ← true · → false</span>}
             </span>
           )}
         </div>

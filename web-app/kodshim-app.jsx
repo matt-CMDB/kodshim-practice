@@ -55,11 +55,12 @@
   };
   function RunIntro({ mode, levelNum, count, onBegin, onBack, onSwitchStage, onAsk }) {
     const c = RUN_COPY[mode];
+    const nothingToReview = mode === "review" && K().pickReview(12).length === 0;
     useEffect(() => {
-      const onKey = (e) => { if (e.key === "Enter") { e.preventDefault(); onBegin(); } };
+      const onKey = (e) => { if (e.key === "Enter" && !nothingToReview) { e.preventDefault(); onBegin(); } };
       window.addEventListener("keydown", onKey);
       return () => window.removeEventListener("keydown", onKey);
-    }, [onBegin]);
+    }, [onBegin, nothingToReview]);
     return (
       <div className="quiz run-intro">
         <TopBar levelNum={levelNum} stage={mode === "review" ? "review" : "prove"} onStageChange={onSwitchStage} onExit={onBack} onAsk={onAsk} />
@@ -70,9 +71,10 @@
             <h1 className="quiz-intro-h">{c.h}</h1>
             <p className="quiz-intro-p">{c.p}{mode === "review" && count ? ` ${count} card${count === 1 ? "" : "s"} this session.` : ""}</p>
             <ul className="quiz-intro-rules">{c.rules.map(([b, t], i) => <li key={i}><b>{b}</b> {t}</li>)}</ul>
+            {nothingToReview && <p className="quiz-intro-p"><b>Nothing to review yet.</b> Walk through a level's lessons first — its cards join the deck as you answer them.</p>}
             <div className="quiz-intro-actions">
               <button type="button" className="btn" onClick={onBack}>Back to the steps</button>
-              <button type="button" className="btn primary gold" onClick={onBegin}><span>{c.cta}</span><span className="arrow">→</span></button>
+              <button type="button" className="btn primary gold" onClick={onBegin} disabled={nothingToReview}><span>{c.cta}</span><span className="arrow">→</span></button>
             </div>
           </div>
         </div>
