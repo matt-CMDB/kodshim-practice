@@ -157,6 +157,19 @@ single cite string (the best one) or `null`.
   korban/korbanot, chatat, asham, shelamim, olah, mincha, kohen, tahor, tzibur,
   yachid, kodshei kodashim, kodashim kalim.
 
+## Checks
+
+Each level also carries a `checks` map from lesson id to the quiz ids the
+scene asks during that lesson, spread across its blocks:
+
+```js
+window.KODSHIM_LEVELS[2].checks = { "L2-01": ["L2-Q01", "L2-Q02"], ... };
+```
+
+`node tools/map_checks.js` proposes a mapping by word overlap; adjust by hand.
+Cards in `cards` blocks may carry an `img` (shown on the board), and a `pic`
+quiz kind shows picture options: `{ kind: "pic", options: [{ img, label }], answer }`.
+
 ## Cite strings
 
 `"<Book> <chapter>:<halacha>"`, with the book names used by the CSV splitter:

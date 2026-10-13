@@ -650,3 +650,41 @@ window.KODSHIM_LEVELS[2] = {
       cite: null },
   ],
 };
+
+// Which quiz items are used as in-lesson checks (built by tools/map_checks.js, hand-adjusted).
+window.KODSHIM_LEVELS[2].checks = {
+  "L2-01": [
+    "L2-Q01",
+    "L2-Q02"
+  ],
+  "L2-02": [
+    "L2-Q03",
+    "L2-Q04",
+    "L2-Q05",
+    "L2-Q06"
+  ],
+  "L2-03": [
+    "L2-Q07",
+    "L2-Q08",
+    "L2-Q09"
+  ],
+  "L2-04": [
+    "L2-Q10",
+    "L2-Q11",
+    "L2-Q12",
+    "L2-Q13",
+    "L2-Q14",
+    "L2-Q15",
+    "L2-Q16",
+    "L2-Q17"
+  ],
+  "L2-05": [
+    "L2-Q18",
+    "L2-Q19",
+    "L2-Q20",
+    "L2-Q21",
+    "L2-Q22",
+    "L2-Q23",
+    "L2-Q24"
+  ]
+};

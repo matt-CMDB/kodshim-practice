@@ -34,21 +34,22 @@ web-app/
   kodshim-training.html    page shell, script order
   kodshim-engine.js        progress, review scheduler, question picker, sound, tutor client
   kodshim-app.jsx          screens and routing
-  kodshim-map.jsx          the staircase, level cards, settings, about
-  kodshim-learn.jsx        Level 1's illustrated lessons (bespoke), TopBar, source drawer
-  kodshim-lesson.jsx       generic lesson renderer for levels 2–5
-  kodshim-quiz.jsx         question kinds, feedback card, the quiz run
+  kodshim-map.jsx          the journey map, level sheet, menu, settings, about
+  kodshim-scene.jsx        the courtyard scene: lesson scripts, boards, dialogue, runs
+  kodshim-quiz.jsx         the answer surfaces (mc, tap, cloze, pic, tf, match, sort)
   kodshim-tutor.jsx        "Ask the kohen" drawer
-  kodshim-ui.jsx           shared bits (inline markup, stars, modal)
+  kodshim-ui.jsx           shared bits (inline markup, stars, modal, source scroll)
   content/level-N.js       lessons + concepts + quiz bank per level
   kodshim-sources.js       generated: cited Hebrew texts + English
-  kodshim-game.css         styles for everything added in the revamp
+  kodshim-play.css         the map and the scene
+  kodshim-game.css         stars, modals, settings, tutor drawer
 tools/
   csv_to_levels.py         CSV → tools/levels-json/level-N.json (normalized cites)
   build_sources.py         pulls cited passages from source-material/ → kodshim-sources.js
   translate_sources.py     fills tools/translations.json through OpenRouter (one-off)
   check_level.js           validates a content file against docs/CONTENT-SCHEMA.md
   crosscheck_content.py    second-model review of a level's content (OpenRouter)
+  map_checks.js            proposes which quiz cards each lesson uses as checks
 docs/
   DESIGN.md                game design
   CONTENT-SCHEMA.md        the content format

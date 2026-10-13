@@ -540,3 +540,41 @@ window.KODSHIM_LEVELS[3] = {
       cite: "Maaseh HaKorbanot 1:4" },
   ],
 };
+
+// Which quiz items are used as in-lesson checks (built by tools/map_checks.js, hand-adjusted).
+window.KODSHIM_LEVELS[3].checks = {
+  "L3-01": [
+    "L3-Q01",
+    "L3-Q02",
+    "L3-Q03",
+    "L3-Q04",
+    "L3-Q05",
+    "L3-Q06"
+  ],
+  "L3-02": [
+    "L3-Q07",
+    "L3-Q08",
+    "L3-Q09",
+    "L3-Q10"
+  ],
+  "L3-03": [
+    "L3-Q11",
+    "L3-Q12",
+    "L3-Q13",
+    "L3-Q14",
+    "L3-Q15"
+  ],
+  "L3-04": [
+    "L3-Q16",
+    "L3-Q17",
+    "L3-Q18",
+    "L3-Q19",
+    "L3-Q20"
+  ],
+  "L3-05": [
+    "L3-Q21",
+    "L3-Q22",
+    "L3-Q23",
+    "L3-Q24"
+  ]
+};

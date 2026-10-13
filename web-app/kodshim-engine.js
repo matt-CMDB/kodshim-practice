@@ -122,6 +122,22 @@
     if (!p.learned) { p.learned = true; progress.xp += 40; }
     saveProgress();
   }
+  // Per-lesson completion inside Learn.
+  function completeLesson(n, lessonId) {
+    const p = levelState(n);
+    if (!p.lessons) p.lessons = {};
+    if (!p.lessons[lessonId]) { p.lessons[lessonId] = Date.now(); progress.xp += 10; }
+    const L = level(n);
+    if (L && L.lessons && L.lessons.every((ls) => p.lessons[ls.id])) p.learned = true;
+    saveProgress();
+  }
+  function lessonDone(n, lessonId) { const p = levelState(n); return !!(p.lessons && p.lessons[lessonId]); }
+  function nextLesson(n) {
+    const L = level(n);
+    if (!L || !L.lessons) return 0;
+    const i = L.lessons.findIndex((ls) => !lessonDone(n, ls.id));
+    return i < 0 ? 0 : i;
+  }
   function completeRun(n, stage, result) {
     // result: { correct, total, hearts, streak }
     const p = levelState(n);
@@ -357,7 +373,7 @@
     subscribe,
     levelState, stagesDone, stepsClimbed, totalSteps, isUnlocked, currentLevel, stepFor, STAGES,
     unlockedInstruments,
-    completeLearn, completeRun, starsFor, PASS_RATIO, MASTER_RATIO,
+    completeLearn, completeLesson, lessonDone, nextLesson, completeRun, starsFor, PASS_RATIO, MASTER_RATIO,
     recordAnswer, dueCards, weakCards, card,
     pickProve, pickMaster, pickReview, shuffle,
     sfx,

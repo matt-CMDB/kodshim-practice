@@ -1,6 +1,6 @@
 // Small shared UI pieces used by the map, lessons, quiz and tutor.
 (() => {
-  const { useEffect } = React;
+  const { useEffect, useState, useMemo } = React;
 
   // Inline markup: {{he:עוֹלָה}} -> Hebrew span, **bold** -> <b>.
   function Inline({ text }) {
@@ -63,5 +63,124 @@
     );
   }
 
-  Object.assign(window, { Inline, Stars, Modal, sourceFor, HeartRow });
+  /* ─── Source scroll (parchment drawer) ─────────────────────────────── */
+  function SourceScroll({ sources, onClose }) {
+    const [idx, setIdx] = useState(0);
+    const total = sources ? sources.length : 0;
+    useEffect(() => {setIdx(0);}, [sources]);
+  
+    useEffect(() => {
+      const onKey = (e) => {
+        if (e.key === "Escape") {e.preventDefault();onClose();}
+        if (e.key === "ArrowLeft" && idx > 0) {e.preventDefault();setIdx(idx - 1);}
+        if (e.key === "ArrowRight" && idx < total - 1) {e.preventDefault();setIdx(idx + 1);}
+      };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [idx, total, onClose]);
+  
+    if (!sources || sources.length === 0) return null;
+    const cur = sources[idx];
+  
+    return (
+      <div className="drawer-back" onClick={onClose} role="presentation">
+        <div
+          className="scroll"
+          onClick={(e) => e.stopPropagation()}
+          role="dialog"
+          aria-label={"Source: " + cur.cite}>
+          
+          <div className="rod" aria-hidden="true" />
+          <div className="parchment">
+            <button
+              type="button"
+              className="parchment-close"
+              onClick={onClose}
+              aria-label="Close">
+              ×</button>
+            <div className="parchment-eyebrow">Source</div>
+            <h3 className="parchment-cite">{cur.cite}</h3>
+            <div className="parchment-body">
+              <div className="parchment-en">{cur.en}</div>
+              <div className="parchment-divider" />
+              <div className="parchment-he">{cur.he}</div>
+            </div>
+            {total > 1 &&
+            <div className="parchment-paging">
+                <button
+                type="button"
+                className="paging-arrow"
+                onClick={() => setIdx(idx - 1)}
+                disabled={idx === 0}
+                aria-label="Previous source">
+                ←</button>
+                <div className="paging-dots">
+                  {sources.map((s, i) =>
+                <button
+                  key={i}
+                  type="button"
+                  className={"paging-dot" + (i === idx ? " current" : "")}
+                  onClick={() => setIdx(i)}
+                  aria-label={"Source " + (i + 1) + ": " + s.cite} />
+  
+                )}
+                </div>
+                <button
+                type="button"
+                className="paging-arrow"
+                onClick={() => setIdx(idx + 1)}
+                disabled={idx === total - 1}
+                aria-label="Next source">
+                →</button>
+                <span className="paging-count">
+                  <b>{idx + 1}</b> of {total}
+                </span>
+              </div>
+            }
+          </div>
+          <div className="rod" aria-hidden="true" />
+        </div>
+      </div>);
+  
+  }
+  
+
+  /* ─── Confetti ─────────────────────────────────────────────────────── */
+  function Confetti() {
+    const COLORS = ["#D4A046", "#6B8A3F", "#B85A3D", "#4A7CB5", "#8B5E9C", "#D46B46", "#4BAF82"];
+    const pieces = useMemo(() =>
+      Array.from({ length: 90 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        delay: Math.random() * 3,
+        dur: 2.5 + Math.random() * 2,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        w: 7 + Math.random() * 9,
+        h: 5 + Math.random() * 6,
+        drift: (Math.random() - 0.5) * 120,
+      })), []);
+  
+    return (
+      <div className="confetti-wrap" aria-hidden="true">
+        {pieces.map(p => (
+          <div
+            key={p.id}
+            className="confetti-piece"
+            style={{
+              "--x": p.x + "%",
+              "--w": p.w + "px",
+              "--h": p.h + "px",
+              "--color": p.color,
+              "--delay": p.delay + "s",
+              "--dur": p.dur + "s",
+              "--drift": p.drift + "px",
+            }}
+          />
+        ))}
+      </div>
+    );
+  }
+  
+
+  Object.assign(window, { Inline, Stars, Modal, sourceFor, HeartRow, SourceScroll, Confetti });
 })();

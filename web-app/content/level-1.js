@@ -12,7 +12,138 @@ window.KODSHIM_LEVELS[1] = {
     "This level follows the first chapter of the Rambam's {{he:הִלְכוֹת מַעֲשֵׂה הַקָּרְבָּנוֹת}} from halacha 1 to 18.",
   ],
   scope: "Maaseh HaKorbanot 1:1–1:18",
-  lessons: null,   // bespoke slides live in kodshim-learn.jsx
+  lessons: [
+    {
+      id: "L1-01",
+      title: "Five species, and only five",
+      dek: "Of every animal alive, the Torah names just five as fit for the altar.",
+      sources: ["Maaseh HaKorbanot 1:1", "Vayikra 1:2", "Vayikra 1:14"],
+      intro: [
+        "Of every creature alive, the Torah lets only five kinds onto the altar: three from the herd and flock, and two kinds of bird.",
+        "A deer is kosher to eat. A chicken is kosher to eat. Neither can ever be a korban.",
+      ],
+      blocks: [
+        { type: "cards", items: [
+          { he: "בָּקָר", tl: "bakar", en: "cattle", img: "assets/cow-male.webp", text: "The herd. Bulls, cows, and calves." },
+          { he: "כְּבָשִׂים", tl: "kevasim", en: "sheep", img: "assets/ram.webp", text: "Half of the flock. Rams, ewes, and lambs." },
+          { he: "עִזִּים", tl: "izim", en: "goats", img: "assets/male-goat.webp", text: "The other half of the flock." },
+        ] },
+        { type: "cards", items: [
+          { he: "תּוֹרִים", tl: "torim", en: "turtledoves", text: "Fit only when grown." },
+          { he: "בְּנֵי יוֹנָה", tl: "bnei yonah", en: "young pigeons", text: "Fit only while young." },
+        ] },
+        { type: "callout", title: "The whole list", text: "Five species: {{he:בָּקָר}}, {{he:כְּבָשִׂים}}, {{he:עִזִּים}}, {{he:תּוֹרִים}}, {{he:בְּנֵי יוֹנָה}}. Flour, wine, and oil are offerings too, but a separate system with its own laws." },
+      ],
+    },
+    {
+      id: "L1-02",
+      title: "Each species has its own words",
+      dek: "The Torah doesn't say \"a young male cow\". It says egel.",
+      sources: ["Maaseh HaKorbanot 1:14"],
+      intro: [
+        "Every species has one word for the young animal and other words for the grown male and the grown female. The Torah uses them precisely, and so will the korbanot.",
+      ],
+      blocks: [
+        { type: "cards", items: [
+          { he: "עֵגֶל", tl: "egel", en: "calf — young male", img: "assets/calf.webp", text: "A young male of the herd. The young female is an {{he:עֶגְלָה}}, eglah." },
+          { he: "פַּר", tl: "par", en: "bull — adult male", img: "assets/cow-male.webp", text: "Also called {{he:שׁוֹר}}, shor." },
+          { he: "פָּרָה", tl: "parah", en: "cow — adult female", img: "assets/cow-f.webp", text: "The grown female of the herd." },
+        ] },
+        { type: "cards", items: [
+          { he: "כֶּבֶשׂ", tl: "keves", en: "lamb — under one year", img: "assets/lamb.webp", text: "A male sheep in its first year. The young female is a {{he:כִּבְשָׂה}}, kivsah." },
+          { he: "אַיִל", tl: "ayil", en: "ram — adult male", img: "assets/ram.webp", text: "A male sheep from its second year." },
+          { he: "רָחֵל", tl: "rachel", en: "ewe — adult female", img: "assets/ewe.webp", text: "The grown female sheep." },
+        ] },
+        { type: "cards", items: [
+          { he: "גְּדִי", tl: "gedi", en: "kid — young male", img: "assets/kid-goat.webp", text: "A young male goat. The young female is a {{he:שְׂעִירָה}}, se'irah (or gediyah)." },
+          { he: "תַּיִשׁ", tl: "tayish", en: "he-goat — adult male", img: "assets/male-goat.webp", text: "Also called {{he:שָׂעִיר}}, sa'ir." },
+          { he: "עֵז", tl: "ez", en: "she-goat — adult female", img: "assets/female-goat-never-used.webp", text: "The grown female goat." },
+        ] },
+        { type: "callout", title: "Why it matters", text: "When the Torah says {{he:כֶּבֶשׂ}} it means a sheep in its first year, and when it says {{he:אַיִל}} it means one in its second. The two are never interchangeable in a korban." },
+      ],
+    },
+    {
+      id: "L1-03",
+      title: "How old is old enough?",
+      dek: "Animals enter and leave eligibility on the calendar, to the hour.",
+      sources: ["Maaseh HaKorbanot 1:12", "Maaseh HaKorbanot 1:14", "Vayikra 22:27", "Vayikra 22:22"],
+      intro: [
+        "An animal may not be offered before it has lived seven full days. From the eighth day it is valid after the fact; the Rambam rules that one should wait until the thirtieth day to begin with.",
+      ],
+      blocks: [
+        { type: "steps", items: [
+          { title: "Days 1 to 7", he: "פָּסוּל", text: "Too young. Not a valid korban at any price." },
+          { title: "Days 8 to 29", he: "בְּדִיעֲבַד", text: "Valid if it was brought, but one should wait." },
+          { title: "Day 30 onward", he: "לְכַתְּחִלָּה", text: "Valid from the outset. Bechor, pesach, and maaser may already be brought from day eight." },
+        ] },
+        { type: "table", caption: "Maximum age", cols: ["", "Through"], rows: [
+          ["Cattle — {{he:בָּקָר}}", "three full years"],
+          ["Sheep and goats — {{he:צֹאן}}", "two full years"],
+        ] },
+        { type: "callout", title: "To the hour", text: "Age is counted from the hour of birth. A male sheep on the thirtieth day of its second year is a {{he:פִּלְגָּס}}, pilgas: no longer a keves, not yet an ayil, and fit as neither. And if the animal crosses an age line between shechitah and zerikah, it is pasul." },
+        { type: "callout", title: "One more disqualifier", text: "A {{he:מוּם}}, a blemish listed in the Torah such as blindness or a broken limb, makes an animal pasul at any age." },
+      ],
+    },
+    {
+      id: "L1-04",
+      title: "The four categories of korban",
+      dek: "Every offering, communal or individual, fits one of four kinds.",
+      sources: ["Maaseh HaKorbanot 1:2", "Maaseh HaKorbanot 1:3"],
+      intro: [
+        "Every animal korban in the Torah belongs to one of four categories. Three more offerings exist only for individuals.",
+      ],
+      blocks: [
+        { type: "cards", items: [
+          { he: "עוֹלָה", tl: "olah", en: "burnt offering", text: "Entirely burned on the altar. No portion is eaten." },
+          { he: "חַטָּאת", tl: "chatat", en: "sin offering", text: "Atones for an unintentional sin whose deliberate form carries karet." },
+          { he: "אָשָׁם", tl: "asham", en: "guilt offering", text: "Brought for a short list of specific sins, or in a case of doubt." },
+          { he: "שְׁלָמִים", tl: "shelamim", en: "peace offering", text: "The altar gets the fats, the kohen gets a share, and the owner eats the rest." },
+        ] },
+        { type: "terms", items: [
+          { he: "פֶּסַח", tl: "pesach", en: "individuals only" },
+          { he: "בְּכוֹר", tl: "bechor", en: "individuals only" },
+          { he: "מַעֲשֵׂר", tl: "maaser", en: "individuals only" },
+        ] },
+      ],
+    },
+    {
+      id: "L1-05",
+      title: "Which animal for which korban",
+      dek: "Each korban dictates species, sex, and sometimes age.",
+      sources: ["Maaseh HaKorbanot 1:8", "Maaseh HaKorbanot 1:9", "Maaseh HaKorbanot 1:10", "Maaseh HaKorbanot 1:11", "Maaseh HaKorbanot 1:14"],
+      intro: [
+        "Each of the four categories has its own rules about which species and which sex may be brought. Learn these four lines and most of the level is yours.",
+      ],
+      blocks: [
+        { type: "table", caption: "Species and sex by korban", cols: ["Korban", "Species", "Sex"], rows: [
+          ["{{he:עוֹלָה}} olah", "any of the five", "male (birds: either)"],
+          ["{{he:חַטָּאת}} chatat", "any of the five", "individual's animal chatat: female"],
+          ["{{he:אָשָׁם}} asham", "sheep only", "male"],
+          ["{{he:שְׁלָמִים}} shelamim", "cattle, sheep, goats — never birds", "either"],
+        ] },
+        { type: "callout", title: "The exceptions", text: "An individual's animal chatat is female, except three people who bring males: a {{he:נָשִׂיא}} brings a male goat, and the {{he:כֹּהֵן מָשִׁיחַ}} and the kohen gadol on Yom Kippur bring a bull." },
+      ],
+    },
+    {
+      id: "L1-06",
+      title: "Communal, individual, and the two grades of holiness",
+      dek: "The community is limited to olah and chatat. Holiness grade follows the category.",
+      sources: ["Maaseh HaKorbanot 1:4", "Maaseh HaKorbanot 1:17"],
+      intro: [
+        "Communal offerings follow a fixed public schedule. Individual offerings come from a person's own life: a birth, a mistake, a vow, a festival.",
+      ],
+      blocks: [
+        { type: "compare",
+          left: { title: "The community brings", he: "קָרְבַּן צִבּוּר", items: ["Olah or chatat — that is the whole list", "On Shavuot, two lambs as communal shelamim", "Never an asham", "Never a bird"] },
+          right: { title: "An individual brings", he: "קָרְבַּן יָחִיד", items: ["Any of the four categories", "Pesach, bechor, and maaser as well", "Birds, when the korban allows them"] },
+        },
+        { type: "compare",
+          left: { title: "Most holy", he: "קָדְשֵׁי קָדָשִׁים", items: ["Olah", "Chatat", "Asham", "The two Shavuot lambs"] },
+          right: { title: "Lighter holies", he: "קָדָשִׁים קַלִּים", items: ["Shelamim of an individual", "Bechor", "Maaser", "Pesach"] },
+        },
+      ],
+    },
+  ],
   concepts: [
     {
         "id": "L1-C01",
@@ -504,5 +635,75 @@ window.KODSHIM_LEVELS[1] = {
       explain: "A chatat can come from all five species. Which sex depends on who brings it — an individual's animal chatat is female; for birds it does not matter.",
       cite: "Maaseh HaKorbanot 1:9",
     },
+    {
+      id: "L1-Q23", kind: "pic",
+      prompt: "Tap the ayil.",
+      options: [
+        { img: "assets/ram.webp", label: "אַיִל" }, { img: "assets/lamb.webp", label: "כֶּבֶשׂ" },
+        { img: "assets/male-goat.webp", label: "תַּיִשׁ" }, { img: "assets/cow-male.webp", label: "פַּר" },
+      ],
+      answer: 0,
+      explain: "The ayil is the grown ram. The keves is the lamb in its first year; tayish and par are the adult male goat and bull.",
+      cite: "Maaseh HaKorbanot 1:14",
+    },
+    {
+      id: "L1-Q24", kind: "pic",
+      prompt: "Tap the egel.",
+      options: [
+        { img: "assets/kid-goat.webp", label: "גְּדִי" }, { img: "assets/calf.webp", label: "עֵגֶל" },
+        { img: "assets/lamb.webp", label: "כֶּבֶשׂ" }, { img: "assets/cow-f.webp", label: "פָּרָה" },
+      ],
+      answer: 1,
+      explain: "The egel is the calf, the young male of the herd. Gedi and keves are the young goat and sheep; parah is the grown cow.",
+      cite: "Maaseh HaKorbanot 1:14",
+    },
+    {
+      id: "L1-Q25", kind: "pic",
+      prompt: "Tap the gedi.",
+      options: [
+        { img: "assets/ewe.webp", label: "רָחֵל" }, { img: "assets/calf.webp", label: "עֵגֶל" },
+        { img: "assets/kid-goat.webp", label: "גְּדִי" }, { img: "assets/lamb.webp", label: "כֶּבֶשׂ" },
+      ],
+      answer: 2,
+      explain: "The gedi is the young male goat. The young sheep is a keves, the young cow an egel, and the rachel is a grown ewe.",
+      cite: "Maaseh HaKorbanot 1:14",
+    },
+    {
+      id: "L1-Q26", kind: "pic",
+      prompt: "Tap the parah, the grown female of the herd.",
+      options: [
+        { img: "assets/cow-male.webp", label: "פַּר" }, { img: "assets/ewe.webp", label: "רָחֵל" },
+        { img: "assets/calf.webp", label: "עֵגֶל" }, { img: "assets/cow-f.webp", label: "פָּרָה" },
+      ],
+      answer: 3,
+      explain: "Parah is the cow. Par is the bull, egel the calf, and rachel the ewe of the flock.",
+      cite: "Maaseh HaKorbanot 1:14",
+    },
+    {
+      id: "L1-Q27", kind: "cloze",
+      prompt: "An ____ is burned entirely on the altar; no one eats any of it.",
+      options: ["olah", "asham", "shelamim", "chatat"],
+      answer: 0,
+      explain: "The olah goes up whole. A chatat and asham are eaten by the kohanim; a shelamim is shared with the owner.",
+      cite: "Maaseh HaKorbanot 1:2",
+    },
+    {
+      id: "L1-Q28", kind: "mc",
+      prompt: "From which korban does the owner eat a share?",
+      options: ["Shelamim", "Olah", "Chatat", "Asham"],
+      answer: 0,
+      explain: "Only the shelamim feeds the owner: the altar takes the fats, the kohen takes his portion, and the owner eats the rest.",
+      cite: "Maaseh HaKorbanot 1:2",
+    },
   ],
+};
+
+// Which quiz items are used as in-lesson checks.
+window.KODSHIM_LEVELS[1].checks = {
+  "L1-01": ["L1-Q02", "L1-Q04", "L1-Q15"],
+  "L1-02": ["L1-Q23", "L1-Q05", "L1-Q24", "L1-Q01", "L1-Q25", "L1-Q20", "L1-Q26", "L1-Q03"],
+  "L1-03": ["L1-Q16", "L1-Q06", "L1-Q07", "L1-Q13", "L1-Q12", "L1-Q14", "L1-Q19"],
+  "L1-04": ["L1-Q27", "L1-Q28"],
+  "L1-05": ["L1-Q08", "L1-Q21", "L1-Q22", "L1-Q09", "L1-Q17", "L1-Q18"],
+  "L1-06": ["L1-Q10", "L1-Q11"],
 };

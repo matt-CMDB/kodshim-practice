@@ -73,6 +73,11 @@ const ids = new Set();
   if (q.cite !== null && q.cite !== undefined && !isStr(q.cite)) err(`${tag}: cite must be string or null`);
   kinds[q.kind] = (kinds[q.kind] || 0) + 1;
   switch (q.kind) {
+    case "pic":
+      if (!Array.isArray(q.options) || q.options.length < 3 || q.options.length > 4) err(`${tag}: pic needs 3-4 options`);
+      (q.options || []).forEach((o) => { if (!o || !isStr(o.img)) err(`${tag}: pic option needs img`); else if (!fs.existsSync(path.join(assetsDir, "..", o.img))) err(`${tag}: asset not found ${o.img}`); });
+      if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options || []).length) err(`${tag}: answer index out of range`);
+      break;
     case "mc": case "tap": case "cloze":
       if (!Array.isArray(q.options) || q.options.length < 3 || q.options.length > 5) err(`${tag}: 3-5 options`);
       if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options || []).length) err(`${tag}: answer index out of range`);
@@ -98,6 +103,15 @@ const ids = new Set();
   }
 });
 
+// checks map: every id must exist, every lesson should have some
+if (L.checks) {
+  const qids = new Set((L.quiz || []).map((q) => q.id));
+  Object.entries(L.checks).forEach(([lid, ids]) => {
+    if (!(L.lessons || []).some((ls) => ls.id === lid)) err(`checks: unknown lesson ${lid}`);
+    ids.forEach((id) => { if (!qids.has(id)) err(`checks: unknown quiz id ${id} in ${lid}`); });
+  });
+  (L.lessons || []).forEach((ls) => { if (!L.checks[ls.id] || !L.checks[ls.id].length) warn(`lesson ${ls.id} has no checks`); });
+} else if (L.lessons) warn("no checks map");
 const n = (L.quiz || []).length;
 if (n < 16) warn(`only ${n} quiz items (want 18-24)`);
 const tfs = (L.quiz || []).filter((q) => q.kind === "tf");
