@@ -648,43 +648,424 @@ window.KODSHIM_LEVELS[2] = {
       answer: 0,
       explain: "A chatat for a sin is required, so it is a korban chovah — as is the pesach. An olah or shelamim brought freely is a korban nedavah.",
       cite: null },
+
+    // ── Lesson 1: the four kinds and the three additional offerings ──
+    { id: "L2-Q25", kind: "mc",
+      prompt: "Which of these is NOT one of the four main kinds of individual animal korban?",
+      options: ["Asham", "Shelamim", "Bechor", "Chatat"],
+      answer: 2,
+      explain: "The four main kinds are olah, chatat, asham, and shelamim. A bechor is real and important, but the Rambam lists it among the three additional individual offerings, not the four.",
+      cite: "Maaseh HaKorbanot 1:2" },
+
+    { id: "L2-Q26", kind: "mc",
+      prompt: "Beyond the four main kinds, which three offerings does the Rambam list as additional individual offerings?",
+      options: [
+        "Olah, chatat, asham",
+        "Pesach, chatat, shelamim",
+        "Bechor, asham, maaser behemah",
+        "Pesach, bechor, maaser behemah",
+      ],
+      answer: 3,
+      explain: "The three additional individual offerings are the pesach, the bechor, and maaser behemah. Chatat and asham belong to the four main kinds.",
+      cite: "Maaseh HaKorbanot 1:3" },
+
+    { id: "L2-Q27", kind: "tf",
+      prompt: "Maaser behemah is one of the four main kinds of individual animal korban.",
+      answer: false,
+      explain: "No — maaser behemah is one of the three additional individual offerings, together with the pesach and the bechor. The four main kinds are olah, chatat, asham, and shelamim.",
+      cite: "Maaseh HaKorbanot 1:3" },
+
+    { id: "L2-Q28", kind: "cloze",
+      prompt: "The three additional individual offerings are the pesach, the bechor, and ____.",
+      options: ["the asham", "maaser behemah", "the shelamim"],
+      answer: 1,
+      explain: "Pesach, bechor, and maaser behemah are the three additional offerings. Asham and shelamim are two of the four main kinds.",
+      cite: "Maaseh HaKorbanot 1:3" },
+
+    { id: "L2-Q29", kind: "match",
+      prompt: "Match each offering to what its name means.",
+      pairs: [
+        { hebrew: "פֶּסַח",           english: "the Pesach offering" },
+        { hebrew: "בְּכוֹר",          english: "a firstborn animal" },
+        { hebrew: "מַעְשַׂר בְּהֵמָה", english: "the animal tithe" },
+        { hebrew: "אָשָׁם",           english: "the guilt offering, for specific sins" },
+      ],
+      explain: "Pesach, bechor (firstborn), and maaser behemah (animal tithe) are the three additional individual offerings. The asham is one of the four main kinds.",
+      cite: "Maaseh HaKorbanot 1:3" },
+
+    // ── Lesson 2: what each kind is ──
+    { id: "L2-Q30", kind: "mc",
+      prompt: "Which korban is burned entirely on the altar, with nothing of it eaten?",
+      options: ["Olah", "Shelamim", "Chatat", "Asham"],
+      answer: 0,
+      explain: "The olah goes up entirely on the altar. Chatat and asham are eaten by the kohanim; shelamim is shared by the kohanim and the owners.",
+      cite: "Maaseh HaKorbanot 5:1" },
+
+    { id: "L2-Q31", kind: "tf",
+      prompt: "A kohen may eat his portion of an olah inside the courtyard.",
+      answer: false,
+      explain: "There is no portion of an olah for anyone. It is a burnt offering, consumed entirely on the altar. It is the chatat and asham that the kohanim eat in the courtyard.",
+      cite: "Vayikra 1:9" },
+
+    { id: "L2-Q32", kind: "tap",
+      prompt: "Tap the korban that goes up entirely on the altar.",
+      options: ["שְׁלָמִים", "בְּכוֹר", "חַטָּאת", "עוֹלָה"],
+      answer: 3,
+      explain: "Olah means \"that which goes up\" — the whole animal rises on the altar and nothing is eaten. The others all have a portion that is eaten.",
+      cite: "Maaseh HaKorbanot 5:1" },
+
+    { id: "L2-Q33", kind: "mc",
+      prompt: "A man unintentionally did something that, had he done it on purpose, would carry karet. Which korban does he bring?",
+      options: ["An asham", "An olah", "A chatat", "A shelamim"],
+      answer: 2,
+      explain: "That is the chatat exactly: an unintentional transgression of a sin whose intentional violation is punishable by karet. An asham is for its own short list of cases.",
+      cite: "Shegagot 1:1" },
+
+    { id: "L2-Q34", kind: "cloze",
+      prompt: "A chatat is brought for a sin committed ____.",
+      options: ["intentionally", "unintentionally", "in doubt — he is not sure he sinned at all"],
+      answer: 1,
+      explain: "A chatat atones for a sin done unintentionally (bishgagah). A doubtful chatat — where one is unsure whether the sin happened — calls for an asham, not a chatat.",
+      cite: "Shegagot 1:1" },
+
+    { id: "L2-Q35", kind: "mc",
+      prompt: "Which of these cases calls for an asham?",
+      options: [
+        "An unintentional sin whose intentional violation carries karet",
+        "A gift to the altar, brought freely",
+        "Me'ilah — misuse of Temple property",
+        "Thanksgiving for a kindness received",
+      ],
+      answer: 2,
+      explain: "Me'ilah is on the asham list, along with a false oath on money, a doubtful chatat, the purification of a metzora, and a nazir who became tamei. The karet case is a chatat; a free gift or thanksgiving is an olah or shelamim.",
+      cite: "Shegagot 8:1" },
+
+    { id: "L2-Q36", kind: "mc",
+      prompt: "A person is not sure whether he committed a sin that would require a chatat. What does he bring?",
+      options: ["An asham", "A chatat anyway", "An olah", "Nothing until he is certain"],
+      answer: 0,
+      explain: "A doubtful chatat (sfek chatat) is one of the cases for which an asham is brought. The chatat itself is only for a sin he knows he committed.",
+      cite: "Shegagot 8:1" },
+
+    { id: "L2-Q37", kind: "mc",
+      prompt: "Which korban is the only one the owners themselves eat from?",
+      options: ["Olah", "Chatat", "Shelamim", "Asham"],
+      answer: 2,
+      explain: "Shelamim is eaten partly by the kohanim and partly by the owners. An olah is not eaten at all; chatat and asham are eaten by the kohanim alone.",
+      cite: "Maaseh HaKorbanot 1:2" },
+
+    { id: "L2-Q38", kind: "tf",
+      prompt: "A shelamim is eaten partly by the kohanim and partly by the owners.",
+      answer: true,
+      explain: "Correct. That shared meal is what sets the shelamim apart: the kohanim take their part, and the owners eat the rest. It is brought freely, or in thanksgiving and the like.",
+      cite: "Vayikra 3" },
+
+    // ── Lesson 3: the eimurin and the alyah ──
+    { id: "L2-Q39", kind: "match",
+      prompt: "Match each part to its name.",
+      pairs: [
+        { hebrew: "הַחֵלֶב שֶׁעַל הַקֶּרֶב", english: "the fat on the stomach" },
+        { hebrew: "שְׁתֵּי הַכְּלָיוֹת",    english: "the two kidneys, with their fat" },
+        { hebrew: "יוֹתֶרֶת הַכָּבֵד",      english: "the lobe of the liver" },
+        { hebrew: "אַלְיָה",               english: "the fat tail — sheep only" },
+      ],
+      explain: "These are the eimurin, the parts burned on the altar from every animal korban. The alyah is added only for sheep.",
+      cite: "Maaseh HaKorbanot 1:17" },
+
+    { id: "L2-Q40", kind: "sort",
+      prompt: "Sort each part of the animal: is it one of the eimurin burned on the altar, or not?",
+      buckets: [
+        { id: "eim", he: "אֵימוּרִין",     en: "Burned as eimurin" },
+        { id: "not", he: "לֹא אֵימוּרִין", en: "Not among the eimurin" },
+      ],
+      items: [
+        { hebrew: "הַחֵלֶב שֶׁעַל הַקֶּרֶב", translit: "chelev on the stomach", bucket: "eim" },
+        { hebrew: "הָעוֹר",               translit: "the hide",              bucket: "not" },
+        { hebrew: "שְׁתֵּי הַכְּלָיוֹת",    translit: "the two kidneys",       bucket: "eim" },
+        { hebrew: "הַבָּשָׂר",             translit: "the meat",              bucket: "not" },
+        { hebrew: "יוֹתֶרֶת הַכָּבֵד",      translit: "lobe of the liver",     bucket: "eim" },
+        { hebrew: "הַדָּם",                translit: "the blood",             bucket: "not" },
+      ],
+      explain: "The eimurin are three things: the chelev on the stomach, the two kidneys with their fat, and the lobe of the liver (plus the alyah for sheep). The hide, the meat, and the blood are not eimurin.",
+      cite: "Maaseh HaKorbanot 1:17" },
+
+    { id: "L2-Q41", kind: "tap",
+      prompt: "Tap the word for the fats and organs burned on the altar from every animal korban.",
+      options: ["אַלְיָה", "יוֹתֶרֶת הַכָּבֵד", "כְּלָיוֹת", "אֵימוּרִין"],
+      answer: 3,
+      explain: "Eimurin is the collective name. The alyah, the yoteret hakaved, and the kelayot are each only one of the parts.",
+      cite: "Maaseh HaKorbanot 1:17" },
+
+    { id: "L2-Q42", kind: "mc",
+      prompt: "A keves and an ez are both brought as shelamim. Whose eimurin include the alyah?",
+      options: ["Only the keves's", "Only the ez's", "Both", "Neither"],
+      answer: 0,
+      explain: "Only sheep have the alyah, the fat tail, so it joins the eimurin of the keves alone. The goat's eimurin are the three standard parts.",
+      cite: "Vayikra 3:9" },
+
+    { id: "L2-Q43", kind: "tf",
+      prompt: "The eimurin of a goat include the alyah, the fat tail.",
+      answer: false,
+      explain: "A goat has no alyah. The fat tail belongs to sheep alone, and only for sheep is it part of the eimurin.",
+      cite: "Maaseh HaKorbanot 1:17" },
+
+    // ── Lesson 4: two grades of holiness ──
+    { id: "L2-Q44", kind: "mc",
+      prompt: "What are the two grades of holiness into which every korban falls?",
+      options: [
+        "Korban tzibur and korban yachid",
+        "Kodshei kodashim and kodashim kalim",
+        "Nedavah and chovah",
+        "Behemah and of",
+      ],
+      answer: 1,
+      explain: "By sanctity, every korban is either kodshei kodashim (most holy) or kodashim kalim (lighter holies). The other pairs sort korbanot by who brings them, why, and from which animal.",
+      cite: "Maaseh HaKorbanot 1:16" },
+
+    { id: "L2-Q45", kind: "cloze",
+      prompt: "The lower of the two grades of holiness is called ____.",
+      options: ["kodshei kodashim", "korban yachid", "kodashim kalim"],
+      answer: 2,
+      explain: "Kodashim kalim, the lighter holies, is the lower grade; kodshei kodashim is the higher. Korban yachid is about who brings the korban, not its sanctity.",
+      cite: "Maaseh HaKorbanot 1:16" },
+
+    { id: "L2-Q46", kind: "match",
+      prompt: "Match each term to its meaning.",
+      pairs: [
+        { hebrew: "קָדְשֵׁי קָדָשִׁים", english: "the most holy grade — olot, chatot, ashamot" },
+        { hebrew: "קָדָשִׁים קַלִּים",  english: "the lighter grade — shelamim of an individual, bechor, maaser behemah, pesach" },
+        { hebrew: "צָפוֹן",             english: "the north of the courtyard, where kodshei kodashim are slaughtered" },
+        { hebrew: "עֲזָרָה",            english: "the Temple courtyard, where kodshei kodashim are eaten" },
+      ],
+      explain: "Kodshei kodashim are slaughtered in the tzafon and eaten in the azarah. Kodashim kalim may be slaughtered anywhere in the azarah and eaten anywhere in Jerusalem.",
+      cite: "Maaseh HaKorbanot 1:16" },
+
+    { id: "L2-Q47", kind: "mc",
+      prompt: "Which of these is NOT kodshei kodashim?",
+      options: ["Asham", "Maaser behemah", "The communal chatot", "Par he'elem davar"],
+      answer: 1,
+      explain: "Maaser behemah is kodashim kalim. Ashamot, the communal chatot, and the par he'elem davar are all on the kodshei kodashim list.",
+      cite: "Maaseh HaKorbanot 1:16" },
+
+    { id: "L2-Q48", kind: "mc",
+      prompt: "Which list gives the kodashim kalim?",
+      options: [
+        "Olot, chatot, ashamot, and the two Shavuot lambs",
+        "Bechor, maaser behemah, pesach, and the par he'elem davar",
+        "Chatot, ashamot, bechor, and pesach",
+        "Shelamim of an individual, bechor, maaser behemah, and the korban pesach",
+      ],
+      answer: 3,
+      explain: "Kodashim kalim are the shelamim of an individual, bechor, maaser behemah, and the korban pesach. The par he'elem davar, chatot, and ashamot are kodshei kodashim.",
+      cite: "Maaseh HaKorbanot 1:16" },
+
+    { id: "L2-Q49", kind: "tf",
+      prompt: "The korban pesach is kodashim kalim.",
+      answer: true,
+      explain: "Yes. The pesach sits with the shelamim of an individual, bechor, and maaser behemah among the kodashim kalim.",
+      cite: "Maaseh HaKorbanot 1:16" },
+
+    { id: "L2-Q50", kind: "sort",
+      prompt: "Sort each korban by where it is slaughtered.",
+      buckets: [
+        { id: "north", he: "צָפוֹן בִּלְבַד",    en: "North of the courtyard only" },
+        { id: "any",   he: "בְּכָל הָעֲזָרָה",   en: "Anywhere in the courtyard" },
+      ],
+      items: [
+        { hebrew: "עוֹלָה",          translit: "olah",          bucket: "north" },
+        { hebrew: "שַׁלְמֵי יָחִיד",  translit: "shalmei yachid", bucket: "any"   },
+        { hebrew: "אָשָׁם",          translit: "asham",         bucket: "north" },
+        { hebrew: "בְּכוֹר",         translit: "bechor",        bucket: "any"   },
+        { hebrew: "חַטָּאת",         translit: "chatat",        bucket: "north" },
+        { hebrew: "פֶּסַח",          translit: "pesach",        bucket: "any"   },
+      ],
+      explain: "The place of slaughter follows the grade. Kodshei kodashim — olah, chatat, asham — are slaughtered in the north; kodashim kalim — shelamim of an individual, bechor, pesach — anywhere in the courtyard.",
+      cite: "Maaseh HaKorbanot 5:8" },
+
+    { id: "L2-Q51", kind: "mc",
+      prompt: "A kohen is about to slaughter a chatat. Where must he do it?",
+      options: [
+        "In the north of the courtyard",
+        "Anywhere in the courtyard",
+        "Anywhere in Jerusalem",
+        "In the south of the courtyard",
+      ],
+      answer: 0,
+      explain: "A chatat is kodshei kodashim, so it must be slaughtered in the north of the courtyard. Only kodashim kalim may be slaughtered anywhere in the courtyard — and no korban is slaughtered outside it.",
+      cite: "Maaseh HaKorbanot 5:8" },
+
+    { id: "L2-Q52", kind: "tap",
+      prompt: "Tap the word for the part of the courtyard where kodshei kodashim are slaughtered.",
+      options: ["דָּרוֹם", "צָפוֹן", "עֲזָרָה", "יְרוּשָׁלַיִם"],
+      answer: 1,
+      explain: "Tzafon, the north. Darom is south; azarah is the whole courtyard; Yerushalayim is where kodashim kalim may be eaten.",
+      cite: "Vayikra 1:11" },
+
+    { id: "L2-Q53", kind: "mc",
+      prompt: "Which of these korbanot may be slaughtered anywhere in the courtyard?",
+      options: ["Olah", "Chatat", "Maaser behemah", "Asham"],
+      answer: 2,
+      explain: "Maaser behemah is kodashim kalim, so it may be slaughtered anywhere in the courtyard. Olah, chatat, and asham are kodshei kodashim and must be slaughtered in the north.",
+      cite: "Maaseh HaKorbanot 5:8" },
+
+    { id: "L2-Q54", kind: "tf",
+      prompt: "A kohen takes his portion of a chatat home and eats it in his house in Jerusalem. That is permitted.",
+      answer: false,
+      explain: "No. A chatat is kodshei kodashim, and kodshei kodashim are eaten only inside the Temple courtyard. Eating it at home in Jerusalem is the rule for kodashim kalim.",
+      cite: "Maaseh HaKorbanot 10:1" },
+
+    { id: "L2-Q55", kind: "mc",
+      prompt: "Who may eat from an asham?",
+      options: [
+        "Any tahor person",
+        "The owners",
+        "The kohanim together with the owners",
+        "Male kohanim only",
+      ],
+      answer: 3,
+      explain: "An asham is kodshei kodashim, so only male kohanim eat it, inside the courtyard, on the day of slaughter and the following night.",
+      cite: "Maaseh HaKorbanot 10:1" },
+
+    { id: "L2-Q56", kind: "sort",
+      prompt: "Sort each korban by who eats from it.",
+      buckets: [
+        { id: "kohanim", he: "כֹּהֲנִים זְכָרִים בָּעֲזָרָה", en: "Male kohanim, in the courtyard" },
+        { id: "tahor",   he: "כָּל טָהוֹר בִּירוּשָׁלַיִם",   en: "Anyone tahor, in Jerusalem" },
+        { id: "none",    he: "אֵינוֹ נֶאֱכָל",                en: "No one — burned entirely" },
+      ],
+      items: [
+        { hebrew: "חַטָּאת",          translit: "chatat",         bucket: "kohanim" },
+        { hebrew: "שַׁלְמֵי יָחִיד",   translit: "shalmei yachid", bucket: "tahor"   },
+        { hebrew: "עוֹלָה",           translit: "olah",           bucket: "none"    },
+        { hebrew: "אָשָׁם",           translit: "asham",          bucket: "kohanim" },
+        { hebrew: "מַעְשַׂר בְּהֵמָה", translit: "maaser behemah", bucket: "tahor"   },
+      ],
+      explain: "Chatat and asham are kodshei kodashim: male kohanim, in the courtyard. Shelamim of an individual and maaser behemah are kodashim kalim: anyone tahor, anywhere in Jerusalem. The olah is not eaten at all.",
+      cite: "Maaseh HaKorbanot 10:1" },
+
+    { id: "L2-Q57", kind: "tf",
+      prompt: "A tahor woman who is not from a family of kohanim eats from her family's shelamim at home in Jerusalem. That is permitted.",
+      answer: true,
+      explain: "Yes. Shelamim of an individual are kodashim kalim, which anyone tahor — men and women — may eat anywhere in Jerusalem.",
+      cite: "Maaseh HaKorbanot 10:5" },
+
+    { id: "L2-Q58", kind: "cloze",
+      prompt: "Kodashim kalim may be eaten anywhere in ____.",
+      options: ["the Temple courtyard", "Jerusalem", "Eretz Yisrael"],
+      answer: 1,
+      explain: "Kodashim kalim may be eaten anywhere in Jerusalem. The courtyard alone is the rule for kodshei kodashim, and nothing is eaten outside the city.",
+      cite: "Maaseh HaKorbanot 10:5" },
+
+    // ── Lesson 5: the vocabulary of classification ──
+    { id: "L2-Q59", kind: "mc",
+      prompt: "Which of these is NOT a behemah?",
+      options: ["Par", "Keves", "Tor", "Ez"],
+      answer: 2,
+      explain: "A tor (turtledove) is an of, a bird. Behemah means the four-legged kosher domesticated animals: cattle (par), sheep (keves), and goats (ez).",
+      cite: "Maaseh HaKorbanot 1:1" },
+
+    { id: "L2-Q60", kind: "match",
+      prompt: "Match each term to its meaning.",
+      pairs: [
+        { hebrew: "בְּהֵמָה",    english: "a four-legged kosher domesticated animal: cattle, sheep, goats" },
+        { hebrew: "עוֹף",        english: "a kosher bird — for korbanot, only turtledoves and young pigeons" },
+        { hebrew: "תּוֹר",       english: "turtledove" },
+        { hebrew: "בֶּן יוֹנָה", english: "young pigeon" },
+      ],
+      explain: "Behemah is the land animal; of is the bird. The only birds brought as korbanot are the tor (turtledove) and the ben yonah (young pigeon).",
+      cite: "Maaseh HaKorbanot 1:1" },
+
+    { id: "L2-Q61", kind: "tap",
+      prompt: "Tap the word for a kosher bird brought as a korban.",
+      options: ["עוֹף", "בְּהֵמָה", "יָחִיד", "כֶּבֶשׂ"],
+      answer: 0,
+      explain: "Of is the bird — and for korbanot only turtledoves and young pigeons qualify. Behemah is the land animal; a keves is one kind of behemah; yachid is an individual.",
+      cite: "Maaseh HaKorbanot 1:1" },
+
+    { id: "L2-Q62", kind: "mc",
+      prompt: "Which korban is brought on behalf of all Israel and paid for from public funds?",
+      options: ["A korban yachid", "A korban nedavah", "A korban tzibur", "A korban chovah"],
+      answer: 2,
+      explain: "That is the korban tzibur, the communal offering, funded by the machatzit hashekel. A korban yachid is one person's offering at his own expense.",
+      cite: "Temidin uMusafin 1:1" },
+
+    { id: "L2-Q63", kind: "sort",
+      prompt: "Sort each korban: communal or individual?",
+      buckets: [
+        { id: "tzibur", he: "קָרְבַּן צִבּוּר", en: "Korban tzibur" },
+        { id: "yachid", he: "קָרְבַּן יָחִיד",  en: "Korban yachid" },
+      ],
+      items: [
+        { hebrew: "פֶּסַח",             translit: "pesach",            bucket: "yachid" },
+        { hebrew: "פַּר הֶעְלֵם דָּבָר", translit: "par he'elem davar", bucket: "tzibur" },
+        { hebrew: "בְּכוֹר",            translit: "bechor",            bucket: "yachid" },
+        { hebrew: "חַטַּאת צִבּוּר",     translit: "chatat tzibur",     bucket: "tzibur" },
+        { hebrew: "מַעְשַׂר בְּהֵמָה",   translit: "maaser behemah",    bucket: "yachid" },
+        { hebrew: "שַׁלְמֵי יָחִיד",     translit: "shalmei yachid",    bucket: "yachid" },
+      ],
+      explain: "Pesach, bechor, maaser behemah, and the shelamim of an individual are all individual offerings. The par he'elem davar and the communal chatot are brought on behalf of all Israel.",
+      cite: "Temidin uMusafin 1:1" },
+
+    { id: "L2-Q64", kind: "cloze",
+      prompt: "A korban yachid is paid for from ____.",
+      options: ["the individual's own property", "public funds — the machatzit hashekel", "the kohanim's share"],
+      answer: 0,
+      explain: "A korban yachid is brought by a single person at his own expense. Public funds, the machatzit hashekel, pay for the korban tzibur.",
+      cite: "Maaseh HaKorbanot 14:1" },
+
+    { id: "L2-Q65", kind: "mc",
+      prompt: "Which korbanot are usually brought as a nedavah?",
+      options: ["Chatat or asham", "Olah or shelamim", "Pesach or bechor"],
+      answer: 1,
+      explain: "A nedavah is a voluntary offering, and it is usually an olah or a shelamim. A chatat comes because of a sin, and the pesach is required — those are chovah.",
+      cite: "Maaseh HaKorbanot 14:1" },
+
+    { id: "L2-Q66", kind: "sort",
+      prompt: "Sort each korban: nedavah or chovah?",
+      buckets: [
+        { id: "nedavah", he: "נְדָבָה", en: "Nedavah — voluntary" },
+        { id: "chovah",  he: "חוֹבָה",  en: "Chovah — required" },
+      ],
+      items: [
+        { hebrew: "עוֹלָה",    translit: "olah, brought as a gift",     bucket: "nedavah" },
+        { hebrew: "חַטָּאת",   translit: "chatat, for a sin",            bucket: "chovah"  },
+        { hebrew: "פֶּסַח",    translit: "pesach",                       bucket: "chovah"  },
+        { hebrew: "שְׁלָמִים", translit: "shelamim, brought as a gift",  bucket: "nedavah" },
+      ],
+      explain: "An olah or shelamim a person brings freely is a nedavah. A chatat for a sin and the pesach are obligations — korban chovah.",
+      cite: "Maaseh HaKorbanot 14:1" },
+
+    { id: "L2-Q67", kind: "mc",
+      prompt: "On the fourteenth of Nisan a man brings his korban pesach. Is it a nedavah or a chovah?",
+      options: [
+        "Chovah — he is required to bring it",
+        "Nedavah — he chose to bring it",
+        "Neither — the pesach is a korban tzibur",
+      ],
+      answer: 0,
+      explain: "The pesach is a korban chovah: the person is obligated to bring it. It is still a korban yachid — each person brings his own — not a korban tzibur.",
+      cite: null },
+
+    { id: "L2-Q68", kind: "tap",
+      prompt: "Tap the word for a korban a person is required to bring.",
+      options: ["נְדָבָה", "צִבּוּר", "שְׁלָמִים", "חוֹבָה"],
+      answer: 3,
+      explain: "Chovah is an obligation — a chatat for a sin, or the pesach. Nedavah is its opposite, a free gift; tzibur says who brings it, not why.",
+      cite: null },
   ],
 };
 
-// Which quiz items are used as in-lesson checks (built by tools/map_checks.js, hand-adjusted).
+// Which quiz items are used as in-lesson checks (hand-picked: 5–7 simple-kind items per
+// lesson, each item in one lesson only; the rest of the bank is drawn in runs and review).
 window.KODSHIM_LEVELS[2].checks = {
-  "L2-01": [
-    "L2-Q01",
-    "L2-Q02"
-  ],
-  "L2-02": [
-    "L2-Q03",
-    "L2-Q04",
-    "L2-Q05",
-    "L2-Q06"
-  ],
-  "L2-03": [
-    "L2-Q07",
-    "L2-Q08",
-    "L2-Q09"
-  ],
-  "L2-04": [
-    "L2-Q10",
-    "L2-Q11",
-    "L2-Q12",
-    "L2-Q13",
-    "L2-Q14",
-    "L2-Q15",
-    "L2-Q16",
-    "L2-Q17"
-  ],
-  "L2-05": [
-    "L2-Q18",
-    "L2-Q19",
-    "L2-Q20",
-    "L2-Q21",
-    "L2-Q22",
-    "L2-Q23",
-    "L2-Q24"
-  ]
+  // The four kinds, and the three additional individual offerings.
+  "L2-01": ["L2-Q01", "L2-Q25", "L2-Q26", "L2-Q27", "L2-Q28"],
+  // What each kind is for, and who eats from it.
+  "L2-02": ["L2-Q03", "L2-Q04", "L2-Q05", "L2-Q30", "L2-Q33", "L2-Q37", "L2-Q38"],
+  // The eimurin and the alyah.
+  "L2-03": ["L2-Q07", "L2-Q08", "L2-Q09", "L2-Q41", "L2-Q42", "L2-Q43"],
+  // Two grades of holiness: lists, where slaughtered, where and by whom eaten.
+  "L2-04": ["L2-Q44", "L2-Q47", "L2-Q49", "L2-Q13", "L2-Q14", "L2-Q15", "L2-Q54"],
+  // Behemah/of, tzibur/yachid, nedavah/chovah.
+  "L2-05": ["L2-Q18", "L2-Q20", "L2-Q22", "L2-Q23", "L2-Q24", "L2-Q59", "L2-Q62"],
 };

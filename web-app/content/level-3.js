@@ -291,7 +291,11 @@ window.KODSHIM_LEVELS[3] = {
   ],
 
   // ── Quiz ─────────────────────────────────────────────────────────────
+  // 66 items. Every concept row (L3-C01..C24) is tested by at least three
+  // items from different angles: a scenario, a reverse question, a kosher-or-
+  // pasul check, a cloze, a sort. Items are grouped by topic, not by kind.
   quiz: [
+    // ── The four mechusrei kapparah ──
     { id: "L3-Q01", kind: "mc",
       prompt: "Who are the four mechusrei kapparah?",
       options: [
@@ -354,6 +358,7 @@ window.KODSHIM_LEVELS[3] = {
       explain: "The nazir tameh brings two birds (olah and chatat) and a male lamb as an asham — the asham nazir.",
       cite: "Nezirut 6:11" },
 
+    // ── Vows, suspicion, converts, thanks ──
     { id: "L3-Q07", kind: "match",
       prompt: "Match each person or korban to its description.",
       pairs: [
@@ -401,6 +406,7 @@ window.KODSHIM_LEVELS[3] = {
       explain: "A todah is brought by one who survived danger — crossing the sea, traveling through a desert, recovering from illness, or being released from prison.",
       cite: "Maaseh HaKorbanot 2:1" },
 
+    // ── Chatat by rank ──
     { id: "L3-Q11", kind: "match",
       prompt: "Match each person to the korban his rank calls for.",
       pairs: [
@@ -444,6 +450,7 @@ window.KODSHIM_LEVELS[3] = {
       explain: "The chavitin is split: half is brought in the morning and half in the afternoon.",
       cite: "Temidin uMusafin 3:18" },
 
+    // ── The ashamot ──
     { id: "L3-Q16", kind: "match",
       prompt: "Match each asham to the situation that brings it.",
       pairs: [
@@ -452,11 +459,11 @@ window.KODSHIM_LEVELS[3] = {
         { hebrew: "אָשָׁם תָּלוּי", english: "unsure whether he committed a karet-level sin" },
         { hebrew: "אֲשַׁם שִׁפְחָה חֲרוּפָה", english: "slept with a maidservant designated to another man" },
       ],
-      explain: "Gezelot is for a false money oath, me'ilot for benefit from hekdesh, talui for doubt about a karet-level sin, and shifchah charufah for relations with a designated maidservant. All four are male sheep.",
+      explain: "Gezelot is for a false money oath, me'ilot for unintentional benefit from hekdesh, talui for doubt about a karet-level sin, and shifchah charufah for relations with a designated maidservant. All four are male sheep.",
       cite: "Shegagot 8:1" },
 
     { id: "L3-Q17", kind: "tf",
-      prompt: "The asham me'ilot must be a male sheep worth at least two shekels, and the one who benefited from hekdesh repays what he took plus a fifth.",
+      prompt: "The asham me'ilot must be a male sheep worth at least two shekels, and the one who unintentionally benefited from hekdesh repays what he took plus a fifth.",
       answer: true,
       explain: "True. The asham me'ilot is a male sheep worth at least two shekels, and the offender repays the hekdesh plus a fifth.",
       cite: "Meilah 1:1" },
@@ -492,6 +499,7 @@ window.KODSHIM_LEVELS[3] = {
       explain: "The ger's korban and the kohen gadol's Yom Kippur ram are olot; the nasi's male goat and the kohen mashiach's bull are chatot; the nazir tameh's lamb and the korban for a shifchah charufah are ashamot.",
       cite: "Shegagot 5:1" },
 
+    // ── Sliding scale and the tzibur ──
     { id: "L3-Q21", kind: "tap",
       prompt: "Tap the term for the korban whose animal depends on what the owner can afford.",
       options: ["מְחֻסְּרֵי כַּפָּרָה", "אֲשַׁם מְעִילוֹת", "קָרְבַּן עוֹלֶה וְיוֹרֵד", "שְׁלָמִים"],
@@ -517,10 +525,10 @@ window.KODSHIM_LEVELS[3] = {
         "Shevuat ha'eidut — falsely denying knowledge of testimony",
         "Entering the Mikdash or eating kodshim while tameh",
         "Shevuat bituy — a false expression-oath",
-        "Deriving benefit from hekdesh",
+        "Unintentionally deriving benefit from hekdesh",
       ],
       answer: 3,
-      explain: "The three are shevuat ha'eidut, tumat mikdash ve'kodashav, and shevuat bituy. Benefit from hekdesh brings an asham me'ilot, not an oleh ve'yored.",
+      explain: "The three are shevuat ha'eidut, tumat mikdash ve'kodashav, and shevuat bituy. Unintentional benefit from hekdesh brings an asham me'ilot, not an oleh ve'yored.",
       cite: "Shegagot 10:1" },
 
     { id: "L3-Q24", kind: "sort",
@@ -538,43 +546,437 @@ window.KODSHIM_LEVELS[3] = {
       ],
       explain: "A tzibur brings only olot and chatot. It never brings an asham, almost never a bird offering, and shelamim only as the two Shavuot lambs — so as categories, asham, birds, and shelamim belong to the yachid.",
       cite: "Maaseh HaKorbanot 1:4" },
+
+    // ── More on the mechusrei kapparah ──
+    { id: "L3-Q25", kind: "mc",
+      prompt: "A woman gave birth and cannot afford a lamb. What does she bring?",
+      options: [
+        "A lamb as olah and a bird as chatat",
+        "A female lamb as chatat",
+        "Two birds — one olah and one chatat",
+        "Two birds — both as olah",
+      ],
+      answer: 2,
+      explain: "The poor yoledet brings two birds, one as olah and one as chatat. The lamb-and-bird set is for a yoledet who can afford the lamb; two birds both as olah is the ger's korban.",
+      cite: "Mechusrei Kapparah 1:1" },
+
+    { id: "L3-Q26", kind: "mc",
+      prompt: "A zav has finished his purification. What does he bring, and when?",
+      options: [
+        "Two birds — one olah and one chatat — on the eighth day",
+        "A lamb as olah and a bird as chatat on the eighth day",
+        "Two birds — one olah and one chatat — on the seventh day",
+        "A male lamb as asham and two birds",
+      ],
+      answer: 0,
+      explain: "The zav, like the zavah, brings two birds on the eighth day — one olah and one chatat. No lamb, and no asham.",
+      cite: "Mechusrei Kapparah 2:1" },
+
+    { id: "L3-Q27", kind: "mc",
+      prompt: "A metzora who can afford it has been healed and comes to be purified. What does he bring?",
+      options: [
+        "Two birds — one olah and one chatat — and a log of oil",
+        "Three lambs — an asham, a female chatat, a male olah — and a log of oil",
+        "One male lamb as asham, two birds, and a log of oil",
+        "A male lamb as olah, a female lamb as chatat, and a ram as shelamim",
+      ],
+      answer: 1,
+      explain: "The wealthy metzora brings three lambs — an asham waved alive, a female lamb as chatat, a male lamb as olah — plus a log of oil. One lamb with two birds is the poor metzora's set; the set with a ram is the nazir's.",
+      cite: "Mechusrei Kapparah 4:1" },
+
+    { id: "L3-Q28", kind: "mc",
+      prompt: "A metzora cannot afford three lambs. What does he bring at his purification?",
+      options: [
+        "Two birds — one olah and one chatat — and nothing else",
+        "Three lambs and a log of oil",
+        "A female lamb as chatat and two birds",
+        "One male lamb as asham, waved alive, two birds, and a log of oil",
+      ],
+      answer: 3,
+      explain: "Poverty turns the metzora's olah and chatat into birds, but his asham stays a male lamb waved alive, and he still brings the log of oil.",
+      cite: "Mechusrei Kapparah 4:3" },
+
+    { id: "L3-Q29", kind: "tf",
+      prompt: "A wealthy yoledet brings a lamb as her chatat and a bird as her olah.",
+      answer: false,
+      explain: "False. It is the other way round: the lamb is her olah, and the bird — a turtledove or a young pigeon — is her chatat.",
+      cite: "Mechusrei Kapparah 1:1" },
+
+    { id: "L3-Q30", kind: "tf",
+      prompt: "A zavah brings a lamb as olah and a bird as chatat on the eighth day.",
+      answer: false,
+      explain: "False. The zavah, like the zav, brings two birds on the eighth day — one olah and one chatat. The lamb-and-bird pair belongs to the wealthy yoledet.",
+      cite: "Mechusrei Kapparah 2:1" },
+
+    { id: "L3-Q31", kind: "tf",
+      prompt: "The nazir who became tameh is one of the four mechusrei kapparah.",
+      answer: false,
+      explain: "False. The four are the zav, the zavah, the yoledet, and the metzora. The nazir tameh brings a similar set — two birds and an asham — but is not counted among them.",
+      cite: "Mechusrei Kapparah 1:1" },
+
+    { id: "L3-Q32", kind: "tf",
+      prompt: "A poor metzora still brings a male lamb as his asham, waved alive, even though his olah and chatat are birds.",
+      answer: true,
+      explain: "True. Poverty changes the metzora's olah and chatat into two birds, but the asham remains a male lamb waved alive, and the log of oil is brought either way.",
+      cite: "Mechusrei Kapparah 4:3" },
+
+    { id: "L3-Q33", kind: "tf",
+      prompt: "The wealthy metzora's three lambs are an asham, a female lamb as chatat, and a male lamb as olah.",
+      answer: true,
+      explain: "True. Three lambs — the asham waved alive, a female chatat, a male olah — plus a log of oil.",
+      cite: "Mechusrei Kapparah 4:1" },
+
+    { id: "L3-Q34", kind: "match",
+      prompt: "Match each mechusar kapparah to the korban he or she brings.",
+      pairs: [
+        { hebrew: "זָב", english: "two birds on the eighth day — one olah and one chatat" },
+        { hebrew: "יוֹלֶדֶת עֲשִׁירָה", english: "a lamb as olah and a bird as chatat" },
+        { hebrew: "מְצֹרָע עָשִׁיר", english: "three lambs and a log of oil" },
+        { hebrew: "מְצֹרָע עָנִי", english: "one lamb as asham, two birds, and a log of oil" },
+      ],
+      explain: "The zav brings two birds on the eighth day; the wealthy yoledet a lamb (olah) and a bird (chatat); the wealthy metzora three lambs and a log of oil; the poor metzora one lamb as asham, two birds, and the log of oil.",
+      cite: "Mechusrei Kapparah 1:1" },
+
+    { id: "L3-Q35", kind: "sort",
+      prompt: "Which of these people are among the four mechusrei kapparah, and which are not?",
+      buckets: [
+        { id: "mk", he: "מְחֻסַּר כַּפָּרָה", en: "One of the four" },
+        { id: "not", he: "אֵינוֹ מְחֻסַּר כַּפָּרָה", en: "Not one of the four" },
+      ],
+      items: [
+        { hebrew: "זָב", translit: "zav", bucket: "mk" },
+        { hebrew: "נָזִיר טָמֵא", translit: "nazir tameh", bucket: "not" },
+        { hebrew: "יוֹלֶדֶת", translit: "yoledet", bucket: "mk" },
+        { hebrew: "סוֹטָה", translit: "sotah", bucket: "not" },
+        { hebrew: "זָבָה", translit: "zavah", bucket: "mk" },
+        { hebrew: "גֵּר", translit: "ger", bucket: "not" },
+        { hebrew: "מְצֹרָע", translit: "metzora", bucket: "mk" },
+      ],
+      explain: "The four mechusrei kapparah are the zav, the zavah, the yoledet, and the metzora. The nazir tameh, the sotah, and the ger each bring their own korban but are not counted among them.",
+      cite: "Mechusrei Kapparah 1:1" },
+
+    { id: "L3-Q36", kind: "sort",
+      prompt: "Each chip is one version of a korban that changes with the owner's means. Is it the wealthy version or the poor version?",
+      buckets: [
+        { id: "rich", he: "עָשִׁיר", en: "Wealthy" },
+        { id: "poor", he: "עָנִי", en: "Poor" },
+      ],
+      items: [
+        { hebrew: "כֶּבֶשׂ לְעוֹלָה — יוֹלֶדֶת", translit: "yoledet: a lamb as olah", bucket: "rich" },
+        { hebrew: "שְׁנֵי עוֹפוֹת — יוֹלֶדֶת", translit: "yoledet: two birds", bucket: "poor" },
+        { hebrew: "שְׁלֹשָׁה כְּבָשִׂים — מְצֹרָע", translit: "metzora: three lambs", bucket: "rich" },
+        { hebrew: "כֶּבֶשׂ וּשְׁנֵי עוֹפוֹת — מְצֹרָע", translit: "metzora: one lamb and two birds", bucket: "poor" },
+        { hebrew: "בְּהֵמָה נְקֵבָה לְחַטָּאת — עוֹלֶה וְיוֹרֵד", translit: "oleh ve'yored: a female animal as chatat", bucket: "rich" },
+        { hebrew: "סֹלֶת — עוֹלֶה וְיוֹרֵד", translit: "oleh ve'yored: fine flour", bucket: "poor" },
+      ],
+      explain: "Wealthy: the yoledet's lamb, the metzora's three lambs, and the female animal of korban oleh ve'yored. Poor: the yoledet's two birds, the metzora's one lamb with two birds, and the solet of korban oleh ve'yored.",
+      cite: "Shegagot 10:1" },
+
+    // ── More on the nazir, sotah, ger ──
+    { id: "L3-Q37", kind: "mc",
+      prompt: "A nazir has completed the days of his vow. What does he bring?",
+      options: [
+        "Two birds and a male lamb as asham",
+        "A ram as olah, a female lamb as chatat, and a male lamb as shelamim",
+        "A male lamb as olah, a female lamb as chatat, and a ram as shelamim — with matzot and libations",
+        "Three lambs and a log of oil",
+      ],
+      answer: 2,
+      explain: "At the conclusion of his vow the nazir brings a male lamb as olah, a female lamb as chatat, and a ram as shelamim, together with matzot and libations. Two birds and an asham are for a nazir who became tameh.",
+      cite: "Nezirut 8:1" },
+
+    { id: "L3-Q38", kind: "mc",
+      prompt: "A nazir became tameh in the middle of his vow. What korban does he bring?",
+      options: [
+        "Two birds — one olah and one chatat — and a male lamb as asham",
+        "A male lamb as olah, a female lamb as chatat, and a ram as shelamim",
+        "Two birds — one olah and one chatat — on the eighth day, and nothing more",
+        "A male sheep as asham talui",
+      ],
+      answer: 0,
+      explain: "The nazir tameh brings two birds — one olah and one chatat — and a male lamb as asham, the asham nazir. The three animals with a ram are for a nazir who completed his vow.",
+      cite: "Nezirut 6:11" },
+
+    { id: "L3-Q39", kind: "mc",
+      prompt: "Who brings a mincha of barley, one-tenth ephah, with no oil and no frankincense?",
+      options: [
+        "The kohen gadol, every day",
+        "A sotah",
+        "A poor person who owes a korban oleh ve'yored",
+        "A nazir at the end of his vow",
+      ],
+      answer: 1,
+      explain: "That is the sotah's mincha — barley, one-tenth ephah, with no oil and no frankincense. The kohen gadol's daily chavitin is fine flour with oil; the poor tier of oleh ve'yored is solet, fine flour.",
+      cite: "Sotah 3:1" },
+
+    { id: "L3-Q40", kind: "tf",
+      prompt: "Kosher or pasul? A nazir who became tameh brought a female lamb as his asham.",
+      answer: false,
+      explain: "Pasul. The asham nazir is a male lamb — an asham is always a male sheep. With it he brings two birds, one olah and one chatat.",
+      cite: "Nezirut 6:11" },
+
+    { id: "L3-Q41", kind: "cloze",
+      prompt: "The sotah's mincha is one-tenth ephah of ____, with no oil and no frankincense.",
+      options: ["fine flour (solet)", "barley", "matzot"],
+      answer: 1,
+      explain: "Barley. The sotah's mincha is barley, one-tenth ephah, with neither oil nor frankincense — stripped down like a sinner's mincha.",
+      cite: "Sotah 3:1" },
+
+    { id: "L3-Q42", kind: "cloze",
+      prompt: "At the end of his vow the nazir brings a male lamb as olah, a female lamb as chatat, and a ram as ____.",
+      options: ["asham", "shelamim", "olah", "todah"],
+      answer: 1,
+      explain: "Shelamim. The nazir's closing set is olah (male lamb), chatat (female lamb), and shelamim (ram), with matzot and libations.",
+      cite: "Nezirut 8:1" },
+
+    { id: "L3-Q43", kind: "cloze",
+      prompt: "A ger brings an olah — either an animal, or two birds, both of them as ____.",
+      options: ["olah", "chatat", "shelamim", "asham"],
+      answer: 0,
+      explain: "Olah. Unlike the bird pairs of the mechusrei kapparah, both of the ger's birds are olah; there is no chatat in his korban.",
+      cite: "Mechusrei Kapparah 1:2" },
+
+    { id: "L3-Q44", kind: "tap",
+      prompt: "Tap the asham a nazir brings because he became tameh during his vow.",
+      options: ["אֲשַׁם מְצֹרָע", "אָשָׁם תָּלוּי", "אֲשַׁם מְעִילוֹת", "אֲשַׁם נָזִיר"],
+      answer: 3,
+      explain: "The asham nazir — a male lamb brought together with his two birds, one olah and one chatat.",
+      cite: "Nezirut 6:11" },
+
+    { id: "L3-Q45", kind: "tap",
+      prompt: "Tap the person whose two birds are both olah.",
+      options: ["יוֹלֶדֶת", "זָבָה", "גֵּר", "נָזִיר טָמֵא"],
+      answer: 2,
+      explain: "The ger. Every other bird pair in this level — yoledet, zav and zavah, nazir tameh — is one olah and one chatat; the ger's two birds are both olah.",
+      cite: "Mechusrei Kapparah 1:2" },
+
+    // ── More on chatat by rank ──
+    { id: "L3-Q46", kind: "mc",
+      prompt: "A nasi sinned unintentionally. What chatat does he bring?",
+      options: [
+        "A female goat or a female sheep",
+        "A bull, burned outside",
+        "A male lamb",
+        "A male goat (se'ir izim)",
+      ],
+      answer: 3,
+      explain: "The nasi's chatat is a male goat, se'ir izim. A female goat or sheep is the ordinary Israelite's chatat; a bull burned outside is the kohen mashiach's.",
+      cite: "Shegagot 5:1" },
+
+    { id: "L3-Q47", kind: "mc",
+      prompt: "Who brings a bull as a chatat that is burned outside and never eaten?",
+      options: [
+        "A nasi who sinned unintentionally",
+        "The kohen gadol on Yom Kippur, as his olah",
+        "A kohen mashiach who sinned unintentionally",
+        "An ordinary Israelite who sinned unintentionally",
+      ],
+      answer: 2,
+      explain: "The kohen mashiach's chatat for his unintentional sin is a bull (par), burned outside and not eaten. The nasi brings a male goat; the Israelite a female goat or sheep; the kohen gadol's Yom Kippur olah is a ram.",
+      cite: "Shegagot 2:1" },
+
+    { id: "L3-Q48", kind: "mc",
+      prompt: "What is the chavitin?",
+      options: [
+        "The kohen gadol's Yom Kippur olah — a ram",
+        "The kohen gadol's daily mincha — one-tenth ephah of fine flour, half in the morning and half in the afternoon, baked on a flat pan with oil",
+        "The sotah's barley mincha, with no oil or frankincense",
+        "The poor tier of korban oleh ve'yored — fine flour",
+      ],
+      answer: 1,
+      explain: "The chavitin is the kohen gadol's daily mincha: one-tenth ephah of fine flour, half brought in the morning and half in the afternoon, baked on a flat pan (machavat) with oil.",
+      cite: "Temidin uMusafin 3:18" },
+
+    { id: "L3-Q49", kind: "tap",
+      prompt: "Tap the animal an ordinary Israelite brings as a chatat for an unintentional sin.",
+      options: ["שְׂעִיר עִזִּים", "פַּר", "שְׂעִירַת עִזִּים", "אַיִל"],
+      answer: 2,
+      explain: "Se'irat izim — a female goat — or a kivsah, a female sheep. The male goat is the nasi's chatat, the bull is the kohen mashiach's, and the ram is the kohen gadol's Yom Kippur olah.",
+      cite: "Shegagot 5:1" },
+
+    { id: "L3-Q50", kind: "sort",
+      prompt: "Sort each chatat animal by who brings it for an unintentional sin.",
+      buckets: [
+        { id: "yisrael", he: "יִשְׂרָאֵל", en: "Ordinary Israelite" },
+        { id: "nasi", he: "נָשִׂיא", en: "Nasi" },
+        { id: "mashiach", he: "כֹּהֵן מָשִׁיחַ", en: "Kohen mashiach" },
+      ],
+      items: [
+        { hebrew: "שְׂעִיר עִזִּים", translit: "se'ir izim — male goat", bucket: "nasi" },
+        { hebrew: "שְׂעִירַת עִזִּים", translit: "se'irat izim — female goat", bucket: "yisrael" },
+        { hebrew: "פַּר", translit: "par — bull", bucket: "mashiach" },
+        { hebrew: "כִּבְשָׂה", translit: "kivsah — female sheep", bucket: "yisrael" },
+      ],
+      explain: "The ordinary Israelite brings a female goat or a female sheep; the nasi a male goat; the kohen mashiach a bull, which is burned outside.",
+      cite: "Shegagot 5:1" },
+
+    // ── More on the ashamot ──
+    { id: "L3-Q51", kind: "mc",
+      prompt: "A man denied under oath that he owed his neighbour money, then admitted it. Which korban, and what must he do first?",
+      options: [
+        "Asham talui — no payment is needed",
+        "Korban oleh ve'yored — after repaying the principal",
+        "Asham me'ilot — after repaying plus a fifth",
+        "Asham gezelot — after repaying the principal plus a fifth",
+      ],
+      answer: 3,
+      explain: "A false oath about a monetary obligation brings an asham gezelot, a male sheep — but first he repays the principal plus a fifth. Asham me'ilot is for hekdesh, not a neighbour's money.",
+      cite: "Shegagot 8:1" },
+
+    { id: "L3-Q52", kind: "mc",
+      prompt: "A man unintentionally used property of hekdesh for himself. Which asham does he bring, and what must he do first?",
+      options: [
+        "Asham me'ilot — a male sheep worth at least two shekels — after repaying hekdesh plus a fifth",
+        "Asham gezelot — after repaying the principal alone",
+        "Asham talui — after repaying hekdesh plus a fifth",
+        "Korban oleh ve'yored — a female animal, two birds, or fine flour",
+      ],
+      answer: 0,
+      explain: "Unintentional benefit from hekdesh brings an asham me'ilot: a male sheep worth at least two shekels, after he repays hekdesh plus a fifth. Asham gezelot is for a false oath about money owed to a person.",
+      cite: "Meilah 1:1" },
+
+    { id: "L3-Q53", kind: "mc",
+      prompt: "A man is not sure whether he committed a sin that carries karet and would require a chatat. What does he bring?",
+      options: [
+        "A female goat as chatat, as if he had surely sinned",
+        "An asham gezelot",
+        "An asham talui — a male sheep",
+        "A korban oleh ve'yored",
+      ],
+      answer: 2,
+      explain: "Doubt about a karet-level sin brings an asham talui, the 'suspended' asham — a male sheep. The chatat itself is for one who knows he committed the sin.",
+      cite: "Shegagot 8:1" },
+
+    { id: "L3-Q54", kind: "mc",
+      prompt: "A man slept with a maidservant who is not free and is designated to another man. What does he bring?",
+      options: [
+        "A female goat or a female sheep as chatat",
+        "An asham shifchah charufah — a male sheep",
+        "An asham talui",
+        "A korban oleh ve'yored",
+      ],
+      answer: 1,
+      explain: "Relations with a shifchah charufah — a non-free maidservant designated to another man — bring an asham shifchah charufah, a male sheep like every asham.",
+      cite: "Issurei Biah 3:13" },
+
+    { id: "L3-Q55", kind: "tap",
+      prompt: "Tap the asham brought by one who swore falsely about money he owed.",
+      options: ["אֲשַׁם מְעִילוֹת", "אֲשַׁם גְּזֵלוֹת", "אֲשַׁם שִׁפְחָה חֲרוּפָה", "אָשָׁם תָּלוּי"],
+      answer: 1,
+      explain: "The asham gezelot — a male sheep, brought after he repays the principal plus a fifth. The asham me'ilot is its hekdesh counterpart.",
+      cite: "Shegagot 8:1" },
+
+    { id: "L3-Q56", kind: "cloze",
+      prompt: "The asham me'ilot must be a male sheep worth at least ____ shekels.",
+      options: ["one", "five", "two", "ten"],
+      answer: 2,
+      explain: "Two shekels. The asham me'ilot is a male sheep worth at least two shekels, brought after repaying hekdesh plus a fifth.",
+      cite: "Meilah 1:1" },
+
+    { id: "L3-Q57", kind: "match",
+      prompt: "Match each korban to the situation that calls for it.",
+      pairs: [
+        { hebrew: "תּוֹדָה", english: "he came safely through the desert" },
+        { hebrew: "אָשָׁם תָּלוּי", english: "he is unsure whether he committed a karet-level sin" },
+        { hebrew: "אֲשַׁם מְעִילוֹת", english: "he unintentionally benefited from hekdesh" },
+        { hebrew: "קָרְבַּן עוֹלֶה וְיוֹרֵד", english: "he falsely denied knowing testimony under oath" },
+      ],
+      explain: "Surviving the desert brings a todah; doubt about a karet-level sin an asham talui; unintentional benefit from hekdesh an asham me'ilot; shevuat ha'eidut a korban oleh ve'yored.",
+      cite: "Shegagot 8:1" },
+
+    // ── More on the sliding scale and the tzibur ──
+    { id: "L3-Q58", kind: "mc",
+      prompt: "A wealthy man owes a korban oleh ve'yored. What does he bring?",
+      options: [
+        "A male sheep as asham",
+        "Two birds — one olah and one chatat",
+        "A female animal as a chatat",
+        "One-tenth ephah of fine flour",
+      ],
+      answer: 2,
+      explain: "The wealthy tier of korban oleh ve'yored is a female animal brought as a chatat. Two birds are the middle tier; fine flour (solet) is the poor tier.",
+      cite: "Shegagot 10:1" },
+
+    { id: "L3-Q59", kind: "mc",
+      prompt: "A man entered the Mikdash while tameh, not realizing he was tameh. What korban does he owe?",
+      options: [
+        "A korban oleh ve'yored",
+        "An asham talui",
+        "An asham me'ilot",
+        "A male goat as chatat",
+      ],
+      answer: 0,
+      explain: "Entering the Mikdash or eating kodshim while tameh (tumat mikdash ve'kodashav) is one of the three sins that bring a korban oleh ve'yored, along with shevuat ha'eidut and shevuat bituy.",
+      cite: "Shegagot 10:1" },
+
+    { id: "L3-Q60", kind: "mc",
+      prompt: "Which categories of korban may a tzibur bring?",
+      options: [
+        "Olot, chatot, and ashamot",
+        "Only olot and chatot — plus shelamim only as the two Shavuot lambs",
+        "Olot, chatot, shelamim, and bird offerings",
+        "Only olot",
+      ],
+      answer: 1,
+      explain: "The community brings olot and chatot. Its only shelamim are the two lambs of Shavuot; it never brings an asham and almost never a bird offering.",
+      cite: "Maaseh HaKorbanot 1:4" },
+
+    { id: "L3-Q61", kind: "mc",
+      prompt: "Which of these is never brought as a korban tzibur?",
+      options: [
+        "An olah",
+        "A chatat",
+        "An asham",
+        "The two lambs of Shavuot",
+      ],
+      answer: 2,
+      explain: "There is no communal asham. The tzibur brings olot and chatot, and the two Shavuot lambs are its one communal shelamim.",
+      cite: "Maaseh HaKorbanot 1:4" },
+
+    { id: "L3-Q62", kind: "cloze",
+      prompt: "A poor person who owes a korban oleh ve'yored brings ____.",
+      options: ["two birds", "a female lamb", "a male sheep", "solet — fine flour"],
+      answer: 3,
+      explain: "Fine flour (solet). The poor tier of korban oleh ve'yored is flour; two birds are the middle tier and a female animal the wealthy tier.",
+      cite: "Shegagot 10:1" },
+
+    { id: "L3-Q63", kind: "tf",
+      prompt: "Uttering a false shevuat bituy is one of the three sins that bring a korban oleh ve'yored.",
+      answer: true,
+      explain: "True. The three are shevuat ha'eidut (falsely denying knowledge of testimony), tumat mikdash ve'kodashav (entering the Mikdash or eating kodshim while tameh), and shevuat bituy.",
+      cite: "Shegagot 10:1" },
+
+    { id: "L3-Q64", kind: "tf",
+      prompt: "The only shelamim a tzibur ever brings are the two lambs of Shavuot.",
+      answer: true,
+      explain: "True. Communal shelamim exist only as the two Shavuot lambs (kivsei atzeret). Otherwise the tzibur brings olot and chatot.",
+      cite: "Maaseh HaKorbanot 1:4" },
+
+    { id: "L3-Q65", kind: "match",
+      prompt: "Match each sin that brings a korban oleh ve'yored to its name.",
+      pairs: [
+        { hebrew: "שְׁבוּעַת הָעֵדוּת", english: "hearing an oath to testify and falsely denying knowledge" },
+        { hebrew: "טֻמְאַת מִקְדָּשׁ וְקָדָשָׁיו", english: "entering the Mikdash or eating kodshim while tameh" },
+        { hebrew: "שְׁבוּעַת בִּטּוּי", english: "uttering a false expression-oath" },
+      ],
+      explain: "Shevuat ha'eidut is falsely denying knowledge of testimony; tumat mikdash ve'kodashav is entering the Mikdash or eating kodshim while tameh; shevuat bituy is a false expression-oath. All three bring a korban oleh ve'yored.",
+      cite: "Shegagot 10:1" },
+
+    { id: "L3-Q66", kind: "tap",
+      prompt: "Tap the category of korban that a tzibur never brings.",
+      options: ["אָשָׁם", "עוֹלָה", "חַטָּאת"],
+      answer: 0,
+      explain: "There is no communal asham. The tzibur brings olot and chatot, and shelamim only as the two Shavuot lambs.",
+      cite: "Maaseh HaKorbanot 1:4" },
   ],
 };
 
-// Which quiz items are used as in-lesson checks (built by tools/map_checks.js, hand-adjusted).
+// Which quiz items are used as in-lesson checks (hand-built; simple kinds only,
+// 7 per lesson, each item in one lesson).
 window.KODSHIM_LEVELS[3].checks = {
-  "L3-01": [
-    "L3-Q01",
-    "L3-Q02",
-    "L3-Q03",
-    "L3-Q04",
-    "L3-Q05",
-    "L3-Q06"
-  ],
-  "L3-02": [
-    "L3-Q07",
-    "L3-Q08",
-    "L3-Q09",
-    "L3-Q10"
-  ],
-  "L3-03": [
-    "L3-Q11",
-    "L3-Q12",
-    "L3-Q13",
-    "L3-Q14",
-    "L3-Q15"
-  ],
-  "L3-04": [
-    "L3-Q16",
-    "L3-Q17",
-    "L3-Q18",
-    "L3-Q19",
-    "L3-Q20"
-  ],
-  "L3-05": [
-    "L3-Q21",
-    "L3-Q22",
-    "L3-Q23",
-    "L3-Q24"
-  ]
+  "L3-01": ["L3-Q01", "L3-Q02", "L3-Q03", "L3-Q04", "L3-Q06", "L3-Q27", "L3-Q28"],
+  "L3-02": ["L3-Q08", "L3-Q09", "L3-Q10", "L3-Q37", "L3-Q38", "L3-Q40", "L3-Q43"],
+  "L3-03": ["L3-Q12", "L3-Q13", "L3-Q14", "L3-Q15", "L3-Q46", "L3-Q47", "L3-Q49"],
+  "L3-04": ["L3-Q17", "L3-Q18", "L3-Q19", "L3-Q51", "L3-Q52", "L3-Q53", "L3-Q54"],
+  "L3-05": ["L3-Q21", "L3-Q22", "L3-Q23", "L3-Q59", "L3-Q60", "L3-Q62", "L3-Q66"],
 };

@@ -576,43 +576,411 @@ window.KODSHIM_LEVELS[4] = {
       answer: true,
       explain: "True. After melikah, sprinkling on the lower wall and squeezing the rest at the base, the bird chatat's body is eaten by male kohanim. It is the bird olah that is burned whole.",
       cite: "Maaseh HaKorbanot 7:6" },
+
+    // ── The four avodot ─────────────────────────────────────────────────
+    { id: "L4-Q25", kind: "tf",
+      prompt: "Kosher or pasul? After the shechitah, a zar (non-kohen) received the blood in the vessel of service.",
+      answer: false,
+      explain: "Pasul. Only shechitah is valid when a zar performs it; kabbalat hadam, holachah and zerikah are avodot that require a kohen.",
+      cite: "Biat HaMikdash 9:1" },
+
+    { id: "L4-Q26", kind: "cloze",
+      prompt: "After holachah, the next avodah is ____.",
+      options: ["zerikah", "kabbalat hadam", "shechitah", "haktarah"],
+      answer: 0,
+      explain: "The order is shechitah, kabbalat hadam, holachah, zerikah: the blood is received, carried to the altar, and then applied. Haktarah follows but is not one of the four avodot.",
+      cite: "Maaseh HaKorbanot 4:1" },
+
+    { id: "L4-Q27", kind: "tap",
+      prompt: "Which word names the fourth avodah — applying the blood to the altar?",
+      options: ["שְׁחִיטָה", "קַבָּלַת הַדָּם", "הוֹלָכָה", "זְרִיקָה"],
+      answer: 3,
+      explain: "Zerikah is the application of the blood to the altar, the last of the four avodot. Shechitah is the slaughter, kabbalat hadam the receiving, holachah the carrying.",
+      cite: "Maaseh HaKorbanot 4:1" },
+
+    { id: "L4-Q28", kind: "mc",
+      prompt: "A kohen carried the vessel of blood from the place of slaughter to the altar. Which avodah is this?",
+      options: ["Kabbalat hadam", "Holachah", "Zerikah", "Haktarah"],
+      answer: 1,
+      explain: "Carrying the blood to the altar is holachah, the third avodah. Kabbalat hadam is receiving it into the vessel, and zerikah is applying it to the altar.",
+      cite: "Maaseh HaKorbanot 4:1" },
+
+    { id: "L4-Q29", kind: "match",
+      prompt: "Match each act of service to what it is.",
+      pairs: [
+        { hebrew: "שְׁחִיטָה", english: "slaughter — valid even when done by a zar" },
+        { hebrew: "קַבָּלַת הַדָּם", english: "receiving the blood into a vessel of service" },
+        { hebrew: "הוֹלָכָה", english: "carrying the blood to the altar" },
+        { hebrew: "זְרִיקָה", english: "applying the blood to the altar" },
+        { hebrew: "הַקְטָרָה", english: "burning the eimurin or the whole olah on the altar fire — not one of the four" },
+      ],
+      explain: "The four avodot are all about the blood: shechitah, kabbalat hadam, holachah and zerikah. Haktarah — burning on the altar fire — comes afterward and is not counted among them.",
+      cite: "Maaseh HaKorbanot 4:1" },
+
+    { id: "L4-Q30", kind: "sort",
+      prompt: "Kohen or zar? Sort each act by who may perform it.",
+      buckets: [
+        { id: "kohen", he: "צְרִיכָה כֹּהֵן", en: "Requires a kohen" },
+        { id: "zar", he: "כְּשֵׁרָה בְּזָר", en: "Valid even by a zar" },
+      ],
+      items: [
+        { hebrew: "שְׁחִיטָה", translit: "shechitah", bucket: "zar" },
+        { hebrew: "קַבָּלַת הַדָּם", translit: "kabbalat hadam", bucket: "kohen" },
+        { hebrew: "הוֹלָכָה", translit: "holachah", bucket: "kohen" },
+        { hebrew: "זְרִיקָה", translit: "zerikah", bucket: "kohen" },
+        { hebrew: "מְלִיקָה", translit: "melikah", bucket: "kohen" },
+      ],
+      explain: "Shechitah is the only avodah valid by a zar. Receiving, carrying and applying the blood require a kohen — and melikah of a bird is done with the kohen's own thumbnail.",
+      cite: "Biat HaMikdash 9:1" },
+
+    // ── Blood on the altar ──────────────────────────────────────────────
+    { id: "L4-Q31", kind: "mc",
+      prompt: "How many blood applications does an asham have?",
+      options: [
+        "One, poured at the base",
+        "Two that count as four — shtayim shehen arba",
+        "Four — one on each horn",
+        "Seven",
+      ],
+      answer: 1,
+      explain: "An asham follows the olah pattern: the blood is cast at two opposite corners of the outer altar, touching all four sides — shtayim shehen arba. Four separate applications on the horns is the chatat; seven is the inner chatat's sprinkling before the parochet.",
+      cite: "Maaseh HaKorbanot 5:6" },
+
+    { id: "L4-Q32", kind: "mc",
+      prompt: "Which korban's blood is placed on the horns of the golden altar inside the Heichal?",
+      options: ["An ordinary outer-altar chatat", "An olah", "Par kohen mashiach", "A bird chatat"],
+      answer: 2,
+      explain: "The bull of the kohen mashiach is an inner chatat: its blood is sprinkled seven times before the parochet and placed on the horns of the golden altar. An ordinary chatat's blood goes on the outer altar's horns; an olah's is cast at its corners; a bird chatat's is sprinkled on its wall.",
+      cite: "Maaseh HaKorbanot 5:11" },
+
+    { id: "L4-Q33", kind: "cloze",
+      prompt: "The blood of an inner chatat such as par he'elem davar is sprinkled ____ times before the parochet.",
+      options: ["one", "two", "four", "seven"],
+      answer: 3,
+      explain: "Seven sprinklings before the parochet, then the blood goes on the horns of the golden altar. Four is the number of horn applications for an ordinary outer-altar chatat.",
+      cite: "Maaseh HaKorbanot 5:11" },
+
+    { id: "L4-Q34", kind: "tap",
+      prompt: "Before which object is the blood of par he'elem davar sprinkled seven times?",
+      options: ["מִזְבַּח הַזָּהָב", "פָּרֹכֶת", "יְסוֹד", "קַרְנוֹת הַמִּזְבֵּחַ"],
+      answer: 1,
+      explain: "The parochet — the curtain inside the Heichal. After the seven sprinklings the blood goes on the horns of the golden altar, and the remainder is poured at the base of the outer altar.",
+      cite: "Maaseh HaKorbanot 5:11" },
+
+    { id: "L4-Q35", kind: "tf",
+      prompt: "The leftover blood of an inner chatat such as par he'elem davar is poured at the base of the golden altar.",
+      answer: false,
+      explain: "False. What is left after the sprinklings before the parochet and the golden altar's horns is carried out and poured at the base of the outer altar.",
+      cite: "Maaseh HaKorbanot 5:11" },
+
+    { id: "L4-Q36", kind: "match",
+      prompt: "Match each korban to where its blood goes.",
+      pairs: [
+        { hebrew: "חַטָּאת חִיצוֹנָה", english: "on the four horns of the outer altar; the rest poured at the base" },
+        { hebrew: "עוֹלָה", english: "cast from the vessel at two opposite corners of the outer altar" },
+        { hebrew: "פַּר הֶעְלֵם דָּבָר", english: "seven times before the parochet, then on the horns of the golden altar" },
+        { hebrew: "חַטַּאת הָעוֹף", english: "sprinkled on the lower half of the altar wall, below the chut hasikra" },
+      ],
+      explain: "Three patterns on the outer altar — horns for an ordinary chatat, two corners for an olah, the lower wall for a bird chatat — and one inside the Heichal, for the inner chatot.",
+      cite: "Maaseh HaKorbanot 5:11" },
+
+    { id: "L4-Q37", kind: "sort",
+      prompt: "Which blood pattern? Sort each korban.",
+      buckets: [
+        { id: "horns", he: "אַרְבַּע מַתָּנוֹת", en: "Four — one on each horn of the outer altar" },
+        { id: "two", he: "שְׁתַּיִם שֶׁהֵן אַרְבַּע", en: "Two corners that count as four" },
+        { id: "inner", he: "לִפְנֵי הַפָּרֹכֶת", en: "Seven times before the parochet" },
+      ],
+      items: [
+        { hebrew: "חַטָּאת חִיצוֹנָה", translit: "ordinary outer-altar chatat", bucket: "horns" },
+        { hebrew: "עוֹלָה", translit: "olah", bucket: "two" },
+        { hebrew: "שְׁלָמִים", translit: "shelamim", bucket: "two" },
+        { hebrew: "אָשָׁם", translit: "asham", bucket: "two" },
+        { hebrew: "פַּר הֶעְלֵם דָּבָר", translit: "par he'elem davar", bucket: "inner" },
+        { hebrew: "פַּר כֹּהֵן מָשִׁיחַ", translit: "par kohen mashiach", bucket: "inner" },
+      ],
+      explain: "An ordinary outer-altar chatat gets four applications, one per horn. Olah, shelamim and asham share the two-corners pattern, shtayim shehen arba. Par he'elem davar and par kohen mashiach are inner chatot: seven sprinklings before the parochet, then the golden altar's horns.",
+      cite: "Maaseh HaKorbanot 5:6" },
+
+    // ── Who eats what ───────────────────────────────────────────────────
+    { id: "L4-Q38", kind: "mc",
+      prompt: "The olah's blood has been cast on the altar. What happens to the animal now?",
+      options: [
+        "Its eimurin are burned and the meat is eaten by the kohanim",
+        "The chazeh and shok go to the kohen and the rest to the owner",
+        "It is burned outside the camp",
+        "The whole animal is burned on the altar; only the hide is kept",
+      ],
+      answer: 3,
+      explain: "An olah is burned entirely on the altar fire; nothing of it is eaten. Only the hide stays below, and it goes to the kohanim. Eimurin-plus-meat is the chatat; chazeh and shok is the shelamim.",
+      cite: "Maaseh HaKorbanot 5:1" },
+
+    { id: "L4-Q39", kind: "tf",
+      prompt: "The hide of an olah is burned on the altar together with the rest of the animal.",
+      answer: false,
+      explain: "False. The olah's body goes up whole, but its hide does not: the hide goes to the kohanim of the mishmar serving that week.",
+      cite: "Maaseh HaKorbanot 5:19" },
+
+    { id: "L4-Q40", kind: "cloze",
+      prompt: "The hide of an olah goes to ____.",
+      options: ["the owner", "the altar fire", "the kohen gadol", "the kohanim of the mishmar"],
+      answer: 3,
+      explain: "The hide belongs to the kohanim of the mishmar — the priestly watch on duty that week — not to the owner, and it is not burned.",
+      cite: "Maaseh HaKorbanot 5:19" },
+
+    { id: "L4-Q41", kind: "mc",
+      prompt: "Why are the five chatot ha-nisrafot not eaten?",
+      options: [
+        "They are brought on Yom Kippur",
+        "They are brought by the kohen gadol",
+        "They are male animals",
+        "Their blood is brought into the Heichal",
+      ],
+      answer: 3,
+      explain: "A chatat whose blood enters the Heichal is not eaten; its body is burned outside. That is what the five burned chatot have in common — not the day, the person, or the sex of the animal.",
+      cite: "Maaseh HaKorbanot 5:1" },
+
+    { id: "L4-Q42", kind: "mc",
+      prompt: "Which of these chatot is eaten by the kohanim?",
+      options: [
+        "Par kohen mashiach",
+        "The Yom Kippur goat whose partner is sent to Azazel",
+        "The chatat of a nasi",
+        "Se'irei avodah zarah",
+      ],
+      answer: 2,
+      explain: "A nasi's chatat is an ordinary outer-altar chatat and is eaten by the kohanim. The other three are among the five burned chatot, whose blood is brought into the Heichal.",
+      cite: "Maaseh HaKorbanot 1:15" },
+
+    { id: "L4-Q43", kind: "match",
+      prompt: "Match each of the burned chatot to who brings it.",
+      pairs: [
+        { hebrew: "פַּר כֹּהֵן מָשִׁיחַ", english: "the bull of the anointed kohen" },
+        { hebrew: "פַּר הֶעְלֵם דָּבָר", english: "the bull for a communal error of the court" },
+        { hebrew: "שְׂעִיר יוֹם הַכִּפּוּרִים", english: "the Yom Kippur goat whose partner is sent to Azazel" },
+        { hebrew: "שְׂעִירֵי עֲבוֹדָה זָרָה", english: "the goats for communal idolatry" },
+      ],
+      explain: "These four, together with the Yom Kippur bull of the kohen gadol, are the five chatot ha-nisrafot. Their blood enters the Heichal, so their bodies are burned outside rather than eaten.",
+      cite: "Maaseh HaKorbanot 1:15" },
+
+    { id: "L4-Q44", kind: "mc",
+      prompt: "A kohen mashiach sinned. What animal is his chatat?",
+      options: ["A female lamb", "A female goat", "A male goat", "A bull"],
+      answer: 3,
+      explain: "The kohen mashiach brings a bull — one of the three exceptions to the rule that an individual's animal chatat is female. A nasi brings a male goat; the kohen gadol on Yom Kippur also brings a bull.",
+      cite: "Maaseh HaKorbanot 1:14" },
+
+    { id: "L4-Q45", kind: "cloze",
+      prompt: "The chatat of a nasi is a ____.",
+      options: ["female goat", "male goat", "bull", "female lamb"],
+      answer: 1,
+      explain: "A nasi brings a male goat — an exception to the rule that an individual's animal chatat is female. The bull is the chatat of the kohen mashiach and of the kohen gadol on Yom Kippur.",
+      cite: "Maaseh HaKorbanot 1:14" },
+
+    { id: "L4-Q46", kind: "mc",
+      prompt: "A kohen wants to eat from a chatat. Until when may he?",
+      options: [
+        "Until the end of the day of slaughter",
+        "Through the night following the day of slaughter",
+        "Until the end of the following day",
+        "For two days and one night",
+      ],
+      answer: 1,
+      explain: "A chatat is eaten on the day of slaughter and the following night. Two days and one night is the shelamim's limit.",
+      cite: "Maaseh HaKorbanot 10:6" },
+
+    { id: "L4-Q47", kind: "tf",
+      prompt: "Permitted or forbidden? A kohen ate from a chatat on the day after its slaughter.",
+      answer: false,
+      explain: "Forbidden. A chatat may be eaten only on the day of slaughter and the following night; by the next morning the meat is notar and must be burned.",
+      cite: "Maaseh HaKorbanot 10:6" },
+
+    { id: "L4-Q48", kind: "cloze",
+      prompt: "From a shelamim the kohen receives the chazeh (breast) and ____.",
+      options: ["the hide", "all the remaining meat", "the shok — the right thigh", "the eimurin"],
+      answer: 2,
+      explain: "The kohen's portion of a shelamim is the chazeh and the shok, the right thigh. All the meat is his only from a chatat; the eimurin go to the altar; the hide is his from an olah.",
+      cite: "Maaseh HaKorbanot 10:1" },
+
+    { id: "L4-Q49", kind: "mc",
+      prompt: "From which korban does the kohen receive all of the meat, once the eimurin have been burned?",
+      options: ["Olah", "Shelamim", "Chatat", "Todah"],
+      answer: 2,
+      explain: "From a chatat the kohanim receive all the meat after the eimurin are burned. From a shelamim or todah they receive only the chazeh and shok; from an olah only the hide.",
+      cite: "Maaseh HaKorbanot 10:1" },
+
+    { id: "L4-Q50", kind: "tap",
+      prompt: "Which word means waving the offering toward the four directions and up and down?",
+      options: ["הַזָּאָה", "מִצּוּי", "תְּנוּפָה", "הוֹלָכָה"],
+      answer: 2,
+      explain: "Tenufah is the waving — done with the chazeh and shok of a shelamim and with certain other korbanot. Haza'ah is sprinkling blood, mitzui is squeezing it out, holachah is carrying it.",
+      cite: "Maaseh HaKorbanot 9:6" },
+
+    { id: "L4-Q51", kind: "mc",
+      prompt: "The kohen moved the chazeh and shok of a shelamim toward the four directions, then up and down. What is this act called?",
+      options: ["Tenufah", "Haza'ah", "Holachah", "Mitzui"],
+      answer: 0,
+      explain: "That is tenufah — waving. It is done with the chazeh and shok of a shelamim, and with a few other korbanot.",
+      cite: "Maaseh HaKorbanot 9:6" },
+
+    { id: "L4-Q52", kind: "tf",
+      prompt: "The two Shavuot lambs, the kivsei atzeret, are waved in tenufah while still alive.",
+      answer: true,
+      explain: "True. Only two korbanot are waved alive: the kivsei atzeret and the asham of a metzora.",
+      cite: "Mechusrei Kapparah 4:2" },
+
+    { id: "L4-Q53", kind: "mc",
+      prompt: "What do the kivsei atzeret, the two Shavuot lambs, share with the asham of a metzora?",
+      options: [
+        "They are waved in tenufah while still alive",
+        "Their blood is sprinkled before the parochet",
+        "They are burned outside",
+        "They are eaten for two days and one night",
+      ],
+      answer: 0,
+      explain: "Both are waved while alive — the only korbanot that are. A shelamim's tenufah, by contrast, is done after slaughter with the chazeh and shok.",
+      cite: "Mechusrei Kapparah 4:2" },
+
+    // ── Time and place ──────────────────────────────────────────────────
+    { id: "L4-Q54", kind: "tf",
+      prompt: "Shelamim may still be eaten on the day after it is slaughtered.",
+      answer: true,
+      explain: "True. A shelamim is eaten for two days and one night — the day of slaughter, the night, and the following day. A chatat or asham would be notar by then.",
+      cite: "Maaseh HaKorbanot 10:6-7" },
+
+    { id: "L4-Q55", kind: "mc",
+      prompt: "A todah is a kind of shelamim. How long may it be eaten?",
+      options: [
+        "Two days and one night",
+        "One day and the following night",
+        "Only until nightfall",
+        "Three days and two nights",
+      ],
+      answer: 1,
+      explain: "A todah gets only one day and the following night, even though an ordinary shelamim gets two days and one night.",
+      cite: "Maaseh HaKorbanot 10:6-7" },
+
+    { id: "L4-Q56", kind: "tap",
+      prompt: "Which word names korban meat left over past its permitted time?",
+      options: ["פִּגּוּל", "נוֹתָר", "חוּץ לִמְקוֹמוֹ", "אֵימוּרִין"],
+      answer: 1,
+      explain: "Notar is meat left past its time: it must be burned, and one who eats it is liable to karet. Pigul and chutz limkomo are about intention at the time of the avodah, not about what happened to the meat.",
+      cite: "Pesulei HaMukdashin 18:10" },
+
+    { id: "L4-Q57", kind: "tf",
+      prompt: "Kosher or pasul? At the zerikah the kohen intended to eat the meat after its permitted time. The korban is pigul: invalid, and one who eats it is liable to karet.",
+      answer: true,
+      explain: "True. Intent to eat outside the permitted time makes the korban pigul — it is invalid, and eating it carries karet.",
+      cite: "Pesulei HaMukdashin 13:1" },
+
+    { id: "L4-Q58", kind: "cloze",
+      prompt: "A korban offered with intent to eat it outside its permitted place is ____.",
+      options: [
+        "pasul, but eating it carries no karet",
+        "pigul, and eating it carries karet",
+        "kosher, since only time-intent disqualifies",
+        "notar, and must be burned",
+      ],
+      answer: 0,
+      explain: "Chutz limkomo invalidates the korban, but there is no karet for eating it. Karet is reserved for pigul — intent outside its time — and for notar.",
+      cite: "Pesulei HaMukdashin 13:1" },
+
+    { id: "L4-Q59", kind: "mc",
+      prompt: "At the zerikah of a chatat, the kohen intended to eat its meat outside the courtyard. What is the status?",
+      options: [
+        "Kosher — intention does not affect the korban",
+        "Pigul — eating it is karet",
+        "Pasul as chutz limkomo — but no karet",
+        "Notar — it must be burned",
+      ],
+      answer: 2,
+      explain: "A chatat's place is the Temple courtyard, so intent to eat it elsewhere is chutz limkomo: the korban is pasul, but there is no karet. Pigul would be intent about the time, not the place.",
+      cite: "Pesulei HaMukdashin 13:1" },
+
+    { id: "L4-Q60", kind: "sort",
+      prompt: "What is the status? Sort each case — karet for eating it, pasul without karet, or kosher.",
+      buckets: [
+        { id: "karet", he: "כָּרֵת", en: "Eating it is karet" },
+        { id: "pasul", he: "פָּסוּל בְּלֹא כָּרֵת", en: "Pasul, but no karet" },
+        { id: "kosher", he: "כָּשֵׁר", en: "Kosher — may be eaten" },
+      ],
+      items: [
+        { hebrew: "נוֹתָר", translit: "notar", bucket: "karet" },
+        { hebrew: "פִּגּוּל", translit: "pigul", bucket: "karet" },
+        { hebrew: "חוּץ לִמְקוֹמוֹ", translit: "chutz limkomo", bucket: "pasul" },
+        { hebrew: "חַטָּאת בַּלַּיְלָה שֶׁאַחַר הַשְּׁחִיטָה", translit: "chatat eaten on the night after slaughter", bucket: "kosher" },
+        { hebrew: "שְׁלָמִים בַּיּוֹם הַשֵּׁנִי", translit: "shelamim eaten on the second day", bucket: "kosher" },
+      ],
+      explain: "Notar and pigul both carry karet for eating. Chutz limkomo makes the korban pasul with no karet. A chatat on the night after slaughter and a shelamim on its second day are both within their time.",
+      cite: "Pesulei HaMukdashin 13:1" },
+
+    // ── Bird offerings ──────────────────────────────────────────────────
+    { id: "L4-Q61", kind: "tap",
+      prompt: "Which word names the red line around the outer altar that separates the bird olah's blood from the bird chatat's?",
+      options: ["חוּט הַסִּקְרָא", "יְסוֹד", "פָּרֹכֶת", "קֶרֶן"],
+      answer: 0,
+      explain: "The chut hasikra divides the altar wall into an upper and a lower half: a bird olah's blood goes above it, a bird chatat's below it. The yesod is the base, the parochet the curtain, the keren a horn.",
+      cite: "Maaseh HaKorbanot 6:20" },
+
+    { id: "L4-Q62", kind: "tf",
+      prompt: "Kosher or pasul? The kohen squeezed a bird olah's blood onto the upper half of the altar wall, above the chut hasikra.",
+      answer: true,
+      explain: "Kosher. A bird olah's blood belongs on the upper half of the outer altar wall, above the chut hasikra. It is the bird chatat whose blood goes below the line.",
+      cite: "Maaseh HaKorbanot 6:20" },
+
+    { id: "L4-Q63", kind: "tf",
+      prompt: "Kosher or pasul? A bird chatat's blood was applied above the chut hasikra.",
+      answer: false,
+      explain: "Pasul. A bird chatat's blood is sprinkled on the lower half of the altar wall, below the chut hasikra; above the line is the place of the bird olah.",
+      cite: "Maaseh HaKorbanot 7:6" },
+
+    { id: "L4-Q64", kind: "mc",
+      prompt: "After a bird olah's blood is squeezed out on the altar wall, what is done with the bird?",
+      options: [
+        "Its eimurin are burned and the rest is eaten",
+        "The crop is removed with its skin, the bird is split by its wings without separating, and it is burned whole",
+        "It is eaten by male kohanim in the courtyard",
+        "It is burned outside",
+      ],
+      answer: 1,
+      explain: "A bird olah has its crop removed with its skin, is split open by its wings without being separated, and is burned whole on the altar. Eating the body is the bird chatat.",
+      cite: "Maaseh HaKorbanot 6:20" },
+
+    { id: "L4-Q65", kind: "match",
+      prompt: "Match each bird-offering term to its meaning.",
+      pairs: [
+        { hebrew: "מְלִיקָה", english: "severing the neck from behind with the thumbnail" },
+        { hebrew: "מִצּוּי", english: "squeezing the blood out onto the altar" },
+        { hebrew: "מֻרְאָה", english: "the crop — removed with its skin from a bird olah" },
+        { hebrew: "שִׁסּוּעַ", english: "splitting the bird by its wings without separating it" },
+      ],
+      explain: "Melikah replaces shechitah for birds. Then the blood is squeezed out — mitzui — and, for a bird olah only, the crop is removed and the bird is split by its wings before being burned whole.",
+      cite: "Maaseh HaKorbanot 6:20" },
+
+    { id: "L4-Q66", kind: "mc",
+      prompt: "Which statement about haktarah is correct?",
+      options: [
+        "It is one of the four avodot of the blood",
+        "It is the pouring of leftover blood at the base",
+        "It is the burning of the eimurin — or the whole olah — on the altar fire",
+        "It is done only for a shelamim",
+      ],
+      answer: 2,
+      explain: "Haktarah is the burning on the altar fire: the eimurin of a chatat, asham or shelamim, or the whole olah. It follows the four blood avodot and is not counted among them.",
+      cite: "Maaseh HaKorbanot 6:1" },
   ],
 };
 
 // Which quiz items are used as in-lesson checks (built by tools/map_checks.js, hand-adjusted).
 window.KODSHIM_LEVELS[4].checks = {
-  "L4-01": [
-    "L4-Q01",
-    "L4-Q02",
-    "L4-Q03",
-    "L4-Q04"
-  ],
-  "L4-02": [
-    "L4-Q05",
-    "L4-Q06",
-    "L4-Q07",
-    "L4-Q08",
-    "L4-Q09"
-  ],
-  "L4-03": [
-    "L4-Q10",
-    "L4-Q11",
-    "L4-Q12",
-    "L4-Q13",
-    "L4-Q14",
-    "L4-Q15",
-    "L4-Q16"
-  ],
-  "L4-04": [
-    "L4-Q17",
-    "L4-Q18",
-    "L4-Q19",
-    "L4-Q20"
-  ],
-  "L4-05": [
-    "L4-Q21",
-    "L4-Q22",
-    "L4-Q23",
-    "L4-Q24"
-  ]
+  // The four avodot: order, zar vs kohen, haktarah
+  "L4-01": ["L4-Q01", "L4-Q02", "L4-Q03", "L4-Q04", "L4-Q25", "L4-Q26", "L4-Q28"],
+  // Blood on the altar: horns, two corners, inner chatot
+  "L4-02": ["L4-Q05", "L4-Q06", "L4-Q07", "L4-Q08", "L4-Q09", "L4-Q31", "L4-Q33"],
+  // Who eats what: hide, chatat, the five burned chatot, sex, tenufah
+  "L4-03": ["L4-Q11", "L4-Q12", "L4-Q13", "L4-Q39", "L4-Q41", "L4-Q45", "L4-Q52"],
+  // Time and place: deadlines, notar, pigul, chutz limkomo
+  "L4-04": ["L4-Q18", "L4-Q20", "L4-Q46", "L4-Q55", "L4-Q56", "L4-Q57", "L4-Q58"],
+  // Bird offerings: melikah, the chut hasikra, olah vs chatat
+  "L4-05": ["L4-Q22", "L4-Q23", "L4-Q24", "L4-Q61", "L4-Q62", "L4-Q63", "L4-Q64"],
 };
