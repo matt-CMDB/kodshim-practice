@@ -1,0 +1,310 @@
+{
+  "num": 3,
+  "name": "Who brings what korban",
+  "concepts": [
+    {
+      "id": "L3-C01",
+      "q": "What sacrifice does a sotah bring?",
+      "a": "A barley mincha of one-tenth ephah without oil or frankincense — called minchath chatat.",
+      "qHe": "מה קרבן הסוטה?",
+      "aHe": "מנחת שעורים עשירית האיפה ללא שמן ולבונה — היא מנחת חטאת.",
+      "tanach": [
+        "Bamidbar 5:15"
+      ],
+      "rambam": [
+        "Sotah 3:1"
+      ]
+    },
+    {
+      "id": "L3-C02",
+      "q": "What korbanot does a nazir bring at the conclusion of his vow?",
+      "a": "A male lamb as olah, a female lamb as chatat, and a ram as shelamim — with matzot and libations.",
+      "qHe": "אלו קרבנות מביא הנזיר בסוף נזירותו?",
+      "aHe": "כבש לעולה, כבשה לחטאת, ואיל לשלמים — ומצות ונסכים.",
+      "tanach": [
+        "Bamidbar 6:14"
+      ],
+      "rambam": [
+        "Nezirut 8:1"
+      ]
+    },
+    {
+      "id": "L3-C03",
+      "q": "What korban does a nazir who became impure (nazir tameh) bring?",
+      "a": "Two birds (one olah and one chatat) and a male lamb as asham (asham nazir).",
+      "qHe": "מה קרבן נזיר שנטמא?",
+      "aHe": "שני עופות (אחד לעולה ואחד לחטאת) וכבש זכר לאשם (אשם נזיר).",
+      "tanach": [
+        "Bamidbar 6:10-12"
+      ],
+      "rambam": [
+        "Nezirut 6:11"
+      ]
+    },
+    {
+      "id": "L3-C04",
+      "q": "What korbanot does a wealthy metzora bring upon purification?",
+      "a": "Three lambs (asham waved alive, female chatat, male olah) and a log of oil.",
+      "qHe": "אלו קרבנות מביא מצורע עשיר בטהרתו?",
+      "aHe": "שלושה כבשים (אשם מנופף חי, חטאת נקבה, עולה זכר) ולוג שמן.",
+      "tanach": [
+        "Vayikra 14:10"
+      ],
+      "rambam": [
+        "Mechusrei Kapparah 4:1"
+      ]
+    },
+    {
+      "id": "L3-C05",
+      "q": "What korbanot does a poor metzora bring upon purification?",
+      "a": "One male lamb as asham (waved alive), two birds (olah and chatat), and a log of oil.",
+      "qHe": "אלו קרבנות מביא מצורע עני בטהרתו?",
+      "aHe": "כבש זכר לאשם (מנופף חי), שני עופות (עולה וחטאת), ולוג שמן.",
+      "tanach": [
+        "Vayikra 14:21"
+      ],
+      "rambam": [
+        "Mechusrei Kapparah 4:3"
+      ]
+    },
+    {
+      "id": "L3-C06",
+      "q": "What korbanot does a wealthy yoledet bring?",
+      "a": "A lamb as an olah and a bird (turtledove or pigeon) as a chatat.",
+      "qHe": "אלו קרבנות מביאה יולדת עשירה?",
+      "aHe": "כבש לעולה ועוף (תור או בן יונה) לחטאת.",
+      "tanach": [
+        "Vayikra 12:6"
+      ],
+      "rambam": [
+        "Mechusrei Kapparah 1:1"
+      ]
+    },
+    {
+      "id": "L3-C07",
+      "q": "What korbanot does a poor yoledet bring?",
+      "a": "Two birds — one olah and one chatat.",
+      "qHe": "אלו קרבנות מביאה יולדת עניה?",
+      "aHe": "שני עופות — אחד לעולה ואחד לחטאת.",
+      "tanach": [
+        "Vayikra 12:8"
+      ],
+      "rambam": [
+        "Mechusrei Kapparah 1:1"
+      ]
+    },
+    {
+      "id": "L3-C08",
+      "q": "What korbanot does a zav or zavah bring upon purification?",
+      "a": "Two birds on the eighth day — one olah and one chatat.",
+      "qHe": "אלו קרבנות מביא זב או זבה בטהרתם?",
+      "aHe": "שני עופות ביום השמיני — אחד לעולה ואחד לחטאת.",
+      "tanach": [
+        "Vayikra 15:14-15"
+      ],
+      "rambam": [
+        "Mechusrei Kapparah 2:1"
+      ]
+    },
+    {
+      "id": "L3-C09",
+      "q": "Who are the four mechusserei kapparah?",
+      "a": "Zav, zavah, yoledet, and metzora.",
+      "qHe": "מי הם ארבעת מחוסרי הכפרה?",
+      "aHe": "זב, זבה, יולדת, ומצורע.",
+      "tanach": [],
+      "rambam": [
+        "Mechusrei Kapparah 1:1"
+      ]
+    },
+    {
+      "id": "L3-C10",
+      "q": "What chatat does a nasi bring for an unintentional sin?",
+      "a": "A male goat (se'ir izim).",
+      "qHe": "מה חטאת הנשיא על שגגה?",
+      "aHe": "שעיר עיזים זכר.",
+      "tanach": [
+        "Vayikra 4:23"
+      ],
+      "rambam": [
+        "Shegagot 5:1"
+      ]
+    },
+    {
+      "id": "L3-C11",
+      "q": "What chatat does an ordinary Israelite bring for an unintentional sin?",
+      "a": "A female goat (se'irat izim) or a female sheep (kivsah).",
+      "qHe": "מה חטאת יחיד ישראל רגיל על שגגה?",
+      "aHe": "שעירת עיזים נקבה או כבשה.",
+      "tanach": [
+        "Vayikra 4:28"
+      ],
+      "rambam": [
+        "Shegagot 5:1"
+      ]
+    },
+    {
+      "id": "L3-C12",
+      "q": "What chatat does a kohen mashiach (anointed high priest) bring for his unintentional sin?",
+      "a": "A bull (par) — burned outside; not eaten.",
+      "qHe": "מה חטאת כהן משיח על שגגתו?",
+      "aHe": "פר — הנשרף בחוץ ואינו נאכל.",
+      "tanach": [
+        "Vayikra 4:3"
+      ],
+      "rambam": [
+        "Shegagot 2:1"
+      ]
+    },
+    {
+      "id": "L3-C13",
+      "q": "What korbanot does the kohen gadol bring on Yom Kippur for himself and his household?",
+      "a": "A bull as personal chatat and a ram as personal olah.",
+      "qHe": "אלו קרבנות מביא כהן גדול עבורו ועבור ביתו ביום הכיפורים?",
+      "aHe": "פר לחטאת עצמו ואיל לעולתו.",
+      "tanach": [
+        "Vayikra 16:3"
+      ],
+      "rambam": [
+        "Avodat Yom HaKippurim 4:1"
+      ]
+    },
+    {
+      "id": "L3-C14",
+      "q": "What does the kohen gadol bring daily as the chavitin?",
+      "a": "A meal offering of one-tenth ephah of fine flour, half in the morning and half in the afternoon, baked on a flat pan with oil.",
+      "qHe": "מהם חביתי כהן גדול?",
+      "aHe": "מנחת עשירית האיפה סולת, חציה בבוקר וחציה בערב, אפויה במחבת עם שמן.",
+      "tanach": [
+        "Vayikra 6:13-15"
+      ],
+      "rambam": [
+        "Temidin uMusafin 3:18"
+      ]
+    },
+    {
+      "id": "L3-C15",
+      "q": "What is the asham gezilot and when is it brought?",
+      "a": "A male sheep brought by one who swore falsely on a monetary obligation. He must first repay the principal plus a fifth.",
+      "qHe": "מהו אשם גזילות ומתי מביאים אותו?",
+      "aHe": "כבש זכר על שבועת שקר בממון. חייב להחזיר קרן וחומש לפני הקרבה.",
+      "tanach": [
+        "Vayikra 5:21-25"
+      ],
+      "rambam": [
+        "Shegagot 8:1"
+      ]
+    },
+    {
+      "id": "L3-C16",
+      "q": "What is the asham meilot and when is it brought?",
+      "a": "A male sheep worth at least two shekels brought by one who derived benefit from hekdesh. He must repay plus a fifth.",
+      "qHe": "מהו אשם מעילות ומתי מביאים אותו?",
+      "aHe": "כבש זכר ששווה לפחות שני שקלים על מי שנהנה מהקדש. חייב לשלם בתוספת חומש.",
+      "tanach": [
+        "Vayikra 5:15-16"
+      ],
+      "rambam": [
+        "Meilah 1:1"
+      ]
+    },
+    {
+      "id": "L3-C17",
+      "q": "What is the asham talui?",
+      "a": "A male sheep brought when one is uncertain whether he committed a karet-level sin requiring a chatat.",
+      "qHe": "מהו אשם תלוי?",
+      "aHe": "כבש זכר הבא כשמסופק אם חטא בחטא שחייב כרת.",
+      "tanach": [
+        "Vayikra 5:17-18"
+      ],
+      "rambam": [
+        "Shegagot 8:1"
+      ]
+    },
+    {
+      "id": "L3-C18",
+      "q": "What is the asham shifchah charufah?",
+      "a": "A male sheep brought by a man who slept with a non-free maidservant designated to another man.",
+      "qHe": "מהו אשם שפחה חרופה?",
+      "aHe": "כבש זכר הבא על שכיבת שפחה חרופה.",
+      "tanach": [
+        "Vayikra 19:20-22"
+      ],
+      "rambam": [
+        "Issurei Biah 3:13"
+      ]
+    },
+    {
+      "id": "L3-C19",
+      "q": "What is a korban olah ve'yored?",
+      "a": "A sliding-scale offering: wealthy brings a female animal (chatat); middle-income brings two birds (olah + chatat); poor brings selet (fine flour).",
+      "qHe": "מהו קרבן עולה ויורד?",
+      "aHe": "קרבן שמינו תלוי ביכולת: עשיר מביא בהמה נקבה (חטאת); בינוני מביא שני עופות (עולה וחטאת); עני מביא סולת.",
+      "tanach": [
+        "Vayikra 5:6-11"
+      ],
+      "rambam": [
+        "Shegagot 10:1"
+      ]
+    },
+    {
+      "id": "L3-C20",
+      "q": "For what three sins is korban olah ve'yored brought?",
+      "a": "Hearing an oath to testify and falsely denying knowledge (shevuat ha'eidut); entering the Mikdash or eating kodshim while tameh (tumat mikdash ve'kodashav); uttering a false expression-oath (shevuat bituy).",
+      "qHe": "על אלו שלושה חטאים בא קרבן עולה ויורד?",
+      "aHe": "שמיעת קול אלה — שבועת העדות; טומאת מקדש וקדשיו; שבועת ביטוי.",
+      "tanach": [
+        "Vayikra 5:1-4"
+      ],
+      "rambam": [
+        "Shegagot 10:1"
+      ]
+    },
+    {
+      "id": "L3-C21",
+      "q": "Who brings a korban todah?",
+      "a": "One who survived danger — crossing the sea, traveling through a desert, recovering from illness, or being released from prison.",
+      "qHe": "מי מביא קרבן תודה?",
+      "aHe": "מי שניצל מסכנה — עובר ים, הולך מדבר, חולה שנתרפא, או יצא מבית האסורים.",
+      "tanach": [
+        "Tehillim 107:22"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 2:1"
+      ]
+    },
+    {
+      "id": "L3-C22",
+      "q": "What korbanot does a convert (ger) bring upon conversion?",
+      "a": "An olah — either an animal olah or two birds (both as olah).",
+      "qHe": "אלו קרבנות מביא הגר בגיורו?",
+      "aHe": "עולה — בהמה לעולה או שני עופות (שניהם עולה).",
+      "tanach": [],
+      "rambam": [
+        "Mechusrei Kapparah 1:2"
+      ]
+    },
+    {
+      "id": "L3-C23",
+      "q": "Which categories of korban may a tzibur bring?",
+      "a": "Only olot and chatot. Communal shelamim exist only as the two Shavuot lambs; no communal asham; almost no communal bird offerings.",
+      "qHe": "אלו סוגי קרבן הציבור מביא?",
+      "aHe": "רק עולות וחטאות. שלמי ציבור יחידים הם שני כבשי עצרת; אין אשם ציבור; כמעט אין עוף ציבור.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:4"
+      ]
+    },
+    {
+      "id": "L3-C24",
+      "q": "Which categories may a tzibur never bring?",
+      "a": "Asham; almost any bird offering; shelamim (apart from the two Shavuot lambs).",
+      "qHe": "אלו קרבנות הציבור לעולם אינו מביא?",
+      "aHe": "אשם; כמעט אין עוף ציבור; שלמי ציבור (חוץ משני כבשי עצרת).",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:4"
+      ]
+    }
+  ]
+}

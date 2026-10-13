@@ -1,0 +1,257 @@
+{
+  "num": 2,
+  "name": "Basic categorization",
+  "concepts": [
+    {
+      "id": "L2-C01",
+      "q": "What are the four main types of individual animal korbanot?",
+      "a": "Olah, chatat, asham, and shelamim.",
+      "qHe": "מהם ארבעת סוגי קרבנות הבהמה העיקריים?",
+      "aHe": "עוֹלָה, חַטָּאת, אָשָׁם, וּשְׁלָמִים.",
+      "tanach": [
+        "Vayikra 1-7"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:2"
+      ]
+    },
+    {
+      "id": "L2-C02",
+      "q": "Name three additional individual offerings beyond the four main types.",
+      "a": "Pesach, bechor, and maaser behemah.",
+      "qHe": "מהם שלושה קרבנות יחיד נוספים מעבר לארבעת העיקריים?",
+      "aHe": "פסח, בכור, ומעשר בהמה.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:3"
+      ]
+    },
+    {
+      "id": "L2-C03",
+      "q": "What is an olah?",
+      "a": "A burnt offering — entirely consumed on the altar; nothing is eaten.",
+      "qHe": "מהי עולה?",
+      "aHe": "קרבן הנשרף כולו על המזבח; אין ממנו נאכל כלל.",
+      "tanach": [
+        "Vayikra 1:9"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:1"
+      ]
+    },
+    {
+      "id": "L2-C04",
+      "q": "What is a chatat?",
+      "a": "A sin offering — brought to atone for an unintentional transgression of a sin whose intentional violation is punishable by karet.",
+      "qHe": "מהי חטאת?",
+      "aHe": "קרבן הבא לכפר על שגגת חטא שזדונו כרת.",
+      "tanach": [
+        "Vayikra 4"
+      ],
+      "rambam": [
+        "Shegagot 1:1"
+      ]
+    },
+    {
+      "id": "L2-C05",
+      "q": "What is an asham?",
+      "a": "A guilt offering — brought for specific sins (Temple misappropriation, false oaths on property, doubtful chatat, metzora purification, nazir who became impure).",
+      "qHe": "מהו אשם?",
+      "aHe": "קרבן הבא על חטאים מסוימים (מעילה, שבועות שקר בממון, ספק חטאת, טהרת מצורע, נזיר שנטמא).",
+      "tanach": [
+        "Vayikra 5:15"
+      ],
+      "rambam": [
+        "Shegagot 8:1"
+      ]
+    },
+    {
+      "id": "L2-C06",
+      "q": "What is a shelamim?",
+      "a": "A peace offering — eaten partly by the kohanim and partly by the owners; brought voluntarily or for thanksgiving and similar reasons.",
+      "qHe": "מהם שלמים?",
+      "aHe": "קרבן שחלקו נאכל לכוהנים וחלקו לבעלים; בא לנדבה והודיה.",
+      "tanach": [
+        "Vayikra 3"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:2"
+      ]
+    },
+    {
+      "id": "L2-C07",
+      "q": "What are the eimurin?",
+      "a": "The fats and organs burned on the altar: chelev on the stomach, two kidneys with their fat, and yoteret hakabed (lobe of liver). For sheep: also the alyah (fat tail).",
+      "qHe": "מהם האימורים?",
+      "aHe": "החלקים הנשרפים על המזבח: החלב שעל הקרב, שתי הכליות עם חלבהן, ויותרת הכבד. ובכבש — גם האליה.",
+      "tanach": [
+        "Vayikra 3:3-4"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:17"
+      ]
+    },
+    {
+      "id": "L2-C08",
+      "q": "What is the alyah and which species has it?",
+      "a": "The fat tail — only sheep (kevasim) have it; it is included in their eimurin.",
+      "qHe": "מהי האליה ולאיזה מין יש אותה?",
+      "aHe": "חתיכת חלב כבדה בעורף; רק לכבשים יש אותה ונכללת באימוריהם.",
+      "tanach": [
+        "Vayikra 3:9"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 1:17"
+      ]
+    },
+    {
+      "id": "L2-C09",
+      "q": "What are the two categories of korbanot by their level of sanctity?",
+      "a": "Kodshei kodashim (most holy) and kodashim kalim (lesser holy).",
+      "qHe": "מהן שתי קבוצות הקרבנות לפי רמת קדושתן?",
+      "aHe": "קדשי קדשים וקדשים קלים.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:16"
+      ]
+    },
+    {
+      "id": "L2-C10",
+      "q": "Which korbanot are classified as kodshei kodashim?",
+      "a": "Olot, chatot, ashamot, the two Shavuot lambs (kivsei atzeret), the par he'elem davar, and communal chatot.",
+      "qHe": "אלו קרבנות הם קדשי קדשים?",
+      "aHe": "עולות, חטאות, אשמות, שני כבשי עצרת, פר העלם דבר, וחטאות ציבור.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:16"
+      ]
+    },
+    {
+      "id": "L2-C11",
+      "q": "Which korbanot are classified as kodashim kalim?",
+      "a": "Shelamim of an individual, bechor, maaser behemah, and the korban pesach.",
+      "qHe": "אלו קרבנות הם קדשים קלים?",
+      "aHe": "שלמי יחיד, בכור, מעשר בהמה, וקרבן פסח.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:16"
+      ]
+    },
+    {
+      "id": "L2-C12",
+      "q": "Where must kodshei kodashim be slaughtered?",
+      "a": "In the northern section of the Temple courtyard (tzafon).",
+      "qHe": "היכן שוחטים קדשי קדשים?",
+      "aHe": "בצפון העזרה.",
+      "tanach": [
+        "Vayikra 1:11"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:8"
+      ]
+    },
+    {
+      "id": "L2-C13",
+      "q": "Where may kodashim kalim be slaughtered?",
+      "a": "Anywhere in the Temple courtyard.",
+      "qHe": "היכן מותר לשחוט קדשים קלים?",
+      "aHe": "בכל מקום בעזרה.",
+      "tanach": [
+        "Vayikra 3:2"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 5:8"
+      ]
+    },
+    {
+      "id": "L2-C14",
+      "q": "Where must kodshei kodashim be eaten?",
+      "a": "In the Temple courtyard, by male kohanim only, on the day of slaughter and the following night.",
+      "qHe": "איפה נאכלים קדשי קדשים?",
+      "aHe": "בעזרה, על ידי הכוהנים הזכרים בלבד, ביום שחיטה ובלילה שלאחריו.",
+      "tanach": [
+        "Vayikra 6:19"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 10:1"
+      ]
+    },
+    {
+      "id": "L2-C15",
+      "q": "Where may kodashim kalim be eaten?",
+      "a": "Anywhere in Jerusalem; by anyone tahor (men and women).",
+      "qHe": "איפה נאכלים קדשים קלים?",
+      "aHe": "בכל מקום בירושלים; על ידי כל אדם טהור (גברים ונשים).",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 10:5"
+      ]
+    },
+    {
+      "id": "L2-C16",
+      "q": "What is a behemah?",
+      "a": "A four-legged kosher domesticated animal — i.e., cattle, sheep, or goats.",
+      "qHe": "מהי בהמה?",
+      "aHe": "בהמה טהורה בעלת ארבע רגליים — בקר, כבשים, או עזים.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:1"
+      ]
+    },
+    {
+      "id": "L2-C17",
+      "q": "What is an of (עוף) for korbanot?",
+      "a": "A kosher bird — only turtledoves and young pigeons qualify.",
+      "qHe": "מהו עוף לעניין קרבנות?",
+      "aHe": "עוף טהור — רק תורים ובני יונה.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 1:1"
+      ]
+    },
+    {
+      "id": "L2-C18",
+      "q": "What is a korban tzibur?",
+      "a": "A communal offering — brought from public funds (machatzit hashekel) on behalf of all Israel.",
+      "qHe": "מהו קרבן ציבור?",
+      "aHe": "קרבן הבא מקופת הציבור (משקלי הציבור) בעבור כל ישראל.",
+      "tanach": [],
+      "rambam": [
+        "Temidin uMusafin 1:1"
+      ]
+    },
+    {
+      "id": "L2-C19",
+      "q": "What is a korban yachid?",
+      "a": "An individual offering — brought by a single person at his own expense.",
+      "qHe": "מהו קרבן יחיד?",
+      "aHe": "קרבן שאדם פרטי מביא מנכסיו.",
+      "tanach": [],
+      "rambam": [
+        "Maaseh HaKorbanot 14:1"
+      ]
+    },
+    {
+      "id": "L2-C20",
+      "q": "What is a korban nedavah?",
+      "a": "A voluntary offering with no obligation — usually an olah or shelamim.",
+      "qHe": "מהו קרבן נדבה?",
+      "aHe": "קרבן שבא בנדבת לב ללא חיוב — בדרך כלל עולה או שלמים.",
+      "tanach": [
+        "Vayikra 1:2"
+      ],
+      "rambam": [
+        "Maaseh HaKorbanot 14:1"
+      ]
+    },
+    {
+      "id": "L2-C21",
+      "q": "What is a korban chovah?",
+      "a": "A required offering — brought to fulfill an obligation (e.g.",
+      "qHe": "chatat for a sin or pesach).",
+      "aHe": "מהו קרבן חובה?",
+      "tanach": [],
+      "rambam": []
+    }
+  ]
+}

@@ -860,7 +860,7 @@ function NameCellZoom({ cellKey, onClose }) {
 /* ═══════════════════════════════════════════════════════════════════ */
 /*  LearnScreen                                                        */
 /* ═══════════════════════════════════════════════════════════════════ */
-function LearnScreen({ onDone, onBack, onSwitchStage }) {
+function LearnScreen({ levelNum = 1, onDone, onBack, onSwitchStage, onAsk }) {
   const [slideIdx, setSlideIdx] = useStateLV(0);
   const [reveal, setReveal] = useStateLV(0);
   const [drawerOpen, setDrawerOpen] = useStateLV(false);
@@ -940,10 +940,12 @@ function LearnScreen({ onDone, onBack, onSwitchStage }) {
   return (
     <div className="learn">
       <TopBar
+        levelNum={levelNum}
         stage="learn"
         onStageChange={onSwitchStage}
-        onExit={onBack} />
-      
+        onExit={onBack}
+        onAsk={onAsk} />
+
 
       <div className="slide-area" ref={slideAreaRef}>
         <div className="slide-head">
@@ -1040,43 +1042,51 @@ function LearnScreen({ onDone, onBack, onSwitchStage }) {
 const STAGES = [
 { id: "learn", num: "01", label: "Learn" },
 { id: "prove", num: "02", label: "Prove" },
-{ id: "review", num: "03", label: "Review" }];
+{ id: "master", num: "03", label: "Master" }];
 
 
-function TopBar({ stage, onStageChange, onExit, onMusic }) {
+function TopBar({ levelNum = 1, stage, onStageChange, onExit, onAsk }) {
+  const K = window.KODSHIM;
+  const L = K.level(levelNum) || {};
+  const st = K.levelState(levelNum);
+  const canMaster = !!st.prove.passed;
+  const pad = K.pad2(levelNum);
   return (
     <div className="topbar">
       <div className="brand">
         <span className="brand-mark">קדשים</span>
         <span className="brand-sep" />
         <span className="brand-title">
-          <span className="num">LVL 01</span>
+          <span className="num">LVL {pad}</span>
         </span>
       </div>
 
       <div className="stage-wrap">
-        <div className="stage-label">Level 01 · Animals for Korbanos</div>
+        <div className="stage-label">{stage === "review" ? "Review · all levels" : `Level ${pad} · ${L.name || ""}`}</div>
         <div className="stage-bricks" role="tablist" aria-label="Stage selector">
-          {STAGES.map((s) =>
-          <button
-            key={s.id}
-            type="button"
-            role="tab"
-            aria-selected={stage === s.id}
-            className={"brick" + (stage === s.id ? " active" : "")}
-            onClick={() => onStageChange && onStageChange(s.id)}
-            title={s.label}>
-            
-              <span className="brick-num">{s.num}</span>
-              <span className="brick-name">{s.label}</span>
-            </button>
-          )}
+          {STAGES.map((s) => {
+            const off = s.id === "master" && !canMaster;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                role="tab"
+                aria-selected={stage === s.id}
+                className={"brick" + (stage === s.id ? " active" : "") + (off ? " off" : "")}
+                disabled={off}
+                onClick={() => onStageChange && onStageChange(s.id)}
+                title={off ? "Prove the level first" : s.label}>
+                <span className="brick-num">{s.num}</span>
+                <span className="brick-name">{s.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
       <div className="topbar-actions">
-        {onMusic &&
-        <button type="button" className="icon-btn" onClick={onMusic} title="Music">♪</button>
+        {onAsk &&
+        <button type="button" className="icon-btn ask" onClick={onAsk} title="Ask the kohen"><span className="ico">?</span><span>Ask</span></button>
         }
         <button type="button" className="icon-btn exit" onClick={onExit} title="Exit to the steps" aria-label="Exit">×</button>
       </div>

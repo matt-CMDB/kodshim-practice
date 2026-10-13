@@ -1,299 +1,263 @@
-// Same flow as the original, but the Learn + Quiz screens
-// route to the redesigned components.
+// App shell: screens, music engine, run bookkeeping, tutor drawer.
+//   loading → welcome → map → (learn | run-intro → run → run-result) → map
+(() => {
+  const { useState, useEffect, useMemo, useRef, useCallback } = React;
+  const K = () => window.KODSHIM;
 
-const { useState, useEffect, useMemo, useRef } = React;
+  const ALL_IMAGES = [
+    "assets/heichal-steps.png", "assets/kohen-gadol-teaching.png", "assets/boy-learning.png",
+    "assets/instruments.png", "assets/test.png", "assets/success.png", "assets/teach-and-learn.png",
+    "assets/calf.png", "assets/cow-male.png", "assets/cow-f.png", "assets/ram.png", "assets/ewe.png",
+    "assets/lamb.png", "assets/male-goat.png", "assets/kid-goat.png",
+  ];
 
-const ALL_IMAGES = [
-  "assets/heichal-steps.png",
-  "assets/kohen-gadol-teaching.png",
-  "assets/boy-learning.png",
-  "assets/instruments.png",
-  "assets/test.png",
-  "assets/success.png",
-  "assets/teach-and-learn.png",
-  "assets/calf.png",
-  "assets/cow-male.png",
-  "assets/cow-f.png",
-  "assets/ram.png",
-  "assets/ewe.png",
-  "assets/lamb.png",
-  "assets/male-goat.png",
-  "assets/kid-goat.png",
-];
+  /* ─── Music engine ─────────────────────────────────────────────────── */
+  function useMusicEngine() {
+    const s = K().settings;
+    const [enabled, setEnabledState] = useState(s.music !== false);
+    const [started, setStarted] = useState(false);
+    const [volumes, setVolumesState] = useState(() => (Array.isArray(s.volumes) && s.volumes.length === INSTRUMENTS.length ? s.volumes : INSTRUMENTS.map(() => 0.7)));
+    const [unlockedCount, setUnlockedCount] = useState(() => K().unlockedInstruments());
+    const refs = useRef({});
 
-/* ─── Music engine ─────────────────────────────────────────────────── */
-function unlockedCountForLevel(level) {
-  if (level >= 12) return 5;
-  if (level >= 9)  return 4;
-  if (level >= 6)  return 3;
-  if (level >= 3)  return 2;
-  return 1;
-}
+    useEffect(() => K().subscribe(() => setUnlockedCount(K().unlockedInstruments())), []);
+    useEffect(() => {
+      INSTRUMENTS.forEach((inst, i) => {
+        const el = refs.current[inst.id];
+        if (!el) return;
+        el.volume = volumes[i];
+        const shouldPlay = started && enabled && i < unlockedCount;
+        if (shouldPlay) { const p = el.play(); if (p && p.catch) p.catch(() => {}); }
+        else el.pause();
+      });
+    }, [started, enabled, unlockedCount, volumes]);
 
-function useMusicEngine(currentLevel) {
-  const [enabled, setEnabled] = useState(true);
-  const [started, setStarted] = useState(false);
-  const [volumes, setVolumes] = useState(() => INSTRUMENTS.map(() => 0.7));
-  const refs = useRef({});
-  const unlockedCount = unlockedCountForLevel(currentLevel);
-
-  useEffect(() => {
-    INSTRUMENTS.forEach((inst, i) => {
-      const el = refs.current[inst.id];
-      if (!el) return;
-      el.volume = volumes[i];
-      const shouldPlay = started && enabled && i < unlockedCount;
-      if (shouldPlay) {
-        const p = el.play();
-        if (p && p.catch) p.catch(() => {});
-      } else {
-        el.pause();
-      }
-    });
-  }, [started, enabled, unlockedCount, volumes]);
-
-  const setVolume = (i, v) =>
-    setVolumes(prev => prev.map((x, j) => (j === i ? v : x)));
-
-  return {
-    enabled,
-    setEnabled,
-    start: () => setStarted(true),
-    unlockedCount,
-    volumes,
-    setVolume,
-    refs
-  };
-}
-
-function pickQuiz(questions, n) {
-  const arr = questions.slice();
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    const setEnabled = (v) => { setEnabledState(v); K().setSetting("music", v); };
+    const setVolume = (i, v) => setVolumesState((prev) => { const next = prev.map((x, j) => (j === i ? v : x)); K().setSetting("volumes", next); return next; });
+    return { enabled, setEnabled, start: () => setStarted(true), unlockedCount, volumes, setVolume, refs };
   }
-  return arr.slice(0, Math.min(n, arr.length));
-}
 
-function App() {
-  const [screen, setScreen] = useState("loading");
-  const [loadedCount, setLoadedCount] = useState(0);
-
-  useEffect(() => {
-    let count = 0;
-    ALL_IMAGES.forEach(src => {
-      const img = new Image();
-      img.onload = img.onerror = () => {
-        count += 1;
-        setLoadedCount(count);
-        if (count >= ALL_IMAGES.length) setScreen("welcome");
-      };
-      img.src = src;
-    });
-  }, []);
-  const [tutorialDismissed, setTutorialDismissed] = useState(false);
-  const [musicCardOpen, setMusicCardOpen] = useState(false);
-
-  // Quiz state
-  const [quizIdx, setQuizIdx] = useState(0);
-  const [hearts, setHearts] = useState(3);
-  const [correct, setCorrect] = useState(0);
-  const [status, setStatus] = useState(null);
-  const [qKey, setQKey] = useState(0);
-
-  const data = window.KODSHIM_DATA;
-  const [quizItems, setQuizItems] = useState(() => pickQuiz(data.quiz, 10));
-  const totalQ = quizItems.length;
-
-  const currentLevel = useMemo(() => {
-    const open = data.levels.filter(l => l.state !== "locked");
-    return open.length ? Math.max(...open.map(l => l.num)) : 1;
-  }, [data.levels]);
-  const music = useMusicEngine(currentLevel);
-
-  const resetQuiz = () => {
-    setQuizItems(pickQuiz(data.quiz, 10));
-    setQuizIdx(0); setHearts(3); setCorrect(0);
-    setStatus(null); setQKey(k => k + 1);
-  };
-
-  const goTutorial  = () => setScreen("tutorial");
-  const goLearn     = () => { resetQuiz(); setScreen("learn"); };
-  const goQuizIntro = () => { resetQuiz(); setScreen("quiz-intro"); };
-  const goQuiz      = () => { resetQuiz(); setScreen("quiz"); };
-  const goReview    = () => setScreen("review");
-
-  // Stage selector used by the three-brick topbar control.
-  // The user can flip freely between Learn and Review; choosing Prove
-  // sends them to the quiz intro splash so the quiz starts fresh.
-  const switchStage = (stage) => {
-    if (stage === "learn")  setScreen("learn");
-    else if (stage === "prove")  setScreen("quiz-intro");
-    else if (stage === "review") setScreen("review");
-  };
-
-  const handleResolve = (ok) => {
-    setStatus({
-      ok,
-      msg: ok
-        ? randomFrom(["Correct.", "Right.", "Yes.", "Spot on."])
-        : randomFrom(["Not quite.", "Almost.", "Off by one.", "Try the next."])
-    });
-    if (ok) setCorrect(c => c + 1);
-    let newHearts = hearts;
-    if (!ok) { newHearts = hearts - 1; setHearts(newHearts); }
-
-    setTimeout(() => {
-      setStatus(null);
-      if (newHearts <= 0) { setScreen("result"); return; }
-      if (quizIdx + 1 >= totalQ) {
-        setScreen("success");
-        return;
-      }
-      setQuizIdx(quizIdx + 1);
-      setQKey(k => k + 1);
-    }, 1200);
-  };
-
-  const isIntro = screen === "welcome" || screen === "tutorial";
-
-  return (
-    <div className="app" data-screen-label={"Kodshim · " + screen}>
-      <div className="stage">
-        {screen === "loading" && (
-          <LoadingScene loaded={loadedCount} total={ALL_IMAGES.length} />
-        )}
-        {screen === "welcome" && (
-          <WelcomeScene
-            levels={data.levels}
-            onContinue={() => { music.start(); setScreen("tutorial"); }}
-            onOpenMusic={() => setMusicCardOpen(true)}
-          />
-        )}
-        {screen === "tutorial" && (
-          <TutorialScene
-            levels={data.levels}
-            showCard={!tutorialDismissed}
-            onDismissCard={() => setTutorialDismissed(true)}
-            onShowCard={() => setTutorialDismissed(false)}
-            onSelectStep={() => { setTutorialDismissed(true); goLearn(); }}
-            music={music}
-            onOpenMusic={() => setMusicCardOpen(true)}
-          />
-        )}
-        {screen === "learn" && (
-          <LearnScreen onDone={goQuizIntro} onBack={goTutorial} onSwitchStage={switchStage} />
-        )}
-        {screen === "quiz-intro" && (
-          <QuizIntroScreen onBegin={goQuiz} onBack={goTutorial} onSwitchStage={switchStage} />
-        )}
-        {screen === "quiz" && (
-          <QuizScreen
-            key={qKey}
-            item={quizItems[quizIdx]}
-            qIdx={quizIdx}
-            qTotal={totalQ}
-            hearts={hearts}
-            status={status}
-            onResolve={handleResolve}
-            onBack={goTutorial}
-            onSwitchStage={switchStage}
-          />
-        )}
-        {screen === "result" && (
-          <ResultScreen
-            passed={hearts > 0 && correct >= Math.ceil(totalQ * 0.7)}
-            hearts={hearts}
-            total={totalQ}
-            correct={correct}
-            onMap={goTutorial}
-            onRetry={goQuiz}
-            onSwitchStage={switchStage}
-          />
-        )}
-        {screen === "success" && (
-          <SuccessScreen
-            hearts={hearts}
-            correct={correct}
-            total={totalQ}
-            onMap={goTutorial}
-            onRetry={goQuiz}
-            onSwitchStage={switchStage}
-          />
-        )}
-        {screen === "review" && (
-          <ReviewScreen onSwitchStage={switchStage} onBack={goTutorial} />
-        )}
+  function AudioRack({ music }) {
+    return (
+      <div aria-hidden="true" className="audio-rack">
+        {INSTRUMENTS.map((inst) => (
+          <audio key={inst.id} ref={(el) => { music.refs.current[inst.id] = el; }} src={encodeURI(inst.file)} loop preload="auto" />
+        ))}
       </div>
-      {musicCardOpen && (
-        <MusicCard music={music} onClose={() => setMusicCardOpen(false)} />
-      )}
-      <AudioRack music={music} />
-    </div>
-  );
-}
+    );
+  }
 
-function AudioRack({ music }) {
-  return (
-    <div aria-hidden="true" className="audio-rack">
-      {INSTRUMENTS.map(inst => (
-        <audio
-          key={inst.id}
-          ref={el => { music.refs.current[inst.id] = el; }}
-          src={encodeURI(inst.file)}
-          loop
-          preload="auto"
-        />
-      ))}
-    </div>
-  );
-}
-
-/* ─── Quiz wrapper ─────────────────────────────────────────────────── */
-function QuizScreen({ item, qIdx, qTotal, hearts, status, onResolve, onBack, onSwitchStage }) {
-  const pct = ((qIdx + 1) / qTotal) * 100;
-  return (
-    <div className="quiz">
-      <TopBar stage="prove" onStageChange={onSwitchStage} onExit={onBack} />
-      <div className="quiz-top">
-        <div className="quiz-hearts" aria-label="Hearts remaining">
-          {[0, 1, 2].map(i => (
-            <span key={i} className={"quiz-heart" + (i >= hearts ? " lost" : "")} />
-          ))}
-        </div>
-        <div className="quiz-progress">
-          <div className="quiz-bar"><div className="quiz-bar-fill" style={{ width: pct + "%" }} /></div>
-          <span className="quiz-count">
-            <b>{String(qIdx + 1).padStart(2, "0")}</b> / {String(qTotal).padStart(2, "0")}
-          </span>
-        </div>
-        <div style={{ width: 1 }} />
-      </div>
-
-      <div className="quiz-body">
-        {item.kind === "mc"    && <MCQuestion item={item} onResolve={onResolve} />}
-        {item.kind === "tap"   && <MCQuestion item={item} onResolve={onResolve} tap />}
-        {item.kind === "match" && <MatchQuestion item={item} onResolve={onResolve} />}
-        {item.kind === "sort"  && <SortQuestion item={item} onResolve={onResolve} />}
-      </div>
-
-      <div className="quiz-foot">
-        <span className="quiz-hint">
-          {item.kind === "sort" ? "Place every chip, then press Check." : "One wrong answer costs a heart."}
-        </span>
-        {status && (
-          <div className={"quiz-status " + (status.ok ? "ok" : "bad")}>
-            <span className="dot">{status.ok ? "✓" : "✕"}</span>
-            <span>{status.msg}</span>
+  /* ─── Run intro ────────────────────────────────────────────────────── */
+  const RUN_COPY = {
+    prove: { eyebrow: "Prove your knowledge", h: "Time to test what you've learned.", p: "Twelve cards drawn from this level — multiple choice, sorting, matching, kosher-or-pasul.", rules: [["Three hearts.", "Each wrong answer costs one."], ["Seventy percent", "correct earns the step and opens the next level."], ["Every card", "goes into your review deck afterward."]], art: "assets/test.png", cta: "Begin" },
+    master: { eyebrow: "Master the level", h: "A harder run. Earlier levels mix in.", p: "Twelve cards, weighted toward the ones you've missed, with a few from the levels below.", rules: [["Three hearts.", "Same as Prove."], ["Eighty-five percent", "to pass — this is the third step and an instrument."], ["Earlier material", "appears without warning."]], art: "assets/teach-and-learn.png", cta: "Begin" },
+    review: { eyebrow: "Review", h: "Keep what you've learned.", p: "Cards that are due, then the ones you find hardest, from every level you've opened.", rules: [["No hearts.", "Nothing to lose but the forgetting."], ["Right answers", "push a card further into the future."], ["Wrong answers", "bring it back tomorrow."]], art: "assets/teach-and-learn.png", cta: "Start review" },
+  };
+  function RunIntro({ mode, levelNum, count, onBegin, onBack, onSwitchStage, onAsk }) {
+    const c = RUN_COPY[mode];
+    useEffect(() => {
+      const onKey = (e) => { if (e.key === "Enter") { e.preventDefault(); onBegin(); } };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [onBegin]);
+    return (
+      <div className="quiz run-intro">
+        <TopBar levelNum={levelNum} stage={mode === "review" ? "review" : "prove"} onStageChange={onSwitchStage} onExit={onBack} onAsk={onAsk} />
+        <div className="quiz-intro">
+          <div className="quiz-intro-art"><img src={c.art} alt="" /></div>
+          <div className="quiz-intro-text">
+            <div className="quiz-intro-eyebrow">{mode === "review" ? "All levels" : `Level ${K().pad2(levelNum)}`} · {c.eyebrow}</div>
+            <h1 className="quiz-intro-h">{c.h}</h1>
+            <p className="quiz-intro-p">{c.p}{mode === "review" && count ? ` ${count} card${count === 1 ? "" : "s"} this session.` : ""}</p>
+            <ul className="quiz-intro-rules">{c.rules.map(([b, t], i) => <li key={i}><b>{b}</b> {t}</li>)}</ul>
+            <div className="quiz-intro-actions">
+              <button type="button" className="btn" onClick={onBack}>Back to the steps</button>
+              <button type="button" className="btn primary gold" onClick={onBegin}><span>{c.cta}</span><span className="arrow">→</span></button>
+            </div>
           </div>
-        )}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-function randomFrom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  /* ─── Run result ───────────────────────────────────────────────────── */
+  function RunResult({ mode, levelNum, result, outcome, missed, onMap, onRetry, onNext, onSwitchStage, onAsk, unlockedNote }) {
+    const passed = mode === "review" ? true : outcome.passed;
+    useEffect(() => {
+      if (passed) K().sfx.fanfare();
+      const onKey = (e) => { if (e.key === "Enter") { e.preventDefault(); (passed ? onNext : onRetry)(); } };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [passed, onNext, onRetry]);
+    const pct = Math.round((result.correct / result.total) * 100);
+    const title = mode === "review" ? "Reviewed." : passed ? (mode === "master" ? "Mastered." : "Proven.") : (result.outOfHearts ? "Out of hearts." : "Not yet.");
+    const L = K().level(levelNum);
+    const nextL = K().level(levelNum + 1);
+    const sub = mode === "review"
+      ? `${result.correct} of ${result.total} remembered. ${missed.length ? "The ones you missed come back tomorrow." : "Everything held."}`
+      : passed
+        ? (mode === "master" ? `Level ${levelNum} is yours. ${unlockedNote || ""}` : (nextL ? `Level ${levelNum + 1} — ${nextL.name} — is open.` : "You've proved the final level."))
+        : (result.outOfHearts ? "Three misses. Have a look at the ones you got wrong, then try again." : `You need ${Math.round((mode === "master" ? K().MASTER_RATIO : K().PASS_RATIO) * 100)}% to pass. Have a look at the misses and go again.`);
+    return (
+      <div className="quiz">
+        {passed && mode !== "review" && <Confetti />}
+        <TopBar levelNum={levelNum} stage={mode === "review" ? "review" : "prove"} onStageChange={onSwitchStage} onExit={onMap} onAsk={onAsk} />
+        <div className={passed ? "success-body" : "result"}>
+          <div className={passed ? "" : "result-card"}>
+            {passed && mode !== "review" && <img src="assets/success.png" className="success-img" alt="" />}
+            <div className="quiz-intro-eyebrow">{mode === "review" ? "Review" : `Level ${K().pad2(levelNum)} · ${mode === "master" ? "Master" : "Prove"}`}</div>
+            <h1 className={passed ? "success-h" : "result-h"}>{title}</h1>
+            {mode !== "review" && outcome.stars > 0 && <div className="result-stars"><Stars n={outcome.stars} size="lg" /></div>}
+            {outcome.xp > 0 && <div className="result-xp">+{outcome.xp} xp</div>}
+            <p className="result-p">{sub}</p>
+            {unlockedNote && mode === "master" && <div className="result-note"><span>♪</span><span>{unlockedNote}</span></div>}
+            <div className="result-stats">
+              <div className="result-stat"><span className="v">{result.correct}/{result.total}</span><span className="l">Correct</span></div>
+              <div className="result-stat"><span className="v">{pct}%</span><span className="l">Score</span></div>
+              {mode !== "review" && <div className="result-stat"><span className="v">{result.hearts}</span><span className="l">Hearts left</span></div>}
+              <div className="result-stat"><span className="v">{result.streak}</span><span className="l">Best streak</span></div>
+            </div>
+            {missed.length > 0 && (
+              <div className="result-missed">
+                <div className="result-missed-title">Worth another look</div>
+                <ul>{missed.map((m) => <li key={m.id}><span className="q">{m.prompt.replace(/_{3,}/, "…")}</span><span className="a">{m.answerText}</span></li>)}</ul>
+              </div>
+            )}
+            <div className="result-actions">
+              <button type="button" className="btn" onClick={onMap}>Back to the steps</button>
+              {!passed && <button type="button" className="btn primary gold" onClick={onRetry}><span>Try again</span><span className="arrow">→</span></button>}
+              {passed && <button type="button" className="btn primary gold" onClick={onNext}><span>{mode === "review" ? "Back to the steps" : mode === "prove" ? "Master this level" : (nextL ? `On to Level ${levelNum + 1}` : "Back to the steps")}</span><span className="arrow">→</span></button>}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-/* mount */
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+  function answerTextOf(item) {
+    switch (item.kind) {
+      case "mc": case "tap": case "cloze": return item.options[item.answer];
+      case "tf": return item.answer ? "True / kosher" : "False / pasul";
+      case "match": return "see the pairs in Learn";
+      case "sort": return "see the buckets in Learn";
+      default: return "";
+    }
+  }
+
+  /* ─── App ──────────────────────────────────────────────────────────── */
+  function App() {
+    const [screen, setScreen] = useState("loading");
+    const [loadedCount, setLoadedCount] = useState(0);
+    const [levelNum, setLevelNum] = useState(() => K().currentLevel());
+    const [run, setRun] = useState(null);          // { mode, items, key }
+    const [result, setResult] = useState(null);    // { result, outcome, missed, unlockedNote }
+    const [musicCardOpen, setMusicCardOpen] = useState(false);
+    const [tutor, setTutor] = useState(null);      // { seed }
+    const [settingsOpen, setSettingsOpen] = useState(false);
+    const [mapKey, setMapKey] = useState(0);
+    const music = useMusicEngine();
+    const missedRef = useRef([]);
+
+    useEffect(() => {
+      let count = 0;
+      ALL_IMAGES.forEach((src) => {
+        const img = new Image();
+        img.onload = img.onerror = () => { count += 1; setLoadedCount(count); if (count >= ALL_IMAGES.length) setScreen("welcome"); };
+        img.src = src;
+      });
+    }, []);
+
+    const goMap = useCallback(() => { setRun(null); setResult(null); setTutor(null); setMapKey((k) => k + 1); setScreen("map"); }, []);
+    const startStage = useCallback((num, stage) => {
+      setLevelNum(num);
+      setTutor(null);
+      if (stage === "learn") { setScreen("learn"); return; }
+      setRun({ mode: stage, items: null, key: Date.now() });
+      setScreen("run-intro");
+    }, []);
+    const startReview = useCallback(() => {
+      const num = K().currentLevel();
+      setLevelNum(num);
+      setTutor(null);
+      setRun({ mode: "review", items: null, key: Date.now() });
+      setScreen("run-intro");
+    }, []);
+    const beginRun = useCallback(() => {
+      const r = run;
+      let items;
+      if (r.mode === "prove") items = K().pickProve(levelNum, 12);
+      else if (r.mode === "master") items = K().pickMaster(levelNum, 12);
+      else items = K().pickReview(12);
+      if (!items.length) { goMap(); return; }
+      missedRef.current = [];
+      setRun({ ...r, items, key: Date.now() });
+      setScreen("run");
+    }, [run, levelNum, goMap]);
+    const finishRun = useCallback((res) => {
+      const before = K().unlockedInstruments();
+      const outcome = run.mode === "review" ? { passed: true, stars: 0, xp: res.correct * 5 } : K().completeRun(levelNum, run.mode, res);
+      if (run.mode === "review") { K().progress.xp += outcome.xp; }
+      const after = K().unlockedInstruments();
+      let unlockedNote = null;
+      if (after > before) { unlockedNote = `The ${INSTRUMENTS[after - 1].en.split("·")[0].trim()} joins the ensemble.`; K().sfx.unlock(); }
+      else if (run.mode === "master" && outcome.passed && K().stepsClimbed() >= K().totalSteps()) unlockedNote = "You stand at the gate of the Ezras Yisrael.";
+      setResult({ result: res, outcome, missed: missedRef.current.slice(), unlockedNote });
+      setScreen("run-result");
+    }, [run, levelNum]);
+
+    // Track misses for the result screen (the run records Leitner itself).
+    const onRunAnswer = useCallback((item, ok) => { if (!ok) missedRef.current.push({ id: item.id, prompt: item.prompt, answerText: answerTextOf(item) }); }, []);
+
+    const switchStage = useCallback((stage) => {
+      if (stage === "learn") setScreen("learn");
+      else if (stage === "prove" || stage === "master") startStage(levelNum, stage);
+      else if (stage === "review") startReview();
+    }, [levelNum, startStage, startReview]);
+
+    const openTutor = useCallback((item, ok) => { setTutor({ seed: item ? { item, ok } : null }); }, []);
+    const askBtn = useCallback(() => openTutor(null, null), [openTutor]);
+
+    const learnDone = useCallback(() => { K().completeLearn(levelNum); startStage(levelNum, "prove"); }, [levelNum, startStage]);
+
+    const firstVisit = !K().settings.seenTutorial;
+    const L = K().level(levelNum);
+
+    return (
+      <div className="app" data-screen-label={"Kodshim · " + screen}>
+        <div className="stage">
+          {screen === "loading" && <LoadingScene loaded={loadedCount} total={ALL_IMAGES.length} />}
+          {screen === "welcome" && (
+            <WelcomeScene levels={[]} onContinue={() => { music.start(); K().setSetting("seenWelcome", true); goMap(); }} onOpenMusic={() => setMusicCardOpen(true)} />
+          )}
+          {screen === "map" && (
+            <MapScene key={mapKey} music={music} firstVisit={firstVisit} onStart={(n, stage) => { if (firstVisit) K().setSetting("seenTutorial", true); startStage(n, stage); }}
+              onReview={startReview} onOpenMusic={() => setMusicCardOpen(true)} onReset={() => { K().resetProgress(); setMapKey((k) => k + 1); }} />
+          )}
+          {screen === "learn" && (L.lessons
+            ? <LessonScreen key={levelNum} levelNum={levelNum} onDone={learnDone} onBack={goMap} onSwitchStage={switchStage} onAsk={askBtn} />
+            : <LearnScreen key={levelNum} levelNum={levelNum} onDone={learnDone} onBack={goMap} onSwitchStage={switchStage} onAsk={askBtn} />)}
+          {screen === "run-intro" && run && (
+            <RunIntro mode={run.mode} levelNum={levelNum} count={run.mode === "review" ? Math.min(12, K().dueCards().length) || null : null} onBegin={beginRun} onBack={goMap} onSwitchStage={switchStage} onAsk={askBtn} />
+          )}
+          {screen === "run" && run && run.items && (
+            <QuizRun key={run.key} mode={run.mode} levelNum={levelNum} items={run.items.map((it) => Object.assign({}, it, { _track: true }))}
+              onFinish={finishRun} onExit={goMap} onSwitchStage={switchStage} onAsk={openTutor} onAnswer={onRunAnswer} />
+          )}
+          {screen === "run-result" && run && result && (
+            <RunResult mode={run.mode} levelNum={levelNum} result={result.result} outcome={result.outcome} missed={result.missed} unlockedNote={result.unlockedNote}
+              onMap={goMap} onRetry={() => { setRun({ ...run, items: null }); setScreen("run-intro"); }}
+              onNext={() => { if (run.mode === "prove") startStage(levelNum, "master"); else if (run.mode === "master" && K().level(levelNum + 1)) startStage(levelNum + 1, "learn"); else goMap(); }}
+              onSwitchStage={switchStage} onAsk={askBtn} />
+          )}
+        </div>
+        {musicCardOpen && <MusicCard music={music} onClose={() => setMusicCardOpen(false)} />}
+        {settingsOpen && <SettingsCard onClose={() => setSettingsOpen(false)} music={music} onOpenMusic={() => setMusicCardOpen(true)} onReset={() => { K().resetProgress(); setSettingsOpen(false); goMap(); }} />}
+        {tutor && <TutorDrawer levelNum={levelNum} seed={tutor.seed} onClose={() => setTutor(null)} onOpenSettings={() => setSettingsOpen(true)} />}
+        <AudioRack music={music} />
+      </div>
+    );
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+})();

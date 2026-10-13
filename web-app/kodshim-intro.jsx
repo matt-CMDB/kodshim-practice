@@ -8,13 +8,14 @@ const { useState: useStateI, useEffect: useEffectI, useRef: useRefI } = React;
 
 /* ─── Instruments — Beis HaMikdash Levi'im ensemble ─────────────────── */
 // All five tracks are the same piece (Seikilos) per instrument, intended
-// to layer. Unlocks: 1 instrument at L1, then +1 at levels 3, 6, 9, 12.
+// to layer. Unlocks: nevel from the start, then one more at steps 3, 6, 9
+// and 12 of the staircase — i.e. one per level mastered.
 const INSTRUMENTS = [
-  { id: "nevel",      he: "נֵבֶל",       en: "Nevel · Lyre",        file: "assets/nevel-Lyre.mp3",          unlockLevel: 1  },
-  { id: "kinnor",     he: "כִּנּוֹר",    en: "Kinnor · Harp",       file: "assets/kinor-Harp.mp3",          unlockLevel: 3  },
-  { id: "chalil",     he: "חָלִיל",      en: "Chalil · Pipe",       file: "assets/chalil-Oboe.mp3",         unlockLevel: 6  },
-  { id: "chatzotzra", he: "חֲצוֹצְרָה", en: "Chatzotzra · Trumpet", file: "assets/chatzotzrah-trumpet.mp3", unlockLevel: 9  },
-  { id: "tziltzel",   he: "צֶלְצֶל",     en: "Tziltzel · Cymbals",  file: "assets/tziltzel-cymbals.mp3",    unlockLevel: 12 }
+  { id: "nevel",      he: "נֵבֶל",       en: "Nevel · Lyre",        file: "assets/nevel-Lyre.mp3",          unlockStep: 0  },
+  { id: "kinnor",     he: "כִּנּוֹר",    en: "Kinnor · Harp",       file: "assets/kinor-Harp.mp3",          unlockStep: 3  },
+  { id: "chalil",     he: "חָלִיל",      en: "Chalil · Pipe",       file: "assets/chalil-Oboe.mp3",         unlockStep: 6  },
+  { id: "chatzotzra", he: "חֲצוֹצְרָה", en: "Chatzotzra · Trumpet", file: "assets/chatzotzrah-trumpet.mp3", unlockStep: 9  },
+  { id: "tziltzel",   he: "צֶלְצֶל",     en: "Tziltzel · Cymbals",  file: "assets/tziltzel-cymbals.mp3",    unlockStep: 12 }
 ];
 window.INSTRUMENTS = INSTRUMENTS;
 
@@ -428,7 +429,7 @@ function MusicCard({ music, onClose }) {
                   </span>
                   <span className="music-status">
                     {!unlocked
-                      ? "Level " + inst.unlockLevel
+                      ? "Step " + inst.unlockStep
                       : isPlaying ? "Playing" : "Ready"}
                   </span>
                   <input
@@ -450,8 +451,9 @@ function MusicCard({ music, onClose }) {
             })}
           </ul>
           <p className="music-modal-foot">
-            Climb the steps to add more voices — kinnor at level 3, chalil
-            at level 6, chatzotzra at level 9, and tziltzel at level 12.
+            Climb the steps to add more voices — kinnor at step 3, chalil
+            at step 6, chatzotzra at step 9, and tziltzel at step 12. Each
+            is the third step of a level: master it, and the instrument joins.
           </p>
         </div>
       </div>
