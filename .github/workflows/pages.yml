@@ -5,7 +5,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["web-app/**", ".github/workflows/pages.yml"]
+    paths: ["web-app/**", "quest/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -25,8 +25,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Add index.html
-        run: cp web-app/kodshim-training.html web-app/index.html
+      - name: Add index.html and the Kodshim Quest game
+        run: |
+          cp web-app/kodshim-training.html web-app/index.html
+          rm -rf web-app/quest && cp -r quest web-app/quest
       - uses: actions/configure-pages@v5
         with:
           enablement: true
