@@ -28,6 +28,10 @@ Controls: arrows / WASD move, Z / Space / Enter confirm and talk, X cancel
 `localStorage` under `kodshim.quest.v1`. On GitHub Pages it is published at
 `https://<owner>.github.io/kodshim-practice/quest/`.
 
+The look is "HD-2D": 16px pixel art rendered at 2× (3× on very large
+screens) with a lighting pass on top (soft shadows, ambient occlusion, bloom,
+a tilt-shift blur at the edges, drifting dust) and a high-resolution glass UI.
+
 Layout: `js/content.js` (every fact, lesson and question, with Rambam and
 Vayikra sources), `js/rules.js` (the animal and korban generators that grade
 answers from those rules), `js/sprites.js` and `js/tiles.js` (all pixel art,
