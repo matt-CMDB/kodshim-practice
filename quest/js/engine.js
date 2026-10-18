@@ -15,7 +15,7 @@ window.Game = (function () {
   const SAVE_KEY = 'kodshim.quest.v1';
 
   // ------------------------------------------------------------ state
-  const fresh = () => ({ map: 'home', x: 5, y: 6, dir: 'up', hp: 6, maxHp: 6, xp: 0, flags: {}, seen: {}, reg: {}, seals: [], journal: [], beaten: {}, taught: {}, music: true, steps: 0, wins: 0, losses: 0, encounters: 0, moved: {} });
+  const fresh = () => ({ map: 'home', x: 5, y: 6, dir: 'up', hp: 6, maxHp: 6, xp: 0, flags: {}, seen: {}, reg: {}, seals: [], journal: [], beaten: {}, taught: {}, music: true, musicLevel: 'medium', steps: 0, wins: 0, losses: 0, encounters: 0, moved: {} });
   let S = fresh();
   let map = null, npcs = [], anims = [], player = null, cam = { x: 0, y: 0 }, tick = 0;
   let mode = 'title';          // title | world | script
@@ -23,6 +23,7 @@ window.Game = (function () {
   let particles = [], emotes = [], clouds = [];
   const keys = {};
   const handlers = [];         // input handler stack (topmost gets presses)
+  const modal = [];            // the menu layer: while anything is here, it gets every press
   let lastEncounterStep = -10;
 
   // ------------------------------------------------------------ tiles
@@ -91,12 +92,16 @@ window.Game = (function () {
     keys[act] = true;
   });
   window.addEventListener('keyup', e => { const act = KEYMAP[e.code]; if (act) keys[act] = false; });
+  let menuOpen = false;
   function press(act) {
-    const h = handlers[handlers.length - 1];
+    // the main menu opens on any screen except the title; nothing underneath is interrupted
+    if (act === 'start' && mode !== 'title' && !menuOpen) { openMenu(); return; }
+    const stack = modal.length ? modal : handlers;
+    const h = stack[stack.length - 1];
     if (h) h(act);
   }
-  function pushHandler(fn) { handlers.push(fn); return () => { const i = handlers.lastIndexOf(fn); if (i >= 0) handlers.splice(i, 1); }; }
-  function waitPress(accept = ['a']) { return new Promise(res => { const pop = pushHandler(act => { if (accept.includes(act)) { pop(); res(act); } }); }); }
+  function pushHandler(fn, isModal = false) { const stack = isModal ? modal : handlers; stack.push(fn); return () => { const i = stack.lastIndexOf(fn); if (i >= 0) stack.splice(i, 1); }; }
+  function waitPress(accept = ['a'], isModal = false) { return new Promise(res => { const pop = pushHandler(act => { if (accept.includes(act)) { pop(); res(act); } }, isModal); }); }
   // touch
   for (const b of document.querySelectorAll('#touch button')) {
     const dir = b.dataset.dir, btn = b.dataset.btn;
@@ -119,6 +124,10 @@ window.Game = (function () {
     g.imageSmoothingEnabled = false; glowG.imageSmoothingEnabled = false; blurG.imageSmoothingEnabled = false;
     gameEl.style.width = (W * SCALE) + 'px'; gameEl.style.height = (H * SCALE) + 'px';
     document.documentElement.style.setProperty('--s', SCALE);
+    // UI scale: full size at about 1150×700 and up, shrinking (not below 0.6) in small windows
+    const ui = Math.max(0.6, Math.min(1, Math.min((W * SCALE) / 1150, (H * SCALE) / 700)));
+    document.documentElement.style.setProperty('--ui', ui.toFixed(3));
+    document.documentElement.style.setProperty('--fb', Math.round(18 * ui) + 'px');
     motes = Array.from({ length: 28 }, () => ({ x: Math.random(), y: Math.random(), r: 1.5 + Math.random() * 2.5, p: Math.random() * 6.28, v: .00008 + Math.random() * .00012 }));
     if (player) snapCamera();
   }
@@ -270,10 +279,10 @@ window.Game = (function () {
       <p>Valid from day 8; lechatchilah from day 30 (not bechor, pesach, maaser). Hours count, through zerikah. Any mum: pasul.<br>Turtledove: fit only grown. Pigeon: fit only young. Start of tzihuv: both unfit. Birds: sex and ordinary blemishes do not matter; a missing limb, dried wing or blinded eye does.</p>`,
     kinds: `<h3>The four kinds (Maaseh HaKorbanos 1:8–1:11, 1:15)</h3><table><tr><th></th><th>Olah <span class="he">עוֹלָה</span></th><th>Chatas <span class="he">חַטָּאת</span></th><th>Asham <span class="he">אָשָׁם</span></th><th>Shelamim <span class="he">שְׁלָמִים</span></th></tr>
       <tr><th>Cattle</th><td class="y">♂ only</td><td class="n">not for an individual*</td><td class="n">no</td><td class="y">♂ or ♀</td></tr>
-      <tr><th>Sheep</th><td class="y">♂ only</td><td class="y">♀ (kivsah)</td><td class="y">♂ only (ayil; keves for nazir, metzora)</td><td class="y">♂ or ♀</td></tr>
-      <tr><th>Goats</th><td class="y">♂ only</td><td class="y">♀ (se'irah)</td><td class="n">no</td><td class="y">♂ or ♀</td></tr>
+      <tr><th>Sheep</th><td class="y">♂ only</td><td class="y">♀ first year (kivsah)</td><td class="y">♂ only (ayil; keves for nazir, metzora)</td><td class="y">♂ or ♀</td></tr>
+      <tr><th>Goats</th><td class="y">♂ only</td><td class="y">♀ first year (se'irah)</td><td class="n">no</td><td class="y">♂ or ♀</td></tr>
       <tr><th>Birds</th><td class="y">♂ or ♀</td><td class="y">in the cases the Torah names</td><td class="n">no</td><td class="n">no</td></tr></table>
-      <p>*An individual's chatas is female and not cattle, except the nasi (male goat), the kohen mashiach (bull) and the kohen gadol on Yom Kippur (bull).</p>`,
+      <p>*An individual's chatas is a female in its first year ("ez bas shenasah", Bamidbar 15:27) and not cattle, except the nasi (male goat), the kohen mashiach (bull) and the kohen gadol on Yom Kippur (bull).</p>`,
     kedushah: `<h3>Kodshei kodashim and kodashim kalim (1:17, 5:2, 10:3–10:7)</h3><table><tr><th></th><th>Kodshei kodashim</th><th>Kodashim kalim</th></tr>
       <tr><th>Which</th><td>olah, chatas, asham, the two Shavuos lambs</td><td>an individual's shelamim (and todah), bechor, maaser, pesach</td></tr>
       <tr><th>Shechitah</th><td>north of the mizbeach only</td><td>anywhere in the Azarah</td></tr>
@@ -395,7 +404,7 @@ window.Game = (function () {
     const qs = tr.questions.map(id => R.byId(id));
     const res = await window.Battle.run({ type: 'trainer', arena: map.id === 'city' ? 'city' : 'pasture', name: tr.name.toUpperCase(), kind: n.kind, questions: qs, level: map.encounters === 'l2' ? 2 : 1, intro: `${tr.name} challenges you!` });
     if (res.won) { S.beaten[n.id] = true; S.wins++; addXp(40); await say(tr.lose, { name: tr.name }); save(); }
-    else { await say('Come back when you have learned more.', { name: tr.name }); if (S.hp <= 0) await faint(); else save(); }
+    else { n.cooldown = 480; await say('Come back when you have learned more. Go on, I will give you a moment.', { name: tr.name }); if (S.hp <= 0) await faint(); else save(); }
   }
   async function wildEncounter() {
     S.encounters++; lastEncounterStep = S.steps;
@@ -467,7 +476,7 @@ window.Game = (function () {
     }
     // trainers' line of sight
     for (const n of npcs) {
-      if (!n.trainer || S.beaten[n.id]) continue;
+      if (!n.trainer || S.beaten[n.id] || n.cooldown > 0) continue;
       if (inSight(n)) { runScript(() => trainerApproach(n)); return; }
     }
     // encounters
@@ -508,7 +517,7 @@ window.Game = (function () {
   function update() {
     tick++;
     if (!map || !player) return;
-    if (mode === 'world' && !busy) {
+    if (mode === 'world' && !busy && !modal.length) {
       if (!player.moving) {
         const dir = keys.up ? 'up' : keys.down ? 'down' : keys.left ? 'left' : keys.right ? 'right' : null;
         if (dir) { if (!tryMove(player, dir)) player.dir = dir; }
@@ -520,6 +529,7 @@ window.Game = (function () {
     }
     // npcs
     for (const n of npcs) {
+      if (n.cooldown > 0 && !busy) n.cooldown--;
       if (n.moving) { stepEntity(n, 1); continue; }
       if (!n.wander || busy) continue;
       if (--n.timer > 0) continue;
@@ -707,14 +717,31 @@ window.Game = (function () {
     lightG.fillStyle = vg; lightG.fillRect(0, 0, lw, lh);
   }
 
-  function loop() { update(); render(); requestAnimationFrame(loop); }
+  // Fixed-step simulation at 60 Hz in wall-clock time, rendered once per frame,
+  // so movement, timers and cooldowns run at the same speed on any machine.
+  const STEP = 1000 / 60; let last = 0, acc = 0;
+  function loop(ts) {
+    if (!last) last = ts;
+    acc += Math.min(250, ts - last); last = ts;
+    let n = 0;
+    while (acc >= STEP && n < 6) { update(); acc -= STEP; n++; }
+    if (n === 6) acc = 0;
+    render();
+    requestAnimationFrame(loop);
+  }
 
   // ------------------------------------------------------------ start menu
+  async function openMenu() {
+    menuOpen = true;
+    try { await startMenu(); } catch (e) { console.error(e); }
+    menuOpen = false;
+  }
   async function startMenu() {
+    const inBattle = !!document.getElementById('battle');
     const box = el('div', 'panel'); box.id = 'startmenu';
-    const items = [['SEFER', 'animals, korbanos, seals, journal'], ['SAVE', 'write progress'], [A.enabled ? 'MUSIC: ON' : 'MUSIC: OFF', 'toggle music'], ['HOW TO PLAY', 'controls and goals'], ['CLOSE', '']];
+    const items = [['SEFER', 'animals, korbanos, seals, journal', false], ['SAVE', inBattle ? 'not during a test' : 'write progress', inBattle], ['MUSIC: ' + A.level.toUpperCase(), 'off · low · medium · loud', false], ['HOW TO PLAY', 'controls and goals', false], ['CLOSE MENU', 'back to the game', false]];
     const menu = el('div', 'menu'); box.appendChild(menu);
-    items.forEach(([t, d], i) => menu.appendChild(el('div', 'item' + (i === 0 ? ' sel' : ''), `${t}<small>${d}</small>`)));
+    items.forEach(([t, d, dim], i) => menu.appendChild(el('div', 'item' + (i === 0 ? ' sel' : '') + (dim ? ' dim' : ''), `${t}<small>${d}</small>`)));
     ui.appendChild(box);
     let sel = 0; const its = [...menu.children];
     const render = () => its.forEach((it, i) => it.classList.toggle('sel', i === sel));
@@ -725,20 +752,26 @@ window.Game = (function () {
         else if (act === 'down') { sel = (sel + 1) % 5; render(); A.sfx('blip'); }
         else if (act === 'a') { pop(); A.sfx('confirm'); resolve(sel); }
         else if (act === 'b' || act === 'start') { pop(); A.sfx('cancel'); resolve(4); }
-      });
+      }, true);
     });
     box.remove();
     if (i === 0) await window.Sefer.open();
-    else if (i === 1) { save(); A.sfx('save'); toast('Progress saved.'); }
-    else if (i === 2) { S.music = !A.enabled; A.setEnabled(S.music); save(); }
-    else if (i === 3) await say('ARROWS / WASD move. Z, SPACE or ENTER: talk, confirm (A). X: cancel (B); hold to run. ESC: this menu. Name the animals in the tall grass to fill your Sefer; hear the teachers; then face the kohen at the gate. Wrong answers cost hearts; houses restore them.');
+    else if (i === 1) { if (inBattle) { toast('Finish the test first.'); } else { save(); A.sfx('save'); toast('Progress saved.'); } }
+    else if (i === 2) { const order = ['off', 'low', 'medium', 'loud']; const next = order[(order.indexOf(A.level) + 1) % order.length]; A.setLevel(next); S.musicLevel = next; S.music = next !== 'off'; save(); toast('Music: ' + next + '.'); if (next !== 'off' && map) A.play(map.music); }
+    else if (i === 3) await helpPanel();
+  }
+  async function helpPanel() {
+    const b = el('div', 'panel', '<b>How to play</b><br>ARROWS / WASD move. Z, SPACE or ENTER: talk, confirm (A). X: cancel (B); hold to run. ESC: this menu, on any screen.<br><br>Name the animals in the tall grass to fill your Sefer; hear the teachers; then face the kohen at the gate. Wrong answers cost hearts; houses restore them. A test cannot be left once it starts.<br><br><span class="src">Press A or B to close.</span>');
+    b.id = 'board'; b.style.bottom = 'auto'; b.style.top = '50%'; b.style.transform = 'translate(-50%, -50%)'; b.style.width = 'min(700px, calc(100% - 48px))'; b.style.backgroundImage = `url(${window.Sefer.parchment()})`; b.style.backgroundSize = '512px 512px';
+    ui.appendChild(b);
+    await waitPress(['a', 'b', 'start'], true);
+    b.remove();
   }
 
   // world-mode handler
   pushHandler(act => {
     if (mode !== 'world' || busy) return;
     if (act === 'a' && !player.moving) interact();
-    else if (act === 'start') runScript(startMenu);
   });
 
   // ------------------------------------------------------------ title
@@ -782,7 +815,7 @@ window.Game = (function () {
     await fadeOut();
     t.remove();
     if (newGame) { S = fresh(); save(); } else load();
-    A.setEnabled(S.music);
+    A.setLevel(S.musicLevel || (S.music === false ? 'off' : 'medium'));
     loadMap(S.map, S.x, S.y, S.dir);
     mode = 'world';
     await fadeIn();
@@ -794,7 +827,7 @@ window.Game = (function () {
 
   function boot() {
     if (SP.problems.length) console.warn('sprite problems', SP.problems);
-    loop();
+    requestAnimationFrame(loop);
     title();
   }
 
