@@ -4,39 +4,12 @@ A small game for learning the laws of korbanot (Temple offerings) from the
 Rambam's Mishneh Torah, one level at a time. Five levels, fifteen steps up to
 the Ezras Yisrael, the Levi'im's music layering as you climb.
 
-## Kodshim Quest (new)
+## Kodshim Quest
 
-`quest/` holds a second, separate game built on the same content: a
-top-down, Pokémon-style adventure. You play a trainee in Temple-era
-Yerushalayim. "Wild" animals appear in the tall grass of the pastures outside
-Sha'ar HaTzon and you name them (keves, ayil, pilgas, egel, par...) from their
-species, sex and exact age to register them in your Sefer HaKorbanos; pilgrims
-on the road challenge you when you cross their line of sight; the kohen at each
-gate is the boss, and the badges are the Mikdash's own seals from Shekalim 5:3.
-Level 1 (the pastures) covers the five species, names, ages and blemishes;
-Level 2 (the city) covers olah, chatas, asham and shelamim, kodshei kodashim
-vs. kodashim kalim, and where each is slaughtered and eaten.
-
-```
-cd quest
-python3 -m http.server 8766
-# then open http://localhost:8766/
-```
-
-Controls: arrows / WASD move, Z / Space / Enter confirm and talk, X cancel
-(hold to run), Esc menu (Sefer, save, music). Progress is saved in
-`localStorage` under `kodshim.quest.v1`. On GitHub Pages it is published at
-`https://<owner>.github.io/kodshim-practice/quest/`.
-
-The look is "HD-2D": 16px pixel art rendered at 2× (3× on very large
-screens) with a lighting pass on top (soft shadows, ambient occlusion, bloom,
-a tilt-shift blur at the edges, drifting dust) and a high-resolution glass UI.
-
-Layout: `js/content.js` (every fact, lesson and question, with Rambam and
-Vayikra sources), `js/rules.js` (the animal and korban generators that grade
-answers from those rules), `js/sprites.js` and `js/tiles.js` (all pixel art,
-drawn in code), `js/maps.js`, `js/engine.js`, `js/battle.js`, `js/sefer.js`,
-`js/audio.js` (chiptune, no samples).
+Kodshim Quest, the Pokémon-style game built on the same content, now lives in
+its own repository, [kodshim-quest](https://github.com/matt-CMDB/kodshim-quest),
+and is played at https://jewishai.me/kodshim-quest/. The old `quest/` address
+on this site redirects there.
 
 ## Run it
 

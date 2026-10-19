@@ -25,7 +25,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Add index.html and the Kodshim Quest game
+      - name: Add index.html and the redirect to Kodshim Quest
         run: |
           cp web-app/kodshim-training.html web-app/index.html
           rm -rf web-app/quest && cp -r quest web-app/quest
